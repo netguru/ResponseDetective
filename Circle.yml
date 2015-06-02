@@ -1,0 +1,21 @@
+#
+#  Circle.yml
+#
+#  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
+#
+
+machine:
+  xcode:
+    version: 6.3.1
+
+checkout:
+  pre:
+    - curl -L https://raw.githubusercontent.com/netguru/review/master/check.rb | ruby
+
+dependencies:
+  cache_directories:
+    - Carthage
+  pre:
+    - brew install carthage
+  override:
+    - carthage bootstrap
