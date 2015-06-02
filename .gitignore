@@ -1,0 +1,35 @@
+#
+#  .gitignore
+#
+#  Copyright (c) 2015 Netguru Sp z o.o. All rights reserved.
+#
+
+.DS_Store
+.localized
+
+xcuserdata
+profile
+build
+output
+DerivedData
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.pbxuser
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.o
+*.LinkFileList
+*.hmap
+*~.nib
+*.swp
+*.dat
+*.dep
+
+.idea
+*.iml
+
+Pods
+Carthage
