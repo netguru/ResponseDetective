@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AC7849F1B1DE43B00884F99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7849E1B1DE43B00884F99 /* Info.plist */; };
+		3AC784A51B1DE49100884F99 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A31B1DE48000884F99 /* Nimble.framework */; };
+		3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A41B1DE48000884F99 /* Quick.framework */; };
+		3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AED3ED91B1DD7B400FA35FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AED3EC31B1DD7B400FA35FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AED3ECB1B1DD7B400FA35FC;
+			remoteInfo = ResponseDetective;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3AC7847B1B1DE3C400884F99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3AC7847D1B1DE3C400884F99 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		3AC7847F1B1DE3C400884F99 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		3AC784801B1DE3C400884F99 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		3AC784811B1DE3C400884F99 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		3AC784821B1DE3C400884F99 /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
+		3AC784841B1DE3C400884F99 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		3AC784851B1DE3C400884F99 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
+		3AC784861B1DE3C400884F99 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		3AC7848F1B1DE3C400884F99 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		3AC784901B1DE3C400884F99 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		3AC784911B1DE3C400884F99 /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
+		3AC784921B1DE3C400884F99 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		3AC784941B1DE3C400884F99 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		3AC784951B1DE3C400884F99 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		3AC784961B1DE3C400884F99 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		3AC784971B1DE3C400884F99 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		3AC784981B1DE3C400884F99 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		3AC7849D1B1DE42F00884F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AC7849E1B1DE43B00884F99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AC784A31B1DE48000884F99 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		3AC784A41B1DE48000884F99 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AED3EC81B1DD7B400FA35FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AED3ED41B1DD7B400FA35FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AC784A51B1DE49100884F99 /* Nimble.framework in Frameworks */,
+				3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */,
+				3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AC7847A1B1DE3C400884F99 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7847B1B1DE3C400884F99 /* .gitignore */,
+				3AC7847C1B1DE3C400884F99 /* Base */,
+				3AC7848E1B1DE3C400884F99 /* iOS */,
+				3AC784931B1DE3C400884F99 /* Mac OS X */,
+			);
+			name = Configuration;
+			path = Carthage/Checkouts/xcconfigs;
+			sourceTree = "<group>";
+		};
+		3AC7847C1B1DE3C400884F99 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7847D1B1DE3C400884F99 /* Common.xcconfig */,
+				3AC7847E1B1DE3C400884F99 /* Configurations */,
+				3AC784831B1DE3C400884F99 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3AC7847E1B1DE3C400884F99 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7847F1B1DE3C400884F99 /* Debug.xcconfig */,
+				3AC784801B1DE3C400884F99 /* Profile.xcconfig */,
+				3AC784811B1DE3C400884F99 /* Release.xcconfig */,
+				3AC784821B1DE3C400884F99 /* Test.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		3AC784831B1DE3C400884F99 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				3AC784841B1DE3C400884F99 /* Application.xcconfig */,
+				3AC784851B1DE3C400884F99 /* Framework.xcconfig */,
+				3AC784861B1DE3C400884F99 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		3AC7848E1B1DE3C400884F99 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7848F1B1DE3C400884F99 /* iOS-Application.xcconfig */,
+				3AC784901B1DE3C400884F99 /* iOS-Base.xcconfig */,
+				3AC784911B1DE3C400884F99 /* iOS-Framework.xcconfig */,
+				3AC784921B1DE3C400884F99 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		3AC784931B1DE3C400884F99 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				3AC784941B1DE3C400884F99 /* Mac-Application.xcconfig */,
+				3AC784951B1DE3C400884F99 /* Mac-Base.xcconfig */,
+				3AC784961B1DE3C400884F99 /* Mac-DynamicLibrary.xcconfig */,
+				3AC784971B1DE3C400884F99 /* Mac-Framework.xcconfig */,
+				3AC784981B1DE3C400884F99 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
+		3AC7849A1B1DE3E800884F99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7847A1B1DE3C400884F99 /* Configuration */,
+				3AC7849B1B1DE3FD00884F99 /* ResponseDetective */,
+				3AC7849C1B1DE40500884F99 /* ResponseDetective Tests */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AC7849B1B1DE3FD00884F99 /* ResponseDetective */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7849D1B1DE42F00884F99 /* Info.plist */,
+			);
+			name = ResponseDetective;
+			path = "ResponseDetective/Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AC7849C1B1DE40500884F99 /* ResponseDetective Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7849E1B1DE43B00884F99 /* Info.plist */,
+			);
+			name = "ResponseDetective Tests";
+			path = "ResponseDetective Tests/Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AC784A01B1DE44300884F99 /* ResponseDetective */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ResponseDetective;
+			path = "ResponseDetective/Source Files";
+			sourceTree = "<group>";
+		};
+		3AC784A21B1DE46D00884F99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AC784A31B1DE48000884F99 /* Nimble.framework */,
+				3AC784A41B1DE48000884F99 /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AC784AC1B1DE82400884F99 /* ResponseDetective Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "ResponseDetective Tests";
+			path = "ResponseDetective Tests/Source Files";
+			sourceTree = "<group>";
+		};
+		3AED3EC21B1DD7B400FA35FC = {
+			isa = PBXGroup;
+			children = (
+				3AC784A01B1DE44300884F99 /* ResponseDetective */,
+				3AC784AC1B1DE82400884F99 /* ResponseDetective Tests */,
+				3AC7849A1B1DE3E800884F99 /* Supporting Files */,
+				3AC784A21B1DE46D00884F99 /* Frameworks */,
+				3AED3ECD1B1DD7B400FA35FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3AED3ECD1B1DD7B400FA35FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */,
+				3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3AED3EC91B1DD7B400FA35FC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3AED3ECB1B1DD7B400FA35FC /* ResponseDetective */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective" */;
+			buildPhases = (
+				3AED3EC71B1DD7B400FA35FC /* Sources */,
+				3AED3EC81B1DD7B400FA35FC /* Frameworks */,
+				3AED3EC91B1DD7B400FA35FC /* Headers */,
+				3AED3ECA1B1DD7B400FA35FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ResponseDetective;
+			productName = ResponseDetective;
+			productReference = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3AED3ED61B1DD7B400FA35FC /* ResponseDetective Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective Tests" */;
+			buildPhases = (
+				3AED3ED31B1DD7B400FA35FC /* Sources */,
+				3AED3ED41B1DD7B400FA35FC /* Frameworks */,
+				3AED3ED51B1DD7B400FA35FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AED3EDA1B1DD7B400FA35FC /* PBXTargetDependency */,
+			);
+			name = "ResponseDetective Tests";
+			productName = ResponseDetectiveTests;
+			productReference = 3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AED3EC31B1DD7B400FA35FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NGR;
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Netguru Sp. z o.o.";
+				TargetAttributes = {
+					3AED3ECB1B1DD7B400FA35FC = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					3AED3ED61B1DD7B400FA35FC = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = 3AED3EC61B1DD7B400FA35FC /* Build configuration list for PBXProject "ResponseDetective" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+			);
+			mainGroup = 3AED3EC21B1DD7B400FA35FC;
+			productRefGroup = 3AED3ECD1B1DD7B400FA35FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AED3ECB1B1DD7B400FA35FC /* ResponseDetective */,
+				3AED3ED61B1DD7B400FA35FC /* ResponseDetective Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AED3ECA1B1DD7B400FA35FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AC7849F1B1DE43B00884F99 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AED3ED51B1DD7B400FA35FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AED3EC71B1DD7B400FA35FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AED3ED31B1DD7B400FA35FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AED3EDA1B1DD7B400FA35FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AED3ECB1B1DD7B400FA35FC /* ResponseDetective */;
+			targetProxy = 3AED3ED91B1DD7B400FA35FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3AED3EE01B1DD7B400FA35FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC7847F1B1DE3C400884F99 /* Debug.xcconfig */;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AED3EE11B1DD7B400FA35FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC784811B1DE3C400884F99 /* Release.xcconfig */;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3AED3EE31B1DD7B400FA35FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC784911B1DE3C400884F99 /* iOS-Framework.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3AED3EE41B1DD7B400FA35FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC784911B1DE3C400884F99 /* iOS-Framework.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+			};
+			name = Release;
+		};
+		3AED3EE61B1DD7B400FA35FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC7848F1B1DE3C400884F99 /* iOS-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective Tests/Supporting Files/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3AED3EE71B1DD7B400FA35FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC7848F1B1DE3C400884F99 /* iOS-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective Tests/Supporting Files/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AED3EC61B1DD7B400FA35FC /* Build configuration list for PBXProject "ResponseDetective" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AED3EE01B1DD7B400FA35FC /* Debug */,
+				3AED3EE11B1DD7B400FA35FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AED3EE31B1DD7B400FA35FC /* Debug */,
+				3AED3EE41B1DD7B400FA35FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AED3EE61B1DD7B400FA35FC /* Debug */,
+				3AED3EE71B1DD7B400FA35FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AED3EC31B1DD7B400FA35FC /* Project object */;
+}
