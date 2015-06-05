@@ -257,6 +257,7 @@
 				3AED3ED31B1DD7B400FA35FC /* Sources */,
 				3AED3ED41B1DD7B400FA35FC /* Frameworks */,
 				3AED3ED51B1DD7B400FA35FC /* Resources */,
+				3ACCEBDB1B21D70D006C0FF4 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,6 +334,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "WARNING_FLAGS=\"TODO:|FIXME:|TEMP:\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($WARNING_FLAGS).*\\$\" | perl -p -e \"s/($WARNING_FLAGS)/ warning: \\$1/\"";
+		};
+		3ACCEBDB1B21D70D006C0FF4 /* Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+			);
+			name = "Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
