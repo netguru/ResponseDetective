@@ -230,6 +230,7 @@
 			buildConfigurationList = 3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective" */;
 			buildPhases = (
 				3AED3EC71B1DD7B400FA35FC /* Sources */,
+				3ACCEBD41B21D21A006C0FF4 /* Display Warning Flags */,
 				3AED3EC81B1DD7B400FA35FC /* Frameworks */,
 				3AED3EC91B1DD7B400FA35FC /* Headers */,
 				3AED3ECA1B1DD7B400FA35FC /* Resources */,
@@ -311,6 +312,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3ACCEBD41B21D21A006C0FF4 /* Display Warning Flags */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Display Warning Flags";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "WARNING_FLAGS=\"TODO:|FIXME:|TEMP:\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($WARNING_FLAGS).*\\$\" | perl -p -e \"s/($WARNING_FLAGS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3AED3EC71B1DD7B400FA35FC /* Sources */ = {
