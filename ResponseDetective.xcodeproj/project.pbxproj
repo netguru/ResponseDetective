@@ -12,6 +12,7 @@
 		3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A41B1DE48000884F99 /* Quick.framework */; };
 		3ACCEBD31B21CE9F006C0FF4 /* InterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCEBD21B21CE9F006C0FF4 /* InterceptorType.swift */; };
 		3ACCEBD71B21D556006C0FF4 /* DummySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCEBD51B21D50F006C0FF4 /* DummySpec.swift */; };
+		3ACCEBDD1B21DC4A006C0FF4 /* ResponseDetective.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,20 @@
 			remoteInfo = ResponseDetective;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3ACCEBDC1B21DC47006C0FF4 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3ACCEBDD1B21DC4A006C0FF4 /* ResponseDetective.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3AC7847B1B1DE3C400884F99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -257,7 +272,8 @@
 				3AED3ED31B1DD7B400FA35FC /* Sources */,
 				3AED3ED41B1DD7B400FA35FC /* Frameworks */,
 				3AED3ED51B1DD7B400FA35FC /* Resources */,
-				3ACCEBDB1B21D70D006C0FF4 /* Copy Frameworks */,
+				3ACCEBDB1B21D70D006C0FF4 /* Copy Carthage Frameworks */,
+				3ACCEBDC1B21DC47006C0FF4 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,7 +351,7 @@
 			shellPath = /bin/sh;
 			shellScript = "WARNING_FLAGS=\"TODO:|FIXME:|TEMP:\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($WARNING_FLAGS).*\\$\" | perl -p -e \"s/($WARNING_FLAGS)/ warning: \\$1/\"";
 		};
-		3ACCEBDB1B21D70D006C0FF4 /* Copy Frameworks */ = {
+		3ACCEBDB1B21D70D006C0FF4 /* Copy Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -344,7 +360,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 			);
-			name = "Copy Frameworks";
+			name = "Copy Carthage Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
