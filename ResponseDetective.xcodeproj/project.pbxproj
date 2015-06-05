@@ -46,6 +46,7 @@
 		3AC7849E1B1DE43B00884F99 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AC784A31B1DE48000884F99 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		3AC784A41B1DE48000884F99 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		3ACCEBCF1B21C84D006C0FF4 /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,6 +194,7 @@
 		3AED3EC21B1DD7B400FA35FC = {
 			isa = PBXGroup;
 			children = (
+				3ACCEBCF1B21C84D006C0FF4 /* ResponseDetective.playground */,
 				3AC784A01B1DE44300884F99 /* ResponseDetective */,
 				3AC784AC1B1DE82400884F99 /* ResponseDetective Tests */,
 				3AC7849A1B1DE3E800884F99 /* Supporting Files */,
@@ -281,8 +283,6 @@
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
-			knownRegions = (
-			);
 			mainGroup = 3AED3EC21B1DD7B400FA35FC;
 			productRefGroup = 3AED3ECD1B1DD7B400FA35FC /* Products */;
 			projectDirPath = "";
