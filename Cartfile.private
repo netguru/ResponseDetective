@@ -7,4 +7,4 @@
 github "jspahrsummers/xcconfigs" ~> 0.8
 
 github "Quick/Quick" ~> 0.3
-github "Quick/Nimble" ~> 0.4
+github "Quick/Nimble" ~> 1.0
