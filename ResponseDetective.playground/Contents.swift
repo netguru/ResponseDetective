@@ -7,3 +7,7 @@
 import Foundation
 import ResponseDetective
 import XCPlayground
+
+// Enable indefinite execution so that requests complete before the playground
+// is killed.
+XCPSetExecutionShouldContinueIndefinitely(continueIndefinitely: true)
