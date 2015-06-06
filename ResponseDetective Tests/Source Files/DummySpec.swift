@@ -10,12 +10,12 @@ import Quick
 
 class MathSpec: QuickSpec { override func spec() {
 
-    describe("math") {
+	describe("math") {
 
-        it("is awesome") {
-            expect(2+3).to(equal(5))
-        }
+		it("is awesome") {
+			expect(2+3).to(equal(5))
+		}
 
-    }
+	}
 
 }}
