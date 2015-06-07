@@ -16,14 +16,14 @@ public protocol RequestInterceptorType {
 	///
 	/// :returns: A boolean indicating whether the request should be
 	/// intercepted and processed.
-	func canIntercept(#request: NSURLRequest) -> Bool
+	func canInterceptRequest(request: NSURLRequest) -> Bool
 
 	/// Intercepts and processes the outgoing request. Preferably, all side
 	/// effects should be executed asynchronously, so that the request doesn't
 	/// get blocked.
 	///
 	/// :param: request The request to be processed.
-	func intercept(#request: NSURLRequest)
+	func interceptRequest(request: NSURLRequest)
 
 }
 
@@ -37,13 +37,21 @@ public protocol ResponseInterceptorType {
 	///
 	/// :returns: A boolean indicating whether the response should be
 	/// intercepted and processed.
-	func canIntercept(#response: NSHTTPURLResponse) -> Bool
+	func canInterceptResponse(response: NSHTTPURLResponse) -> Bool
 
 	/// Intercepts and processes the incoming response. Preferably, all side
 	/// effects should be executed asynchronously, so that the response doesn't
 	/// get blocked.
 	///
 	/// :param: response The response to be processed.
-	func intercept(#response: NSHTTPURLResponse)
+	/// :param: data The data which arrived with the response.
+	func interceptResponse(response: NSHTTPURLResponse, _ data: NSData)
+
+	/// Intercepts and processes the incoming response error. Preferably, all
+	/// side effects should be executed asynchronously, so that the response
+	/// doesn't get blocked.
+	///
+	/// :param: error The assocciated error.
+	func interceptResponseError(error: NSError)
 
 }
