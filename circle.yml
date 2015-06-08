@@ -11,6 +11,7 @@ machine:
 checkout:
   pre:
     - curl -L https://raw.githubusercontent.com/netguru/review/master/check.rb | ruby
+    - sudo chown :wheel /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ *.simruntime/Contents/Resources/RuntimeRoot/usr/lib/dyld_sim
 
 dependencies:
   cache_directories:
