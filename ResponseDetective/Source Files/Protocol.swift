@@ -8,44 +8,63 @@
 
 import Foundation
 
+typealias RemovalToken = Int
+
 public final class InterceptingProtocol: NSURLProtocol {
     
-    private static var requestInterceptors: [RequestInterceptorType] = []
-    private static var responseInterceptors: [ResponseInterceptorType] = []
+    private static var requestInterceptors: [RemovalToken : RequestInterceptorType] = [:]
+    private static var responseInterceptors: [RemovalToken : ResponseInterceptorType] = [:]
     
-    override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
-        super.init(request: request, cachedResponse: cachedResponse, client: client)
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            if error != nil {
-                //TODO - log error
-            } else {
-                //TODO - intercept response
-            }})
-        task.resume()
-    }
+    private var session = NSURLSession.sharedSession()
 
     override public func startLoading() {
-        for requestInterceptor in InterceptingProtocol.requestInterceptors {
-            if requestInterceptor.canInterceptRequest(request){
+        
+        for (removalToken,requestInterceptor) in InterceptingProtocol.requestInterceptors {
+            if requestInterceptor.canInterceptRequest(request) {
+                requestInterceptor.interceptRequest(request)
+            }
+        }
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+            if error != nil {
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    for (removalToken,responseInterceptor) in InterceptingProtocol.responseInterceptors {
+                        if responseInterceptor.canInterceptResponse(httpResponse){
+                            responseInterceptor.interceptResponseError(error)
+                        }
+                    }
+                }
+            } else {
+                if let httpResponse = response as? NSHTTPURLResponse {
+                    for (removalToken,responseInterceptor) in InterceptingProtocol.responseInterceptors {
+                        if responseInterceptor.canInterceptResponse(httpResponse){
+                            responseInterceptor.interceptResponse(httpResponse, data)
+                        }
+                    }
+                }}})
+        
+        task.resume()
+        
+        for (removalToken,requestInterceptor) in InterceptingProtocol.requestInterceptors {
+            if requestInterceptor.canInterceptRequest(request) {
                 requestInterceptor.interceptRequest(request)
             }
         }
     }
 
-    class func registerRequestInterceptor(interceptor: RequestInterceptorType) {
-        requestInterceptors.append(interceptor)
+    class func registerRequestInterceptorWithRemovalToken(interceptor: RequestInterceptorType, token: RemovalToken) {
+        requestInterceptors[token] = interceptor
     }
    
-    class func registerResponseInterceptor(interceptor: ResponseInterceptorType) {
-        responseInterceptors.append(interceptor)
+    class func registerResponseInterceptorWithRemovalToken(interceptor: ResponseInterceptorType, token: RemovalToken) {
+        responseInterceptors[token] = interceptor
     }
     
-    class func unregisterRequestInterceptor(interceptor: RequestInterceptorType) {
-        //TODO - implementation
+    class func unregisterRequestInterceptorAtToken(token: RemovalToken) {
+        responseInterceptors[token] = nil
     }
     
-    class func unregisterResponseInterceptor(interceptor: ResponseInterceptorType) {
-        //TODO - implementation
+    class func unregisterResponseInterceptorAtToken(token: RemovalToken) {
+        responseInterceptors[token] = nil
     }
 }

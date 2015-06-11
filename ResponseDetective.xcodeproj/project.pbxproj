@@ -310,9 +310,6 @@
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
 			mainGroup = 3AED3EC21B1DD7B400FA35FC;
 			productRefGroup = 3AED3ECD1B1DD7B400FA35FC /* Products */;
 			projectDirPath = "";
