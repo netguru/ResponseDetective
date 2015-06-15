@@ -51,7 +51,8 @@ public protocol ResponseInterceptorType {
 	/// side effects should be executed asynchronously, so that the response
 	/// doesn't get blocked.
 	///
+	/// :param: response The response received along the error (if any).
 	/// :param: error The assocciated error.
-	func interceptResponseError(error: NSError)
+	func interceptResponseError(response: NSHTTPURLResponse?, _ error: NSError)
 
 }

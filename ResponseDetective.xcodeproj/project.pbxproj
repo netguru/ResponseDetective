@@ -14,7 +14,7 @@
 		3ACCEBD71B21D556006C0FF4 /* DummySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCEBD51B21D50F006C0FF4 /* DummySpec.swift */; };
 		3ACCEBDD1B21DC4A006C0FF4 /* ResponseDetective.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; };
-		740DBDFC1B25B5690039F95D /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* Protocol.swift */; };
+		740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,7 @@
 		3ACCEBD51B21D50F006C0FF4 /* DummySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummySpec.swift; sourceTree = "<group>"; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		740DBDFB1B25B5690039F95D /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptingProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				3ACCEBD21B21CE9F006C0FF4 /* InterceptorType.swift */,
-				740DBDFB1B25B5690039F95D /* Protocol.swift */,
+				740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */,
 			);
 			name = ResponseDetective;
 			path = "ResponseDetective/Source Files";
@@ -378,7 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ACCEBD31B21CE9F006C0FF4 /* InterceptorType.swift in Sources */,
-				740DBDFC1B25B5690039F95D /* Protocol.swift in Sources */,
+				740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
