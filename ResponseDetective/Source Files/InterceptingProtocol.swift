@@ -9,7 +9,7 @@ import Foundation
 public final class InterceptingProtocol: NSURLProtocol {
 
 	/// The interceptor removal token type.
-	typealias InterceptorRemovalToken = UInt
+	public typealias InterceptorRemovalToken = UInt
 
 	/// The last registered removal token.
 	private static var lastRemovalToken: InterceptorRemovalToken = 0
@@ -21,7 +21,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	private static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
 
 	/// Private under-the-hood session object.
-	private let session = NSURLSession()
+	private let session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
 
 	// MARK: Interceptor registration
 
@@ -31,7 +31,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	///
 	/// :returns: A unique token which can be used for removing that request
 	/// incerceptor.
-	static func registerRequestInterceptor(interceptor: RequestInterceptorType) -> InterceptorRemovalToken {
+	public static func registerRequestInterceptor(interceptor: RequestInterceptorType) -> InterceptorRemovalToken {
 		requestInterceptors[++lastRemovalToken] = interceptor
 		return lastRemovalToken
 	}
@@ -42,7 +42,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	///
 	/// :returns: A unique token which can be used for removing that response
 	/// incerceptor.
-	static func registerResponseInterceptor(interceptor: ResponseInterceptorType) -> InterceptorRemovalToken {
+	public static func registerResponseInterceptor(interceptor: ResponseInterceptorType) -> InterceptorRemovalToken {
 		responseInterceptors[++lastRemovalToken] = interceptor
 		return lastRemovalToken
 	}
@@ -51,7 +51,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	///
 	/// :param: removalToken The removal token obtained when registering the
 	/// request interceptor.
-	static func unregisterRequestInterceptor(removalToken: InterceptorRemovalToken) {
+	public static func unregisterRequestInterceptor(removalToken: InterceptorRemovalToken) {
 		requestInterceptors[removalToken] = nil
 	}
 
@@ -59,13 +59,21 @@ public final class InterceptingProtocol: NSURLProtocol {
 	///
 	/// :param: removalToken The removal token obtained when registering the
 	/// response interceptor.
-	static func unregisterResponseInterceptor(removalToken: InterceptorRemovalToken) {
+	public static func unregisterResponseInterceptor(removalToken: InterceptorRemovalToken) {
 		responseInterceptors[removalToken] = nil
 	}
 
 	// MARK: NSURLProtocol Overrides
 
-	override public func startLoading() {
+	public override static func canInitWithRequest(request: NSURLRequest) -> Bool {
+		return true
+	}
+
+	public override static func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
+		return request
+	}
+
+	public override func startLoading() {
 
 		propagateRequestInterception(request)
 
