@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */; };
+		3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */; };
 		3AC7849F1B1DE43B00884F99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7849E1B1DE43B00884F99 /* Info.plist */; };
 		3AC784A51B1DE49100884F99 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A31B1DE48000884F99 /* Nimble.framework */; };
 		3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A41B1DE48000884F99 /* Quick.framework */; };
@@ -42,6 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRepresentation.swift; sourceTree = "<group>"; };
+		3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseRepresentation.swift; sourceTree = "<group>"; };
 		3AC7847B1B1DE3C400884F99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3AC7847D1B1DE3C400884F99 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		3AC7847F1B1DE3C400884F99 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A9AD42B1B2F37C100E9C7AC /* Representations */ = {
+			isa = PBXGroup;
+			children = (
+				3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */,
+				3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */,
+			);
+			name = Representations;
+			sourceTree = "<group>";
+		};
 		3AC7847A1B1DE3C400884F99 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +203,7 @@
 		3AC784A01B1DE44300884F99 /* ResponseDetective */ = {
 			isa = PBXGroup;
 			children = (
+				3A9AD42B1B2F37C100E9C7AC /* Representations */,
 				3ACCEBD21B21CE9F006C0FF4 /* InterceptorType.swift */,
 				740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */,
 			);
@@ -377,6 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */,
+				3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */,
 				3ACCEBD31B21CE9F006C0FF4 /* InterceptorType.swift in Sources */,
 				740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */,
 			);
