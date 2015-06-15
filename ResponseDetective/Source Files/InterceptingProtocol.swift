@@ -21,7 +21,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	private static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
 
 	/// Private under-the-hood session object.
-	private var session = NSURLSession.sharedSession()
+	private let session = NSURLSession()
 
 	// MARK: Interceptor registration
 
