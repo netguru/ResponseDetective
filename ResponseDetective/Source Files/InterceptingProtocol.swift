@@ -15,13 +15,13 @@ public final class InterceptingProtocol: NSURLProtocol {
 	private static var lastRemovalToken: InterceptorRemovalToken = 0
 
 	/// Private request interceptors store.
-    private static var requestInterceptors = [InterceptorRemovalToken: RequestInterceptorType]()
+	private static var requestInterceptors = [InterceptorRemovalToken: RequestInterceptorType]()
 
 	/// Private response interceptors store.
-    private static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
+	private static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
 
 	/// Private under-the-hood session object.
-    private var session = NSURLSession.sharedSession()
+	private var session = NSURLSession.sharedSession()
 
 	// MARK: Interceptor registration
 
@@ -65,11 +65,11 @@ public final class InterceptingProtocol: NSURLProtocol {
 
 	// MARK: NSURLProtocol Overrides
 
-    override public func startLoading() {
+	override public func startLoading() {
 
-        propagateRequestInterception(request)
-        
-        let task = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
+		propagateRequestInterception(request)
+
+		let task = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
 			if let error = error {
 				self?.propagateResponseErrorInterception((response as? NSHTTPURLResponse), error)
 			} else if let response = response as? NSHTTPURLResponse, let data = data {
@@ -77,9 +77,9 @@ public final class InterceptingProtocol: NSURLProtocol {
 			}
 		}
 
-        task.resume()
+		task.resume()
 
-    }
+	}
 
 	// MARK: Propagation helpers
 
