@@ -23,6 +23,9 @@ public final class InterceptingProtocol: NSURLProtocol {
 	/// Private under-the-hood session object.
 	private let session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
 
+	/// Private under-the-hood session task.
+	private var sessionTask: NSURLSessionDataTask?
+
 	// MARK: Interceptor registration
 
 	/// Registers a new request interceptor.
@@ -77,7 +80,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 
 		propagateRequestInterception(request)
 
-		let task = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
+		sessionTask = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
 			if let error = error {
 				self?.propagateResponseErrorInterception((response as? NSHTTPURLResponse), error)
 			} else if let response = response as? NSHTTPURLResponse, let data = data {
@@ -85,8 +88,12 @@ public final class InterceptingProtocol: NSURLProtocol {
 			}
 		}
 
-		task.resume()
+		sessionTask?.resume()
 
+	}
+
+	public override func stopLoading() {
+		sessionTask?.cancel()
 	}
 
 	// MARK: Propagation helpers
