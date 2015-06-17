@@ -24,7 +24,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	private let session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
 
 	/// Private under-the-hood session task.
-	private var sessionTask: NSURLSessionDataTask?
+	private var sessionTask = NSURLSessionDataTask()
 
 	// MARK: Interceptor registration
 
@@ -67,6 +67,18 @@ public final class InterceptingProtocol: NSURLProtocol {
 	}
 
 	// MARK: NSURLProtocol Overrides
+	
+	public override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
+		super.init(request: request, cachedResponse: cachedResponse, client: client)
+		
+		sessionTask = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
+			if let error = error {
+				self?.propagateResponseErrorInterception((response as? NSHTTPURLResponse), error)
+			} else if let response = response as? NSHTTPURLResponse, let data = data {
+				self?.propagateResponseInterception(response, data)
+			}
+		}
+	}
 
 	public override static func canInitWithRequest(request: NSURLRequest) -> Bool {
 		return true
@@ -77,23 +89,12 @@ public final class InterceptingProtocol: NSURLProtocol {
 	}
 
 	public override func startLoading() {
-
 		propagateRequestInterception(request)
-
-		sessionTask = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
-			if let error = error {
-				self?.propagateResponseErrorInterception((response as? NSHTTPURLResponse), error)
-			} else if let response = response as? NSHTTPURLResponse, let data = data {
-				self?.propagateResponseInterception(response, data)
-			}
-		}
-
-		sessionTask?.resume()
-
+		sessionTask.resume()
 	}
 
 	public override func stopLoading() {
-		sessionTask?.cancel()
+		sessionTask.cancel()
 	}
 
 	// MARK: Propagation helpers
