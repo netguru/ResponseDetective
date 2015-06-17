@@ -34,9 +34,9 @@ public struct ResponseRepresentation {
 	/// Initializes the receiver with an instance of NSHTTPURLResponse.
 	///
 	/// :param: response The foundation NSHTTPURLResponse object.
-	/// :param: data The data assocciated with the response.
+	/// :param: data The data associated with the response.
 	///
-	/// :returns: An initialized receiver or nil if an instance sould not be
+	/// :returns: An initialized receiver or nil if an instance should not be
 	/// created using the given response.
 	public init?(response: NSHTTPURLResponse, data: NSData) {
 		if let url = response.URL?.absoluteString {

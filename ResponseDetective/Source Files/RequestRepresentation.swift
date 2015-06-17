@@ -35,7 +35,7 @@ public struct RequestRepresentation {
 	///
 	/// :param: request The foundation NSSURLRequest object.
 	///
-	/// :returns: An initialized receiver or nil if an instance sould not be
+	/// :returns: An initialized receiver or nil if an instance should not be
 	/// created using the given request.
 	public init?(request: NSURLRequest) {
 		if let method = request.HTTPMethod, let url = request.URL?.absoluteString {

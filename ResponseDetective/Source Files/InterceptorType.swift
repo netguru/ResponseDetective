@@ -52,7 +52,7 @@ public protocol ResponseInterceptorType {
 	/// doesn't get blocked.
 	///
 	/// :param: response The response received along the error (if any).
-	/// :param: error The assocciated error.
+	/// :param: error The associated error.
 	func interceptResponseError(response: NSHTTPURLResponse?, _ error: NSError)
 
 }
