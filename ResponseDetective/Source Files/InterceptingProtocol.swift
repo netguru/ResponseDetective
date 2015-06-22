@@ -24,7 +24,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	private let session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
 
 	/// Private under-the-hood session task.
-	private var sessionTask = NSURLSessionDataTask()
+	private lazy var sessionTask = NSURLSessionDataTask()
 
 	// MARK: Interceptor registration
 
@@ -131,5 +131,32 @@ public final class InterceptingProtocol: NSURLProtocol {
 			interceptor.interceptResponseError(response, error)
 		}
 	}
+}
 
+extension InterceptingProtocol: NSURLSessionDataDelegate {
+	
+	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
+		self.client!.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
+	}
+	
+	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
+		self.client!.URLProtocol(self, didLoadData: data)
+	}
+}
+
+extension InterceptingProtocol: NSURLSessionTaskDelegate {
+
+	public func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest!) -> Void) {
+		self.client!.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
+	}
+	
+	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential!) -> Void) {
+		self.client!.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
+	}
+	
+	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
+		if let error = error {
+			self.client!.URLProtocol(self, didFailWithError: error)
+		}
+	}
 }
