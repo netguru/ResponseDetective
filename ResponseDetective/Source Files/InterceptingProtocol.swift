@@ -21,10 +21,10 @@ public final class InterceptingProtocol: NSURLProtocol {
 	private static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
 
 	/// Private under-the-hood session object.
-	private let session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
-
+	private var session: NSURLSession!
+	
 	/// Private under-the-hood session task.
-	private lazy var sessionTask = NSURLSessionDataTask()
+	private var sessionTask: NSURLSessionDataTask!
 
 	// MARK: Interceptor registration
 
@@ -70,6 +70,8 @@ public final class InterceptingProtocol: NSURLProtocol {
 	
 	public override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
 		super.init(request: request, cachedResponse: cachedResponse, client: client)
+		
+		session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration(), delegate: self, delegateQueue: nil)
 		
 		sessionTask = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
 			if let error = error {
@@ -133,16 +135,20 @@ public final class InterceptingProtocol: NSURLProtocol {
 	}
 }
 
+// MARK: NSURLSessionDataDelegate methods
+
 extension InterceptingProtocol: NSURLSessionDataDelegate {
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
-		self.client!.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
+		self.client!.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.NotAllowed)
 	}
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
 		self.client!.URLProtocol(self, didLoadData: data)
 	}
 }
+
+// MARK: NSURLSessionTaskDelegate methods
 
 extension InterceptingProtocol: NSURLSessionTaskDelegate {
 
