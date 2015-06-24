@@ -15,10 +15,10 @@ public final class InterceptingProtocol: NSURLProtocol {
 	private static var lastRemovalToken: InterceptorRemovalToken = 0
 
 	/// Private request interceptors store.
-	private static var requestInterceptors = [InterceptorRemovalToken: RequestInterceptorType]()
+	private static var requestInterceptors = [InterceptorRemovalToken: InterceptorType]()
 
 	/// Private response interceptors store.
-	private static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
+	private static var responseInterceptors = [InterceptorRemovalToken: InterceptorType]()
 
 	/// Private under-the-hood session object.
 	private var session: NSURLSession!
@@ -34,7 +34,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	///
 	/// :returns: A unique token which can be used for removing that request
 	/// incerceptor.
-	public static func registerRequestInterceptor(interceptor: RequestInterceptorType) -> InterceptorRemovalToken {
+	public static func registerRequestInterceptor(interceptor: InterceptorType) -> InterceptorRemovalToken {
 		requestInterceptors[++lastRemovalToken] = interceptor
 		return lastRemovalToken
 	}
@@ -45,7 +45,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	///
 	/// :returns: A unique token which can be used for removing that response
 	/// incerceptor.
-	public static func registerResponseInterceptor(interceptor: ResponseInterceptorType) -> InterceptorRemovalToken {
+	public static func registerResponseInterceptor(interceptor: InterceptorType) -> InterceptorRemovalToken {
 		responseInterceptors[++lastRemovalToken] = interceptor
 		return lastRemovalToken
 	}
@@ -106,8 +106,8 @@ public final class InterceptingProtocol: NSURLProtocol {
 	/// :param: request The intercepted request.
 	private func propagateRequestInterception(request: NSURLRequest) {
 		for (_, interceptor) in InterceptingProtocol.requestInterceptors {
-			if interceptor.canInterceptRequest(request) {
-				interceptor.interceptRequest(request)
+			if interceptor.canIntercept(request) {
+				interceptor.intercept(request, data: nil)
 			}
 		}
 	}
@@ -118,8 +118,8 @@ public final class InterceptingProtocol: NSURLProtocol {
 	/// :param: data The intercepted response data.
 	private func propagateResponseInterception(response: NSHTTPURLResponse, _ data: NSData) {
 		for (_, interceptor) in InterceptingProtocol.responseInterceptors {
-			if interceptor.canInterceptResponse(response) {
-				interceptor.interceptResponse(response, data)
+			if interceptor.canIntercept(response) {
+				interceptor.intercept(response, data: data)
 			}
 		}
 	}
@@ -130,7 +130,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	/// :param: error The intercepted response error.
 	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ error: NSError) {
 		for (_, interceptor) in InterceptingProtocol.responseInterceptors {
-			interceptor.interceptResponseError(response, error)
+			interceptor.interceptResponseError!(response, error)
 		}
 	}
 }
