@@ -14,37 +14,32 @@ XCPSetExecutionShouldContinueIndefinitely(continueIndefinitely: true)
 
 // /////////////////////////////////////////////////////////////////////////////
 
-class PlaygroundRequestInterceptor: InterceptorType {
-	
-	@objc func canIntercept(content: AnyObject) -> Bool {
-		return true
-	}
-	
-	@objc func intercept(content: AnyObject, _ data: NSData?) {
-		print(content)
-	}
-	
-}
+struct PlaygroundInterceptor: RequestInterceptorType, ResponseInterceptorType {
 
-class PlaygroundResponseInterceptor: InterceptorType {
-	
-	@objc func canIntercept(content: AnyObject) -> Bool {
+	func canInterceptRequest(request: NSURLRequest) -> Bool {
 		return true
 	}
-	
-	@objc func intercept(content: AnyObject, _ data: NSData?) {
-		print(content)
+
+	func interceptRequest(request: NSURLRequest) {
+		print(request)
 	}
-	
-	@objc func interceptResponseError(response: NSHTTPURLResponse?, _ error: NSError) {
+
+	func canInterceptResponse(response: NSHTTPURLResponse) -> Bool {
+		return true
+	}
+
+	func interceptResponse(response: NSHTTPURLResponse, _ data: NSData) {
+		print((response, data))
+	}
+
+	func interceptResponseError(response: NSHTTPURLResponse?, _ error: NSError) {
 		print((response, error))
 	}
-	
+
 }
 
-
-let requestToken = InterceptingProtocol.registerRequestInterceptor(PlaygroundRequestInterceptor())
-let responseToken = InterceptingProtocol.registerResponseInterceptor(PlaygroundResponseInterceptor())
+let requestToken = InterceptingProtocol.registerRequestInterceptor(PlaygroundInterceptor())
+let responseToken = InterceptingProtocol.registerResponseInterceptor(PlaygroundInterceptor())
 
 let session = NSURLSession(configuration: { () -> NSURLSessionConfiguration in
 	let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
