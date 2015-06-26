@@ -19,8 +19,8 @@ public struct RequestRepresentation {
 	public let headers: [String: String]
 
 	/// Request content type.
-	public var contentType: String {
-		return headers["Content-Type"] ?? "application/octet-stream"
+	public var contentType: String? {
+		return headers["Content-Type"]
 	}
 
 	/// Request body data.

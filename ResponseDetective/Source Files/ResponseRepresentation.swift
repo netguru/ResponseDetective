@@ -19,8 +19,8 @@ public struct ResponseRepresentation {
 	public let headers: [String: String]
 
 	/// Response content type.
-	public var contentType: String {
-		return headers["Content-Type"] ?? "application/octet-stream"
+	public var contentType: String? {
+		return headers["Content-Type"]
 	}
 
 	/// Response body data.
