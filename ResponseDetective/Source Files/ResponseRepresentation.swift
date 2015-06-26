@@ -38,7 +38,7 @@ public struct ResponseRepresentation {
 	///
 	/// :returns: An initialized receiver or nil if an instance should not be
 	/// created using the given response.
-	public init?(response: NSHTTPURLResponse, data: NSData) {
+	public init?(_ response: NSHTTPURLResponse, _ data: NSData) {
 		if let url = response.URL?.absoluteString {
 			self.statusCode = response.statusCode
 			self.url = url
