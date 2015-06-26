@@ -27,9 +27,9 @@ public struct RequestRepresentation {
 	public let body: NSData?
 
 	/// Request body UTF-8 string.
-	public var bodyUTF8String: String? {
-		return flatMap(body) { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
-	}
+	public lazy var bodyUTF8String: String? = {
+		return flatMap(self.body) { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
+	}()
 
 	/// Initializes the receiver with an instance of NSURLRequest.
 	///
