@@ -131,7 +131,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	/// :param: response The intercepted response (if any).
 	/// :param: error The intercepted response error.
 	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ error: NSError) {
-		// TODO
+		// TODO: Propagate response error interception once #97764910 is done
 	}
 }
 
