@@ -103,9 +103,11 @@ public final class InterceptingProtocol: NSURLProtocol {
 	///
 	/// :param: request The intercepted request.
 	private func propagateRequestInterception(request: NSURLRequest) {
-		for (_, interceptor) in InterceptingProtocol.requestInterceptors {
-			if interceptor.canInterceptRequest(request) {
-				interceptor.interceptRequest(request)
+		if let representation = RequestRepresentation(request) {
+			for (_, interceptor) in InterceptingProtocol.requestInterceptors {
+				if interceptor.canInterceptRequest(representation) {
+					interceptor.interceptRequest(representation)
+				}
 			}
 		}
 	}
@@ -115,9 +117,11 @@ public final class InterceptingProtocol: NSURLProtocol {
 	/// :param: request The intercepted response.
 	/// :param: data The intercepted response data.
 	private func propagateResponseInterception(response: NSHTTPURLResponse, _ data: NSData) {
-		for (_, interceptor) in InterceptingProtocol.responseInterceptors {
-			if interceptor.canInterceptResponse(response) {
-				interceptor.interceptResponse(response, data)
+		if let representation = ResponseRepresentation(response, data) {
+			for (_, interceptor) in InterceptingProtocol.responseInterceptors {
+				if interceptor.canInterceptResponse(representation) {
+					interceptor.interceptResponse(representation)
+				}
 			}
 		}
 	}
@@ -127,9 +131,7 @@ public final class InterceptingProtocol: NSURLProtocol {
 	/// :param: response The intercepted response (if any).
 	/// :param: error The intercepted response error.
 	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ error: NSError) {
-		for (_, interceptor) in InterceptingProtocol.responseInterceptors {
-			interceptor.interceptResponseError(response, error)
-		}
+		// TODO
 	}
 }
 
