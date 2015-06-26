@@ -27,7 +27,7 @@ public struct ResponseRepresentation {
 	public let body: NSData
 
 	/// Response body UTF-8 string.
-	public var bodyString: String? {
+	public var bodyUTF8String: String? {
 		return NSString(data: body, encoding: NSUTF8StringEncoding) as String?
 	}
 
