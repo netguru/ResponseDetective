@@ -22,6 +22,7 @@
 		3ACCEBDD1B21DC4A006C0FF4 /* ResponseDetective.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; };
 		740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */; };
+		744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F59DC1B415173006833EB /* ErrorInterceptorType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptingProtocol.swift; sourceTree = "<group>"; };
+		744F59DC1B415173006833EB /* ErrorInterceptorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorInterceptorType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */,
 				3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */,
+				744F59DC1B415173006833EB /* ErrorInterceptorType.swift */,
 			);
 			name = "Incerceptor Types";
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				3A3741051B3DB0B8002448A1 /* BufferOutputStream.swift in Sources */,
 				3A3741031B3DB059002448A1 /* ResponseInterceptorType.swift in Sources */,
 				3A3741071B3DB0CD002448A1 /* NSLogOutputStream.swift in Sources */,
+				744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */,
 				3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */,
 				3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */,
 				3A3741011B3DB00A002448A1 /* RequestInterceptorType.swift in Sources */,
