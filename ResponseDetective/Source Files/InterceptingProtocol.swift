@@ -6,7 +6,7 @@
 
 import Foundation
 
-public final class InterceptingProtocol: NSURLProtocol {
+public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTaskDelegate {
 
 	/// The interceptor removal token type.
 	public typealias InterceptorRemovalToken = UInt
@@ -133,32 +133,38 @@ public final class InterceptingProtocol: NSURLProtocol {
 	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ error: NSError) {
 		// TODO: Propagate response error interception once #97764910 is done
 	}
-}
 
-extension InterceptingProtocol: NSURLSessionDataDelegate {
+	// MARK: NSURLSessionDataDelegate methods
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
-		self.client!.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
+		if let client = client {
+			client.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
+		}
 	}
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
-		self.client!.URLProtocol(self, didLoadData: data)
+		if let client = client {
+			client.URLProtocol(self, didLoadData: data)
+		}
 	}
-}
 
-extension InterceptingProtocol: NSURLSessionTaskDelegate {
+	// MARK: NSURLSessionTaskDelegate methods
 
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest!) -> Void) {
-		self.client!.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
+		if let client = client {
+			client.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
+		}
 	}
 	
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential!) -> Void) {
-		self.client!.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
+		if let client = client {
+			self.client!.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
+		}
 	}
 	
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
-		if let error = error {
-			self.client!.URLProtocol(self, didFailWithError: error)
+		if let client = client, error = error {
+			client.URLProtocol(self, didFailWithError: error)
 		}
 	}
 }
