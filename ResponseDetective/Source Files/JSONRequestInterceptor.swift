@@ -6,6 +6,7 @@
 
 import Foundation
 
+/// Intercepts JSON requests.
 public final class JSONRequestInterceptor: RequestInterceptorType {
 
 	/// The output stream used by the interceptor.
@@ -33,14 +34,16 @@ public final class JSONRequestInterceptor: RequestInterceptorType {
 
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let jsonString = flatMap(flatMap(flatMap(request.body, {
+			if let jsonString = flatMap(flatMap(flatMap(request.bodyData, {
 				NSJSONSerialization.JSONObjectWithData($0, options: nil, error: nil)
 			}), {
 				NSJSONSerialization.dataWithJSONObject($0, options: .PrettyPrinted, error: nil)
 			}), {
 				NSString(data: $0, encoding: NSUTF8StringEncoding) as? String
 			}) {
-				self.outputStream.write(jsonString)
+				dispatch_async(dispatch_get_main_queue()) {
+					self.outputStream.write(jsonString)
+				}
 			}
 		}
 	}

@@ -4,11 +4,10 @@
 //  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
 //
 
-/// Instances of conforming types can be registered in the intercepting
-/// NSURLProtocol and used to intercept NSHTTPURLResponses' errors.
-
 import Foundation
 
+/// Instances of conforming types can be registered in the intercepting
+/// NSURLProtocol and used to intercept NSHTTPURLResponses' errors.
 public protocol ErrorInterceptorType {
 	
 	/// Intercepts and processes the incoming response error. Preferably, all

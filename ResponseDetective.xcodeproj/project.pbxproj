@@ -112,9 +112,9 @@
 		3A3740FE1B3DAFE3002448A1 /* Incerceptor Types */ = {
 			isa = PBXGroup;
 			children = (
+				744F59DC1B415173006833EB /* ErrorInterceptorType.swift */,
 				3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */,
 				3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */,
-				744F59DC1B415173006833EB /* ErrorInterceptorType.swift */,
 			);
 			name = "Incerceptor Types";
 			sourceTree = "<group>";

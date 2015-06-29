@@ -23,13 +23,30 @@ public struct RequestRepresentation {
 		return headers["Content-Type"]
 	}
 
-	/// Request body data.
-	public let body: NSData?
+	/// Request body input stream.
+	public let bodyStream: NSInputStream?
+
+	/// Request body data. Most requests will have only a stream available, so
+	/// accessing this property will lazily open the stream and drain it in a
+	/// thread-blocking manner.
+	public var bodyData: NSData? {
+		return flatMap(bodyStream) { stream in
+			var data = NSMutableData()
+			stream.open()
+			while stream.hasBytesAvailable {
+				var buffer = [UInt8](count: 1024, repeatedValue: 0)
+				let length = stream.read(&buffer, maxLength: buffer.count)
+				data.appendBytes(buffer, length: length)
+			}
+			stream.close()
+			return data
+		}
+	}
 
 	/// Request body UTF-8 string.
-	public lazy var bodyUTF8String: String? = {
-		return flatMap(self.body) { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
-	}()
+	public var bodyUTF8String: String? {
+		return flatMap(bodyData) { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
+	}
 
 	/// Initializes the receiver with an instance of NSURLRequest.
 	///
@@ -49,7 +66,15 @@ public struct RequestRepresentation {
 					return initial
 				}
 			} ?? [:]
-			self.body = request.HTTPBody?.copy() as! NSData?
+			self.bodyStream = {
+				if let bodyData = request.HTTPBody {
+					return NSInputStream(data: bodyData)
+				} else if let bodyStream = request.HTTPBodyStream {
+					return bodyStream
+				} else {
+					return nil
+				}
+			}()
 		} else {
 			return nil
 		}
