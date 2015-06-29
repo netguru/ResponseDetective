@@ -161,34 +161,26 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	// MARK: NSURLSessionDataDelegate methods
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
-		if let client = client {
-			client.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
-		}
+        client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
 	}
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
-		if let client = client {
-			client.URLProtocol(self, didLoadData: data)
-		}
+        client?.URLProtocol(self, didLoadData: data)
 	}
 
 	// MARK: NSURLSessionTaskDelegate methods
 
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest!) -> Void) {
-		if let client = client {
-			client.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
-		}
+        client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
 	}
 	
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential!) -> Void) {
-		if let client = client {
-			self.client!.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
-		}
+        client?.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
 	}
 	
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
-		if let client = client, error = error {
-			client.URLProtocol(self, didFailWithError: error)
+		if let error = error {
+			client?.URLProtocol(self, didFailWithError: error)
 		}
 	}
 }
