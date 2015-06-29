@@ -95,7 +95,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 		
 		sessionTask = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
 			if let error = error {
-				self?.propagateResponseErrorInterception((response as? NSHTTPURLResponse), error)
+				self?.propagateResponseErrorInterception((response as? NSHTTPURLResponse), data, error)
 			} else if let response = response as? NSHTTPURLResponse, let data = data {
 				self?.propagateResponseInterception(response, data)
 			}
@@ -152,9 +152,13 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	///
 	/// :param: error The intercepted response error.
 	/// :param: response The intercepted response (if any).
-	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ error: NSError) {
-		for (_, interceptor) in InterceptingProtocol.errorInterceptors {
-			interceptor.interceptError(error, response)
+	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ data: NSData?, _ error: NSError) {
+        var representation: ResponseRepresentation?
+        if let response = response {
+            representation = ResponseRepresentation(response, data)
+        }
+        for (_, interceptor) in InterceptingProtocol.errorInterceptors {
+			interceptor.interceptError(error, representation)
 		}
 	}
 

@@ -24,11 +24,15 @@ public struct ResponseRepresentation {
 	}
 
 	/// Response body data.
-	public let bodyData: NSData
+	public let bodyData: NSData?
 
 	/// Response body UTF-8 string.
 	public lazy var bodyUTF8String: String? = {
-		return NSString(data: self.bodyData, encoding: NSUTF8StringEncoding) as String?
+        if let bodyData = self.bodyData {
+            return NSString(data: bodyData, encoding: NSUTF8StringEncoding) as String?
+        } else {
+            return nil
+        }
 	}()
 
 	/// Initializes the receiver with an instance of NSHTTPURLResponse.
@@ -38,7 +42,7 @@ public struct ResponseRepresentation {
 	///
 	/// :returns: An initialized receiver or nil if an instance should not be
 	/// created using the given response.
-	public init?(_ response: NSHTTPURLResponse, _ data: NSData) {
+	public init?(_ response: NSHTTPURLResponse, _ data: NSData?) {
 		if let url = response.URL?.absoluteString {
 			self.statusCode = response.statusCode
 			self.url = url

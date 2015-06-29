@@ -16,6 +16,6 @@ public protocol ErrorInterceptorType {
 	///
 	/// :param: error The received error.
 	/// :param: response The response received along the error (if any).
-	func interceptError(error: NSError, _ response: NSHTTPURLResponse?)
+	func interceptError(error: NSError, _ response: ResponseRepresentation?)
 	
 }
