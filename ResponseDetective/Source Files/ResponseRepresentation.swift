@@ -24,11 +24,11 @@ public struct ResponseRepresentation {
 	}
 
 	/// Response body data.
-	public let body: NSData
+	public let bodyData: NSData
 
 	/// Response body UTF-8 string.
 	public lazy var bodyUTF8String: String? = {
-		return NSString(data: self.body, encoding: NSUTF8StringEncoding) as String?
+		return NSString(data: self.bodyData, encoding: NSUTF8StringEncoding) as String?
 	}()
 
 	/// Initializes the receiver with an instance of NSHTTPURLResponse.
@@ -48,7 +48,7 @@ public struct ResponseRepresentation {
 				}
 				return initial
 			}
-			self.body = data
+			self.bodyData = data
 		} else {
 			return nil
 		}
