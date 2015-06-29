@@ -20,6 +20,7 @@
 		3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A41B1DE48000884F99 /* Quick.framework */; };
 		3ACCEBD71B21D556006C0FF4 /* DummySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCEBD51B21D50F006C0FF4 /* DummySpec.swift */; };
 		3ACCEBDD1B21DC4A006C0FF4 /* ResponseDetective.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3ADB3A801B41917D00292B49 /* JSONResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB3A7F1B41917D00292B49 /* JSONResponseInterceptor.swift */; };
 		3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; };
 		740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */; };
 		744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F59DC1B415173006833EB /* ErrorInterceptorType.swift */; };
@@ -82,6 +83,7 @@
 		3AC784A41B1DE48000884F99 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		3ACCEBCF1B21C84D006C0FF4 /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; };
 		3ACCEBD51B21D50F006C0FF4 /* DummySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummySpec.swift; sourceTree = "<group>"; };
+		3ADB3A7F1B41917D00292B49 /* JSONResponseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResponseInterceptor.swift; sourceTree = "<group>"; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptingProtocol.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3A37410C1B3DB475002448A1 /* JSONRequestInterceptor.swift */,
+				3ADB3A7F1B41917D00292B49 /* JSONResponseInterceptor.swift */,
 			);
 			name = "JSON Interceptors";
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			files = (
 				3A3741091B3DB0E4002448A1 /* PrintlnOutputStream.swift in Sources */,
 				3A3741051B3DB0B8002448A1 /* BufferOutputStream.swift in Sources */,
+				3ADB3A801B41917D00292B49 /* JSONResponseInterceptor.swift in Sources */,
 				3A3741031B3DB059002448A1 /* ResponseInterceptorType.swift in Sources */,
 				3A3741071B3DB0CD002448A1 /* NSLogOutputStream.swift in Sources */,
 				744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */,
