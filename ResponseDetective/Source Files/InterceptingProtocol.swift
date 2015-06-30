@@ -153,11 +153,11 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	/// :param: error The intercepted response error.
 	/// :param: response The intercepted response (if any).
 	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ data: NSData?, _ error: NSError) {
-        var representation: ResponseRepresentation?
-        if let response = response {
-            representation = ResponseRepresentation(response, data)
-        }
-        for (_, interceptor) in InterceptingProtocol.errorInterceptors {
+		var representation: ResponseRepresentation?
+		if let response = response {
+			representation = ResponseRepresentation(response, data)
+		}
+		for (_, interceptor) in InterceptingProtocol.errorInterceptors {
 			interceptor.interceptError(error, representation)
 		}
 	}
@@ -165,21 +165,21 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	// MARK: NSURLSessionDataDelegate methods
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
-        client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
+		client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
 	}
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
-        client?.URLProtocol(self, didLoadData: data)
+		client?.URLProtocol(self, didLoadData: data)
 	}
 
 	// MARK: NSURLSessionTaskDelegate methods
 
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest!) -> Void) {
-        client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
+		client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
 	}
 	
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential!) -> Void) {
-        client?.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
+		client?.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
 	}
 	
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
