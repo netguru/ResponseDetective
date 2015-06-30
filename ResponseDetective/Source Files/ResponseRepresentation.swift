@@ -27,13 +27,9 @@ public struct ResponseRepresentation {
 	public let bodyData: NSData?
 
 	/// Response body UTF-8 string.
-	public lazy var bodyUTF8String: String? = {
-		if let bodyData = self.bodyData {
-			return NSString(data: bodyData, encoding: NSUTF8StringEncoding) as String?
-		} else {
-			return nil
-		}
-	}()
+	public var bodyUTF8String: String? {
+		return flatMap(bodyData) { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
+	}
 
 	/// Initializes the receiver with an instance of NSHTTPURLResponse.
 	///
