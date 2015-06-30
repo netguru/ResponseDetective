@@ -152,13 +152,12 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	///
 	/// :param: error The intercepted response error.
 	/// :param: response The intercepted response (if any).
+	/// :param: error The error which occured during the request.
 	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ data: NSData?, _ error: NSError) {
-		var representation: ResponseRepresentation?
-		if let response = response {
-			representation = ResponseRepresentation(response, data)
-		}
-		for (_, interceptor) in InterceptingProtocol.errorInterceptors {
-			interceptor.interceptError(error, representation)
+		if let response = response, representation = ResponseRepresentation(response, data) {
+			for (_, interceptor) in InterceptingProtocol.errorInterceptors {
+				interceptor.interceptError(error, representation)
+			}
 		}
 	}
 
