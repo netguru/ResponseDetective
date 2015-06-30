@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0BB2E81B42CE53004FC330 /* BasicErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BB2E71B42CE53004FC330 /* BasicErrorInterceptor.swift */; };
 		3A3741011B3DB00A002448A1 /* RequestInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */; };
 		3A3741031B3DB059002448A1 /* ResponseInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */; };
 		3A3741051B3DB0B8002448A1 /* BufferOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741041B3DB0B8002448A1 /* BufferOutputStream.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A0BB2E71B42CE53004FC330 /* BasicErrorInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicErrorInterceptor.swift; sourceTree = "<group>"; };
 		3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptorType.swift; sourceTree = "<group>"; };
 		3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseInterceptorType.swift; sourceTree = "<group>"; };
 		3A3741041B3DB0B8002448A1 /* BufferOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferOutputStream.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0BB2E61B42CE3F004FC330 /* Error Interceptors */ = {
+			isa = PBXGroup;
+			children = (
+				3A0BB2E71B42CE53004FC330 /* BasicErrorInterceptor.swift */,
+			);
+			name = "Error Interceptors";
+			sourceTree = "<group>";
+		};
 		3A3740FE1B3DAFE3002448A1 /* Incerceptor Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				3A37410B1B3DB34A002448A1 /* Core Types */,
+				3A0BB2E61B42CE3F004FC330 /* Error Interceptors */,
 				3A37410A1B3DB336002448A1 /* JSON Interceptors */,
 				740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */,
 			);
@@ -452,6 +463,7 @@
 				3ADB3A801B41917D00292B49 /* JSONResponseInterceptor.swift in Sources */,
 				3A3741031B3DB059002448A1 /* ResponseInterceptorType.swift in Sources */,
 				3A3741071B3DB0CD002448A1 /* NSLogOutputStream.swift in Sources */,
+				3A0BB2E81B42CE53004FC330 /* BasicErrorInterceptor.swift in Sources */,
 				744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */,
 				3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */,
 				3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */,

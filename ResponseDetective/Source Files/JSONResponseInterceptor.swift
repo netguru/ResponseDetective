@@ -26,7 +26,7 @@ public final class JSONResponseInterceptor: ResponseInterceptorType {
 		self.init(outputStream: PrintlnOutputStream())
 	}
 
-	// MARK: RequestInterceptorType implementation
+	// MARK: ResponseInterceptorType implementation
 
 	public func canInterceptResponse(response: ResponseRepresentation) -> Bool {
 		return map(response.contentType) { $0 == "application/json" } ?? false
