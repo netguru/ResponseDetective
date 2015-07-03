@@ -35,7 +35,7 @@ public final class HTMLInterceptor {
 
 	/// Prettifies the HTML string.
 	///
-	/// :param: data The HTML string to prettify.
+	/// :param: string The HTML string to prettify.
 	///
 	/// :returns: A prettified HTML string.
 	private func prettifyHTMLString(string: String) -> String? {
@@ -44,7 +44,7 @@ public final class HTMLInterceptor {
 
 	/// Prettifies the HTML data.
 	///
-	/// :param: stream The HTML data to prettify.
+	/// :param: data The HTML data to prettify.
 	///
 	/// :returns: A prettified HTML string.
 	private func prettifyHTMLData(data: NSData) -> String? {
@@ -71,9 +71,9 @@ extension HTMLInterceptor: RequestInterceptorType {
 
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let jsonString = flatMap(request.bodyData, { self.prettifyHTMLData($0) }) {
+			if let HTMLString = flatMap(request.bodyData, { self.prettifyHTMLData($0) }) {
 				dispatch_async(dispatch_get_main_queue()) {
-					self.outputStream.write(jsonString)
+					self.outputStream.write(HTMLString)
 				}
 			}
 		}
@@ -95,9 +95,9 @@ extension HTMLInterceptor: ResponseInterceptorType {
 
 	public func interceptResponse(response: ResponseRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let jsonString = flatMap(response.bodyData, { self.prettifyHTMLData($0) }) {
+			if let HTMLString = flatMap(response.bodyData, { self.prettifyHTMLData($0) }) {
 				dispatch_async(dispatch_get_main_queue()) {
-					self.outputStream.write(jsonString)
+					self.outputStream.write(HTMLString)
 				}
 			}
 		}

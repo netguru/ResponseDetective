@@ -36,7 +36,7 @@ public final class XMLInterceptor {
 
 	/// Prettifies the XML string.
 	///
-	/// :param: data The XML string to prettify.
+	/// :param: string The XML string to prettify.
 	///
 	/// :returns: A prettified XML string.
 	private func prettifyXMLString(string: String) -> String? {
@@ -45,7 +45,7 @@ public final class XMLInterceptor {
 
 	/// Prettifies the XML data.
 	///
-	/// :param: stream The XML data to prettify.
+	/// :param: data The XML data to prettify.
 	///
 	/// :returns: A prettified XML string.
 	private func prettifyXMLData(data: NSData) -> String? {
@@ -72,9 +72,9 @@ extension XMLInterceptor: RequestInterceptorType {
 
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let jsonString = flatMap(request.bodyData, { self.prettifyXMLData($0) }) {
+			if let XMLString = flatMap(request.bodyData, { self.prettifyXMLData($0) }) {
 				dispatch_async(dispatch_get_main_queue()) {
-					self.outputStream.write(jsonString)
+					self.outputStream.write(XMLString)
 				}
 			}
 		}
@@ -96,9 +96,9 @@ extension XMLInterceptor: ResponseInterceptorType {
 
 	public func interceptResponse(response: ResponseRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let jsonString = flatMap(response.bodyData, { self.prettifyXMLData($0) }) {
+			if let XMLString = flatMap(response.bodyData, { self.prettifyXMLData($0) }) {
 				dispatch_async(dispatch_get_main_queue()) {
-					self.outputStream.write(jsonString)
+					self.outputStream.write(XMLString)
 				}
 			}
 		}
