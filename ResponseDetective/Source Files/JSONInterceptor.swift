@@ -6,6 +6,7 @@
 
 import Foundation
 
+/// Intercepts JSON requests and responses.
 public final class JSONInterceptor {
 
 	/// The output stream used by the interceptor.

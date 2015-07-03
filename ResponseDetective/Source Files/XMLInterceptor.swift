@@ -6,6 +6,7 @@
 
 import Foundation
 
+/// Intercepts XML requests and responses.
 public final class XMLInterceptor {
 
 	/// The output stream used by the interceptor.
@@ -33,7 +34,7 @@ public final class XMLInterceptor {
 
 	// MARK: Prettifying
 
-	/// Prettifies the JSON string.
+	/// Prettifies the XML string.
 	///
 	/// :param: data The XML string to prettify.
 	///
