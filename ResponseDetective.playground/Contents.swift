@@ -14,32 +14,52 @@ XCPSetExecutionShouldContinueIndefinitely(continueIndefinitely: true)
 
 // /////////////////////////////////////////////////////////////////////////////
 
-struct PlaygroundInterceptor: RequestInterceptorType, ResponseInterceptorType {
 
-	func canInterceptRequest(request: NSURLRequest) -> Bool {
+struct PlaygroundInterceptor: RequestInterceptorType, ResponseInterceptorType, ErrorInterceptorType {
+	
+	func canInterceptRequest(request: RequestRepresentation) -> Bool {
 		return true
 	}
-
-	func interceptRequest(request: NSURLRequest) {
-		print(request)
+	
+	func interceptRequest(request: RequestRepresentation) {
+		print(request.method)
+		print(request.url)
+		print(request.headers)
+		print(request.contentType)
+		print(request.bodyStream)
+		print(request.bodyData)
+		print(request.bodyUTF8String)
 	}
-
-	func canInterceptResponse(response: NSHTTPURLResponse) -> Bool {
+	
+	func canInterceptResponse(response: ResponseRepresentation) -> Bool {
 		return true
 	}
-
-	func interceptResponse(response: NSHTTPURLResponse, _ data: NSData) {
-		print((response, data))
+	
+	func interceptResponse(response: ResponseRepresentation) {
+		print(response.statusCode)
+		print(response.url)
+		print(response.headers)
+		print(response.contentType)
+		print(response.bodyData)
+		print(response.bodyUTF8String)
 	}
-
-	func interceptResponseError(response: NSHTTPURLResponse?, _ error: NSError) {
-		print((response, error))
+	
+	func interceptError(error: NSError, _ response: ResponseRepresentation?) {
+		print(error.description)
+		if let response = response {
+			print(response.statusCode)
+			print(response.url)
+			print(response.headers)
+			print(response.contentType)
+			print(response.bodyData)
+			print(response.bodyUTF8String)
+		}
 	}
-
 }
 
 let requestToken = InterceptingProtocol.registerRequestInterceptor(PlaygroundInterceptor())
 let responseToken = InterceptingProtocol.registerResponseInterceptor(PlaygroundInterceptor())
+let errorToken = InterceptingProtocol.registerErrorInterceptor(PlaygroundInterceptor())
 
 let session = NSURLSession(configuration: { () -> NSURLSessionConfiguration in
 	let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
