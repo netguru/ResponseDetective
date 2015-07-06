@@ -29,9 +29,11 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	/// Private under-the-hood session task.
 	private lazy var sessionTask = NSURLSessionDataTask()
 	
+	/// Private under-the-hood response object
 	private var response: NSHTTPURLResponse?
 	
-	private var responseData: NSMutableData?
+	/// Private under-the-hood response data object.
+	private lazy var responseData = NSMutableData()
 	
 
 	// MARK: Interceptor registration
@@ -138,7 +140,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	///
 	/// :param: request The intercepted response.
 	/// :param: data The intercepted response data.
-	private func propagateResponseInterception(response: NSHTTPURLResponse, _ data: NSData?) {
+	private func propagateResponseInterception(response: NSHTTPURLResponse, _ data: NSData) {
 		if let representation = ResponseRepresentation(response, data) {
 			for (_, interceptor) in InterceptingProtocol.responseInterceptors {
 				if interceptor.canInterceptResponse(representation) {
@@ -173,10 +175,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
 		client?.URLProtocol(self, didLoadData: data)
-		if responseData == nil {
-			responseData = NSMutableData()
-		}
-		responseData!.appendData(data)
+		responseData.appendData(data)
 	}
 
 	// MARK: NSURLSessionTaskDelegate methods
