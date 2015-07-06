@@ -39,9 +39,9 @@ public final class PlainTextInterceptor {
 	///
 	/// :returns: A prettified plain text string.
 	private func prettifyPlainTextData(data: NSData) -> String? {
-		return flatMap(data, {
+		return flatMap(data) {
 			NSString(data: $0, encoding: NSUTF8StringEncoding) as String?
-		})
+		}
 	}
 }
 
@@ -54,12 +54,14 @@ extension PlainTextInterceptor: RequestInterceptorType {
 	public func canInterceptRequest(request: RequestRepresentation) -> Bool {
 		return map(request.contentType) {
 			contains(self.acceptableContentTypes, $0)
-			} ?? false
+		} ?? false
 	}
 	
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let plainTextString = flatMap(request.bodyData, { self.prettifyPlainTextData($0) }) {
+			if let plainTextString = flatMap(request.bodyData, {
+				self.prettifyPlainTextData($0)
+			}) {
 				dispatch_async(dispatch_get_main_queue()) {
 					self.outputStream.write(plainTextString)
 				}
@@ -78,12 +80,14 @@ extension PlainTextInterceptor: ResponseInterceptorType {
 	public func canInterceptResponse(response: ResponseRepresentation) -> Bool {
 		return map(response.contentType) {
 			contains(self.acceptableContentTypes, $0)
-			} ?? false
+		} ?? false
 	}
 	
 	public func interceptResponse(response: ResponseRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let plainTextString = flatMap(response.bodyData, { self.prettifyPlainTextData($0) }) {
+			if let plainTextString = flatMap(response.bodyData, {
+				self.prettifyPlainTextData($0)
+			}) {
 				dispatch_async(dispatch_get_main_queue()) {
 					self.outputStream.write(plainTextString)
 				}
