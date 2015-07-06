@@ -55,8 +55,8 @@ public struct RequestRepresentation {
 	/// :returns: An initialized receiver or nil if an instance should not be
 	/// created using the given request.
 	public init?(_ request: NSURLRequest) {
-		if let method = request.HTTPMethod, let url = request.URL?.absoluteString {
-			self.method = method
+		if let url = request.URL?.absoluteString {
+			self.method = request.HTTPMethod ?? "GET"
 			self.url = url
 			self.headers = map(request.allHTTPHeaderFields) { headers in
 				reduce(headers, [:]) { (var initial, element) in
