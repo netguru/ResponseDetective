@@ -24,10 +24,15 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	private static var errorInterceptors = [InterceptorRemovalToken: ErrorInterceptorType]()
 
 	/// Private under-the-hood session object.
-	private let session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
+	private var session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
 
 	/// Private under-the-hood session task.
 	private lazy var sessionTask = NSURLSessionDataTask()
+	
+	private var response: NSHTTPURLResponse?
+	
+	private var responseData: NSMutableData?
+	
 
 	// MARK: Interceptor registration
 
@@ -93,13 +98,8 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	public override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
 		super.init(request: request, cachedResponse: cachedResponse, client: client)
 		
-		sessionTask = session.dataTaskWithRequest(request) { [weak self] (data, response, error) in
-			if let error = error {
-				self?.propagateResponseErrorInterception((response as? NSHTTPURLResponse), data, error)
-			} else if let response = response as? NSHTTPURLResponse, let data = data {
-				self?.propagateResponseInterception(response, data)
-			}
-		}
+		session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration(), delegate: self, delegateQueue: nil)
+		sessionTask = session.dataTaskWithRequest(request)
 	}
 
 	public override static func canInitWithRequest(request: NSURLRequest) -> Bool {
@@ -138,7 +138,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	///
 	/// :param: request The intercepted response.
 	/// :param: data The intercepted response data.
-	private func propagateResponseInterception(response: NSHTTPURLResponse, _ data: NSData) {
+	private func propagateResponseInterception(response: NSHTTPURLResponse, _ data: NSData?) {
 		if let representation = ResponseRepresentation(response, data) {
 			for (_, interceptor) in InterceptingProtocol.responseInterceptors {
 				if interceptor.canInterceptResponse(representation) {
@@ -166,10 +166,17 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
 		client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy:NSURLCacheStoragePolicy.Allowed)
 		completionHandler(.Allow)
+		if let response = response as? NSHTTPURLResponse {
+			self.response = response
+		}
 	}
 	
 	public func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
 		client?.URLProtocol(self, didLoadData: data)
+		if responseData == nil {
+			responseData = NSMutableData()
+		}
+		responseData!.appendData(data)
 	}
 
 	// MARK: NSURLSessionTaskDelegate methods
@@ -187,6 +194,10 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
 		if let error = error {
 			client?.URLProtocol(self, didFailWithError: error)
+			propagateResponseErrorInterception(response, responseData, error)
+		}
+		if let response = self.response {
+			propagateResponseInterception(response, responseData)
 		}
 	}
 }
