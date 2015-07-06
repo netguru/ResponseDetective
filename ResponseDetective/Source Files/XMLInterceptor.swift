@@ -72,7 +72,9 @@ extension XMLInterceptor: RequestInterceptorType {
 
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let XMLString = flatMap(request.bodyData, { self.prettifyXMLData($0) }) {
+			if let XMLString = flatMap(request.bodyData, {
+				self.prettifyXMLData($0)
+			}) {
 				dispatch_async(dispatch_get_main_queue()) {
 					self.outputStream.write(XMLString)
 				}
@@ -96,7 +98,9 @@ extension XMLInterceptor: ResponseInterceptorType {
 
 	public func interceptResponse(response: ResponseRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let XMLString = flatMap(response.bodyData, { self.prettifyXMLData($0) }) {
+			if let XMLString = flatMap(response.bodyData, {
+				self.prettifyXMLData($0)
+			}) {
 				dispatch_async(dispatch_get_main_queue()) {
 					self.outputStream.write(XMLString)
 				}

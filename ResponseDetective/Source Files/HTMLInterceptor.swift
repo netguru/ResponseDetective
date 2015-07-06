@@ -66,12 +66,14 @@ extension HTMLInterceptor: RequestInterceptorType {
 	public func canInterceptRequest(request: RequestRepresentation) -> Bool {
 		return map(request.contentType) {
 			contains(self.acceptableContentTypes, $0)
-			} ?? false
+		} ?? false
 	}
 
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let HTMLString = flatMap(request.bodyData, { self.prettifyHTMLData($0) }) {
+			if let HTMLString = flatMap(request.bodyData, {
+				self.prettifyHTMLData($0)
+			}) {
 				dispatch_async(dispatch_get_main_queue()) {
 					self.outputStream.write(HTMLString)
 				}
@@ -90,12 +92,14 @@ extension HTMLInterceptor: ResponseInterceptorType {
 	public func canInterceptResponse(response: ResponseRepresentation) -> Bool {
 		return map(response.contentType) {
 			contains(self.acceptableContentTypes, $0)
-			} ?? false
+		} ?? false
 	}
 
 	public func interceptResponse(response: ResponseRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let HTMLString = flatMap(response.bodyData, { self.prettifyHTMLData($0) }) {
+			if let HTMLString = flatMap(response.bodyData, {
+				self.prettifyHTMLData($0)
+			}) {
 				dispatch_async(dispatch_get_main_queue()) {
 					self.outputStream.write(HTMLString)
 				}
