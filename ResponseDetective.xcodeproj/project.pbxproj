@@ -34,6 +34,7 @@
 		3AF362291B46C09C00083A18 /* HTMLInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */; };
 		3AFBE0321B467D0F00C6759A /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AB0D1B45971F00D58C62 /* Bridging-Header.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */; };
+		741BF1F01B4C2E0B0050D9A2 /* XMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */; };
 		744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F59DC1B415173006833EB /* ErrorInterceptorType.swift */; };
 		749D31D81B4BD58B00A0E1A9 /* PlainTextInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */; };
 		74FC3CB51B472FE1005DCD57 /* PlainTextInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */; };
@@ -111,6 +112,7 @@
 		3AF362251B46B83900083A18 /* HTMLPrettifying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLPrettifying.m; sourceTree = "<group>"; };
 		3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLInterceptor.swift; sourceTree = "<group>"; };
 		740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptingProtocol.swift; sourceTree = "<group>"; };
+		741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLInterceptorSpec.swift; sourceTree = "<group>"; };
 		744F59DC1B415173006833EB /* ErrorInterceptorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorInterceptorType.swift; sourceTree = "<group>"; };
 		74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainTextInterceptorSpec.swift; sourceTree = "<group>"; };
 		74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainTextInterceptor.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			children = (
 				3A29A8A81B4A6F670025F46A /* Test Types */,
 				3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */,
+				741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */,
 				74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */,
 			);
 			name = "ResponseDetective Tests";
@@ -530,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				741BF1F01B4C2E0B0050D9A2 /* XMLInterceptorSpec.swift in Sources */,
 				749D31D81B4BD58B00A0E1A9 /* PlainTextInterceptorSpec.swift in Sources */,
 				3A29A8AA1B4A6F750025F46A /* TestResponseInterceptor.swift in Sources */,
 				3A29A8A71B4A6F5C0025F46A /* TestRequestInterceptor.swift in Sources */,
