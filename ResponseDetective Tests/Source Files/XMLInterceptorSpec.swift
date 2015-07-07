@@ -1,9 +1,8 @@
 //
+//
 //  XMLInterceptorSpec.swift
-//  
 //
-//  Created by Aleksander Popko on 07.07.2015.
-//
+//  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
 //
 
 import Foundation
