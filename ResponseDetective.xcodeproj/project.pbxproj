@@ -36,6 +36,7 @@
 		740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */; };
 		741BF1F01B4C2E0B0050D9A2 /* XMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */; };
 		744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F59DC1B415173006833EB /* ErrorInterceptorType.swift */; };
+		7484C6241B4C7D9B004F2117 /* HTMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */; };
 		749D31D81B4BD58B00A0E1A9 /* PlainTextInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */; };
 		74FC3CB51B472FE1005DCD57 /* PlainTextInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptingProtocol.swift; sourceTree = "<group>"; };
 		741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLInterceptorSpec.swift; sourceTree = "<group>"; };
 		744F59DC1B415173006833EB /* ErrorInterceptorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorInterceptorType.swift; sourceTree = "<group>"; };
+		7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLInterceptorSpec.swift; sourceTree = "<group>"; };
 		74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainTextInterceptorSpec.swift; sourceTree = "<group>"; };
 		74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainTextInterceptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +338,7 @@
 				3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */,
 				741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */,
 				74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */,
+				7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */,
 			);
 			name = "ResponseDetective Tests";
 			path = "ResponseDetective Tests/Source Files";
@@ -533,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7484C6241B4C7D9B004F2117 /* HTMLInterceptorSpec.swift in Sources */,
 				741BF1F01B4C2E0B0050D9A2 /* XMLInterceptorSpec.swift in Sources */,
 				749D31D81B4BD58B00A0E1A9 /* PlainTextInterceptorSpec.swift in Sources */,
 				3A29A8AA1B4A6F750025F46A /* TestResponseInterceptor.swift in Sources */,
