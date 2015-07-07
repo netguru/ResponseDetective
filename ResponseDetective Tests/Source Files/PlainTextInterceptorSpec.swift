@@ -19,31 +19,47 @@ class PlainTextInterceptorSpec: QuickSpec {
 			var stream: BufferOutputStream!
 			var sut: PlainTextInterceptor!
 			
-			beforeEach {
-				stream = BufferOutputStream()
-				sut = PlainTextInterceptor(outputStream: stream)
-			}
+			let fixturePlainTextString = "FixturePlainTextString"
+			let fixturePlainTextData = fixturePlainTextString.dataUsingEncoding(NSUTF8StringEncoding)
 			
-			it("should be able to intercept json requests") {
-				let request = RequestRepresentation( {
-					var mutableRequest = NSMutableURLRequest()
-					mutableRequest.URL = NSURL(string: "https://httpbin.org/get")!
-					mutableRequest.addValue("text/plain", forHTTPHeaderField: "Content-Type");
-					return mutableRequest
-					}())!
-				expect(sut.canInterceptRequest(request)).to(beTrue())
-			}
-			
-			it("should be able to intercept json responses") {
-				let response = ResponseRepresentation(NSHTTPURLResponse(
+			let fixtureRequest = RequestRepresentation( {
+				var mutableRequest = NSMutableURLRequest()
+				mutableRequest.URL = NSURL(string: "https://httpbin.org/get")!
+				mutableRequest.addValue("text/plain", forHTTPHeaderField: "Content-Type");
+				mutableRequest.HTTPBody = fixturePlainTextData
+				return mutableRequest
+				}())!
+
+			let fixtureResponse = ResponseRepresentation(NSHTTPURLResponse(
 					URL: NSURL(string: "https://httpbin.org/get")!,
 					statusCode: 200,
 					HTTPVersion: "HTTP/1.1",
 					headerFields: [
 						"Content-Type": "text/plain"
 					]
-					)!, nil)!
-				expect(sut.canInterceptResponse(response)).to(beTrue())
+					)!, fixturePlainTextData)!
+			
+			beforeEach {
+				stream = BufferOutputStream()
+				sut = PlainTextInterceptor(outputStream: stream)
+			}
+			
+			it("should be able to intercept plain text requests") {
+				expect(sut.canInterceptRequest(fixtureRequest)).to(beTrue())
+			}
+			
+			it("should be able to intercept plain text responses") {
+				expect(sut.canInterceptResponse(fixtureResponse)).to(beTrue())
+			}
+			
+			it("intercept plain text request properly") {
+				sut.interceptRequest(fixtureRequest)
+				expect(stream.buffer).toEventually(equal([fixturePlainTextString]), timeout: 15, pollInterval: 1)
+			}
+			
+			it("intercept plain text response properly") {
+				sut.interceptResponse(fixtureResponse)
+				expect(stream.buffer).toEventually(equal([fixturePlainTextString]), timeout: 15, pollInterval: 1)
 			}
 		}
 	}
