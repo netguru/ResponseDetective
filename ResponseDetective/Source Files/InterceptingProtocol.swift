@@ -24,17 +24,16 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	private static var errorInterceptors = [InterceptorRemovalToken: ErrorInterceptorType]()
 
 	/// Private under-the-hood session object.
-	private var session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration())
+	private var session: NSURLSession!
 
 	/// Private under-the-hood session task.
-	private lazy var sessionTask = NSURLSessionDataTask()
+	private var sessionTask: NSURLSessionDataTask!
 	
 	/// Private under-the-hood response object
 	private var response: NSHTTPURLResponse?
 	
 	/// Private under-the-hood response data object.
 	private lazy var responseData = NSMutableData()
-	
 
 	// MARK: Interceptor registration
 
@@ -95,32 +94,6 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 		errorInterceptors[removalToken] = nil
 	}
 
-	// MARK: NSURLProtocol Overrides
-	
-	public override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
-		super.init(request: request, cachedResponse: cachedResponse, client: client)
-		
-		session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration(), delegate: self, delegateQueue: nil)
-		sessionTask = session.dataTaskWithRequest(request)
-	}
-
-	public override static func canInitWithRequest(request: NSURLRequest) -> Bool {
-		return true
-	}
-
-	public override static func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
-		return request
-	}
-
-	public override func startLoading() {
-		propagateRequestInterception(request)
-		sessionTask.resume()
-	}
-
-	public override func stopLoading() {
-		sessionTask.cancel()
-	}
-
 	// MARK: Propagation helpers
 
 	/// Propagates the request interception.
@@ -161,6 +134,31 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 				interceptor.interceptError(error, representation)
 			}
 		}
+	}
+
+	// MARK: NSURLProtocol overrides
+	
+	public override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
+		super.init(request: request, cachedResponse: cachedResponse, client: client)
+		session = NSURLSession(configuration: NSURLSessionConfiguration.ephemeralSessionConfiguration(), delegate: self, delegateQueue: nil)
+		sessionTask = session.dataTaskWithRequest(request)
+	}
+
+	public override static func canInitWithRequest(request: NSURLRequest) -> Bool {
+		return true
+	}
+
+	public override static func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
+		return request
+	}
+
+	public override func startLoading() {
+		propagateRequestInterception(request)
+		sessionTask.resume()
+	}
+
+	public override func stopLoading() {
+		sessionTask.cancel()
 	}
 
 	// MARK: NSURLSessionDataDelegate methods

@@ -55,7 +55,10 @@ public final class JSONInterceptor {
 	/// :returns: A prettified JSON stream.
 	private func prettifyJSONStream(stream: NSInputStream) -> String? {
 		return flatMap(flatMap(flatMap(stream, {
-			NSJSONSerialization.JSONObjectWithStream($0, options: nil, error: nil)
+			stream.open()
+			let object: AnyObject? = NSJSONSerialization.JSONObjectWithStream($0, options: nil, error: nil)
+			stream.close()
+			return object
 		}), {
 			NSJSONSerialization.dataWithJSONObject($0, options: .PrettyPrinted, error: nil)
 		}), {

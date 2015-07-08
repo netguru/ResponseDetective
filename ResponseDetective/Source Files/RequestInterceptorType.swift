@@ -26,4 +26,3 @@ public protocol RequestInterceptorType {
 	func interceptRequest(request: RequestRepresentation)
 
 }
-
