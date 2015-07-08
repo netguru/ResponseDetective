@@ -28,16 +28,16 @@ class PlainTextInterceptorSpec: QuickSpec {
 				mutableRequest.addValue("text/plain", forHTTPHeaderField: "Content-Type");
 				mutableRequest.HTTPBody = fixturePlainTextData
 				return mutableRequest
-				}())!
+			}())!
 
 			let fixtureResponse = ResponseRepresentation(NSHTTPURLResponse(
-					URL: NSURL(string: "https://httpbin.org/get")!,
-					statusCode: 200,
-					HTTPVersion: "HTTP/1.1",
-					headerFields: [
-						"Content-Type": "text/plain"
-					]
-					)!, fixturePlainTextData)!
+				URL: NSURL(string: "https://httpbin.org/get")!,
+				statusCode: 200,
+				HTTPVersion: "HTTP/1.1",
+				headerFields: [
+					"Content-Type": "text/plain"
+				]
+			)!, fixturePlainTextData)!
 			
 			beforeEach {
 				stream = BufferOutputStream()

@@ -31,7 +31,7 @@ class XMLInterceptorSpec: QuickSpec {
 					mutableRequest.URL = NSURL(string: "https://httpbin.org/get")!
 					mutableRequest.addValue("application/xml", forHTTPHeaderField: "Content-Type");
 					return mutableRequest
-					}())!
+				}())!
 				expect(sut.canInterceptRequest(request)).to(beTrue())
 			}
 			
@@ -43,7 +43,7 @@ class XMLInterceptorSpec: QuickSpec {
 					headerFields: [
 						"Content-Type": "application/xml"
 					]
-					)!, nil)!
+				)!, nil)!
 				expect(sut.canInterceptResponse(response)).to(beTrue())
 			}
 		}

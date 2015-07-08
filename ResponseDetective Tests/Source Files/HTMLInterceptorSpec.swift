@@ -29,7 +29,7 @@ class HTMLInterceptorSpec: QuickSpec {
 					mutableRequest.URL = NSURL(string: "https://httpbin.org/get")!
 					mutableRequest.addValue("text/html", forHTTPHeaderField: "Content-Type");
 					return mutableRequest
-					}())!
+				}())!
 				expect(sut.canInterceptRequest(request)).to(beTrue())
 			}
 			
@@ -41,7 +41,7 @@ class HTMLInterceptorSpec: QuickSpec {
 					headerFields: [
 						"Content-Type": "text/html"
 					]
-					)!, nil)!
+				)!, nil)!
 				expect(sut.canInterceptResponse(response)).to(beTrue())
 			}
 		}
