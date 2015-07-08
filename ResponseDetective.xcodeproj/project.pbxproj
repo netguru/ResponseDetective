@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A0BB2E81B42CE53004FC330 /* BasicErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BB2E71B42CE53004FC330 /* BasicErrorInterceptor.swift */; };
 		3A29A8A71B4A6F5C0025F46A /* TestRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */; };
 		3A29A8AA1B4A6F750025F46A /* TestResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */; };
 		3A29A8AC1B4A6FC10025F46A /* TestErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */; };
@@ -24,6 +23,7 @@
 		3A8DF6321B45774300F758EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8DF6311B45774300F758EF /* libxml2.dylib */; };
 		3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */; };
 		3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */; };
+		3ABB31321B4D2D4900271DDA /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31311B4D2D4900271DDA /* BaseInterceptor.swift */; };
 		3AC7849F1B1DE43B00884F99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7849E1B1DE43B00884F99 /* Info.plist */; };
 		3AC784A51B1DE49100884F99 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A31B1DE48000884F99 /* Nimble.framework */; };
 		3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A41B1DE48000884F99 /* Quick.framework */; };
@@ -66,7 +66,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A0BB2E71B42CE53004FC330 /* BasicErrorInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicErrorInterceptor.swift; sourceTree = "<group>"; };
 		3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRequestInterceptor.swift; sourceTree = "<group>"; };
 		3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResponseInterceptor.swift; sourceTree = "<group>"; };
 		3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestErrorInterceptor.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		3A8DF6311B45774300F758EF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRepresentation.swift; sourceTree = "<group>"; };
 		3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseRepresentation.swift; sourceTree = "<group>"; };
+		3ABB31311B4D2D4900271DDA /* BaseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		3AC7847B1B1DE3C400884F99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3AC7847D1B1DE3C400884F99 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		3AC7847F1B1DE3C400884F99 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		3A5133AE1B459C930040276D /* Builtin Interceptors */ = {
 			isa = PBXGroup;
 			children = (
-				3A0BB2E71B42CE53004FC330 /* BasicErrorInterceptor.swift */,
+				3ABB31311B4D2D4900271DDA /* BaseInterceptor.swift */,
 				3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */,
 				3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */,
 				74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */,
@@ -514,12 +514,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3741091B3DB0E4002448A1 /* PrintlnOutputStream.swift in Sources */,
+				3ABB31321B4D2D4900271DDA /* BaseInterceptor.swift in Sources */,
 				3A39AB071B458C8B00D58C62 /* JSONInterceptor.swift in Sources */,
 				3A3741051B3DB0B8002448A1 /* BufferOutputStream.swift in Sources */,
 				3A39AB011B45845600D58C62 /* XMLPrettifying.m in Sources */,
 				3A3741031B3DB059002448A1 /* ResponseInterceptorType.swift in Sources */,
 				3A3741071B3DB0CD002448A1 /* NSLogOutputStream.swift in Sources */,
-				3A0BB2E81B42CE53004FC330 /* BasicErrorInterceptor.swift in Sources */,
 				744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */,
 				3AF362261B46B83900083A18 /* HTMLPrettifying.m in Sources */,
 				3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */,
