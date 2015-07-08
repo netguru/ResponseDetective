@@ -26,7 +26,7 @@ class JSONInterceptorSpec: QuickSpec {
 				var mutableRequest = NSMutableURLRequest()
 				mutableRequest.URL = NSURL(string: "https://httpbin.org/post")!
 				mutableRequest.HTTPMethod = "POST"
-				mutableRequest.addValue("application/json", forHTTPHeaderField: "Content-Type");
+				mutableRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
 				mutableRequest.HTTPBody = uglyFixtureData
 				return mutableRequest
 			}())!

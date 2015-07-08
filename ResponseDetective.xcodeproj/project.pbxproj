@@ -24,6 +24,7 @@
 		3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */; };
 		3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */; };
 		3ABB31321B4D2D4900271DDA /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31311B4D2D4900271DDA /* BaseInterceptor.swift */; };
+		3ABB31341B4D46BD00271DDA /* BaseInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31331B4D46BD00271DDA /* BaseInterceptorSpec.swift */; };
 		3AC7849F1B1DE43B00884F99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7849E1B1DE43B00884F99 /* Info.plist */; };
 		3AC784A51B1DE49100884F99 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A31B1DE48000884F99 /* Nimble.framework */; };
 		3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A41B1DE48000884F99 /* Quick.framework */; };
@@ -84,6 +85,7 @@
 		3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRepresentation.swift; sourceTree = "<group>"; };
 		3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseRepresentation.swift; sourceTree = "<group>"; };
 		3ABB31311B4D2D4900271DDA /* BaseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
+		3ABB31331B4D46BD00271DDA /* BaseInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInterceptorSpec.swift; sourceTree = "<group>"; };
 		3AC7847B1B1DE3C400884F99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3AC7847D1B1DE3C400884F99 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		3AC7847F1B1DE3C400884F99 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				3A29A8A81B4A6F670025F46A /* Test Types */,
+				3ABB31331B4D46BD00271DDA /* BaseInterceptorSpec.swift */,
 				7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */,
 				3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */,
 				74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */,
@@ -537,6 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7484C6241B4C7D9B004F2117 /* HTMLInterceptorSpec.swift in Sources */,
+				3ABB31341B4D46BD00271DDA /* BaseInterceptorSpec.swift in Sources */,
 				741BF1F01B4C2E0B0050D9A2 /* XMLInterceptorSpec.swift in Sources */,
 				749D31D81B4BD58B00A0E1A9 /* PlainTextInterceptorSpec.swift in Sources */,
 				3A29A8AA1B4A6F750025F46A /* TestResponseInterceptor.swift in Sources */,
