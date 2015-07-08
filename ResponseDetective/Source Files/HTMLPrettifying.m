@@ -15,5 +15,5 @@ NSString * __nullable rdv_prettifyHTMLString(NSString * __nonnull string) {
 	htmlDocDumpMemoryFormat(document, &buffer, &bufferLength, 1);
 	NSString *result = [[NSString alloc] initWithBytes:buffer length:bufferLength encoding:NSUTF8StringEncoding];
 	xmlFree(buffer);
-	return result;
+	return [result stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
