@@ -9,40 +9,62 @@ import Nimble
 import ResponseDetective
 import Quick
 
-class JSONInterceptorSpec: QuickSpec { override func spec() {
+class JSONInterceptorSpec: QuickSpec {
 
-	describe("JSONInterceptor") {
+	override func spec() {
 
-		var stream: BufferOutputStream!
-		var sut: JSONInterceptor!
+		describe("JSONInterceptor") {
 
-		beforeEach {
-			stream = BufferOutputStream()
-			sut = JSONInterceptor(outputStream: stream)
-		}
+			var stream: BufferOutputStream!
+			var sut: JSONInterceptor!
 
-		it("should be able to intercept json requests") {
-			let request = RequestRepresentation({
+			let uglyFixtureString = "{\"foo\":\"bar\"\n,\"baz\":true }"
+			let uglyFixtureData = uglyFixtureString.dataUsingEncoding(NSUTF8StringEncoding)!
+			let prettyFixtureString = "{\n  \"foo\" : \"bar\",\n  \"baz\" : true\n}"
+
+			let fixtureRequest = RequestRepresentation( {
 				var mutableRequest = NSMutableURLRequest()
-				mutableRequest.URL = NSURL(string: "https://httpbin.org/get")!
+				mutableRequest.URL = NSURL(string: "https://httpbin.org/post")!
+				mutableRequest.HTTPMethod = "POST"
 				mutableRequest.addValue("application/json", forHTTPHeaderField: "Content-Type");
+				mutableRequest.HTTPBody = uglyFixtureData
 				return mutableRequest
 			}())!
-			expect(sut.canInterceptRequest(request)).to(beTrue())
-		}
 
-		it("should be able to intercept json responses") {
-			let response = ResponseRepresentation(NSHTTPURLResponse(
-				URL: NSURL(string: "https://httpbin.org/get")!,
+			let fixtureResponse = ResponseRepresentation(NSHTTPURLResponse(
+				URL: NSURL(string: "https://httpbin.org/post")!,
 				statusCode: 200,
 				HTTPVersion: "HTTP/1.1",
 				headerFields: [
 					"Content-Type": "application/json"
 				]
-			)!, nil)!
-			expect(sut.canInterceptResponse(response)).to(beTrue())
+			)!, uglyFixtureData)!
+
+			beforeEach {
+				stream = BufferOutputStream()
+				sut = JSONInterceptor(outputStream: stream)
+			}
+
+			it("should be able to intercept application/json requests") {
+				expect(sut.canInterceptRequest(fixtureRequest)).to(beTrue())
+			}
+
+			it("should be able to intercept application/json responses") {
+				expect(sut.canInterceptResponse(fixtureResponse)).to(beTrue())
+			}
+
+			it("should output a correct string when intercepting a application/json request") {
+				sut.interceptRequest(fixtureRequest)
+				expect(stream.buffer).toEventually(contain(prettyFixtureString), timeout: 2, pollInterval: 0.5)
+			}
+
+			it("should output a correct string when intercepting a application/json response") {
+				sut.interceptResponse(fixtureResponse)
+				expect(stream.buffer).toEventually(contain(prettyFixtureString), timeout: 2, pollInterval: 0.5)
+			}
+
 		}
 
 	}
-
-}}
+	
+}

@@ -188,8 +188,8 @@
 				3A0BB2E71B42CE53004FC330 /* BasicErrorInterceptor.swift */,
 				3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */,
 				3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */,
-				3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */,
 				74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */,
+				3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */,
 			);
 			name = "Builtin Interceptors";
 			sourceTree = "<group>";
@@ -335,10 +335,10 @@
 			isa = PBXGroup;
 			children = (
 				3A29A8A81B4A6F670025F46A /* Test Types */,
-				3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */,
-				741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */,
-				74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */,
 				7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */,
+				3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */,
+				74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */,
+				741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */,
 			);
 			name = "ResponseDetective Tests";
 			path = "ResponseDetective Tests/Source Files";

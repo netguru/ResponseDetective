@@ -9,7 +9,6 @@ import Nimble
 import ResponseDetective
 import Quick
 
-
 class PlainTextInterceptorSpec: QuickSpec {
 	
 	override func spec() {
@@ -19,7 +18,7 @@ class PlainTextInterceptorSpec: QuickSpec {
 			var stream: BufferOutputStream!
 			var sut: PlainTextInterceptor!
 			
-			let fixturePlainTextString = "FixturePlainTextString"
+			let fixturePlainTextString = "foo-bar-baz"
 			let fixturePlainTextData = fixturePlainTextString.dataUsingEncoding(NSUTF8StringEncoding)
 			
 			let fixtureRequest = RequestRepresentation( {
@@ -44,23 +43,25 @@ class PlainTextInterceptorSpec: QuickSpec {
 				sut = PlainTextInterceptor(outputStream: stream)
 			}
 			
-			it("should be able to intercept plain text requests") {
+			it("should be able to intercept text/plain requests") {
 				expect(sut.canInterceptRequest(fixtureRequest)).to(beTrue())
 			}
 			
-			it("should be able to intercept plain text responses") {
+			it("should be able to intercept text/plain responses") {
 				expect(sut.canInterceptResponse(fixtureResponse)).to(beTrue())
 			}
 			
-			it("intercept plain text request properly") {
+			it("should output a correct string when intercepting a text/plain request") {
 				sut.interceptRequest(fixtureRequest)
-				expect(stream.buffer).toEventually(equal([fixturePlainTextString]), timeout: 15, pollInterval: 1)
+				expect(stream.buffer).toEventually(contain(fixturePlainTextString), timeout: 2, pollInterval: 0.5)
 			}
 			
-			it("intercept plain text response properly") {
+			it("should output a correct string when intercepting a text/plain response") {
 				sut.interceptResponse(fixtureResponse)
-				expect(stream.buffer).toEventually(equal([fixturePlainTextString]), timeout: 15, pollInterval: 1)
+				expect(stream.buffer).toEventually(equal([fixturePlainTextString]), timeout: 2, pollInterval: 0.5)
 			}
+
 		}
+		
 	}
 }
