@@ -5,8 +5,6 @@
 //
 
 import Foundation
-
-import Foundation
 import Nimble
 import ResponseDetective
 import Quick
@@ -36,7 +34,7 @@ class BaseInterceptorSpec: QuickSpec {
 				mutableRequest.URL = NSURL(string: fixtureRequestURLString)!
 				mutableRequest.HTTPMethod = fixtureRequestMethod
 				for (field, value) in fixtureRequestHeaders {
-					mutableRequest.addValue(value, forHTTPHeaderField: field)
+					mutableRequest.setValue(value, forHTTPHeaderField: field)
 				}
 				return mutableRequest
 			}())!

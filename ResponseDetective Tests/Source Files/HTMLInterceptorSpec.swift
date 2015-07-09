@@ -26,7 +26,7 @@ class HTMLInterceptorSpec: QuickSpec {
 				var mutableRequest = NSMutableURLRequest()
 				mutableRequest.URL = NSURL(string: "https://httpbin.org/post")!
 				mutableRequest.HTTPMethod = "POST"
-				mutableRequest.addValue("text/html", forHTTPHeaderField: "Content-Type")
+				mutableRequest.setValue("text/html", forHTTPHeaderField: "Content-Type")
 				mutableRequest.HTTPBody = uglyFixtureData
 				return mutableRequest
 			}())!

@@ -28,7 +28,7 @@ class XMLInterceptorSpec: QuickSpec {
 				var mutableRequest = NSMutableURLRequest()
 				mutableRequest.URL = NSURL(string: "https://httpbin.org/post")!
 				mutableRequest.HTTPMethod = "POST"
-				mutableRequest.addValue("application/xml", forHTTPHeaderField: "Content-Type")
+				mutableRequest.setValue("application/xml", forHTTPHeaderField: "Content-Type")
 				mutableRequest.HTTPBody = uglyFixtureData
 				return mutableRequest
 			}())!
