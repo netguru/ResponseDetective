@@ -19,7 +19,7 @@ public final class HTMLInterceptor {
 
 	// MARK: Initialization
 
-	/// Initializes the interceptor with a output stream.
+	/// Initializes the interceptor with an output stream.
 	///
 	/// :param: outputStream The output stream to be used.
 	public init(outputStream: OutputStreamType) {
