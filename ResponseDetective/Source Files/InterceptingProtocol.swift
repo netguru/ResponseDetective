@@ -198,3 +198,13 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 		}
 	}
 }
+
+public extension InterceptingProtocol {
+	
+	static func clearInterceptors() {
+		lastRemovalToken = 0
+		requestInterceptors = [:]
+		responseInterceptors = [:]
+		errorInterceptors = [:]
+	}
+}
