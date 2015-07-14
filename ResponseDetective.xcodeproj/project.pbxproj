@@ -592,6 +592,7 @@
 					};
 					3AED3ECB1B1DD7B400FA35FC = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 9HJ69C5G9K;
 					};
 					3AED3ED61B1DD7B400FA35FC = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -889,6 +890,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AC784911B1DE3C400884F99 /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -926,6 +928,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AC7848F1B1DE3C400884F99 /* iOS-Application.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -949,6 +952,7 @@
 				3A2007ED1B5501BC00769021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X) Tests" */ = {
 			isa = XCConfigurationList;
@@ -957,6 +961,7 @@
 				3A2007F01B5501BC00769021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AED3EC61B1DD7B400FA35FC /* Build configuration list for PBXProject "ResponseDetective" */ = {
 			isa = XCConfigurationList;
