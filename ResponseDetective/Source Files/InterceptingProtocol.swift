@@ -15,13 +15,13 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	private static var lastRemovalToken: InterceptorRemovalToken = 0
 
 	/// Private request interceptors store.
-	private static var requestInterceptors = [InterceptorRemovalToken: RequestInterceptorType]()
+	public static var requestInterceptors = [InterceptorRemovalToken: RequestInterceptorType]()
 
 	/// Private response interceptors store.
-	private static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
+	public static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
 	
 	/// Private error interceptors store.
-	private static var errorInterceptors = [InterceptorRemovalToken: ErrorInterceptorType]()
+	public static var errorInterceptors = [InterceptorRemovalToken: ErrorInterceptorType]()
 
 	/// Private under-the-hood session object.
 	private var session: NSURLSession!
@@ -199,12 +199,19 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	}
 }
 
+// MARK: -
+
 public extension InterceptingProtocol {
 	
-	static func clearInterceptors() {
-		lastRemovalToken = 0
-		requestInterceptors = [:]
-		responseInterceptors = [:]
-		errorInterceptors = [:]
+	static func unregisterAllRequestInterceptors() {
+		requestInterceptors.removeAll(keepCapacity: false)
+	}
+	
+	static func unregisterAllResponseInterceptors() {
+		responseInterceptors.removeAll(keepCapacity: false)
+	}
+	
+	static func unregisterAllErrorInterceptors() {
+		errorInterceptors.removeAll(keepCapacity: false)
 	}
 }
