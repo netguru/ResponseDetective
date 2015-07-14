@@ -15,13 +15,13 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	private static var lastRemovalToken: InterceptorRemovalToken = 0
 
 	/// Private request interceptors store.
-	public static var requestInterceptors = [InterceptorRemovalToken: RequestInterceptorType]()
+	public private(set) static var requestInterceptors = [InterceptorRemovalToken: RequestInterceptorType]()
 
 	/// Private response interceptors store.
-	public static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
+	public private(set) static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
 	
 	/// Private error interceptors store.
-	public static var errorInterceptors = [InterceptorRemovalToken: ErrorInterceptorType]()
+	public private(set) static var errorInterceptors = [InterceptorRemovalToken: ErrorInterceptorType]()
 
 	/// Private under-the-hood session object.
 	private var session: NSURLSession!
