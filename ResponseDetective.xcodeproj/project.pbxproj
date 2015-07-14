@@ -7,6 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2007D21B5500DE00769021 /* ImageInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2007D11B5500DE00769021 /* ImageInterceptor.swift */; };
+		3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */; };
+		3A2007F11B55023500769021 /* ErrorInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F59DC1B415173006833EB /* ErrorInterceptorType.swift */; };
+		3A2007F21B55023700769021 /* RequestInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */; };
+		3A2007F31B55023900769021 /* ResponseInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */; };
+		3A2007F41B55023B00769021 /* BufferOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741041B3DB0B8002448A1 /* BufferOutputStream.swift */; };
+		3A2007F51B55023D00769021 /* NSLogOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741061B3DB0CD002448A1 /* NSLogOutputStream.swift */; };
+		3A2007F61B55024000769021 /* PrintlnOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741081B3DB0E4002448A1 /* PrintlnOutputStream.swift */; };
+		3A2007F71B55024200769021 /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */; };
+		3A2007F81B55024400769021 /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */; };
+		3A2007F91B55024800769021 /* HTMLPrettifying.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF362251B46B83900083A18 /* HTMLPrettifying.m */; };
+		3A2007FA1B55024C00769021 /* HTMLPrettifying.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AF362241B46B81500083A18 /* HTMLPrettifying.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A2007FB1B55024F00769021 /* XMLPrettifying.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AAFF1B45844300D58C62 /* XMLPrettifying.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A2007FC1B55025200769021 /* XMLPrettifying.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB001B45845600D58C62 /* XMLPrettifying.m */; };
+		3A2007FD1B55025500769021 /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31311B4D2D4900271DDA /* BaseInterceptor.swift */; };
+		3A2007FE1B55025600769021 /* HTMLInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */; };
+		3A2008001B55025900769021 /* JSONInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */; };
+		3A2008011B55025900769021 /* PlainTextInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */; };
+		3A2008021B55025900769021 /* XMLInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */; };
+		3A2008031B55025C00769021 /* InterceptingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */; };
+		3A2008041B55026000769021 /* TestErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */; };
+		3A2008051B55026000769021 /* TestRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */; };
+		3A2008061B55026000769021 /* TestResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */; };
+		3A2008071B55026000769021 /* BaseInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31331B4D46BD00271DDA /* BaseInterceptorSpec.swift */; };
+		3A2008081B55026000769021 /* HTMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */; };
+		3A2008091B55026000769021 /* JSONInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */; };
+		3A20080A1B55026000769021 /* PlainTextInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */; };
+		3A20080B1B55026000769021 /* XMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */; };
+		3A20080C1B55026500769021 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AB0D1B45971F00D58C62 /* Bridging-Header.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3A2008111B5502FE00769021 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A20080F1B5502FE00769021 /* Nimble.framework */; };
+		3A2008121B5502FE00769021 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008101B5502FE00769021 /* Quick.framework */; };
+		3A2008151B55031100769021 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008141B55031100769021 /* libxml2.dylib */; };
+		3A2008181B5505AA00769021 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008171B5505AA00769021 /* UIKit.framework */; };
+		3A20081A1B5505AD00769021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008191B5505AD00769021 /* Foundation.framework */; };
+		3A20081C1B5505BD00769021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A20081B1B5505BD00769021 /* Foundation.framework */; };
+		3A20081D1B55064F00769021 /* ImageInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2007D11B5500DE00769021 /* ImageInterceptor.swift */; };
+		3A20081F1B55073700769021 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A20081E1B55073700769021 /* AppKit.framework */; };
 		3A29A8A71B4A6F5C0025F46A /* TestRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */; };
 		3A29A8AA1B4A6F750025F46A /* TestResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */; };
 		3A29A8AC1B4A6FC10025F46A /* TestErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */; };
@@ -25,7 +62,6 @@
 		3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */; };
 		3ABB31321B4D2D4900271DDA /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31311B4D2D4900271DDA /* BaseInterceptor.swift */; };
 		3ABB31341B4D46BD00271DDA /* BaseInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31331B4D46BD00271DDA /* BaseInterceptorSpec.swift */; };
-		3AC7849F1B1DE43B00884F99 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7849E1B1DE43B00884F99 /* Info.plist */; };
 		3AC784A51B1DE49100884F99 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A31B1DE48000884F99 /* Nimble.framework */; };
 		3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A41B1DE48000884F99 /* Quick.framework */; };
 		3ACCEBDD1B21DC4A006C0FF4 /* ResponseDetective.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -44,6 +80,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3A2007E41B5501BC00769021 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AED3EC31B1DD7B400FA35FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A2007D71B5501BC00769021;
+			remoteInfo = "ResponseDetective (OS X)";
+		};
 		3AED3ED91B1DD7B400FA35FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3AED3EC31B1DD7B400FA35FC /* Project object */;
@@ -68,6 +111,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A2007D11B5500DE00769021 /* ImageInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInterceptor.swift; sourceTree = "<group>"; };
+		3A2007D81B5501BC00769021 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A20080F1B5502FE00769021 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		3A2008101B5502FE00769021 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		3A2008141B55031100769021 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib/libxml2.dylib; sourceTree = DEVELOPER_DIR; };
+		3A2008171B5505AA00769021 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3A2008191B5505AD00769021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A20081B1B5505BD00769021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3A20081E1B55073700769021 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRequestInterceptor.swift; sourceTree = "<group>"; };
 		3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResponseInterceptor.swift; sourceTree = "<group>"; };
 		3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestErrorInterceptor.swift; sourceTree = "<group>"; };
@@ -125,11 +178,33 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3A2007D41B5501BC00769021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2008151B55031100769021 /* libxml2.dylib in Frameworks */,
+				3A20081F1B55073700769021 /* AppKit.framework in Frameworks */,
+				3A20081C1B5505BD00769021 /* Foundation.framework in Frameworks */,
+				3A2008121B5502FE00769021 /* Quick.framework in Frameworks */,
+				3A2008111B5502FE00769021 /* Nimble.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A2007DF1B5501BC00769021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AED3EC81B1DD7B400FA35FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3A8DF6321B45774300F758EF /* libxml2.dylib in Frameworks */,
+				3A20081A1B5505AD00769021 /* Foundation.framework in Frameworks */,
+				3A2008181B5505AA00769021 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +221,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A20080D1B5502DC00769021 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A8DF6311B45774300F758EF /* libxml2.dylib */,
+				3A2008191B5505AD00769021 /* Foundation.framework */,
+				3AC784A31B1DE48000884F99 /* Nimble.framework */,
+				3AC784A41B1DE48000884F99 /* Quick.framework */,
+				3A2008171B5505AA00769021 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		3A20080E1B5502ED00769021 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				3A2008141B55031100769021 /* libxml2.dylib */,
+				3A20081E1B55073700769021 /* AppKit.framework */,
+				3A20081B1B5505BD00769021 /* Foundation.framework */,
+				3A20080F1B5502FE00769021 /* Nimble.framework */,
+				3A2008101B5502FE00769021 /* Quick.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
 		3A29A8A81B4A6F670025F46A /* Test Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +290,7 @@
 			children = (
 				3ABB31311B4D2D4900271DDA /* BaseInterceptor.swift */,
 				3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */,
+				3A2007D11B5500DE00769021 /* ImageInterceptor.swift */,
 				3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */,
 				74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */,
 				3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */,
@@ -328,9 +428,8 @@
 		3AC784A21B1DE46D00884F99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A8DF6311B45774300F758EF /* libxml2.dylib */,
-				3AC784A31B1DE48000884F99 /* Nimble.framework */,
-				3AC784A41B1DE48000884F99 /* Quick.framework */,
+				3A20080D1B5502DC00769021 /* iOS */,
+				3A20080E1B5502ED00769021 /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -367,6 +466,8 @@
 			children = (
 				3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */,
 				3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */,
+				3A2007D81B5501BC00769021 /* ResponseDetective.framework */,
+				3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,6 +475,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		3A2007D51B5501BC00769021 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2007FB1B55024F00769021 /* XMLPrettifying.h in Headers */,
+				3A2007FA1B55024C00769021 /* HTMLPrettifying.h in Headers */,
+				3A20080C1B55026500769021 /* Bridging-Header.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AED3EC91B1DD7B400FA35FC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,9 +498,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3AED3ECB1B1DD7B400FA35FC /* ResponseDetective */ = {
+		3A2007D71B5501BC00769021 /* ResponseDetective (OS X) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective" */;
+			buildConfigurationList = 3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X)" */;
+			buildPhases = (
+				3A2007D31B5501BC00769021 /* Sources */,
+				3A2007D41B5501BC00769021 /* Frameworks */,
+				3A2007D51B5501BC00769021 /* Headers */,
+				3A2007D61B5501BC00769021 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ResponseDetective (OS X)";
+			productName = "ResponseDetective (OS X)";
+			productReference = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3A2007E11B5501BC00769021 /* ResponseDetective (OS X) Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X) Tests" */;
+			buildPhases = (
+				3A2007DE1B5501BC00769021 /* Sources */,
+				3A2007DF1B5501BC00769021 /* Frameworks */,
+				3A2007E01B5501BC00769021 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A2007E51B5501BC00769021 /* PBXTargetDependency */,
+			);
+			name = "ResponseDetective (OS X) Tests";
+			productName = "ResponseDetective (OS X)Tests";
+			productReference = 3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3AED3ECB1B1DD7B400FA35FC /* ResponseDetective (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective (iOS)" */;
 			buildPhases = (
 				3AED3EC71B1DD7B400FA35FC /* Sources */,
 				3ACCEBD41B21D21A006C0FF4 /* Display Warning Flags */,
@@ -401,14 +548,14 @@
 			);
 			dependencies = (
 			);
-			name = ResponseDetective;
+			name = "ResponseDetective (iOS)";
 			productName = ResponseDetective;
 			productReference = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3AED3ED61B1DD7B400FA35FC /* ResponseDetective Tests */ = {
+		3AED3ED61B1DD7B400FA35FC /* ResponseDetective (iOS) Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective Tests" */;
+			buildConfigurationList = 3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective (iOS) Tests" */;
 			buildPhases = (
 				3AED3ED31B1DD7B400FA35FC /* Sources */,
 				3AED3ED41B1DD7B400FA35FC /* Frameworks */,
@@ -421,7 +568,7 @@
 			dependencies = (
 				3AED3EDA1B1DD7B400FA35FC /* PBXTargetDependency */,
 			);
-			name = "ResponseDetective Tests";
+			name = "ResponseDetective (iOS) Tests";
 			productName = ResponseDetectiveTests;
 			productReference = 3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -437,6 +584,12 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Netguru Sp. z o.o.";
 				TargetAttributes = {
+					3A2007D71B5501BC00769021 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					3A2007E11B5501BC00769021 = {
+						CreatedOnToolsVersion = 6.4;
+					};
 					3AED3ECB1B1DD7B400FA35FC = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
@@ -457,18 +610,33 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3AED3ECB1B1DD7B400FA35FC /* ResponseDetective */,
-				3AED3ED61B1DD7B400FA35FC /* ResponseDetective Tests */,
+				3AED3ECB1B1DD7B400FA35FC /* ResponseDetective (iOS) */,
+				3AED3ED61B1DD7B400FA35FC /* ResponseDetective (iOS) Tests */,
+				3A2007D71B5501BC00769021 /* ResponseDetective (OS X) */,
+				3A2007E11B5501BC00769021 /* ResponseDetective (OS X) Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A2007D61B5501BC00769021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A2007E01B5501BC00769021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AED3ECA1B1DD7B400FA35FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AC7849F1B1DE43B00884F99 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +683,45 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A2007D31B5501BC00769021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2007F51B55023D00769021 /* NSLogOutputStream.swift in Sources */,
+				3A2007F81B55024400769021 /* ResponseRepresentation.swift in Sources */,
+				3A2007F31B55023900769021 /* ResponseInterceptorType.swift in Sources */,
+				3A2007F11B55023500769021 /* ErrorInterceptorType.swift in Sources */,
+				3A2007FE1B55025600769021 /* HTMLInterceptor.swift in Sources */,
+				3A2007F91B55024800769021 /* HTMLPrettifying.m in Sources */,
+				3A2007FC1B55025200769021 /* XMLPrettifying.m in Sources */,
+				3A2007F41B55023B00769021 /* BufferOutputStream.swift in Sources */,
+				3A2007FD1B55025500769021 /* BaseInterceptor.swift in Sources */,
+				3A2007F71B55024200769021 /* RequestRepresentation.swift in Sources */,
+				3A2007F61B55024000769021 /* PrintlnOutputStream.swift in Sources */,
+				3A2008011B55025900769021 /* PlainTextInterceptor.swift in Sources */,
+				3A2007F21B55023700769021 /* RequestInterceptorType.swift in Sources */,
+				3A2008031B55025C00769021 /* InterceptingProtocol.swift in Sources */,
+				3A2008001B55025900769021 /* JSONInterceptor.swift in Sources */,
+				3A2008021B55025900769021 /* XMLInterceptor.swift in Sources */,
+				3A20081D1B55064F00769021 /* ImageInterceptor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A2007DE1B5501BC00769021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2008061B55026000769021 /* TestResponseInterceptor.swift in Sources */,
+				3A2008081B55026000769021 /* HTMLInterceptorSpec.swift in Sources */,
+				3A2008071B55026000769021 /* BaseInterceptorSpec.swift in Sources */,
+				3A20080A1B55026000769021 /* PlainTextInterceptorSpec.swift in Sources */,
+				3A2008041B55026000769021 /* TestErrorInterceptor.swift in Sources */,
+				3A2008091B55026000769021 /* JSONInterceptorSpec.swift in Sources */,
+				3A20080B1B55026000769021 /* XMLInterceptorSpec.swift in Sources */,
+				3A2008051B55026000769021 /* TestRequestInterceptor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AED3EC71B1DD7B400FA35FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -535,6 +742,7 @@
 				74FC3CB51B472FE1005DCD57 /* PlainTextInterceptor.swift in Sources */,
 				3A3741011B3DB00A002448A1 /* RequestInterceptorType.swift in Sources */,
 				740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */,
+				3A2007D21B5500DE00769021 /* ImageInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,19 +765,91 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3A2007E51B5501BC00769021 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A2007D71B5501BC00769021 /* ResponseDetective (OS X) */;
+			targetProxy = 3A2007E41B5501BC00769021 /* PBXContainerItemProxy */;
+		};
 		3AED3EDA1B1DD7B400FA35FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AED3ECB1B1DD7B400FA35FC /* ResponseDetective */;
+			target = 3AED3ECB1B1DD7B400FA35FC /* ResponseDetective (iOS) */;
 			targetProxy = 3AED3ED91B1DD7B400FA35FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		3A2007EC1B5501BC00769021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC784971B1DE3C400884F99 /* Mac-Framework.xcconfig */;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
+				SWIFT_OBJC_BRIDGING_HEADER = "ResponseDetective/Supporting Files/Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		3A2007ED1B5501BC00769021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC784971B1DE3C400884F99 /* Mac-Framework.xcconfig */;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
+				SWIFT_OBJC_BRIDGING_HEADER = "ResponseDetective/Supporting Files/Bridging-Header.h";
+			};
+			name = Release;
+		};
+		3A2007EF1B5501BC00769021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC784941B1DE3C400884F99 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "ResponseDetective Tests/Supporting Files/Info.plist";
+				PRODUCT_NAME = "ResponseDetective Tests";
+			};
+			name = Debug;
+		};
+		3A2007F01B5501BC00769021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC784941B1DE3C400884F99 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "ResponseDetective Tests/Supporting Files/Info.plist";
+				PRODUCT_NAME = "ResponseDetective Tests";
+			};
+			name = Release;
+		};
 		3AED3EE01B1DD7B400FA35FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AC7847F1B1DE3C400884F99 /* Debug.xcconfig */;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -580,6 +860,7 @@
 			baseConfigurationReference = 3AC784811B1DE3C400884F99 /* Release.xcconfig */;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -627,7 +908,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AC7848F1B1DE3C400884F99 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -637,7 +917,7 @@
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ResponseDetective Tests";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -646,7 +926,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AC7848F1B1DE3C400884F99 /* iOS-Application.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,13 +935,29 @@
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ResponseDetective Tests";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A2007EC1B5501BC00769021 /* Debug */,
+				3A2007ED1B5501BC00769021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X) Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A2007EF1B5501BC00769021 /* Debug */,
+				3A2007F01B5501BC00769021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3AED3EC61B1DD7B400FA35FC /* Build configuration list for PBXProject "ResponseDetective" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -672,7 +967,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective" */ = {
+		3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AED3EE31B1DD7B400FA35FC /* Debug */,
@@ -681,7 +976,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective Tests" */ = {
+		3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective (iOS) Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AED3EE61B1DD7B400FA35FC /* Debug */,

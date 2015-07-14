@@ -19,4 +19,4 @@ dependencies:
   pre:
     - brew install carthage
   override:
-    - carthage bootstrap --platform iOS
+    - carthage bootstrap
