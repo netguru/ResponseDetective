@@ -15,7 +15,7 @@ XCPSetExecutionShouldContinueIndefinitely(continueIndefinitely: true)
 // /////////////////////////////////////////////////////////////////////////////
 
 
-struct PlaygroundInterceptor: RequestInterceptorType, ResponseInterceptorType, ErrorInterceptorType {
+class PlaygroundInterceptor: RequestInterceptorType, ResponseInterceptorType, ErrorInterceptorType {
 	
 	func canInterceptRequest(request: RequestRepresentation) -> Bool {
 		return true

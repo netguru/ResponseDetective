@@ -8,7 +8,7 @@ import Foundation
 
 /// Instances of conforming types can be registered in the intercepting
 /// NSURLProtocol and used to intercept NSURLRequests.
-public protocol RequestInterceptorType {
+public protocol RequestInterceptorType: class {
 
 	/// Whether the interceptor can intercept and process the outgoing request.
 	///

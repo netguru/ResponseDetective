@@ -8,7 +8,7 @@ import Foundation
 
 /// Instances of conforming types can be registered in the intercepting
 /// NSURLProtocol and used to intercept NSHTTPURLResponses' errors.
-public protocol ErrorInterceptorType {
+public protocol ErrorInterceptorType: class {
 	
 	/// Intercepts and processes the incoming response error. Preferably, all
 	/// side effects should be executed asynchronously, so that the response

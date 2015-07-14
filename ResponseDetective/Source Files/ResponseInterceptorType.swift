@@ -6,7 +6,7 @@
 
 /// Instances of conforming types can be registered in the intercepting
 /// NSURLProtocol and used to intercept NSHTTPURLResponses.
-public protocol ResponseInterceptorType {
+public protocol ResponseInterceptorType: class {
 
 	/// Whether the interceptor can intercept and process the incoming response.
 	///
