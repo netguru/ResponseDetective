@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A2007D71B5501BC00769021"
-               BuildableName = "ResponseDetective (OS X).framework"
+               BuildableName = "ResponseDetective.framework"
                BlueprintName = "ResponseDetective (OS X)"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A2007E11B5501BC00769021"
-               BuildableName = "ResponseDetective (OS X) Tests.xctest"
+               BuildableName = "ResponseDetective Tests.xctest"
                BlueprintName = "ResponseDetective (OS X) Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A2007E11B5501BC00769021"
-               BuildableName = "ResponseDetective (OS X) Tests.xctest"
+               BuildableName = "ResponseDetective Tests.xctest"
                BlueprintName = "ResponseDetective (OS X) Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A2007D71B5501BC00769021"
-            BuildableName = "ResponseDetective (OS X).framework"
+            BuildableName = "ResponseDetective.framework"
             BlueprintName = "ResponseDetective (OS X)"
             ReferencedContainer = "container:ResponseDetective.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A2007D71B5501BC00769021"
-            BuildableName = "ResponseDetective (OS X).framework"
+            BuildableName = "ResponseDetective.framework"
             BlueprintName = "ResponseDetective (OS X)"
             ReferencedContainer = "container:ResponseDetective.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A2007D71B5501BC00769021"
-            BuildableName = "ResponseDetective (OS X).framework"
+            BuildableName = "ResponseDetective.framework"
             BlueprintName = "ResponseDetective (OS X)"
             ReferencedContainer = "container:ResponseDetective.xcodeproj">
          </BuildableReference>
