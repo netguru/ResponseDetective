@@ -30,15 +30,21 @@ class InterceptingProtocolSpec: QuickSpec {
 			context("registering interceptors") {
 				
 				it("should register request interceptor properly") {
-					// TODO: implement tests
+					let token = InterceptingProtocol.registerRequestInterceptor(fixtureRequestInterceptor)
+					let interceptor = InterceptingProtocol.requestInterceptors[token]
+					expect(interceptor === fixtureRequestInterceptor).to(beTrue())
 				}
 				
 				it("should register response interceptor properly") {
-					// TODO: implement tests
+					let token = InterceptingProtocol.registerResponseInterceptor(fixtureResponseInterceptor)
+					let interceptor = InterceptingProtocol.responseInterceptors[token]
+					expect(interceptor === fixtureResponseInterceptor).to(beTrue())
 				}
 				
 				it("should register error interceptor properly") {
-					// TODO: implement tests
+					let token = InterceptingProtocol.registerErrorInterceptor(fixtureErrorInterceptor)
+					let interceptor = InterceptingProtocol.errorInterceptors[token]
+					expect(interceptor === fixtureErrorInterceptor).to(beTrue())
 				}
 			}
 			
