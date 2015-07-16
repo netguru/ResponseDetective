@@ -8,20 +8,14 @@ import Foundation
 
 public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTaskDelegate {
 
-	/// The interceptor removal token type.
-	public typealias InterceptorRemovalToken = UInt
+	/// Request interceptors store.
+	public private(set) static var requestInterceptors = [RequestInterceptorType]()
 
-	/// The last registered removal token.
-	private static var lastRemovalToken: InterceptorRemovalToken = 0
-
-	/// Private request interceptors store.
-	public private(set) static var requestInterceptors = [InterceptorRemovalToken: RequestInterceptorType]()
-
-	/// Private response interceptors store.
-	public private(set) static var responseInterceptors = [InterceptorRemovalToken: ResponseInterceptorType]()
+	/// Response interceptors store.
+	public private(set) static var responseInterceptors = [ResponseInterceptorType]()
 	
-	/// Private error interceptors store.
-	public private(set) static var errorInterceptors = [InterceptorRemovalToken: ErrorInterceptorType]()
+	/// Error interceptors store.
+	public private(set) static var errorInterceptors = [ErrorInterceptorType]()
 
 	/// Private under-the-hood session object.
 	private var session: NSURLSession!
@@ -43,9 +37,8 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	///
 	/// :returns: A unique token which can be used for removing that request
 	/// interceptor.
-	public static func registerRequestInterceptor(interceptor: RequestInterceptorType) -> InterceptorRemovalToken {
-		requestInterceptors[++lastRemovalToken] = interceptor
-		return lastRemovalToken
+	public static func registerRequestInterceptor(interceptor: RequestInterceptorType) {
+		requestInterceptors.append(interceptor)
 	}
 
 	/// Registers a new response interceptor.
@@ -54,9 +47,8 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	///
 	/// :returns: A unique token which can be used for removing that response
 	/// interceptor.
-	public static func registerResponseInterceptor(interceptor: ResponseInterceptorType) -> InterceptorRemovalToken {
-		responseInterceptors[++lastRemovalToken] = interceptor
-		return lastRemovalToken
+	public static func registerResponseInterceptor(interceptor: ResponseInterceptorType) {
+		responseInterceptors.append(interceptor)
 	}
 	
 	/// Registers a new error interceptor.
@@ -65,33 +57,32 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	///
 	/// :returns: A unique token which can be used for removing that error
 	/// interceptor.
-	public static func registerErrorInterceptor(interceptor: ErrorInterceptorType) -> InterceptorRemovalToken {
-		errorInterceptors[++lastRemovalToken] = interceptor
-		return lastRemovalToken
+	public static func registerErrorInterceptor(interceptor: ErrorInterceptorType) {
+		errorInterceptors.append(interceptor)
 	}
 
 	/// Unregisters the previously registered request interceptor.
 	///
 	/// :param: removalToken The removal token obtained when registering the
 	/// request interceptor.
-	public static func unregisterRequestInterceptor(removalToken: InterceptorRemovalToken) {
-		requestInterceptors[removalToken] = nil
+	public static func unregisterRequestInterceptor(interceptor: RequestInterceptorType) {
+		// TODO: implement unregistring
 	}
 
 	/// Unregisters the previously registered response interceptor.
 	///
 	/// :param: removalToken The removal token obtained when registering the
 	/// response interceptor.
-	public static func unregisterResponseInterceptor(removalToken: InterceptorRemovalToken) {
-		responseInterceptors[removalToken] = nil
+	public static func unregisterResponseInterceptor(interceptor: ResponseInterceptorType) {
+		// TODO: implement unregistring
 	}
 	
 	/// Unregisters the previously registered error interceptor.
 	///
 	/// :param: removalToken The removal token obtained when registering the
 	/// error interceptor.
-	public static func unregisterErrorInterceptor(removalToken: InterceptorRemovalToken) {
-		errorInterceptors[removalToken] = nil
+	public static func unregisterErrorInterceptor(interceptor: ErrorInterceptorType) {
+		// TODO: implement unregistring
 	}
 
 	// MARK: Propagation helpers
@@ -101,7 +92,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	/// :param: request The intercepted request.
 	private func propagateRequestInterception(request: NSURLRequest) {
 		if let representation = RequestRepresentation(request) {
-			for (_, interceptor) in InterceptingProtocol.requestInterceptors {
+			for interceptor in InterceptingProtocol.requestInterceptors {
 				if interceptor.canInterceptRequest(representation) {
 					interceptor.interceptRequest(representation)
 				}
@@ -115,7 +106,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	/// :param: data The intercepted response data.
 	private func propagateResponseInterception(response: NSHTTPURLResponse, _ data: NSData) {
 		if let representation = ResponseRepresentation(response, data) {
-			for (_, interceptor) in InterceptingProtocol.responseInterceptors {
+			for interceptor in InterceptingProtocol.responseInterceptors {
 				if interceptor.canInterceptResponse(representation) {
 					interceptor.interceptResponse(representation)
 				}
@@ -130,7 +121,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	/// :param: error The error which occured during the request.
 	private func propagateResponseErrorInterception(response: NSHTTPURLResponse?, _ data: NSData?, _ error: NSError) {
 		if let response = response, representation = ResponseRepresentation(response, data) {
-			for (_, interceptor) in InterceptingProtocol.errorInterceptors {
+			for interceptor in InterceptingProtocol.errorInterceptors {
 				interceptor.interceptError(error, representation)
 			}
 		}
