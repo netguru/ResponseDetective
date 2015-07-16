@@ -57,15 +57,30 @@ class InterceptingProtocolSpec: QuickSpec {
 			context("unregistering interceptors") {
 			
 				it("should unregister request interceptor properly") {
-					// TODO: Implement test
+					InterceptingProtocol.registerRequestInterceptor(fixtureRequestInterceptor)
+					InterceptingProtocol.unregisterRequestInterceptor(fixtureRequestInterceptor)
+					let isContainingInterceptor = InterceptingProtocol.responseInterceptors.filter( {
+						interceptor in interceptor === fixtureRequestInterceptor
+					}).count > 0
+					expect(isContainingInterceptor).to(beFalse())
 				}
 				
 				it("should unregister response interceptor properly") {
-					// TODO: Implement test
+					InterceptingProtocol.registerResponseInterceptor(fixtureResponseInterceptor)
+					InterceptingProtocol.unregisterResponseInterceptor(fixtureResponseInterceptor)
+					let isContainingInterceptor = InterceptingProtocol.responseInterceptors.filter( {
+						interceptor in interceptor === fixtureResponseInterceptor
+					}).count > 0
+					expect(isContainingInterceptor).to(beFalse())
 				}
 				
 				it("should unregister error interceptor properly") {
-					// TODO: Implement test
+					InterceptingProtocol.registerErrorInterceptor(fixtureErrorInterceptor)
+					InterceptingProtocol.unregisterErrorInterceptor(fixtureErrorInterceptor)
+					let isContainingInterceptor = InterceptingProtocol.errorInterceptors.filter( {
+						interceptor in interceptor === fixtureErrorInterceptor
+					}).count > 0
+					expect(isContainingInterceptor).to(beFalse())
 				}
 			}
 		}
