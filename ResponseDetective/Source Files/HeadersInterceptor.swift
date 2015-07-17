@@ -1,5 +1,5 @@
 //
-//  BaseInterceptor.swift
+//  HeadersInterceptor.swift
 //  
 //  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
 //
@@ -8,7 +8,7 @@ import Foundation
 
 /// Intercepts all requests and responses and displays their metadata, including
 /// errors.
-public final class BaseInterceptor {
+public final class HeadersInterceptor {
 
 	/// The output stream used by the interceptor.
 	public private(set) var outputStream: OutputStreamType
@@ -36,7 +36,7 @@ public final class BaseInterceptor {
 
 // MARK: -
 
-extension BaseInterceptor: RequestInterceptorType {
+extension HeadersInterceptor: RequestInterceptorType {
 
 	// MARK: RequestInterceptorType implementation
 
@@ -60,7 +60,7 @@ extension BaseInterceptor: RequestInterceptorType {
 
 // MARK: -
 
-extension BaseInterceptor: ResponseInterceptorType {
+extension HeadersInterceptor: ResponseInterceptorType {
 
 	// MARK: ResponseInterceptorType implementation
 
@@ -84,7 +84,7 @@ extension BaseInterceptor: ResponseInterceptorType {
 
 // MARK: -
 
-extension BaseInterceptor: ErrorInterceptorType {
+extension HeadersInterceptor: ErrorInterceptorType {
 
 	// MARK: ErrorInterceptorType implementation
 

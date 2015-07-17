@@ -1,5 +1,5 @@
 //
-//  BaseInterceptorSpec.swift
+//  HeadersInterceptorSpec.swift
 //  
 //  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
 //
@@ -9,14 +9,14 @@ import Nimble
 import ResponseDetective
 import Quick
 
-class BaseInterceptorSpec: QuickSpec {
+class HeaderInterceptorSpec: QuickSpec {
 
 	override func spec() {
 
 		describe("BaseInterceptor") {
 
 			var stream: BufferOutputStream!
-			var sut: BaseInterceptor!
+			var sut: HeadersInterceptor!
 
 			let fixtureRequestURLString = "https://httpbin.org/post"
 			let fixtureRequestMethod = "POST"
@@ -48,7 +48,7 @@ class BaseInterceptorSpec: QuickSpec {
 
 			beforeEach {
 				stream = BufferOutputStream()
-				sut = BaseInterceptor(outputStream: stream)
+				sut = HeadersInterceptor(outputStream: stream)
 			}
 
 			it("should be able to intercept any request") {
