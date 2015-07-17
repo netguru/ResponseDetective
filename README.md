@@ -79,6 +79,17 @@ Connection: keep-alive
 }
 ```
 
+## Builtin interceptors
+
+There are following builtin interceptors:
+
+`HeadersInterceptor` - intercepts all requests and responses and displays their metadata, including errors.
+`HTMLInterceptor` - intercepts only HTML requests and responses.
+`ImageInterceptor` - intercepts only image responses.
+`JSONInterceptor` - intercepts only JSON requests and responses.
+`PlainTextInterceptor` - intercepts only text/plain requests and responses.
+`XMLInterceptor` - intercepts only XML requests and responses.
+
 ## Installation
 
 ### Carthage
