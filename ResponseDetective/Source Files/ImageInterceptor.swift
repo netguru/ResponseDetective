@@ -42,7 +42,7 @@ public final class ImageInterceptor {
 	///
 	/// :returns: A metadata string.
 	private func extractMetadataFromImage(contentType: String, _ image: OSImage) -> String {
-		return "\(contentType) (\(image.size.width)px × \(image.size.height)px)"
+		return "\(contentType) (\(Int(image.size.width))px × \(Int(image.size.height))px)"
 	}
 
 	/// Extracts the metadata out of the image data.
