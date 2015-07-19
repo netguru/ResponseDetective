@@ -40,6 +40,15 @@ configuration.protocolClasses = [InterceptingProtocol.self]
 let session = NSURLSession(configuration: configuration)
 ```
 
+If you're using [Alamofire](https://github.com/Alamofire/Alamofire) as your networking framework, integrating ResponseDetective is as easy as initializing your `Manager` with `NSURLSessionConfiguration` described above.
+
+```swift
+let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+configuration.protocolClasses = [InterceptingProtocol.self]
+
+let manager = Alamofire.Manager(configuration: configuration)
+```
+
 ### Step 3: Profit
 
 Now it's time to perform the actual request.
@@ -83,14 +92,14 @@ Connection: keep-alive
 
 There are following builtin interceptors:
 
-| Interceptor          | Description                                                                          |
-|----------------------|--------------------------------------------------------------------------------------|
-| HeadersInterceptor   | intercepts all requests and responses and displays their metadata, including errors. |
-| HTMLInterceptor      | intercepts only HTML requests and responses.                                         |
-| ImageInterceptor     | intercepts only image responses.                                                     |
-| JSONInterceptor      | intercepts only JSON requests and responses.                                         |
-| PlainTextInterceptor | intercepts only text/plain requests and responses.                                   |
-| XMLInterceptor       | intercepts only XML requests and responses.                                          |
+| Interceptor            | Description                                                                          |
+|------------------------|--------------------------------------------------------------------------------------|
+| `HeadersInterceptor`   | Intercepts all requests and responses and displays their metadata, including errors. |
+| `HTMLInterceptor`      | Intercepts only HTML requests and responses.                                         |
+| `ImageInterceptor`     | Intercepts only image responses.                                                     |
+| `JSONInterceptor`      | Intercepts only JSON requests and responses.                                         |
+| `PlainTextInterceptor` | Intercepts only plain text requests and responses.                                   |
+| `XMLInterceptor`       | Intercepts only XML requests and responses.                                          |
 
 ## Installation
 
