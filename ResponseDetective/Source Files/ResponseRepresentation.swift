@@ -25,7 +25,11 @@ public struct ResponseRepresentation {
 
 	/// Response content type.
 	public var contentType: String? {
-		return headers["Content-Type"]
+		return map(map(headers["Content-Type"], {
+			$0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+		}), {
+			$0.substringToIndex($0.rangeOfString(";")?.endIndex ?? $0.endIndex)
+		})
 	}
 
 	/// Response body data.
