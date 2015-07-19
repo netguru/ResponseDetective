@@ -66,7 +66,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	/// :param: removalToken The removal token obtained when registering the
 	/// request interceptor.
 	public static func unregisterRequestInterceptor(interceptor: RequestInterceptorType) {
-		requestInterceptors.removeInterceptor(interceptor)
+		requestInterceptors = filter(requestInterceptors, { $0 !== interceptor })
 	}
 
 	/// Unregisters the previously registered response interceptor.
@@ -74,7 +74,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	/// :param: removalToken The removal token obtained when registering the
 	/// response interceptor.
 	public static func unregisterResponseInterceptor(interceptor: ResponseInterceptorType) {
-		responseInterceptors.removeInterceptor(interceptor)
+		responseInterceptors = filter(responseInterceptors, { $0 !== interceptor })
 	}
 	
 	/// Unregisters the previously registered error interceptor.
@@ -82,7 +82,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	/// :param: removalToken The removal token obtained when registering the
 	/// error interceptor.
 	public static func unregisterErrorInterceptor(interceptor: ErrorInterceptorType) {
-		errorInterceptors.removeInterceptor(interceptor)
+		errorInterceptors = filter(errorInterceptors, { $0 !== interceptor })
 	}
 
 	// MARK: Propagation helpers
@@ -204,23 +204,5 @@ public extension InterceptingProtocol {
 	
 	static func unregisterAllErrorInterceptors() {
 		errorInterceptors.removeAll(keepCapacity: false)
-	}
-}
-
-// MARK: -
-
-private extension Array {
-	mutating func removeInterceptor<U: AnyObject>(interceptor: U) {
-		var removalIndex: Int?
-		for (index, interceptorToCompare) in enumerate(self) {
-			if let interceptorToCompare = interceptorToCompare as? U {
-				if interceptor === interceptorToCompare {
-					removalIndex = index
-				}
-			}
-		}
-		if(removalIndex != nil) {
-			self.removeAtIndex(removalIndex!)
-		}
 	}
 }

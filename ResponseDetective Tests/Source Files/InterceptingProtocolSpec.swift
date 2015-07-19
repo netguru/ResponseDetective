@@ -1,6 +1,5 @@
 //
-//
-//  XMLInterceptorSpec.swift
+//  InterceptingProtocolSpec.swift
 //
 //  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
 //
@@ -14,12 +13,14 @@ import Quick
 class InterceptingProtocolSpec: QuickSpec {
 	
 	override func spec() {
+
+		let sut = InterceptingProtocol.self
 		
 		let fixtureRequestInterceptor = TestRequestInterceptor()
 		let fixtureResponseInterceptor = TestResponseInterceptor()
 		let fixtureErrorInterceptor = TestErrorInterceptor()
 		
-		describe("Intercepting protocol") {
+		describe("InterceptingProtocol") {
 			
 			afterEach() {
 				InterceptingProtocol.unregisterAllRequestInterceptors()
@@ -27,30 +28,27 @@ class InterceptingProtocolSpec: QuickSpec {
 				InterceptingProtocol.unregisterAllErrorInterceptors()
 			}
 			
-			context("registering interceptors") {
+			describe("registering interceptors") {
 				
 				it("should register request interceptor properly") {
 					InterceptingProtocol.registerRequestInterceptor(fixtureRequestInterceptor)
-					let isContainingInterceptor = InterceptingProtocol.requestInterceptors.filter( {
-						interceptor in interceptor === fixtureRequestInterceptor
-					}).count > 0
-					expect(isContainingInterceptor).to(beTrue())
+					expect(contains(InterceptingProtocol.requestInterceptors, {
+						$0 === fixtureRequestInterceptor
+					})).to(beTrue())
 				}
 				
 				it("should register response interceptor properly") {
 					InterceptingProtocol.registerResponseInterceptor(fixtureResponseInterceptor)
-					let isContainingInterceptor = InterceptingProtocol.responseInterceptors.filter( {
-						interceptor in interceptor === fixtureResponseInterceptor
-					}).count > 0
-					expect(isContainingInterceptor).to(beTrue())
+					expect(contains(InterceptingProtocol.responseInterceptors, {
+						$0 === fixtureResponseInterceptor
+					})).to(beTrue())
 				}
 				
 				it("should register error interceptor properly") {
 					InterceptingProtocol.registerErrorInterceptor(fixtureErrorInterceptor)
-					let isContainingInterceptor = InterceptingProtocol.errorInterceptors.filter( {
-						interceptor in interceptor === fixtureErrorInterceptor
-					}).count > 0
-					expect(isContainingInterceptor).to(beTrue())
+					expect(contains(InterceptingProtocol.errorInterceptors, {
+						$0 === fixtureErrorInterceptor
+					})).to(beTrue())
 				}
 			}
 			
@@ -59,28 +57,25 @@ class InterceptingProtocolSpec: QuickSpec {
 				it("should unregister request interceptor properly") {
 					InterceptingProtocol.registerRequestInterceptor(fixtureRequestInterceptor)
 					InterceptingProtocol.unregisterRequestInterceptor(fixtureRequestInterceptor)
-					let isContainingInterceptor = InterceptingProtocol.responseInterceptors.filter( {
-						interceptor in interceptor === fixtureRequestInterceptor
-					}).count > 0
-					expect(isContainingInterceptor).to(beFalse())
+					expect(contains(InterceptingProtocol.requestInterceptors, {
+						$0 === fixtureRequestInterceptor
+					})).to(beFalse())
 				}
 				
 				it("should unregister response interceptor properly") {
 					InterceptingProtocol.registerResponseInterceptor(fixtureResponseInterceptor)
 					InterceptingProtocol.unregisterResponseInterceptor(fixtureResponseInterceptor)
-					let isContainingInterceptor = InterceptingProtocol.responseInterceptors.filter( {
-						interceptor in interceptor === fixtureResponseInterceptor
-					}).count > 0
-					expect(isContainingInterceptor).to(beFalse())
+					expect(contains(InterceptingProtocol.responseInterceptors, {
+						$0 === fixtureResponseInterceptor
+					})).to(beFalse())
 				}
 				
 				it("should unregister error interceptor properly") {
 					InterceptingProtocol.registerErrorInterceptor(fixtureErrorInterceptor)
 					InterceptingProtocol.unregisterErrorInterceptor(fixtureErrorInterceptor)
-					let isContainingInterceptor = InterceptingProtocol.errorInterceptors.filter( {
-						interceptor in interceptor === fixtureErrorInterceptor
-					}).count > 0
-					expect(isContainingInterceptor).to(beFalse())
+					expect(contains(InterceptingProtocol.errorInterceptors, {
+						$0 === fixtureErrorInterceptor
+					})).to(beFalse())
 				}
 			}
 		}
