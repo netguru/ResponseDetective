@@ -14,7 +14,6 @@ XCPSetExecutionShouldContinueIndefinitely(continueIndefinitely: true)
 
 // /////////////////////////////////////////////////////////////////////////////
 
-
 class PlaygroundInterceptor: RequestInterceptorType, ResponseInterceptorType, ErrorInterceptorType {
 	
 	func canInterceptRequest(request: RequestRepresentation) -> Bool {
@@ -57,9 +56,9 @@ class PlaygroundInterceptor: RequestInterceptorType, ResponseInterceptorType, Er
 	}
 }
 
-let requestToken = InterceptingProtocol.registerRequestInterceptor(PlaygroundInterceptor())
-let responseToken = InterceptingProtocol.registerResponseInterceptor(PlaygroundInterceptor())
-let errorToken = InterceptingProtocol.registerErrorInterceptor(PlaygroundInterceptor())
+InterceptingProtocol.registerRequestInterceptor(PlaygroundInterceptor())
+InterceptingProtocol.registerResponseInterceptor(PlaygroundInterceptor())
+InterceptingProtocol.registerErrorInterceptor(PlaygroundInterceptor())
 
 let session = NSURLSession(configuration: { () -> NSURLSessionConfiguration in
 	let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
