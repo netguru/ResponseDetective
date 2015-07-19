@@ -81,3 +81,13 @@ public struct RequestRepresentation {
 	}
 
 }
+
+// MARK: -
+
+extension RequestRepresentation: Printable {
+
+	public var description: String {
+		return "\(method) \(url)"
+	}
+
+}

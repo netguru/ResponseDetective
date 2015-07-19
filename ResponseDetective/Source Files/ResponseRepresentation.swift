@@ -12,6 +12,11 @@ public struct ResponseRepresentation {
 	/// Response status code.
 	public let statusCode: Int
 
+	/// Response status string.
+	public var statusString: String {
+		return NSHTTPURLResponse.localizedStringForStatusCode(statusCode).uppercaseString as String
+	}
+
 	/// Response URL.
 	public let url: String
 
@@ -52,6 +57,16 @@ public struct ResponseRepresentation {
 		} else {
 			return nil
 		}
+	}
+
+}
+
+// MARK: -
+
+extension ResponseRepresentation: Printable {
+
+	public var description: String {
+		return "\(statusCode) \(statusString)"
 	}
 
 }
