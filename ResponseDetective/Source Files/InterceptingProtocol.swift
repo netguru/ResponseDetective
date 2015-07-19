@@ -184,6 +184,7 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 			client?.URLProtocol(self, didFailWithError: error)
 			propagateResponseErrorInterception(response, responseData, error)
 		}
+		client?.URLProtocolDidFinishLoading(self)
 		if let response = self.response {
 			propagateResponseInterception(response, responseData)
 		}
