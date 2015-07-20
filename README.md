@@ -111,6 +111,14 @@ If you're using [Carthage](https://github.com/Carthage/Carthage), just add the f
 github "netguru/ResponseDetective"
 ```
 
+### CocoaPods
+
+Using ResponseDetective with [CocoaPods](http://cocoapods.org) is as easy as adding the following dependency to your `Podfile`:
+
+```none
+pod 'ResponseDetective'
+```
+
 ## About
 
 ### Maintainers

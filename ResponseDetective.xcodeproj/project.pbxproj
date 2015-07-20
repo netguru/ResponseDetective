@@ -36,8 +36,6 @@
 		3A20080A1B55026000769021 /* PlainTextInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */; };
 		3A20080B1B55026000769021 /* XMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */; };
 		3A20080C1B55026500769021 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AB0D1B45971F00D58C62 /* Bridging-Header.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		3A2008111B5502FE00769021 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A20080F1B5502FE00769021 /* Nimble.framework */; };
-		3A2008121B5502FE00769021 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008101B5502FE00769021 /* Quick.framework */; };
 		3A2008151B55031100769021 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008141B55031100769021 /* libxml2.dylib */; };
 		3A2008181B5505AA00769021 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008171B5505AA00769021 /* UIKit.framework */; };
 		3A20081A1B5505AD00769021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008191B5505AD00769021 /* Foundation.framework */; };
@@ -57,6 +55,8 @@
 		3A39AB021B45848500D58C62 /* XMLPrettifying.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AAFF1B45844300D58C62 /* XMLPrettifying.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A39AB071B458C8B00D58C62 /* JSONInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */; };
 		3A39AB091B45904D00D58C62 /* XMLInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */; };
+		3A41B1B81B5D0B38000355E0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A20080F1B5502FE00769021 /* Nimble.framework */; };
+		3A41B1B91B5D0B3A000355E0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008101B5502FE00769021 /* Quick.framework */; };
 		3A8DF6321B45774300F758EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8DF6311B45774300F758EF /* libxml2.dylib */; };
 		3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */; };
 		3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */; };
@@ -192,8 +192,6 @@
 				3A2008151B55031100769021 /* libxml2.dylib in Frameworks */,
 				3A20081F1B55073700769021 /* AppKit.framework in Frameworks */,
 				3A20081C1B5505BD00769021 /* Foundation.framework in Frameworks */,
-				3A2008121B5502FE00769021 /* Quick.framework in Frameworks */,
-				3A2008111B5502FE00769021 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +199,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A41B1B81B5D0B38000355E0 /* Nimble.framework in Frameworks */,
 				3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */,
+				3A41B1B91B5D0B3A000355E0 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,11 +803,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
+					"$(SDKROOT)/usr/include/libxml2",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
-				SWIFT_OBJC_BRIDGING_HEADER = "ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -821,11 +820,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
+					"$(SDKROOT)/usr/include/libxml2",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
-				SWIFT_OBJC_BRIDGING_HEADER = "ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -891,12 +889,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
+					"$(SDKROOT)/usr/include/libxml2",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective/Supporting Files/Info.plist";
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				SWIFT_OBJC_BRIDGING_HEADER = "ResponseDetective/Supporting Files/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -911,12 +908,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
+					"$(SDKROOT)/usr/include/libxml2",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective/Supporting Files/Info.plist";
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				SWIFT_OBJC_BRIDGING_HEADER = "ResponseDetective/Supporting Files/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Release;
 		};
