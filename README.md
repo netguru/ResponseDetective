@@ -10,7 +10,7 @@
 
 ## Usage
 
-Incorporating ResponseDetective in your project is very simple – it all comes down a couple of steps.
+Incorporating ResponseDetective in your project is very simple – it all comes down to a couple of steps.
 
 ### Step 1: Register interceptors
 
@@ -89,9 +89,7 @@ Connection: keep-alive
 }
 ```
 
-## Builtin interceptors
-
-There are following builtin interceptors:
+## Available interceptors
 
 | Interceptor            | Description                                                                          |
 |------------------------|--------------------------------------------------------------------------------------|
