@@ -807,6 +807,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -824,6 +825,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Release;
 		};
