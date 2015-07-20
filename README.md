@@ -4,6 +4,7 @@
 ![](https://img.shields.io/badge/swift-1.2-orange.svg)
 ![](https://img.shields.io/github/release/netguru/ResponseDetective.svg)
 ![](https://img.shields.io/badge/carthage-compatible-brightgreen.svg)
+![](https://img.shields.io/badge/cocoapods-compatible-brightgreen.svg)
 
 **ResponseDetective** is a non-intrusive framework for intercepting any outgoing requests and incoming responses between your app and your server for debugging purposes.
 
