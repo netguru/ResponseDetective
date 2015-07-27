@@ -91,14 +91,14 @@ Connection: keep-alive
 
 ## Available interceptors
 
-| Interceptor            | Description                                                                          |
-|------------------------|--------------------------------------------------------------------------------------|
-| `HeadersInterceptor`   | Intercepts all requests and responses and displays their metadata, including errors. |
-| `HTMLInterceptor`      | Intercepts only HTML requests and responses.                                         |
-| `ImageInterceptor`     | Intercepts only image responses.                                                     |
-| `JSONInterceptor`      | Intercepts only JSON requests and responses.                                         |
+|            Interceptor | Description                                                                          |
+| ---------------------: | :----------------------------------------------------------------------------------- |
+|   `HeadersInterceptor` | Intercepts all requests and responses and displays their metadata, including errors. |
+|      `HTMLInterceptor` | Intercepts only HTML requests and responses.                                         |
+|     `ImageInterceptor` | Intercepts only image responses.                                                     |
+|      `JSONInterceptor` | Intercepts only JSON requests and responses.                                         |
 | `PlainTextInterceptor` | Intercepts only plain text requests and responses.                                   |
-| `XMLInterceptor`       | Intercepts only XML requests and responses.                                          |
+|       `XMLInterceptor` | Intercepts only XML requests and responses.                                          |
 
 ## Installation
 
@@ -115,6 +115,7 @@ github "netguru/ResponseDetective"
 Using ResponseDetective with [CocoaPods](http://cocoapods.org) is as easy as adding the following dependency to your `Podfile`:
 
 ```none
+use_frameworks!
 pod 'ResponseDetective'
 ```
 
