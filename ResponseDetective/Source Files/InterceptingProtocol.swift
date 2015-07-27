@@ -168,16 +168,6 @@ public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate
 	}
 
 	// MARK: NSURLSessionTaskDelegate methods
-
-	public func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest!) -> Void) {
-		client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
-		completionHandler(request)
-	}
-	
-	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential!) -> Void) {
-		client?.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
-		// TODO: Call completionHandler with proper credentials
-	}
 	
 	public func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
 		if let error = error {
