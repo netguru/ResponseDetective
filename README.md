@@ -8,6 +8,10 @@
 
 **ResponseDetective** is a non-intrusive framework for intercepting any outgoing requests and incoming responses between your app and your server for debugging purposes.
 
+## Requirements
+
+ResponseDetective requires **iOS 8** or **OS X 10.10**.
+
 ## Usage
 
 Incorporating ResponseDetective in your project is very simple – it all comes down to a couple of steps.
