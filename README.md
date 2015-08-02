@@ -40,7 +40,11 @@ For `InterceptingProtocol` to work, it needs to be added as a middleman between 
 
 ```swift
 let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-configuration.protocolClasses = [InterceptingProtocol.self]
+if configuration.protocolClasses?.count > 0 {
+	configuration.protocolClasses?.insert(InterceptingProtocol.self, atIndex: 0)
+} else {
+	configuration.protocolClasses = [InterceptingProtocol.self]
+}
 
 let session = NSURLSession(configuration: configuration)
 ```
@@ -49,7 +53,11 @@ If you're using [Alamofire](https://github.com/Alamofire/Alamofire) as your netw
 
 ```swift
 let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-configuration.protocolClasses = [InterceptingProtocol.self]
+if configuration.protocolClasses?.count > 0 {
+	configuration.protocolClasses?.insert(InterceptingProtocol.self, atIndex: 0)
+} else {
+	configuration.protocolClasses = [InterceptingProtocol.self]
+}
 
 let manager = Alamofire.Manager(configuration: configuration)
 ```
