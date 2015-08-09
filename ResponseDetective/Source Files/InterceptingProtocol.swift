@@ -6,7 +6,7 @@
 
 import Foundation
 
-public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTaskDelegate {
+@objc(RDVIntercetingProtocol) public final class InterceptingProtocol: NSURLProtocol, NSURLSessionDataDelegate, NSURLSessionTaskDelegate {
 
 	/// Request interceptors store.
 	public private(set) static var requestInterceptors = [RequestInterceptorType]()

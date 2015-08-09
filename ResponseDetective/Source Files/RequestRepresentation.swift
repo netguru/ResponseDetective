@@ -7,7 +7,7 @@
 import Foundation
 
 /// Represents a request.
-public struct RequestRepresentation {
+@objc(RDVRequestRepresentation) public final class RequestRepresentation {
 
 	/// Request method.
 	public let method: String
@@ -76,6 +76,10 @@ public struct RequestRepresentation {
 				}
 			}()
 		} else {
+			self.method = String()
+			self.url = String()
+			self.headers = Dictionary()
+			self.bodyStream = nil
 			return nil
 		}
 	}

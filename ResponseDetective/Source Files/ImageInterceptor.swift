@@ -15,7 +15,7 @@ import Foundation
 #endif
 
 /// Intercepts image responses.
-public final class ImageInterceptor {
+@objc(RDVImageInterceptor) public final class ImageInterceptor {
 
 	/// The output stream used by the interceptor.
 	public private(set) var outputStream: OutputStreamType

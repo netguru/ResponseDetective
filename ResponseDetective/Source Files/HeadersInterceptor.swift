@@ -8,7 +8,7 @@ import Foundation
 
 /// Intercepts all requests and responses and displays their metadata, including
 /// errors.
-public final class HeadersInterceptor {
+@objc(RDVHeadersInterceptor) public final class HeadersInterceptor {
 
 	/// The output stream used by the interceptor.
 	public private(set) var outputStream: OutputStreamType
