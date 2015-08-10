@@ -7,7 +7,7 @@
 import Foundation
 
 /// Represents a response.
-public struct ResponseRepresentation {
+@objc(RDVResponseRepresentation) public final class ResponseRepresentation {
 
 	/// Response status code.
 	public let statusCode: Int
@@ -59,6 +59,10 @@ public struct ResponseRepresentation {
 			}
 			self.bodyData = data
 		} else {
+			self.statusCode = Int()
+			self.url = String()
+			self.headers = Dictionary()
+			self.bodyData = nil
 			return nil
 		}
 	}

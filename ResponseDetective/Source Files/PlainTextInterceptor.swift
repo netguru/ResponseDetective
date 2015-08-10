@@ -7,7 +7,7 @@
 import Foundation
 
 /// Intercepts plain text requests and responses.
-public final class PlainTextInterceptor {
+@objc(RDVPlainTextInterceptor) public final class PlainTextInterceptor {
 	
 	/// The output stream used by the interceptor.
 	public private(set) var outputStream: OutputStreamType

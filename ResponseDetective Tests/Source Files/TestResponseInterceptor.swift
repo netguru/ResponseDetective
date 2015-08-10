@@ -8,7 +8,7 @@ import Foundation
 import ResponseDetective
 
 /// Intercepts the responses by storing them in an array.
-internal final class TestResponseInterceptor: ResponseInterceptorType {
+@objc internal final class TestResponseInterceptor: ResponseInterceptorType {
 
 	/// The intercepted responses store.
 	internal var interceptedResponses = [ResponseRepresentation]()

@@ -5,7 +5,7 @@
 //
 
 /// An output stream which adds its data to a buffer array.
-public final class BufferOutputStream: OutputStreamType {
+@objc(RDVBufferOutputStream) public final class BufferOutputStream: OutputStreamType {
 
 	/// The buffer array containing all the messages.
 	public private(set) var buffer: [String] = []

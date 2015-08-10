@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0FA47C1B77A17D0082E980 /* OutputStreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FA47B1B77A17D0082E980 /* OutputStreamType.swift */; };
+		3A0FA47D1B77A17D0082E980 /* OutputStreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FA47B1B77A17D0082E980 /* OutputStreamType.swift */; };
 		3A2007D21B5500DE00769021 /* ImageInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2007D11B5500DE00769021 /* ImageInterceptor.swift */; };
 		3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */; };
 		3A2007F11B55023500769021 /* ErrorInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F59DC1B415173006833EB /* ErrorInterceptorType.swift */; };
@@ -116,6 +118,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A0FA47B1B77A17D0082E980 /* OutputStreamType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputStreamType.swift; sourceTree = "<group>"; };
 		3A2007D11B5500DE00769021 /* ImageInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInterceptor.swift; sourceTree = "<group>"; };
 		3A2007D81B5501BC00769021 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +282,7 @@
 				3A3741041B3DB0B8002448A1 /* BufferOutputStream.swift */,
 				3A3741061B3DB0CD002448A1 /* NSLogOutputStream.swift */,
 				3A3741081B3DB0E4002448A1 /* PrintlnOutputStream.swift */,
+				3A0FA47B1B77A17D0082E980 /* OutputStreamType.swift */,
 			);
 			name = "Output Stream Types";
 			sourceTree = "<group>";
@@ -712,6 +716,7 @@
 				3A2008031B55025C00769021 /* InterceptingProtocol.swift in Sources */,
 				3A2008001B55025900769021 /* JSONInterceptor.swift in Sources */,
 				3A2008021B55025900769021 /* XMLInterceptor.swift in Sources */,
+				3A0FA47D1B77A17D0082E980 /* OutputStreamType.swift in Sources */,
 				3A20081D1B55064F00769021 /* ImageInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,6 +759,7 @@
 				74FC3CB51B472FE1005DCD57 /* PlainTextInterceptor.swift in Sources */,
 				3A3741011B3DB00A002448A1 /* RequestInterceptorType.swift in Sources */,
 				740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */,
+				3A0FA47C1B77A17D0082E980 /* OutputStreamType.swift in Sources */,
 				3A2007D21B5500DE00769021 /* ImageInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

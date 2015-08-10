@@ -7,7 +7,7 @@
 import Foundation
 
 /// Intercepts HTML requests and responses.
-public final class HTMLInterceptor {
+@objc(RDVHTMLInterceptor) public final class HTMLInterceptor {
 
 	/// The output stream used by the interceptor.
 	public private(set) var outputStream: OutputStreamType

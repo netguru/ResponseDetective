@@ -6,7 +6,7 @@
 
 /// A simple output stream which prints its data right to the console using
 /// stdlib's println function.
-public struct PrintlnOutputStream: OutputStreamType {
+@objc(RDVPrintlnOutputStream) public final class PrintlnOutputStream: OutputStreamType {
 
 	// MARK: OutputStreamType implementation
 
