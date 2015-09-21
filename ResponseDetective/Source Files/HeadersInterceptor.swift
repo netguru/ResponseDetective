@@ -22,7 +22,7 @@ public final class HeadersInterceptor {
 
 	/// Initializes the interceptor with an output stream.
 	///
-	/// :param: outputStream The output stream to be used.
+	/// - parameter outputStream: The output stream to be used.
 	public init(outputStream: OutputStreamType) {
 		self.outputStream = outputStream
 	}
@@ -46,7 +46,7 @@ extension HeadersInterceptor: RequestInterceptorType {
 
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			let headersString = (map(request.headers, { (key, value) in
+			let headersString = (request.headers.map({ (key, value) in
 				"\(key): \(value)"
 			}) as NSArray).componentsJoinedByString("\n") as String
 			dispatch_async(dispatch_get_main_queue()) {
@@ -70,7 +70,7 @@ extension HeadersInterceptor: ResponseInterceptorType {
 
 	public func interceptResponse(response: ResponseRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			let headersString = (map(response.headers, { (key, value) in
+			let headersString = (response.headers.map({ (key, value) in
 				"\(key): \(value)"
 			}) as NSArray).componentsJoinedByString("\n") as String
 			dispatch_async(dispatch_get_main_queue()) {
@@ -91,7 +91,7 @@ extension HeadersInterceptor: ErrorInterceptorType {
 	public func interceptError(error: NSError, _ response: ResponseRepresentation?) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
 			if let response = response {
-				let headersString = (map(response.headers, { (key, value) in
+				let headersString = (response.headers.map({ (key, value) in
 					"\(key): \(value)"
 				}) as NSArray).componentsJoinedByString("\n") as String
 				dispatch_async(dispatch_get_main_queue()) {

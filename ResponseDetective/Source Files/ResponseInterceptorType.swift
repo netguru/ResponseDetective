@@ -10,9 +10,9 @@ public protocol ResponseInterceptorType: class {
 
 	/// Whether the interceptor can intercept and process the incoming response.
 	///
-	/// :param: response The response in question.
+	/// - parameter response: The response in question.
 	///
-	/// :returns: A boolean indicating whether the response should be
+	/// - returns: A boolean indicating whether the response should be
 	/// intercepted and processed.
 	func canInterceptResponse(response: ResponseRepresentation) -> Bool
 
@@ -20,7 +20,7 @@ public protocol ResponseInterceptorType: class {
 	/// effects should be executed asynchronously, so that the response doesn't
 	/// get blocked.
 	///
-	/// :param: response The response to be processed.
+	/// - parameter response: The response to be processed.
 	func interceptResponse(response: ResponseRepresentation)
 
 }

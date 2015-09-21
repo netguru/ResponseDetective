@@ -9,7 +9,7 @@ import Foundation
 /// An output stream which prints its data right to the console using
 /// Foundation's NSLog function. This stream might be used instead of Println
 /// stream if you'd like your messages to appear in Apple System Log as well.
-public struct NSLogOutputStream: OutputStreamType {
+public final class NSLogOutputStream: OutputStreamType {
 
 	// MARK: OutputStreamType implementation
 

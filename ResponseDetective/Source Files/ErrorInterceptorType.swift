@@ -14,8 +14,8 @@ public protocol ErrorInterceptorType: class {
 	/// side effects should be executed asynchronously, so that the response
 	/// doesn't get blocked.
 	///
-	/// :param: error The received error.
-	/// :param: response The response received along the error (if any).
+	/// - parameter error: The received error.
+	/// - parameter response: The response received along the error (if any).
 	func interceptError(error: NSError, _ response: ResponseRepresentation?)
 	
 }

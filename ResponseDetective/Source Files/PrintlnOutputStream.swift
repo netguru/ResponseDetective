@@ -6,12 +6,12 @@
 
 /// A simple output stream which prints its data right to the console using
 /// stdlib's println function.
-public struct PrintlnOutputStream: OutputStreamType {
+public final class PrintlnOutputStream: OutputStreamType {
 
 	// MARK: OutputStreamType implementation
 
 	public func write(string: String) {
-		println(string)
+		print(string)
 	}
 
 }

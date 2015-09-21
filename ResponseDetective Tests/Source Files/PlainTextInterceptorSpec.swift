@@ -22,7 +22,7 @@ class PlainTextInterceptorSpec: QuickSpec {
 			let fixturePlainTextData = fixturePlainTextString.dataUsingEncoding(NSUTF8StringEncoding)
 			
 			let fixtureRequest = RequestRepresentation( {
-				var mutableRequest = NSMutableURLRequest()
+				let mutableRequest = NSMutableURLRequest()
 				mutableRequest.URL = NSURL(string: "https://httpbin.org/get")!
 				mutableRequest.setValue("text/plain", forHTTPHeaderField: "Content-Type")
 				mutableRequest.HTTPBody = fixturePlainTextData
