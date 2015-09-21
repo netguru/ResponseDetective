@@ -7,7 +7,7 @@
 import Foundation
 
 /// Represents a request.
-@objc(RDVRequestRepresentation) public final class RequestRepresentation {
+public final class RequestRepresentation {
 
 	/// Request method.
 	public let method: String
@@ -30,8 +30,8 @@ import Foundation
 	/// accessing this property will lazily open the stream and drain it in a
 	/// thread-blocking manner.
 	public var bodyData: NSData? {
-		return flatMap(bodyStream) { stream in
-			var data = NSMutableData()
+		return bodyStream.flatMap { stream in
+			let data = NSMutableData()
 			stream.open()
 			while stream.hasBytesAvailable {
 				var buffer = [UInt8](count: 1024, repeatedValue: 0)
@@ -45,27 +45,20 @@ import Foundation
 
 	/// Request body UTF-8 string.
 	public var bodyUTF8String: String? {
-		return flatMap(bodyData) { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
+		return bodyData.flatMap { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
 	}
 
 	/// Initializes the receiver with an instance of NSURLRequest.
 	///
-	/// :param: request The foundation NSSURLRequest object.
+	/// - parameter request: The foundation NSSURLRequest object.
 	///
-	/// :returns: An initialized receiver or nil if an instance should not be
+	/// - returns: An initialized receiver or nil if an instance should not be
 	/// created using the given request.
 	public init?(_ request: NSURLRequest) {
 		if let url = request.URL?.absoluteString {
 			self.method = request.HTTPMethod ?? "GET"
 			self.url = url
-			self.headers = map(request.allHTTPHeaderFields) { headers in
-				reduce(headers, [:]) { (var initial, element) in
-					if let key = element.0 as? String, value = element.1 as? String {
-						initial[key] = value
-					}
-					return initial
-				}
-			} ?? [:]
+			self.headers = request.allHTTPHeaderFields ?? [:]
 			self.bodyStream = {
 				if let bodyData = request.HTTPBody {
 					return NSInputStream(data: bodyData)
@@ -88,7 +81,7 @@ import Foundation
 
 // MARK: -
 
-extension RequestRepresentation: Printable {
+extension RequestRepresentation: CustomStringConvertible {
 
 	public var description: String {
 		return "\(method) \(url)"

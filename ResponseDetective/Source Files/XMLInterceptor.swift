@@ -7,7 +7,7 @@
 import Foundation
 
 /// Intercepts XML requests and responses.
-@objc(RDVXMLInterceptor) public final class XMLInterceptor {
+public final class XMLInterceptor {
 
 	/// The output stream used by the interceptor.
 	public private(set) var outputStream: OutputStreamType
@@ -22,7 +22,7 @@ import Foundation
 
 	/// Initializes the interceptor with an output stream.
 	///
-	/// :param: outputStream The output stream to be used.
+	/// - parameter outputStream: The output stream to be used.
 	public init(outputStream: OutputStreamType) {
 		self.outputStream = outputStream
 	}
@@ -36,22 +36,22 @@ import Foundation
 
 	/// Prettifies the XML string.
 	///
-	/// :param: string The XML string to prettify.
+	/// - parameter string: The XML string to prettify.
 	///
-	/// :returns: A prettified XML string.
+	/// - returns: A prettified XML string.
 	private func prettifyXMLString(string: String) -> String? {
 		return rdv_prettifyXMLString(string)
 	}
 
 	/// Prettifies the XML data.
 	///
-	/// :param: data The XML data to prettify.
+	/// - parameter data: The XML data to prettify.
 	///
-	/// :returns: A prettified XML string.
+	/// - returns: A prettified XML string.
 	private func prettifyXMLData(data: NSData) -> String? {
-		return flatMap(flatMap(data, {
+		return Optional(data).flatMap({
 			NSString(data: $0, encoding: NSUTF8StringEncoding) as String?
-		}), {
+		}).flatMap({
 			self.prettifyXMLString($0)
 		})
 	}
@@ -65,14 +65,14 @@ extension XMLInterceptor: RequestInterceptorType {
 	// MARK: RequestInterceptorType implementation
 
 	public func canInterceptRequest(request: RequestRepresentation) -> Bool {
-		return map(request.contentType) {
-			contains(self.acceptableContentTypes, $0)
+		return request.contentType.map {
+			self.acceptableContentTypes.contains($0)
 		} ?? false
 	}
 
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let XMLString = flatMap(request.bodyData, {
+			if let XMLString = request.bodyData.flatMap({
 				self.prettifyXMLData($0)
 			}) {
 				dispatch_async(dispatch_get_main_queue()) {
@@ -91,14 +91,14 @@ extension XMLInterceptor: ResponseInterceptorType {
 	// MARK: ResponseInterceptorType implementation
 
 	public func canInterceptResponse(response: ResponseRepresentation) -> Bool {
-		return map(response.contentType) {
-			contains(self.acceptableContentTypes, $0)
+		return response.contentType.map {
+			self.acceptableContentTypes.contains($0)
 		} ?? false
 	}
 
 	public func interceptResponse(response: ResponseRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let XMLString = flatMap(response.bodyData, {
+			if let XMLString = response.bodyData.flatMap({
 				self.prettifyXMLData($0)
 			}) {
 				dispatch_async(dispatch_get_main_queue()) {
