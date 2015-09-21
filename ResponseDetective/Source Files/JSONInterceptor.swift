@@ -7,7 +7,7 @@
 import Foundation
 
 /// Intercepts JSON requests and responses.
-@objc(RDVJSONInterceptor) public final class JSONInterceptor {
+public final class JSONInterceptor {
 
 	/// The output stream used by the interceptor.
 	public private(set) var outputStream: OutputStreamType
@@ -21,7 +21,7 @@ import Foundation
 
 	/// Initializes the interceptor with an output stream.
 	///
-	/// :param: outputStream The output stream to be used.
+	/// - parameter outputStream: The output stream to be used.
 	public init(outputStream: OutputStreamType) {
 		self.outputStream = outputStream
 	}
@@ -35,33 +35,33 @@ import Foundation
 
 	/// Prettifies the JSON data.
 	///
-	/// :param: data The JSON data to prettify.
+	/// - parameter data: The JSON data to prettify.
 	///
-	/// :returns: A prettified JSON string.
+	/// - returns: A prettified JSON string.
 	private func prettifyJSONData(data: NSData) -> String? {
-		return flatMap(flatMap(flatMap(data, {
-			NSJSONSerialization.JSONObjectWithData($0, options: nil, error: nil)
-		}), {
-			NSJSONSerialization.dataWithJSONObject($0, options: .PrettyPrinted, error: nil)
-		}), {
+		return Optional(data).flatMap({
+			try? NSJSONSerialization.JSONObjectWithData($0, options: [])
+		}).flatMap({
+			try? NSJSONSerialization.dataWithJSONObject($0, options: .PrettyPrinted)
+		}).flatMap({
 			NSString(data: $0, encoding: NSUTF8StringEncoding) as? String
 		})
 	}
 
 	/// Prettifies the JSON data stream.
 	///
-	/// :param: stream The JSON data stream to prettify.
+	/// - parameter stream: The JSON data stream to prettify.
 	///
-	/// :returns: A prettified JSON stream.
+	/// - returns: A prettified JSON stream.
 	private func prettifyJSONStream(stream: NSInputStream) -> String? {
-		return flatMap(flatMap(flatMap(stream, {
+		return Optional(stream).flatMap({
 			stream.open()
-			let object: AnyObject? = NSJSONSerialization.JSONObjectWithStream($0, options: nil, error: nil)
+			let object: AnyObject? = try? NSJSONSerialization.JSONObjectWithStream($0, options: [])
 			stream.close()
 			return object
-		}), {
-			NSJSONSerialization.dataWithJSONObject($0, options: .PrettyPrinted, error: nil)
-		}), {
+		}).flatMap({
+			try? NSJSONSerialization.dataWithJSONObject($0, options: .PrettyPrinted)
+		}).flatMap({
 			NSString(data: $0, encoding: NSUTF8StringEncoding) as? String
 		})
 	}
@@ -75,14 +75,14 @@ extension JSONInterceptor: RequestInterceptorType {
 	// MARK: RequestInterceptorType implementation
 
 	public func canInterceptRequest(request: RequestRepresentation) -> Bool {
-		return map(request.contentType) {
-			contains(self.acceptableContentTypes, $0)
+		return request.contentType.map {
+			self.acceptableContentTypes.contains($0)
 		} ?? false
 	}
 
 	public func interceptRequest(request: RequestRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let jsonString = flatMap(request.bodyStream, { self.prettifyJSONStream($0) }) {
+			if let jsonString = request.bodyStream.flatMap({ self.prettifyJSONStream($0) }) {
 				dispatch_async(dispatch_get_main_queue()) {
 					self.outputStream.write(jsonString)
 				}
@@ -99,14 +99,14 @@ extension JSONInterceptor: ResponseInterceptorType {
 	// MARK: ResponseInterceptorType implementation
 
 	public func canInterceptResponse(response: ResponseRepresentation) -> Bool {
-		return map(response.contentType) {
-			contains(self.acceptableContentTypes, $0)
+		return response.contentType.map {
+			self.acceptableContentTypes.contains($0)
 		} ?? false
 	}
 
 	public func interceptResponse(response: ResponseRepresentation) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			if let jsonString = flatMap(response.bodyData, { self.prettifyJSONData($0) }) {
+			if let jsonString = response.bodyData.flatMap({ self.prettifyJSONData($0) }) {
 				dispatch_async(dispatch_get_main_queue()) {
 					self.outputStream.write(jsonString)
 				}

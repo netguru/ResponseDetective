@@ -1,7 +1,7 @@
 # 💻 ⇄ ResponseDetective ⇄ 🌍
 
 ![](https://img.shields.io/circleci/project/netguru/ResponseDetective.svg)
-![](https://img.shields.io/badge/swift-1.2-orange.svg)
+![](https://img.shields.io/badge/swift-2.0-orange.svg)
 ![](https://img.shields.io/github/release/netguru/ResponseDetective.svg)
 ![](https://img.shields.io/badge/carthage-compatible-brightgreen.svg)
 ![](https://img.shields.io/badge/cocoapods-compatible-brightgreen.svg)
@@ -34,20 +34,6 @@ InterceptingProtocol.registerResponseInterceptor(HTMLInterceptor())
 InterceptingProtocol.registerErrorInterceptor(BaseInterceptor())
 ```
 
-```objc
-// request
-[RDVInterceptingProtocol registerRequestInterceptor:[RDVBaseInterceptor new]];
-[RDVInterceptingProtocol registerRequestInterceptor:[RDVJSONInterceptor new]];
-
-// response
-[RDVInterceptingProtocol registerResponseInterceptor:[RDVBaseInterceptor new]];
-[RDVInterceptingProtocol registerResponseInterceptor:[RDVJSONInterceptor new]];
-[RDVInterceptingProtocol registerResponseInterceptor:[RDVHTMLInterceptor new]];
-
-// error
-[RDVInterceptingProtocol registerErrorInterceptor:[RDVBaseInterceptor new]];
-```
-
 ### Step 2: Register the protocol
 
 For `InterceptingProtocol` to work, it needs to be added as a middleman between your `NSURLSession` and the Internet. You can do this by registering it in your session's `NSURLSessionConfiguration.protocolClasses`.
@@ -62,15 +48,6 @@ configuration.protocolClasses = map(configuration.protocolClasses, { (var protoc
 let session = NSURLSession(configuration: configuration)
 ```
 
-```objc
-NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-configuration.protocolClasses = [@[
-    [RDVInterceptingProtocol class]
-] arrayByAddingObjectsFromArray:(configuration.protocolClasses ?: @[])];
-
-NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-```
-
 If you're using [Alamofire](https://github.com/Alamofire/Alamofire) as your networking framework, integrating ResponseDetective is as easy as initializing your `Manager` with `NSURLSessionConfiguration` described above.
 
 ```swift
@@ -83,17 +60,6 @@ configuration.protocolClasses = map(configuration.protocolClasses, { (var protoc
 let manager = Alamofire.Manager(configuration: configuration)
 ```
 
-Or, if you're coding in Objective-C and you're using [AFNetworking](https://github.com/AFNetworking/AFNetworking):
-
-```objc
-NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-configuration.protocolClasses = [@[
-    [RDVInterceptingProtocol class]
-] arrayByAddingObjectsFromArray:(configuration.protocolClasses ?: @[])];
-
-AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-```
-
 ### Step 3: Profit
 
 Now it's time to perform the actual request.
@@ -102,12 +68,6 @@ Now it's time to perform the actual request.
 let request = NSURLRequest(URL: NSURL(string: "http://httpbin.org/get")!)
 let task = session.dataTaskWithRequest(request)
 task.resume()
-```
-
-```objc
-NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://httpbin.org/get"]];
-NSURLSessionDataTask *task = [session dataTaskWithRequest:request];
-[task resume];
 ```
 
 Voilà! Now check out your console output.

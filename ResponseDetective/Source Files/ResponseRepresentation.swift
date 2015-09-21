@@ -7,7 +7,7 @@
 import Foundation
 
 /// Represents a response.
-@objc(RDVResponseRepresentation) public final class ResponseRepresentation {
+public final class ResponseRepresentation {
 
 	/// Response status code.
 	public let statusCode: Int
@@ -25,9 +25,9 @@ import Foundation
 
 	/// Response content type.
 	public var contentType: String? {
-		return map(map(headers["Content-Type"], {
+		return headers["Content-Type"].map({
 			$0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-		}), {
+		}).map({
 			$0.substringToIndex($0.rangeOfString(";")?.endIndex ?? $0.endIndex)
 		})
 	}
@@ -37,21 +37,21 @@ import Foundation
 
 	/// Response body UTF-8 string.
 	public var bodyUTF8String: String? {
-		return flatMap(bodyData) { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
+		return bodyData.flatMap { NSString(data: $0, encoding: NSUTF8StringEncoding) } as String?
 	}
 
 	/// Initializes the receiver with an instance of NSHTTPURLResponse.
 	///
-	/// :param: response The foundation NSHTTPURLResponse object.
-	/// :param: data The data associated with the response.
+	/// - parameter response: The foundation NSHTTPURLResponse object.
+	/// - parameter data: The data associated with the response.
 	///
-	/// :returns: An initialized receiver or nil if an instance should not be
+	/// - returns: An initialized receiver or nil if an instance should not be
 	/// created using the given response.
 	public init?(_ response: NSHTTPURLResponse, _ data: NSData?) {
 		if let url = response.URL?.absoluteString {
 			self.statusCode = response.statusCode
 			self.url = url
-			self.headers = reduce(response.allHeaderFields, [:]) { (var initial, element) in
+			self.headers = response.allHeaderFields.reduce([:]) { (var initial, element) in
 				if let key = element.0 as? String, value = element.1 as? String {
 					initial[key] = value
 				}
@@ -71,7 +71,7 @@ import Foundation
 
 // MARK: -
 
-extension ResponseRepresentation: Printable {
+extension ResponseRepresentation: CustomStringConvertible {
 
 	public var description: String {
 		return "\(statusCode) \(statusString)"

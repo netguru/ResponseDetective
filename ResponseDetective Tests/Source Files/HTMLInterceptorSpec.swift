@@ -23,7 +23,7 @@ class HTMLInterceptorSpec: QuickSpec {
 			let prettyFixtureString = "<!DOCTYPE html>\n<html><body><p class=\"foo\">bar<br></p></body></html>"
 
 			let fixtureRequest = RequestRepresentation( {
-				var mutableRequest = NSMutableURLRequest()
+				let mutableRequest = NSMutableURLRequest()
 				mutableRequest.URL = NSURL(string: "https://httpbin.org/post")!
 				mutableRequest.HTTPMethod = "POST"
 				mutableRequest.setValue("text/html", forHTTPHeaderField: "Content-Type")

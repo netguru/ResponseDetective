@@ -129,6 +129,8 @@
 		3A2008191B5505AD00769021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A20081B1B5505BD00769021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3A20081E1B55073700769021 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		3A22BEC51BB0958C00698151 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		3A22BEC61BB0959500698151 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRequestInterceptor.swift; sourceTree = "<group>"; };
 		3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResponseInterceptor.swift; sourceTree = "<group>"; };
 		3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestErrorInterceptor.swift; sourceTree = "<group>"; };
@@ -399,6 +401,8 @@
 		3AC7849A1B1DE3E800884F99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A22BEC51BB0958C00698151 /* Cartfile */,
+				3A22BEC61BB0959500698151 /* Cartfile.private */,
 				3AC7847A1B1DE3C400884F99 /* Configuration */,
 				3AC7849B1B1DE3FD00884F99 /* ResponseDetective */,
 				3AC7849C1B1DE40500884F99 /* ResponseDetective Tests */,
@@ -593,8 +597,9 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = NGR;
+				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Netguru Sp. z o.o.";
 				TargetAttributes = {
 					3A2007D71B5501BC00769021 = {
@@ -812,6 +817,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Debug;
@@ -830,6 +836,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Release;
@@ -840,11 +847,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "ResponseDetective Tests/Supporting Files/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective.tests;
 				PRODUCT_NAME = "ResponseDetective Tests";
 			};
 			name = Debug;
@@ -855,11 +863,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "ResponseDetective Tests/Supporting Files/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective.tests;
 				PRODUCT_NAME = "ResponseDetective Tests";
 			};
 			name = Release;
@@ -901,6 +910,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective/Supporting Files/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Debug;
@@ -920,6 +930,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective/Supporting Files/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Release;
@@ -931,12 +942,13 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective.tests;
 				PRODUCT_NAME = "ResponseDetective Tests";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -950,12 +962,13 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective.tests;
 				PRODUCT_NAME = "ResponseDetective Tests";
 			};
 			name = Release;

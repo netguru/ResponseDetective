@@ -5,11 +5,11 @@
 //
 
 /// A target of text streaming operations.
-@objc(RDVOutputStreamType) public protocol OutputStreamType {
+public protocol OutputStreamType {
 	
 	/// Append the given string to this stream.
 	///
-	/// :param: string The string to append.
+	/// - parameter string: The string to append.
 	func write(string: String)
 	
 }

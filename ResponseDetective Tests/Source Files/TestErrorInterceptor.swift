@@ -8,7 +8,7 @@ import Foundation
 import ResponseDetective
 
 /// Intercepts the response errors by storing them in an array.
-@objc internal final class TestErrorInterceptor: ErrorInterceptorType {
+internal final class TestErrorInterceptor: ErrorInterceptorType {
 
 	/// The intercepted requests store.
 	internal var interceptedErrors = [(NSError, ResponseRepresentation?)]()
