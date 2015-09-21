@@ -23,7 +23,7 @@ class JSONInterceptorSpec: QuickSpec {
 			let prettyFixtureString = "{\n  \"foo\" : \"bar\",\n  \"baz\" : true\n}"
 
 			let fixtureRequest = RequestRepresentation( {
-				var mutableRequest = NSMutableURLRequest()
+				let mutableRequest = NSMutableURLRequest()
 				mutableRequest.URL = NSURL(string: "https://httpbin.org/post")!
 				mutableRequest.HTTPMethod = "POST"
 				mutableRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")

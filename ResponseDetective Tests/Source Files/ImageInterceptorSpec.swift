@@ -21,12 +21,6 @@ class ImageInterceptorSpec: QuickSpec {
 			let fixtureImageData = TestImageGenerator.generateImageData(type: .PNG, size: (100, 100))
 			let fixtureImageString = "image/png (100px × 100px)"
 
-			let fixtureRequest = RequestRepresentation( {
-				var mutableRequest = NSMutableURLRequest()
-				mutableRequest.URL = NSURL(string: "https://httpbin.org/image/png")!
-				return mutableRequest
-			}())!
-
 			let fixtureResponse = ResponseRepresentation(NSHTTPURLResponse(
 				URL: NSURL(string: "https://httpbin.org/image/png")!,
 				statusCode: 200,

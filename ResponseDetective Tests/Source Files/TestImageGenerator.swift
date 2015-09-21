@@ -27,15 +27,15 @@ internal struct TestImageGenerator {
 
 	/// Generates image data.
 	///
-	/// :param: type The type of the image.
-	/// :param: size The image size.
+	/// - parameter type: The type of the image.
+	/// - parameter size: The image size.
 	///
-	/// :returns: Image data.
-	internal static func generateImageData(#type: TestImageType, size: TestImageSize) -> NSData {
+	/// - returns: Image data.
+	internal static func generateImageData(type type: TestImageType, size: TestImageSize) -> NSData {
 		#if os(iOS)
 			switch type {
 				case .PNG:
-					return UIImagePNGRepresentation(generateImage(size: size))
+					return UIImagePNGRepresentation(generateImage(size: size))!
 			}
 		#else
 			return flatMap(flatMap(flatMap(generateImage(size: size), {
@@ -55,10 +55,10 @@ internal struct TestImageGenerator {
 
 	/// Creates an image with a black background.
 	///
-	/// :param: size The size of the image.
+	/// - parameter size: The size of the image.
 	///
-	/// :returns: The generated image.
-	private static func generateImage(#size: TestImageSize) -> OSImage {
+	/// - returns: The generated image.
+	private static func generateImage(size size: TestImageSize) -> OSImage {
 		#if os(iOS)
 			let bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
 			UIGraphicsBeginImageContext(bounds.size)

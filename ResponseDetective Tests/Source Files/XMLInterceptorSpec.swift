@@ -23,7 +23,7 @@ class XMLInterceptorSpec: QuickSpec {
 			let prettyFixtureString = "<?xml version=\"1.0\"?>\n<foo>\n  <bar baz=\"qux\">lorem ipsum</bar>\n</foo>"
 
 			let fixtureRequest = RequestRepresentation( {
-				var mutableRequest = NSMutableURLRequest()
+				let mutableRequest = NSMutableURLRequest()
 				mutableRequest.URL = NSURL(string: "https://httpbin.org/post")!
 				mutableRequest.HTTPMethod = "POST"
 				mutableRequest.setValue("application/xml", forHTTPHeaderField: "Content-Type")
