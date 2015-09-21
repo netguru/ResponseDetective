@@ -38,11 +38,11 @@ internal struct TestImageGenerator {
 					return UIImagePNGRepresentation(generateImage(size: size))!
 			}
 		#else
-			return flatMap(flatMap(flatMap(generateImage(size: size), {
+			return Optional(generateImage(size: size)).flatMap({
 				$0.TIFFRepresentation
-			}), {
+			}).flatMap({
 				NSBitmapImageRep(data: $0)
-			}), {
+			}).flatMap({
 				switch type {
 					case .PNG:
 						return $0.representationUsingType(NSBitmapImageFileType.NSPNGFileType, properties: [
