@@ -10,7 +10,7 @@
 
 ## Requirements
 
-ResponseDetective requires **iOS 8** or **OS X 10.10**.
+ResponseDetective requires **iOS 8+** or **OS X 10.10**.
 
 ## Usage
 
