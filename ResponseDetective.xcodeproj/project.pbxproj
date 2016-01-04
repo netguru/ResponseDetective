@@ -7,83 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A0FA47C1B77A17D0082E980 /* OutputStreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FA47B1B77A17D0082E980 /* OutputStreamType.swift */; };
-		3A0FA47D1B77A17D0082E980 /* OutputStreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0FA47B1B77A17D0082E980 /* OutputStreamType.swift */; };
-		3A2007D21B5500DE00769021 /* ImageInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2007D11B5500DE00769021 /* ImageInterceptor.swift */; };
 		3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */; };
-		3A2007F11B55023500769021 /* ErrorInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F59DC1B415173006833EB /* ErrorInterceptorType.swift */; };
-		3A2007F21B55023700769021 /* RequestInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */; };
-		3A2007F31B55023900769021 /* ResponseInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */; };
-		3A2007F41B55023B00769021 /* BufferOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741041B3DB0B8002448A1 /* BufferOutputStream.swift */; };
-		3A2007F51B55023D00769021 /* NSLogOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741061B3DB0CD002448A1 /* NSLogOutputStream.swift */; };
-		3A2007F61B55024000769021 /* PrintlnOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741081B3DB0E4002448A1 /* PrintlnOutputStream.swift */; };
-		3A2007F71B55024200769021 /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */; };
-		3A2007F81B55024400769021 /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */; };
-		3A2007F91B55024800769021 /* HTMLPrettifying.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF362251B46B83900083A18 /* HTMLPrettifying.m */; };
-		3A2007FA1B55024C00769021 /* HTMLPrettifying.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AF362241B46B81500083A18 /* HTMLPrettifying.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A2007FB1B55024F00769021 /* XMLPrettifying.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AAFF1B45844300D58C62 /* XMLPrettifying.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A2007FC1B55025200769021 /* XMLPrettifying.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB001B45845600D58C62 /* XMLPrettifying.m */; };
-		3A2007FD1B55025500769021 /* HeadersInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31311B4D2D4900271DDA /* HeadersInterceptor.swift */; };
-		3A2007FE1B55025600769021 /* HTMLInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */; };
-		3A2008001B55025900769021 /* JSONInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */; };
-		3A2008011B55025900769021 /* PlainTextInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */; };
-		3A2008021B55025900769021 /* XMLInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */; };
-		3A2008031B55025C00769021 /* InterceptingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */; };
-		3A2008041B55026000769021 /* TestErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */; };
-		3A2008051B55026000769021 /* TestRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */; };
-		3A2008061B55026000769021 /* TestResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */; };
-		3A2008071B55026000769021 /* HeadersInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31331B4D46BD00271DDA /* HeadersInterceptorSpec.swift */; };
-		3A2008081B55026000769021 /* HTMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */; };
-		3A2008091B55026000769021 /* JSONInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */; };
-		3A20080A1B55026000769021 /* PlainTextInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */; };
-		3A20080B1B55026000769021 /* XMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */; };
-		3A20080C1B55026500769021 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AB0D1B45971F00D58C62 /* Bridging-Header.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3A2008151B55031100769021 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008141B55031100769021 /* libxml2.dylib */; };
 		3A2008181B5505AA00769021 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008171B5505AA00769021 /* UIKit.framework */; };
 		3A20081A1B5505AD00769021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008191B5505AD00769021 /* Foundation.framework */; };
 		3A20081C1B5505BD00769021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A20081B1B5505BD00769021 /* Foundation.framework */; };
-		3A20081D1B55064F00769021 /* ImageInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2007D11B5500DE00769021 /* ImageInterceptor.swift */; };
 		3A20081F1B55073700769021 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A20081E1B55073700769021 /* AppKit.framework */; };
-		3A29A8A71B4A6F5C0025F46A /* TestRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */; };
-		3A29A8AA1B4A6F750025F46A /* TestResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */; };
-		3A29A8AC1B4A6FC10025F46A /* TestErrorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */; };
-		3A29A8B71B4A82F40025F46A /* JSONInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */; };
-		3A3741011B3DB00A002448A1 /* RequestInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */; };
-		3A3741031B3DB059002448A1 /* ResponseInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */; };
-		3A3741051B3DB0B8002448A1 /* BufferOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741041B3DB0B8002448A1 /* BufferOutputStream.swift */; };
-		3A3741071B3DB0CD002448A1 /* NSLogOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741061B3DB0CD002448A1 /* NSLogOutputStream.swift */; };
-		3A3741091B3DB0E4002448A1 /* PrintlnOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3741081B3DB0E4002448A1 /* PrintlnOutputStream.swift */; };
-		3A39AB011B45845600D58C62 /* XMLPrettifying.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB001B45845600D58C62 /* XMLPrettifying.m */; };
-		3A39AB021B45848500D58C62 /* XMLPrettifying.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AAFF1B45844300D58C62 /* XMLPrettifying.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A39AB071B458C8B00D58C62 /* JSONInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */; };
-		3A39AB091B45904D00D58C62 /* XMLInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */; };
+		3A3A01881C3A54B5008752CC /* ResponseDetective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A01871C3A54B5008752CC /* ResponseDetective.swift */; };
+		3A3A01891C3A54B5008752CC /* ResponseDetective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A01871C3A54B5008752CC /* ResponseDetective.swift */; };
 		3A41B1B81B5D0B38000355E0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A20080F1B5502FE00769021 /* Nimble.framework */; };
 		3A41B1B91B5D0B3A000355E0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2008101B5502FE00769021 /* Quick.framework */; };
 		3A8DF6321B45774300F758EF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8DF6311B45774300F758EF /* libxml2.dylib */; };
-		3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */; };
-		3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */; };
-		3ABB31321B4D2D4900271DDA /* HeadersInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31311B4D2D4900271DDA /* HeadersInterceptor.swift */; };
-		3ABB31341B4D46BD00271DDA /* HeadersInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB31331B4D46BD00271DDA /* HeadersInterceptorSpec.swift */; };
 		3AC784A51B1DE49100884F99 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A31B1DE48000884F99 /* Nimble.framework */; };
 		3AC784A61B1DE49200884F99 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC784A41B1DE48000884F99 /* Quick.framework */; };
 		3ACCEBDD1B21DC4A006C0FF4 /* ResponseDetective.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3AE54C821B5BCAF300150FC5 /* ImageInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE54C811B5BCAF300150FC5 /* ImageInterceptorSpec.swift */; };
-		3AE54C831B5BCAF300150FC5 /* ImageInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE54C811B5BCAF300150FC5 /* ImageInterceptorSpec.swift */; };
-		3AE54C841B5BCAFE00150FC5 /* InterceptingProtocolSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E58C6F1B4FE9FF00F86252 /* InterceptingProtocolSpec.swift */; };
-		3AE54C871B5BCC6A00150FC5 /* TestImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE54C861B5BCC6A00150FC5 /* TestImageGenerator.swift */; };
-		3AE54C881B5BCC6A00150FC5 /* TestImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE54C861B5BCC6A00150FC5 /* TestImageGenerator.swift */; };
 		3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; };
-		3AF362261B46B83900083A18 /* HTMLPrettifying.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF362251B46B83900083A18 /* HTMLPrettifying.m */; };
-		3AF362271B46BAEE00083A18 /* HTMLPrettifying.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AF362241B46B81500083A18 /* HTMLPrettifying.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AF362291B46C09C00083A18 /* HTMLInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */; };
-		3AFBE0321B467D0F00C6759A /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A39AB0D1B45971F00D58C62 /* Bridging-Header.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */; };
-		741BF1F01B4C2E0B0050D9A2 /* XMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */; };
-		744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F59DC1B415173006833EB /* ErrorInterceptorType.swift */; };
-		7484C6241B4C7D9B004F2117 /* HTMLInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */; };
-		749D31D81B4BD58B00A0E1A9 /* PlainTextInterceptorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */; };
-		74E58C711B4FEF7800F86252 /* InterceptingProtocolSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E58C6F1B4FE9FF00F86252 /* InterceptingProtocolSpec.swift */; };
-		74FC3CB51B472FE1005DCD57 /* PlainTextInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */; };
+		3AFD79531C3A83C300BFD6CD /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79521C3A83C300BFD6CD /* RequestRepresentation.swift */; };
+		3AFD79541C3A83C300BFD6CD /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79521C3A83C300BFD6CD /* RequestRepresentation.swift */; };
+		3AFD79561C3A864200BFD6CD /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79551C3A864200BFD6CD /* ResponseRepresentation.swift */; };
+		3AFD79571C3A864200BFD6CD /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79551C3A864200BFD6CD /* ResponseRepresentation.swift */; };
+		3AFD795C1C3AA43200BFD6CD /* OutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD795B1C3AA43200BFD6CD /* OutputFacility.swift */; };
+		3AFD795D1C3AA43200BFD6CD /* OutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD795B1C3AA43200BFD6CD /* OutputFacility.swift */; };
+		3AFD79601C3AA48800BFD6CD /* ErrorRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD795F1C3AA48800BFD6CD /* ErrorRepresentation.swift */; };
+		3AFD79611C3AA48800BFD6CD /* ErrorRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD795F1C3AA48800BFD6CD /* ErrorRepresentation.swift */; };
+		3AFD79631C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79621C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift */; };
+		3AFD79641C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79621C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,8 +66,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A0FA47B1B77A17D0082E980 /* OutputStreamType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputStreamType.swift; sourceTree = "<group>"; };
-		3A2007D11B5500DE00769021 /* ImageInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInterceptor.swift; sourceTree = "<group>"; };
 		3A2007D81B5501BC00769021 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A20080F1B5502FE00769021 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
@@ -131,25 +77,8 @@
 		3A20081E1B55073700769021 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		3A22BEC51BB0958C00698151 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		3A22BEC61BB0959500698151 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
-		3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRequestInterceptor.swift; sourceTree = "<group>"; };
-		3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResponseInterceptor.swift; sourceTree = "<group>"; };
-		3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestErrorInterceptor.swift; sourceTree = "<group>"; };
-		3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONInterceptorSpec.swift; sourceTree = "<group>"; };
-		3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptorType.swift; sourceTree = "<group>"; };
-		3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseInterceptorType.swift; sourceTree = "<group>"; };
-		3A3741041B3DB0B8002448A1 /* BufferOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferOutputStream.swift; sourceTree = "<group>"; };
-		3A3741061B3DB0CD002448A1 /* NSLogOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLogOutputStream.swift; sourceTree = "<group>"; };
-		3A3741081B3DB0E4002448A1 /* PrintlnOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintlnOutputStream.swift; sourceTree = "<group>"; };
-		3A39AAFF1B45844300D58C62 /* XMLPrettifying.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLPrettifying.h; sourceTree = "<group>"; };
-		3A39AB001B45845600D58C62 /* XMLPrettifying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLPrettifying.m; sourceTree = "<group>"; };
-		3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONInterceptor.swift; sourceTree = "<group>"; };
-		3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLInterceptor.swift; sourceTree = "<group>"; };
-		3A39AB0D1B45971F00D58C62 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		3A3A01871C3A54B5008752CC /* ResponseDetective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDetective.swift; sourceTree = "<group>"; };
 		3A8DF6311B45774300F758EF /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRepresentation.swift; sourceTree = "<group>"; };
-		3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseRepresentation.swift; sourceTree = "<group>"; };
-		3ABB31311B4D2D4900271DDA /* HeadersInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadersInterceptor.swift; sourceTree = "<group>"; };
-		3ABB31331B4D46BD00271DDA /* HeadersInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadersInterceptorSpec.swift; sourceTree = "<group>"; };
 		3AC7847B1B1DE3C400884F99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3AC7847D1B1DE3C400884F99 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		3AC7847F1B1DE3C400884F99 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -173,20 +102,13 @@
 		3AC784A31B1DE48000884F99 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		3AC784A41B1DE48000884F99 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		3ACCEBCF1B21C84D006C0FF4 /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; };
-		3AE54C811B5BCAF300150FC5 /* ImageInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInterceptorSpec.swift; sourceTree = "<group>"; };
-		3AE54C861B5BCC6A00150FC5 /* TestImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestImageGenerator.swift; sourceTree = "<group>"; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF362241B46B81500083A18 /* HTMLPrettifying.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLPrettifying.h; sourceTree = "<group>"; };
-		3AF362251B46B83900083A18 /* HTMLPrettifying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLPrettifying.m; sourceTree = "<group>"; };
-		3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLInterceptor.swift; sourceTree = "<group>"; };
-		740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptingProtocol.swift; sourceTree = "<group>"; };
-		741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLInterceptorSpec.swift; sourceTree = "<group>"; };
-		744F59DC1B415173006833EB /* ErrorInterceptorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorInterceptorType.swift; sourceTree = "<group>"; };
-		7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLInterceptorSpec.swift; sourceTree = "<group>"; };
-		74E58C6F1B4FE9FF00F86252 /* InterceptingProtocolSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterceptingProtocolSpec.swift; sourceTree = "<group>"; };
-		74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainTextInterceptorSpec.swift; sourceTree = "<group>"; };
-		74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainTextInterceptor.swift; sourceTree = "<group>"; };
+		3AFD79521C3A83C300BFD6CD /* RequestRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRepresentation.swift; sourceTree = "<group>"; };
+		3AFD79551C3A864200BFD6CD /* ResponseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseRepresentation.swift; sourceTree = "<group>"; };
+		3AFD795B1C3AA43200BFD6CD /* OutputFacility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputFacility.swift; sourceTree = "<group>"; };
+		3AFD795F1C3AA48800BFD6CD /* ErrorRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorRepresentation.swift; sourceTree = "<group>"; };
+		3AFD79621C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleOutputFacility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,81 +177,6 @@
 				3A2008101B5502FE00769021 /* Quick.framework */,
 			);
 			name = "OS X";
-			sourceTree = "<group>";
-		};
-		3A29A8A81B4A6F670025F46A /* Test Types */ = {
-			isa = PBXGroup;
-			children = (
-				3A29A8AB1B4A6FC10025F46A /* TestErrorInterceptor.swift */,
-				3AE54C861B5BCC6A00150FC5 /* TestImageGenerator.swift */,
-				3A29A8A61B4A6F5C0025F46A /* TestRequestInterceptor.swift */,
-				3A29A8A91B4A6F750025F46A /* TestResponseInterceptor.swift */,
-			);
-			name = "Test Types";
-			sourceTree = "<group>";
-		};
-		3A3740FE1B3DAFE3002448A1 /* Incerceptor Types */ = {
-			isa = PBXGroup;
-			children = (
-				744F59DC1B415173006833EB /* ErrorInterceptorType.swift */,
-				3A3741001B3DB00A002448A1 /* RequestInterceptorType.swift */,
-				3A3741021B3DB059002448A1 /* ResponseInterceptorType.swift */,
-			);
-			name = "Incerceptor Types";
-			sourceTree = "<group>";
-		};
-		3A3740FF1B3DAFEA002448A1 /* Output Stream Types */ = {
-			isa = PBXGroup;
-			children = (
-				3A3741041B3DB0B8002448A1 /* BufferOutputStream.swift */,
-				3A3741061B3DB0CD002448A1 /* NSLogOutputStream.swift */,
-				3A3741081B3DB0E4002448A1 /* PrintlnOutputStream.swift */,
-				3A0FA47B1B77A17D0082E980 /* OutputStreamType.swift */,
-			);
-			name = "Output Stream Types";
-			sourceTree = "<group>";
-		};
-		3A37410B1B3DB34A002448A1 /* Core Types */ = {
-			isa = PBXGroup;
-			children = (
-				3A3740FE1B3DAFE3002448A1 /* Incerceptor Types */,
-				3A3740FF1B3DAFEA002448A1 /* Output Stream Types */,
-				3A9AD42B1B2F37C100E9C7AC /* Type Representations */,
-			);
-			name = "Core Types";
-			sourceTree = "<group>";
-		};
-		3A5133AE1B459C930040276D /* Builtin Interceptors */ = {
-			isa = PBXGroup;
-			children = (
-				3ABB31311B4D2D4900271DDA /* HeadersInterceptor.swift */,
-				3AF362281B46C09C00083A18 /* HTMLInterceptor.swift */,
-				3A2007D11B5500DE00769021 /* ImageInterceptor.swift */,
-				3A39AB061B458C8B00D58C62 /* JSONInterceptor.swift */,
-				74FC3CB41B472FE1005DCD57 /* PlainTextInterceptor.swift */,
-				3A39AB081B45904D00D58C62 /* XMLInterceptor.swift */,
-			);
-			name = "Builtin Interceptors";
-			sourceTree = "<group>";
-		};
-		3A8DF62E1B4576DA00F758EF /* Objective-C Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				3AF362241B46B81500083A18 /* HTMLPrettifying.h */,
-				3AF362251B46B83900083A18 /* HTMLPrettifying.m */,
-				3A39AAFF1B45844300D58C62 /* XMLPrettifying.h */,
-				3A39AB001B45845600D58C62 /* XMLPrettifying.m */,
-			);
-			name = "Objective-C Helpers";
-			sourceTree = "<group>";
-		};
-		3A9AD42B1B2F37C100E9C7AC /* Type Representations */ = {
-			isa = PBXGroup;
-			children = (
-				3A9AD4291B2F2A7A00E9C7AC /* RequestRepresentation.swift */,
-				3A9AD42C1B2F37ED00E9C7AC /* ResponseRepresentation.swift */,
-			);
-			name = "Type Representations";
 			sourceTree = "<group>";
 		};
 		3AC7847A1B1DE3C400884F99 /* Configuration */ = {
@@ -413,7 +260,6 @@
 		3AC7849B1B1DE3FD00884F99 /* ResponseDetective */ = {
 			isa = PBXGroup;
 			children = (
-				3A39AB0D1B45971F00D58C62 /* Bridging-Header.h */,
 				3AC7849D1B1DE42F00884F99 /* Info.plist */,
 			);
 			name = ResponseDetective;
@@ -432,10 +278,9 @@
 		3AC784A01B1DE44300884F99 /* ResponseDetective */ = {
 			isa = PBXGroup;
 			children = (
-				3A37410B1B3DB34A002448A1 /* Core Types */,
-				3A8DF62E1B4576DA00F758EF /* Objective-C Helpers */,
-				3A5133AE1B459C930040276D /* Builtin Interceptors */,
-				740DBDFB1B25B5690039F95D /* InterceptingProtocol.swift */,
+				3A3A01871C3A54B5008752CC /* ResponseDetective.swift */,
+				3AFD79581C3A88FA00BFD6CD /* Representations */,
+				3AFD79591C3AA3FF00BFD6CD /* Output Facilities */,
 			);
 			name = ResponseDetective;
 			path = "ResponseDetective/Source Files";
@@ -453,14 +298,6 @@
 		3AC784AC1B1DE82400884F99 /* ResponseDetective Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3A29A8A81B4A6F670025F46A /* Test Types */,
-				3ABB31331B4D46BD00271DDA /* HeadersInterceptorSpec.swift */,
-				7484C6221B4C7C73004F2117 /* HTMLInterceptorSpec.swift */,
-				3AE54C811B5BCAF300150FC5 /* ImageInterceptorSpec.swift */,
-				74E58C6F1B4FE9FF00F86252 /* InterceptingProtocolSpec.swift */,
-				3A29A8B11B4A7C4E0025F46A /* JSONInterceptorSpec.swift */,
-				74F79AE51B4BD2A1005E1DF2 /* PlainTextInterceptorSpec.swift */,
-				741BF1EE1B4C2DE80050D9A2 /* XMLInterceptorSpec.swift */,
 			);
 			name = "ResponseDetective Tests";
 			path = "ResponseDetective Tests/Source Files";
@@ -489,6 +326,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3AFD79581C3A88FA00BFD6CD /* Representations */ = {
+			isa = PBXGroup;
+			children = (
+				3AFD79521C3A83C300BFD6CD /* RequestRepresentation.swift */,
+				3AFD79551C3A864200BFD6CD /* ResponseRepresentation.swift */,
+				3AFD795F1C3AA48800BFD6CD /* ErrorRepresentation.swift */,
+			);
+			name = Representations;
+			sourceTree = "<group>";
+		};
+		3AFD79591C3AA3FF00BFD6CD /* Output Facilities */ = {
+			isa = PBXGroup;
+			children = (
+				3AFD795B1C3AA43200BFD6CD /* OutputFacility.swift */,
+				3AFD79621C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift */,
+			);
+			name = "Output Facilities";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -496,9 +352,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2007FB1B55024F00769021 /* XMLPrettifying.h in Headers */,
-				3A2007FA1B55024C00769021 /* HTMLPrettifying.h in Headers */,
-				3A20080C1B55026500769021 /* Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,9 +359,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A39AB021B45848500D58C62 /* XMLPrettifying.h in Headers */,
-				3AF362271B46BAEE00083A18 /* HTMLPrettifying.h in Headers */,
-				3AFBE0321B467D0F00C6759A /* Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +446,7 @@
 		3AED3EC31B1DD7B400FA35FC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = NGR;
+				CLASSPREFIX = RDT;
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
@@ -705,24 +555,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2007F51B55023D00769021 /* NSLogOutputStream.swift in Sources */,
-				3A2007F81B55024400769021 /* ResponseRepresentation.swift in Sources */,
-				3A2007F31B55023900769021 /* ResponseInterceptorType.swift in Sources */,
-				3A2007F11B55023500769021 /* ErrorInterceptorType.swift in Sources */,
-				3A2007FE1B55025600769021 /* HTMLInterceptor.swift in Sources */,
-				3A2007F91B55024800769021 /* HTMLPrettifying.m in Sources */,
-				3A2007FC1B55025200769021 /* XMLPrettifying.m in Sources */,
-				3A2007F41B55023B00769021 /* BufferOutputStream.swift in Sources */,
-				3A2007FD1B55025500769021 /* HeadersInterceptor.swift in Sources */,
-				3A2007F71B55024200769021 /* RequestRepresentation.swift in Sources */,
-				3A2007F61B55024000769021 /* PrintlnOutputStream.swift in Sources */,
-				3A2008011B55025900769021 /* PlainTextInterceptor.swift in Sources */,
-				3A2007F21B55023700769021 /* RequestInterceptorType.swift in Sources */,
-				3A2008031B55025C00769021 /* InterceptingProtocol.swift in Sources */,
-				3A2008001B55025900769021 /* JSONInterceptor.swift in Sources */,
-				3A2008021B55025900769021 /* XMLInterceptor.swift in Sources */,
-				3A0FA47D1B77A17D0082E980 /* OutputStreamType.swift in Sources */,
-				3A20081D1B55064F00769021 /* ImageInterceptor.swift in Sources */,
+				3AFD79641C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift in Sources */,
+				3AFD79541C3A83C300BFD6CD /* RequestRepresentation.swift in Sources */,
+				3AFD795D1C3AA43200BFD6CD /* OutputFacility.swift in Sources */,
+				3AFD79611C3AA48800BFD6CD /* ErrorRepresentation.swift in Sources */,
+				3AFD79571C3A864200BFD6CD /* ResponseRepresentation.swift in Sources */,
+				3A3A01891C3A54B5008752CC /* ResponseDetective.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,17 +568,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE54C831B5BCAF300150FC5 /* ImageInterceptorSpec.swift in Sources */,
-				3A2008061B55026000769021 /* TestResponseInterceptor.swift in Sources */,
-				3A2008081B55026000769021 /* HTMLInterceptorSpec.swift in Sources */,
-				3A2008071B55026000769021 /* HeadersInterceptorSpec.swift in Sources */,
-				3A20080A1B55026000769021 /* PlainTextInterceptorSpec.swift in Sources */,
-				3A2008041B55026000769021 /* TestErrorInterceptor.swift in Sources */,
-				3AE54C881B5BCC6A00150FC5 /* TestImageGenerator.swift in Sources */,
-				3A2008091B55026000769021 /* JSONInterceptorSpec.swift in Sources */,
-				3A20080B1B55026000769021 /* XMLInterceptorSpec.swift in Sources */,
-				3AE54C841B5BCAFE00150FC5 /* InterceptingProtocolSpec.swift in Sources */,
-				3A2008051B55026000769021 /* TestRequestInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,24 +575,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3741091B3DB0E4002448A1 /* PrintlnOutputStream.swift in Sources */,
-				3ABB31321B4D2D4900271DDA /* HeadersInterceptor.swift in Sources */,
-				3A39AB071B458C8B00D58C62 /* JSONInterceptor.swift in Sources */,
-				3A3741051B3DB0B8002448A1 /* BufferOutputStream.swift in Sources */,
-				3A39AB011B45845600D58C62 /* XMLPrettifying.m in Sources */,
-				3A3741031B3DB059002448A1 /* ResponseInterceptorType.swift in Sources */,
-				3A3741071B3DB0CD002448A1 /* NSLogOutputStream.swift in Sources */,
-				744F59DD1B415173006833EB /* ErrorInterceptorType.swift in Sources */,
-				3AF362261B46B83900083A18 /* HTMLPrettifying.m in Sources */,
-				3A9AD42A1B2F2A7A00E9C7AC /* RequestRepresentation.swift in Sources */,
-				3AF362291B46C09C00083A18 /* HTMLInterceptor.swift in Sources */,
-				3A39AB091B45904D00D58C62 /* XMLInterceptor.swift in Sources */,
-				3A9AD42D1B2F37ED00E9C7AC /* ResponseRepresentation.swift in Sources */,
-				74FC3CB51B472FE1005DCD57 /* PlainTextInterceptor.swift in Sources */,
-				3A3741011B3DB00A002448A1 /* RequestInterceptorType.swift in Sources */,
-				740DBDFC1B25B5690039F95D /* InterceptingProtocol.swift in Sources */,
-				3A0FA47C1B77A17D0082E980 /* OutputStreamType.swift in Sources */,
-				3A2007D21B5500DE00769021 /* ImageInterceptor.swift in Sources */,
+				3AFD79631C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift in Sources */,
+				3AFD79531C3A83C300BFD6CD /* RequestRepresentation.swift in Sources */,
+				3AFD795C1C3AA43200BFD6CD /* OutputFacility.swift in Sources */,
+				3AFD79601C3AA48800BFD6CD /* ErrorRepresentation.swift in Sources */,
+				3AFD79561C3A864200BFD6CD /* ResponseRepresentation.swift in Sources */,
+				3A3A01881C3A54B5008752CC /* ResponseDetective.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,17 +588,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E58C711B4FEF7800F86252 /* InterceptingProtocolSpec.swift in Sources */,
-				7484C6241B4C7D9B004F2117 /* HTMLInterceptorSpec.swift in Sources */,
-				3ABB31341B4D46BD00271DDA /* HeadersInterceptorSpec.swift in Sources */,
-				741BF1F01B4C2E0B0050D9A2 /* XMLInterceptorSpec.swift in Sources */,
-				749D31D81B4BD58B00A0E1A9 /* PlainTextInterceptorSpec.swift in Sources */,
-				3A29A8AA1B4A6F750025F46A /* TestResponseInterceptor.swift in Sources */,
-				3AE54C871B5BCC6A00150FC5 /* TestImageGenerator.swift in Sources */,
-				3A29A8A71B4A6F5C0025F46A /* TestRequestInterceptor.swift in Sources */,
-				3A29A8B71B4A82F40025F46A /* JSONInterceptorSpec.swift in Sources */,
-				3AE54C821B5BCAF300150FC5 /* ImageInterceptorSpec.swift in Sources */,
-				3A29A8AC1B4A6FC10025F46A /* TestErrorInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,7 +622,6 @@
 				);
 				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -837,7 +640,6 @@
 				);
 				INFOPLIST_FILE = "ResponseDetective/Supporting Files/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -911,7 +713,6 @@
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective/Supporting Files/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -931,7 +732,6 @@
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/ResponseDetective/Supporting Files/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ResponseDetective/Supporting Files/Bridging-Header.h";
 			};
 			name = Release;
 		};
