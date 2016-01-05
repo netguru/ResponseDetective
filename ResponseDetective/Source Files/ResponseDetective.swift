@@ -13,12 +13,6 @@ import Foundation
 	/// An output facility for reporting requests, responses and errors.
 	public let outputFacility: OutputFacility
 	
-	/// A URL protocol instance to be injected into URL sessions.
-	public let URLProtocol: NSURLProtocol
-	
-	/// A URL session delegate to be injected into URL sessions.
-	public let URLSessionDelegate: NSURLSessionDelegate
-	
 	/// Initializes the ResponseDetective instance.
 	///
 	/// - Parameters:
