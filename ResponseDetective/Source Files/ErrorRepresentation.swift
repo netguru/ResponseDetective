@@ -27,7 +27,7 @@ import Foundation
 	public let reason: String?
 	
 	/// The error user info.
-	public let userInfo: [String: AnyObject]
+	public let userInfo: [String: NSObject]
 	
 	/// Initializes the ErrorRepresentation instance.
 	///
@@ -37,12 +37,12 @@ import Foundation
 	///     - requestIdentifier: The unique identifier of assocciated request.
 	///
 	/// - Returns: An initialized instance of the receiver.
-	init(response: ResponseRepresentation?, error: NSError, requestIdentifier: String) {
+	public init(response: ResponseRepresentation?, error: NSError, requestIdentifier: String) {
 		self.response = response
 		self.domain = error.domain
 		self.code = error.code
 		self.reason = error.localizedDescription
-		self.userInfo = error.userInfo as? [String: AnyObject] ?? [:]
+		self.userInfo = error.userInfo as? [String: NSObject] ?? [:]
 		self.requestIdentifier = requestIdentifier
 	}
 	
