@@ -34,6 +34,8 @@
 		3AFD79641C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79621C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift */; };
 		3AFD79681C3AD81D00BFD6CD /* RequestRepresentationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79651C3AD5BC00BFD6CD /* RequestRepresentationSpec.swift */; };
 		3AFD79691C3AD81D00BFD6CD /* RequestRepresentationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79651C3AD5BC00BFD6CD /* RequestRepresentationSpec.swift */; };
+		3AFD796B1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD796A1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift */; };
+		3AFD796C1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD796A1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,7 @@
 		3AFD795F1C3AA48800BFD6CD /* ErrorRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorRepresentation.swift; sourceTree = "<group>"; };
 		3AFD79621C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleOutputFacility.swift; sourceTree = "<group>"; };
 		3AFD79651C3AD5BC00BFD6CD /* RequestRepresentationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRepresentationSpec.swift; sourceTree = "<group>"; };
+		3AFD796A1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseRepresentationSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				3AFD79651C3AD5BC00BFD6CD /* RequestRepresentationSpec.swift */,
+				3AFD796A1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift */,
 			);
 			name = "ResponseDetective Tests";
 			path = "ResponseDetective Tests/Source Files";
@@ -572,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFD796C1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift in Sources */,
 				3AFD79681C3AD81D00BFD6CD /* RequestRepresentationSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFD796B1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift in Sources */,
 				3AFD79691C3AD81D00BFD6CD /* RequestRepresentationSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
