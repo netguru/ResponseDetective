@@ -31,7 +31,9 @@ import Foundation
 	private static var requestPredicates: [NSPredicate] = []
 	
 	/// Body deserializers stored by a supported content type.
-	private static var bodyDeserializers: [String: BodyDeserializer] = [:]
+	private static var bodyDeserializers: [String: BodyDeserializer] = [
+		"application/json": JSONBodyDeserializer()
+	]
 	
 	/// Resets the ResponseDetective mutable state.
 	public static func reset() {
