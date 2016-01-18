@@ -33,6 +33,9 @@ import Foundation
 	/// The raw body data of the response.
 	public let body: NSData?
 	
+	/// The parsed body of the response.
+	public let deserializedBody: String?
+	
 	/// Initializes the RequestRepresentation instance.
 	///
 	/// - Parameters:
@@ -41,13 +44,14 @@ import Foundation
 	///     - requestIdentifier: The unique identifier of assocciated request.
 	///
 	/// - Returns: An initialized instance of the receiver.
-	public init(response: NSHTTPURLResponse, body: NSData?, requestIdentifier: String) {
+	public init(response: NSHTTPURLResponse, body: NSData?, deserializedBody: String?, requestIdentifier: String) {
 		self.statusCode = response.statusCode
 		self.statusString = NSHTTPURLResponse.localizedStringForStatusCode(self.statusCode)
 		self.URLString = response.URL?.absoluteString ?? ""
 		self.headers = response.allHeaderFields as? [String: String] ?? [:]
 		self.contentType = self.headers["ContentType"] ?? "application/octet-stream"
 		self.body = body
+		self.deserializedBody = deserializedBody
 		self.requestIdentifier = requestIdentifier
 	}
 	

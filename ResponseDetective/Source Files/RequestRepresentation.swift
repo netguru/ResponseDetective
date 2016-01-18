@@ -29,6 +29,9 @@ import Foundation
 	/// The raw body data of the request.
 	public let body: NSData?
 	
+	/// The parsed body of the request.
+	public let deserializedBody: String?
+	
 	/// Initializes the RequestRepresentation instance.
 	///
 	/// - Parameters:
@@ -36,12 +39,13 @@ import Foundation
 	///     - identifier: A unique identifier of the request.
 	///
 	/// - Returns: An initialized instance of the receiver.
-	public init(request: NSURLRequest, identifier: String) {
+	public init(request: NSURLRequest, deserializedBody: String?, identifier: String) {
 		self.method = request.HTTPMethod ?? "GET"
 		self.URLString = request.URL?.absoluteString ?? ""
 		self.headers = request.allHTTPHeaderFields ?? [:]
 		self.contentType = self.headers["Content-Type"] ?? "application/octet-stream"
 		self.body = request.HTTPBody
+		self.deserializedBody = deserializedBody
 		self.identifier = identifier
 	}
 	
