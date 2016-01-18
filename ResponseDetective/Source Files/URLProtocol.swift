@@ -23,6 +23,10 @@ import Foundation
 	/// Internal response data storage.
 	private lazy var internalResponseData = NSMutableData()
 	
+	private var requestIdentifier: String {
+		return String(unsafeAddressOf(internalTask.originalRequest!))
+	}
+	
 	// MARK: Interceptors
 	
 	/// Incercepts the given request and passes it to the ResponseDetective
@@ -31,7 +35,11 @@ import Foundation
 	/// - Parameters:
 	///     - request: The intercepted request.
 	private func interceptRequest(request: NSURLRequest) {
-		
+		let deserializedBody = request.HTTPBody.flatMap { data in
+			ResponseDetective.deserializeBody(data, contentType: request.valueForHTTPHeaderField("Content-Type") ?? "application/octet-stream")
+		}
+		let requestRepresentation = RequestRepresentation(request: request, deserializedBody: deserializedBody, identifier: requestIdentifier)
+		ResponseDetective.outputFacility.outputRequestRepresentation(requestRepresentation)
 	}
 	
 	/// Incercepts the given response and passes it to the ResponseDetective
@@ -41,7 +49,11 @@ import Foundation
 	///     - response: The intercepted response.
 	///     - data: The intercepted response data.
 	private func interceptResponse(response: NSHTTPURLResponse, data: NSData?) {
-		
+		let deserializedBody = data.flatMap { data in
+			ResponseDetective.deserializeBody(data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")
+		}
+		let responseRepresentation = ResponseRepresentation(response: response, body: data, deserializedBody: deserializedBody, requestIdentifier: requestIdentifier)
+		ResponseDetective.outputFacility.outputResponseRepresentation(responseRepresentation)
 	}
 	
 	/// Incercepts the given error and passes it to the ResponseDetective
@@ -52,7 +64,16 @@ import Foundation
 	///     - response: The intercepted response.
 	///     - data: The intercepted response data.
 	private func interceptError(error: NSError, response: NSHTTPURLResponse?, data: NSData?) {
-		
+		let deserializedBody = response.flatMap { response in
+			return data.flatMap { data in
+				ResponseDetective.deserializeBody(data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")
+			}
+		}
+		let responseRepresentation = response.flatMap { response in
+			ResponseRepresentation(response: response, body: data, deserializedBody: deserializedBody, requestIdentifier: requestIdentifier)
+		}
+		let errorRepresentation = ErrorRepresentation(response: responseRepresentation, error: error, requestIdentifier: requestIdentifier)
+		ResponseDetective.outputFacility.outputErrorRepresentation(errorRepresentation)
 	}
 	
 	// MARK: NSURLProtocol
