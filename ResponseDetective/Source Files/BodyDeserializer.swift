@@ -18,9 +18,7 @@ import Foundation
 	/// - Parameters:
 	///     - body: The HTTP body.
 	///
-	/// - Throws: An error which occured during deserialization.
-	///
 	/// - Returns: A deserialized representation of the body.
-	func deserializeBody(body: NSData) throws -> String
+	func deserializeBody(body: NSData) -> String?
 	
 }

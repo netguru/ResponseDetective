@@ -90,13 +90,11 @@ import Foundation
 	///     - body: The body to deserialize.
 	///     - contentType: The content type of the body.
 	///
-	/// - Throws: Rethrows error thrown by a deserializer.
-	///
 	/// - Returns: A deserialized body or `nil` if no serializer is capable of
 	/// deserializing body with the given content type.
-	public static func deserializeBody(body: NSData, contentType: String) throws -> String? {
+	public static func deserializeBody(body: NSData, contentType: String) -> String? {
 		if let deserializer = bodyDeserializers[contentType] {
-			return try deserializer.deserializeBody(body)
+			return deserializer.deserializeBody(body)
 		} else {
 			return nil
 		}
