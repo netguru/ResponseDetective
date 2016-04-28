@@ -35,7 +35,7 @@ class ResponseRepresentationSpec: QuickSpec {
 				var sut: ResponseRepresentation!
 				
 				beforeEach {
-					sut = ResponseRepresentation(response: fixtureResponse, body: fixtureBody, requestIdentifier: fixtureIdentifier)
+					sut = ResponseRepresentation(response: fixtureResponse, body: fixtureBody, deserializedBody: nil, requestIdentifier: fixtureIdentifier)
 				}
 				
 				it("should have a correct identifier") {

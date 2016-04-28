@@ -37,6 +37,7 @@ class ErrorRepresentationSpec: QuickSpec {
 						]
 					)!,
 					body: nil,
+					deserializedBody: nil,
 					requestIdentifier: fixtureIdentifier
 				)
 				
