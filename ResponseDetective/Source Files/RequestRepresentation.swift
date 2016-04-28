@@ -51,7 +51,7 @@ import Foundation
 	
 	/// An unavailable initializer.
 	@available(*, unavailable) public override init() {
-		fatalError("\(__FUNCTION__) is not implemented.");
+		fatalError("\(#function) is not implemented.");
 	}
 	
 }
