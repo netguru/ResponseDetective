@@ -4,4 +4,4 @@
 #  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
 #
 
-github "jspahrsummers/xcconfigs" ~> 0.8
+github "jspahrsummers/xcconfigs" ~> 0.9
