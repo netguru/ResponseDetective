@@ -1,7 +1,8 @@
 #
-#  Cartfile
+# Cartfile
 #
-#  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
+# Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+# Licensed under the MIT License.
 #
 
 github "jspahrsummers/xcconfigs" ~> 0.9

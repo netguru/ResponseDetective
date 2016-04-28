@@ -320,7 +320,7 @@
 				3A0F57071C3EC0E700BC3713 /* Internal Implementation */,
 			);
 			name = ResponseDetective;
-			path = "ResponseDetective/Source Files";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		3AC784A21B1DE46D00884F99 /* Frameworks */ = {
@@ -340,7 +340,7 @@
 				3AFD796A1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift */,
 			);
 			name = "ResponseDetective Tests";
-			path = "ResponseDetective Tests/Source Files";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		3AED3EC21B1DD7B400FA35FC = {
