@@ -1,10 +1,10 @@
 //
-// Framework-iOS-Debug.xcconfig
+// Framework-OSX-Debug.xcconfig
 //
 // Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
 #include "Carthage/Checkouts/xcconfigs/Base/Configurations/Debug.xcconfig"
-#include "Carthage/Checkouts/xcconfigs/iOS/iOS-Framework.xcconfig"
+#include "Carthage/Checkouts/xcconfigs/Mac OS X/Mac-Framework.xcconfig"
 #include "Framework-Common.xcconfig"
