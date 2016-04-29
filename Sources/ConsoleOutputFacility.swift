@@ -21,13 +21,17 @@ import Foundation
 	///      │   "foo": "bar"
 	///      │ }
 	///
-	/// - Parameters:
-	///     - request: The request to print.
+	/// - SeeAlso: OutputFacility.outputRequestRepresentation
 	public func outputRequestRepresentation(request: RequestRepresentation) {
+		let headers = request.headers.reduce([]) {
+			return $0 + ["\($1.0): \($1.1)"]
+		}
+		let body = request.deserializedBody.map {
+			$0.characters.split { $0 == "\n" }.map(String.init)
+		} ?? ["<none>"]
 		printBoxString(title: "<\(request.identifier)> [REQUEST] \(request.method) \(request.URLString)", sections: [
-			"Headers": request.headers.reduce([]) {
-				return $0 + ["\($1.0): \($1.1)"]
-			}
+			("Headers", headers),
+			("Body", body),
 		])
 	}
 	
@@ -43,13 +47,17 @@ import Foundation
 	///      │   "headers": {}
 	///      │ }
 	///
-	/// - Parameters:
-	///     - response: The response to print.
+	/// - SeeAlso: OutputFacility.outputResponseRepresentation
 	public func outputResponseRepresentation(response: ResponseRepresentation) {
+		let headers = response.headers.reduce([]) {
+			return $0 + ["\($1.0): \($1.1)"]
+		}
+		let body = response.deserializedBody.map {
+			$0.characters.split { $0 == "\n" }.map(String.init)
+		} ?? ["<none>"]
 		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercaseString)) \(response.URLString)", sections: [
-			"Headers": response.headers.reduce([]) {
-				return $0 + ["\($1.0): \($1.1)"]
-			}
+			("Headers", headers),
+			("Body", body),
 		])
 	}
 	
@@ -60,13 +68,13 @@ import Foundation
 	///      │ NSLocalizedDescriptionKey: The device is not connected to the internet.
 	///      │ NSURLErrorKey: https://httpbin.org/post
 	///
-	/// - Parameters:
-	///     - response: The response to print.
+	/// - SeeAlso: OutputFacility.outputErrorRepresentation
 	public func outputErrorRepresentation(error: ErrorRepresentation) {
+		let userInfo = error.userInfo.reduce([]) {
+			return $0 + ["\($1.0): \($1.1)"]
+		}
 		printBoxString(title: "<\(error.requestIdentifier)> [ERROR] \(error.domain) \(error.code)", sections: [
-			"User Info": error.userInfo.reduce([]) {
-				return $0 + ["\($1.0): \($1.1)"]
-			}
+			("User Info", userInfo),
 		])
 	}
 	
@@ -84,7 +92,7 @@ import Foundation
 	///       lines as values.
 	///
 	/// - Returns: A composed box string.
-	private func composeBoxString(title title: String, sections: [String: [String]]) -> String {
+	private func composeBoxString(title title: String, sections: [(String, [String])]) -> String {
 		return "\(title)\n" + sections.reduce("") {
 			return "\($0) ├─ \($1.0)\n" + $1.1.reduce("") {
 				return "\($0) │ \($1)\n"
@@ -98,7 +106,7 @@ import Foundation
 	///     - title: The title of the box
 	///     - sections: A dictionary with section titles as keys and content
 	///       lines as values.
-	private func printBoxString(title title: String, sections: [String: [String]]) {
+	private func printBoxString(title title: String, sections: [(String, [String])]) {
 		print(composeBoxString(title: title, sections: sections))
 	}
 	

@@ -14,8 +14,7 @@ import Foundation
 	
 	/// Deserializes the body.
 	///
-	/// - Parameters:
-	///     - body: The HTTP body.
+	/// - Parameter body: The HTTP body.
 	///
 	/// - Returns: A deserialized representation of the body.
 	func deserializeBody(body: NSData) -> String?

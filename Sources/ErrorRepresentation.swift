@@ -34,8 +34,6 @@ import Foundation
 	///     - response: The HTTP URL response representation, if any.
 	///     - error: The error that came with the response.
 	///     - requestIdentifier: The unique identifier of assocciated request.
-	///
-	/// - Returns: An initialized instance of the receiver.
 	public init(response: ResponseRepresentation?, error: NSError, requestIdentifier: String) {
 		self.response = response
 		self.domain = error.domain

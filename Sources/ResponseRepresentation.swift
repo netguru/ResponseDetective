@@ -41,8 +41,6 @@ import Foundation
 	///     - response: The HTTP URL response instance.
 	///     - body: The body that came with the response.
 	///     - requestIdentifier: The unique identifier of assocciated request.
-	///
-	/// - Returns: An initialized instance of the receiver.
 	public init(response: NSHTTPURLResponse, body: NSData?, deserializedBody: String?, requestIdentifier: String) {
 		self.statusCode = response.statusCode
 		self.statusString = NSHTTPURLResponse.localizedStringForStatusCode(self.statusCode)

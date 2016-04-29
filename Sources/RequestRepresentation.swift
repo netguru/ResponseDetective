@@ -36,8 +36,6 @@ import Foundation
 	/// - Parameters:
 	///     - request: The URL request instance.
 	///     - identifier: A unique identifier of the request.
-	///
-	/// - Returns: An initialized instance of the receiver.
 	public init(request: NSURLRequest, deserializedBody: String?, identifier: String) {
 		self.method = request.HTTPMethod ?? "GET"
 		self.URLString = request.URL?.absoluteString ?? ""

@@ -13,20 +13,17 @@ import Foundation
 	
 	/// Outputs a request representation.
 	///
-	/// - Parameters:
-	///     - request: The request representation to output.
+	/// - Parameter request: The request representation to output.
 	func outputRequestRepresentation(request: RequestRepresentation)
 	
 	/// Outputs a response representation.
 	///
-	/// - Parameters:
-	///     - response: The response representation to output.
+	/// - Parameter response: The response representation to output.
 	func outputResponseRepresentation(response: ResponseRepresentation)
 	
 	/// Outputs an error representation.
 	///
-	/// - Parameters:
-	///     - error: The error representation to output.
+	/// - Parameter error: The error representation to output.
 	func outputErrorRepresentation(error: ErrorRepresentation)
 	
 }

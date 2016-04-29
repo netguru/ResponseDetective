@@ -31,8 +31,7 @@ import Foundation
 	/// Incercepts the given request and passes it to the ResponseDetective
 	/// instance.
 	///
-	/// - Parameters:
-	///     - request: The intercepted request.
+	/// - Parameter request: The intercepted request.
 	private func interceptRequest(request: NSURLRequest) {
 		let deserializedBody = request.HTTPBody.flatMap { data in
 			ResponseDetective.deserializeBody(data, contentType: request.valueForHTTPHeaderField("Content-Type") ?? "application/octet-stream")

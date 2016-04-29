@@ -44,17 +44,15 @@ import Foundation
 	/// Ignores requests matching the given predicate. The predicate will be
 	/// evaluated with an instance of NSURLRequest.
 	///
-	/// - Parameters:
-	///     - predicate: A predicate for matching a request. If the predicate
-	///     evaluates to `false`, the request is not intercepted.
+	/// - Parameter predicate: A predicate for matching a request. If the
+	/// predicate evaluates to `false`, the request is not intercepted.
 	public static func ignoreRequestsMatchingPredicate(predicate: NSPredicate) {
 		requestPredicates.append(predicate)
 	}
 	
 	/// Checks whether the given request can be incercepted.
 	///
-	/// - Parameters:
-	///     - request: The request to check.
+	/// - Parameter request: The request to check.
 	///
 	/// - Returns: `true` if request can be intercepted, `false` otherwise.
 	public static func canIncerceptRequest(request: NSURLRequest) -> Bool {
