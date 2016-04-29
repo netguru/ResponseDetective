@@ -56,7 +56,7 @@ workflows:
       - carthage:
           inputs:
             - carthage_command: bootstrap
-            - platform: \"iOS, Mac\"
+            - platform: iOS,Mac
 
   # Deploys the project
 
