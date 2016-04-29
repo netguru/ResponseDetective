@@ -5,7 +5,6 @@
 // Licensed under the MIT License.
 //
 
-import Foundation
 import Nimble
 import ResponseDetective
 import Quick
@@ -18,11 +17,15 @@ class RequestRepresentationSpec: QuickSpec {
 			
 			context("after initializing with a request") {
 				
-				let fixtureRequest = NSMutableURLRequest(URL: NSURL(string: "https://httpbin.org/post")!)
-				fixtureRequest.HTTPMethod = "POST"
-				fixtureRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-				fixtureRequest.addValue("bar", forHTTPHeaderField: "X-Foo")
-				fixtureRequest.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(["foo": "bar"], options: [])
+				let fixtureRequest = NSMutableURLRequest(
+					URL: NSURL(string: "https://httpbin.org/post")!,
+					HTTPMethod: "POST",
+					headerFields: [
+						"Content-Type": "application/json",
+						"X-Foo": "bar",
+					],
+					HTTPBody: try! NSJSONSerialization.dataWithJSONObject(["foo": "bar"], options: [])
+				)
 				
 				let fixtureIdentifier = "1"
 				
@@ -56,6 +59,17 @@ class RequestRepresentationSpec: QuickSpec {
 			
 		}
 
+	}
+
+}
+
+private extension NSMutableURLRequest {
+
+	convenience init(URL: NSURL, HTTPMethod: String, headerFields: [String: String], HTTPBody: NSData?) {
+		self.init(URL: URL)
+		self.HTTPMethod = HTTPMethod
+		self.allHTTPHeaderFields = headerFields
+		self.HTTPBody = HTTPBody
 	}
 
 }
