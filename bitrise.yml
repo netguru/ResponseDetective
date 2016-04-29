@@ -18,10 +18,6 @@ trigger_map:
     is_pull_request_allowed: false
     workflow: internal
 
-  - pattern: '*'
-    is_pull_request_allowed: true
-    workflow: external
-
 # Environment configuration
 
 app:
@@ -41,14 +37,9 @@ workflows:
     before_run:
       - bootstrap
       - test-ios
+      - test-osx
     after_run:
       - deploy
-
-  external:
-    before_run:
-      - bootstrap
-      - test-ios
-      - test-osx
 
   # Bootstraps the project before building
 
@@ -75,6 +66,8 @@ workflows:
           inputs:
             - is_clean_build: 'yes'
             - output_tool: xcpretty
+
+  # Runs OS X tests
 
   test-osx:
     envs:
