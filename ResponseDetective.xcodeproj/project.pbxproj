@@ -81,6 +81,8 @@
 		3A28D4871CD2BC9700531879 /* Tests-iOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-iOS-Debug.xcconfig"; sourceTree = "<group>"; };
 		3A28D4881CD2BC9700531879 /* Tests-iOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-iOS-Release.xcconfig"; sourceTree = "<group>"; };
 		3A3A01871C3A54B5008752CC /* ResponseDetective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDetective.swift; sourceTree = "<group>"; };
+		3A7D01841CD3BBD000B7FBD7 /* ResponseDetective-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ResponseDetective-Info.plist"; sourceTree = "<group>"; };
+		3A7D01851CD3BBD000B7FBD7 /* ResponseDetective-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ResponseDetective-Tests-Info.plist"; sourceTree = "<group>"; };
 		3ACCEBCF1B21C84D006C0FF4 /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,16 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		3A7D01831CD3BBD000B7FBD7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A7D01841CD3BBD000B7FBD7 /* ResponseDetective-Info.plist */,
+				3A7D01851CD3BBD000B7FBD7 /* ResponseDetective-Tests-Info.plist */,
+			);
+			name = "Supporting Files";
+			path = Support;
+			sourceTree = "<group>";
+		};
 		3AC784A01B1DE44300884F99 /* ResponseDetective */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +201,7 @@
 				3ACCEBCF1B21C84D006C0FF4 /* ResponseDetective.playground */,
 				3AC784A01B1DE44300884F99 /* ResponseDetective */,
 				3AC784AC1B1DE82400884F99 /* ResponseDetective Tests */,
+				3A7D01831CD3BBD000B7FBD7 /* Supporting Files */,
 				3A28D4811CD2BC9700531879 /* Configuration */,
 				3AED3ECD1B1DD7B400FA35FC /* Products */,
 			);
