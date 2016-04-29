@@ -1,7 +1,8 @@
 #
-#  ResponseDetective.podspec
+# ResponseDetective.podspec
 #
-#  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
+# Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+# Licensed under the MIT License.
 #
 
 Pod::Spec.new do |spec|
@@ -32,7 +33,7 @@ Pod::Spec.new do |spec|
     :tag => spec.version.to_s
   }
 
-  spec.source_files = 'ResponseDetective/Source Files'
+  spec.source_files = 'ResponseDetective/Sources'
 
   # Linking
 

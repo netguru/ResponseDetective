@@ -1,8 +1,9 @@
 #
-#  Cartfile.private
+# Cartfile.private
 #
-#  Copyright (c) 2015 Netguru Sp. z o.o. All rights reserved.
+# Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+# Licensed under the MIT License.
 #
 
-github "Quick/Quick" ~> 0.6
-github "Quick/Nimble" "v2.0.0-rc.3"
+github "Quick/Quick" ~> 0.9
+github "Quick/Nimble" ~> 4.0
