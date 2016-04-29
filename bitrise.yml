@@ -48,6 +48,7 @@ workflows:
     before_run:
       - bootstrap
       - test-ios
+      - test-osx
 
   # Bootstraps the project before building
 
@@ -71,6 +72,15 @@ workflows:
       - BITRISE_SCHEME: $BITRISE_SCHEME_IOS
     steps:
       - xcode-test:
+          inputs:
+            - is_clean_build: 'yes'
+            - output_tool: xcpretty
+
+  test-osx:
+    envs:
+      - BITRISE_SCHEME: $BITRISE_SCHEME_OSX
+    steps:
+      - xcode-test-mac:
           inputs:
             - is_clean_build: 'yes'
             - output_tool: xcpretty
