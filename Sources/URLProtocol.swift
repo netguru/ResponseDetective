@@ -8,7 +8,7 @@
 import Foundation
 
 /// The intercepting URL protocol.
-@objc(RDVURLProtocol) internal final class URLProtocol: NSURLProtocol, NSURLSessionTaskDelegate, NSURLSessionDataDelegate {
+@objc(RDTURLProtocol) internal final class URLProtocol: NSURLProtocol, NSURLSessionTaskDelegate, NSURLSessionDataDelegate {
 	
 	/// Internal session object used to perform the request.
 	private var internalSession: NSURLSession!
@@ -21,7 +21,8 @@ import Foundation
 	
 	/// Internal response data storage.
 	private lazy var internalResponseData = NSMutableData()
-	
+
+	/// A unique identifier of the request. Currently its address.
 	private var requestIdentifier: String {
 		return String(unsafeAddressOf(internalTask.originalRequest!))
 	}
@@ -100,17 +101,17 @@ import Foundation
 	}
 	
 	// MARK: NSURLSessionTaskDelegate
-	
-	func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
+
+	internal func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
 		client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
 	}
 	
-	func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+	internal func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
 		client?.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
 		completionHandler(.PerformDefaultHandling, nil)
 	}
 	
-	func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
+	internal func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
 		if let error = error {
 			interceptError(error, response: internalResponse, data: internalResponseData)
 			client?.URLProtocol(self, didFailWithError: error)
@@ -122,13 +123,13 @@ import Foundation
 	
 	// MARK: NSURLSessionDataDelegate
 	
-	func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
+	internal func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveResponse response: NSURLResponse, completionHandler: (NSURLSessionResponseDisposition) -> Void) {
 		internalResponse = response as? NSHTTPURLResponse
 		completionHandler(.Allow)
 		client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .Allowed)
 	}
 	
-	func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
+	internal func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
 		internalResponseData.appendData(data)
 		client?.URLProtocol(self, didLoadData: data)
 	}

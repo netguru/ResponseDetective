@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents a foundation response error.
-@objc(RDVErrorRepresentation) public final class ErrorRepresentation: NSObject {
+@objc(RDTErrorRepresentation) public final class ErrorRepresentation: NSObject {
 	
 	/// The request's unique identifier.
 	public let requestIdentifier: String

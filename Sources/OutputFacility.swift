@@ -9,7 +9,7 @@ import Foundation
 
 /// Represents an output facility which is capable of displaying requests,
 /// responses and errors.
-@objc(RFVOutputFacility) public protocol OutputFacility {
+@objc(RDTOutputFacility) public protocol OutputFacility {
 	
 	/// Outputs a request representation.
 	///

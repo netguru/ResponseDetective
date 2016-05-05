@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents a foundation URL response.
-@objc(RDVResponseRepresentation) public final class ResponseRepresentation: NSObject {
+@objc(RDTResponseRepresentation) public final class ResponseRepresentation: NSObject {
 	
 	/// The request's unique identifier.
 	public let requestIdentifier: String

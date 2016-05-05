@@ -8,7 +8,7 @@
 import Foundation
 
 /// An output facility which outputs requests, responses and errors to console.
-@objc(RDVConsoleOutputFacility) public final class ConsoleOutputFacility: NSObject, OutputFacility {
+@objc(RDTConsoleOutputFacility) public final class ConsoleOutputFacility: NSObject, OutputFacility {
 	
 	/// Prints the request in the following format:
 	///

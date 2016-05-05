@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents a foundation URL request.
-@objc(RDVRequestRepresentation) public final class RequestRepresentation: NSObject {
+@objc(RDTRequestRepresentation) public final class RequestRepresentation: NSObject {
 	
 	/// A unique identifier of the request.
 	public let identifier: String
@@ -47,7 +47,7 @@ import Foundation
 	}
 	
 	/// An unavailable initializer.
-	@available(*, unavailable) public override init() {
+	@available(*, unavailable) override public init() {
 		fatalError("\(#function) is not implemented.");
 	}
 	

@@ -7,7 +7,7 @@
 
 import Foundation
 
-@objc(RDVResponseDetective) public final class ResponseDetective: NSObject {
+@objc(RDTResponseDetective) public final class ResponseDetective: NSObject {
 	
 	/// Whether ResponseDetective is enabled.
 	public static var enabled: Bool = false {
