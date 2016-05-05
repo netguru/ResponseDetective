@@ -31,7 +31,11 @@ import Foundation
 	
 	/// Body deserializers stored by a supported content type.
 	private static var bodyDeserializers: [String: BodyDeserializer] = [
-		"application/json": JSONBodyDeserializer()
+		"*/json": JSONBodyDeserializer(),
+		"*/xml": XMLBodyDeserializer(),
+		"*/html": HTMLBodyDeserializer(),
+		"image/*": ImageBodyDeserializer(),
+		"text/plain": PlaintextBodyDeserializer(),
 	]
 	
 	/// Resets the ResponseDetective mutable state.
