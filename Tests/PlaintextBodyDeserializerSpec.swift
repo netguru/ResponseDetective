@@ -22,7 +22,7 @@ final class PlaintextBodyDeserializerSpec: QuickSpec {
 				sut = PlaintextBodyDeserializer()
 			}
 
-			it("should correctly deserialize JSON data") {
+			it("should correctly deserialize plaintext data") {
 				let source = "foo bar\nbaz qux"
 				let data = (source as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
 				let expected = source
