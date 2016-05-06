@@ -10,7 +10,7 @@ import Nimble
 import ResponseDetective
 import Quick
 
-final class PlaintextBodyDeserializerSpec: QuickSpec {
+final private class PlaintextBodyDeserializerSpec: QuickSpec {
 	
 	override func spec() {
 		

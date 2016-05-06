@@ -10,7 +10,7 @@ import Nimble
 import ResponseDetective
 import Quick
 
-final class JSONBodyDeserializerSpec: QuickSpec {
+final private class JSONBodyDeserializerSpec: QuickSpec {
 	
 	override func spec() {
 		
