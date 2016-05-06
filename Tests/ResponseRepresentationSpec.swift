@@ -5,11 +5,12 @@
 // Licensed under the MIT License.
 //
 
+import Foundation
 import Nimble
 import ResponseDetective
 import Quick
 
-class ResponseRepresentationSpec: QuickSpec {
+final class ResponseRepresentationSpec: QuickSpec {
 	
 	override func spec() {
 		
