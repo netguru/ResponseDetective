@@ -7,20 +7,22 @@
 
 #if os(iOS) || os(tvOS) || os(watchOS)
 	import UIKit
-	private typealias PlatformImage = UIImage
 #elseif os(OSX)
 	import AppKit
-	private typealias PlatformImage = NSImage
-#else
-	// Is this carOS? :trollface:
 #endif
 
 /// Deserializes image bodies.
 @objc(RDTImageBodyDeserializer) public final class ImageBodyDeserializer: NSObject, BodyDeserializer {
+
+	#if os(iOS) || os(tvOS) || os(watchOS)
+		private typealias Image = UIImage
+	#elseif os(OSX)
+		private typealias Image = NSImage
+	#endif
 	
 	/// Deserializes image data into a pretty-printed string.
 	public func deserializeBody(body: NSData) -> String? {
-		return PlatformImage(data: body).map { "(\($0.size.width)px × \($0.size.height)px" }
+		return Image(data: body).map { "(\($0.size.width)px × \($0.size.height)px" }
 	}
 	
 }
