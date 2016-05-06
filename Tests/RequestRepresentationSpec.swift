@@ -10,7 +10,7 @@ import Nimble
 import ResponseDetective
 import Quick
 
-final private class RequestRepresentationSpec: QuickSpec {
+final class RequestRepresentationSpec: QuickSpec {
 	
 	override func spec() {
 		
