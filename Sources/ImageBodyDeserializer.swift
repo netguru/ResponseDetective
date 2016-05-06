@@ -22,7 +22,7 @@
 	
 	/// Deserializes image data into a pretty-printed string.
 	public func deserializeBody(body: NSData) -> String? {
-		return Image(data: body).map { "(\($0.size.width)px × \($0.size.height)px" }
+		return Image(data: body).map { "\(Int($0.size.width))px × \(Int($0.size.height))px image" }
 	}
 	
 }
