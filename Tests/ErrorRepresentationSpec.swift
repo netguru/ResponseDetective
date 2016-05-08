@@ -26,6 +26,7 @@ final class ErrorRepresentationSpec: QuickSpec {
 				])
 				
 				let fixtureResponse = ResponseRepresentation(
+					requestIdentifier: fixtureIdentifier,
 					response: NSHTTPURLResponse(
 						URL: NSURL(string: "https://httpbin.org/post")!,
 						statusCode: 200,
@@ -36,8 +37,7 @@ final class ErrorRepresentationSpec: QuickSpec {
 						]
 					)!,
 					body: nil,
-					deserializedBody: nil,
-					requestIdentifier: fixtureIdentifier
+					deserializedBody: nil
 				)
 				
 				var sut: ErrorRepresentation!

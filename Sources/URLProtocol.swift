@@ -51,7 +51,7 @@ import Foundation
 		let deserializedBody = data.flatMap { data in
 			ResponseDetective.deserializeBody(data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")
 		}
-		let responseRepresentation = ResponseRepresentation(response: response, body: data, deserializedBody: deserializedBody, requestIdentifier: requestIdentifier)
+		let responseRepresentation = ResponseRepresentation(requestIdentifier: requestIdentifier, response: response, body: data, deserializedBody: deserializedBody)
 		ResponseDetective.outputFacility.outputResponseRepresentation(responseRepresentation)
 	}
 	
@@ -69,7 +69,7 @@ import Foundation
 			}
 		}
 		let responseRepresentation = response.flatMap { response in
-			ResponseRepresentation(response: response, body: data, deserializedBody: deserializedBody, requestIdentifier: requestIdentifier)
+			ResponseRepresentation(requestIdentifier: requestIdentifier, response: response, body: data, deserializedBody: deserializedBody)
 		}
 		let errorRepresentation = ErrorRepresentation(response: responseRepresentation, error: error, requestIdentifier: requestIdentifier)
 		ResponseDetective.outputFacility.outputErrorRepresentation(errorRepresentation)

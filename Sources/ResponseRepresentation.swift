@@ -17,7 +17,9 @@ import Foundation
 	public let statusCode: Int
 	
 	/// A verbal representation of the status code.
-	public let statusString: String
+	public var statusString: String {
+		return NSHTTPURLResponse.localizedStringForStatusCode(statusCode)
+	}
 	
 	/// The URL string of the response (which may be different than originally
 	/// requested because of a redirect).
@@ -27,29 +29,57 @@ import Foundation
 	public let headers: [String: String]
 	
 	/// The content type of the response.
-	public let contentType: String
+	public var contentType: String {
+		return headers["Content-Type"] ?? "application/octet-stream"
+	}
 	
 	/// The raw body data of the response.
 	public let body: NSData?
 	
 	/// The parsed body of the response.
 	public let deserializedBody: String?
-	
-	/// Initializes the RequestRepresentation instance.
+
+	/// Initializes the receiver.
 	///
 	/// - Parameters:
-	///     - response: The HTTP URL response instance.
-	///     - body: The body that came with the response.
-	///     - requestIdentifier: The unique identifier of assocciated request.
-	public init(response: NSHTTPURLResponse, body: NSData?, deserializedBody: String?, requestIdentifier: String) {
-		self.statusCode = response.statusCode
-		self.statusString = NSHTTPURLResponse.localizedStringForStatusCode(self.statusCode)
-		self.URLString = response.URL?.absoluteString ?? ""
-		self.headers = response.allHeaderFields as? [String: String] ?? [:]
-		self.contentType = self.headers["ContentType"] ?? "application/octet-stream"
+	///     - requestIdentifier: The request's unique identifier.
+	///     - statusCode: The status code of the response.
+	///     - URLString: The URL string of the response.
+	///     - headers: The HTTP headers of the response.
+	///     - body: The raw body data of the response.
+	///     - deserializedBody: The parsed body of the response.
+	public init(
+		requestIdentifier: String,
+		statusCode: Int,
+		URLString: String,
+		headers: [String: String],
+		body: NSData?,
+		deserializedBody: String?
+	) {
+		self.requestIdentifier = requestIdentifier
+		self.statusCode = statusCode
+		self.URLString = URLString
+		self.headers = headers
 		self.body = body
 		self.deserializedBody = deserializedBody
-		self.requestIdentifier = requestIdentifier
+	}
+	
+	/// Initializes the receiver.
+	///
+	/// - Parameters:
+	///     - requestIdentifier: The unique identifier of assocciated request.
+	///     - response: The HTTP URL response instance.
+	///     - body: The body that came with the response.
+	///     - deserializedBody: The deserialized response body.
+	public convenience init(requestIdentifier: String, response: NSHTTPURLResponse, body: NSData?, deserializedBody: String?) {
+		self.init(
+			requestIdentifier: requestIdentifier,
+			statusCode: response.statusCode,
+			URLString: response.URL?.absoluteString ?? "",
+			headers: response.allHeaderFields as? [String: String] ?? [:],
+			body: body,
+			deserializedBody: deserializedBody
+		)
 	}
 	
 	/// An unavailable initializer.
