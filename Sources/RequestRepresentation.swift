@@ -30,22 +30,53 @@ import Foundation
 	
 	/// The parsed body of the request.
 	public let deserializedBody: String?
-	
-	/// Initializes the RequestRepresentation instance.
+
+	/// Initializes the receiver.
 	///
 	/// - Parameters:
-	///     - request: The URL request instance.
 	///     - identifier: A unique identifier of the request.
-	public init(request: NSURLRequest, deserializedBody: String?, identifier: String) {
-		self.method = request.HTTPMethod ?? "GET"
-		self.URLString = request.URL?.absoluteString ?? ""
-		self.headers = request.allHTTPHeaderFields ?? [:]
-		self.contentType = self.headers["Content-Type"] ?? "application/octet-stream"
-		self.body = request.HTTPBody
-		self.deserializedBody = deserializedBody
+	///     - method: he HTTP method of the request.
+	///     - URLString: The resolved URL string of the request.
+	///     - headers: The HTTP headers of the request.
+	///     - contentType: The content type of the request.
+	///     - body: The raw body data of the request.
+	///     - deserializedBody: The parsed body of the request.
+	public init(
+		identifier: String,
+		method: String,
+		URLString: String,
+		headers: [String: String],
+		contentType: String,
+		body: NSData?,
+		deserializedBody: String?
+	) {
 		self.identifier = identifier
+		self.method = method
+		self.URLString = URLString
+		self.headers = headers
+		self.contentType = contentType
+		self.body = body
+		self.deserializedBody = deserializedBody
 	}
-	
+
+	/// Initializes the receiver.
+	///
+	/// - Parameters:
+	///     - identifier: A unique identifier of the request.
+	///     - request: The URL request instance.
+	///     - deserializedBody: The parsed body of the request.
+	public convenience init(identifier: String, request: NSURLRequest, deserializedBody: String?) {
+		self.init(
+			identifier: identifier,
+			method: request.HTTPMethod ?? "GET",
+			URLString: request.URL?.absoluteString ?? "",
+			headers: request.allHTTPHeaderFields ?? [:],
+			contentType: request.allHTTPHeaderFields?["Content-Type"] ?? "application/octet-stream",
+			body: request.HTTPBody,
+			deserializedBody: deserializedBody
+		)
+	}
+
 	/// An unavailable initializer.
 	@available(*, unavailable) override public init() {
 		fatalError("\(#function) is not implemented.");

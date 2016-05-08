@@ -37,7 +37,7 @@ import Foundation
 		let deserializedBody = request.HTTPBody.flatMap { data in
 			ResponseDetective.deserializeBody(data, contentType: request.valueForHTTPHeaderField("Content-Type") ?? "application/octet-stream")
 		}
-		let requestRepresentation = RequestRepresentation(request: request, deserializedBody: deserializedBody, identifier: requestIdentifier)
+		let requestRepresentation = RequestRepresentation(identifier: requestIdentifier, request: request, deserializedBody: deserializedBody)
 		ResponseDetective.outputFacility.outputRequestRepresentation(requestRepresentation)
 	}
 	

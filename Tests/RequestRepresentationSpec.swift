@@ -33,7 +33,7 @@ final class RequestRepresentationSpec: QuickSpec {
 				var sut: RequestRepresentation!
 				
 				beforeEach {
-					sut = RequestRepresentation(request: fixtureRequest, deserializedBody: nil, identifier: fixtureIdentifier)
+					sut = RequestRepresentation(identifier: fixtureIdentifier, request: fixtureRequest, deserializedBody: nil)
 				}
 				
 				it("should have a correct identifier") {
