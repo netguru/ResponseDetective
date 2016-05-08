@@ -22,7 +22,7 @@ final class XMLBodyDeserializerSpec: QuickSpec {
 				sut = XMLBodyDeserializer()
 			}
 
-			it("should correctly deserialize xml data") {
+			it("should correctly deserialize XML data") {
 				let source = "<foo bar=\"baz\"><qux></qux></foo>"
 				let data = (source as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
 				let expected = "<?xml version=\"1.0\"?>\n<foo bar=\"baz\">\n  <qux/>\n</foo>"

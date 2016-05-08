@@ -22,10 +22,10 @@ final class HTMLBodyDeserializerSpec: QuickSpec {
 				sut = HTMLBodyDeserializer()
 			}
 
-			it("should correctly deserialize xml data") {
-				let source = "<html><head></head><body class=\"foo\"><p>lorem<br>ipsum</p></body></html>"
+			it("should correctly deserialize HTML data") {
+				let source = "<!DOCTYPE html><html><head></head><body class=\"foo\"><p>lorem<br>ipsum</p></body></html>"
 				let data = (source as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
-				let expected = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\" \"http://www.w3.org/TR/REC-html40/loose.dtd\">\n<html>\n<head></head>\n<body class=\"foo\"><p>lorem<br>ipsum</p></body>\n</html>"
+				let expected = "<!DOCTYPE html>\n<html>\n<head></head>\n<body class=\"foo\"><p>lorem<br>ipsum</p></body>\n</html>"
 				expect { sut.deserializeBody(data) }.to(equal(expected))
 			}
 
