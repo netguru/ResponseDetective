@@ -56,7 +56,7 @@ private func swatchImage(size size: (width: Int, height: Int)) -> Image {
 		UIGraphicsEndImageContext()
 		return image.imageWithRenderingMode(.AlwaysOriginal)
 	#elseif os(OSX)
-		let rect = NSMakeRect(x: 0, y: 0, width: CGFloat(size.width), height: CGFloat(size.height))
+		let rect = NSMakeRect(0, 0, CGFloat(size.width), CGFloat(size.height))
 		let image = NSImage(size: rect.size)
 		image.lockFocus()
 		NSColor.blackColor().drawSwatchInRect(rect)
