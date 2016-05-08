@@ -23,7 +23,9 @@ import Foundation
 	public let headers: [String: String]
 	
 	/// The content type of the request.
-	public let contentType: String
+	public var contentType: String {
+		return headers["Content-Type"] ?? "application/octet-stream"
+	}
 	
 	/// The raw body data of the request.
 	public let body: NSData?
@@ -38,7 +40,6 @@ import Foundation
 	///     - method: he HTTP method of the request.
 	///     - URLString: The resolved URL string of the request.
 	///     - headers: The HTTP headers of the request.
-	///     - contentType: The content type of the request.
 	///     - body: The raw body data of the request.
 	///     - deserializedBody: The parsed body of the request.
 	public init(
@@ -46,7 +47,6 @@ import Foundation
 		method: String,
 		URLString: String,
 		headers: [String: String],
-		contentType: String,
 		body: NSData?,
 		deserializedBody: String?
 	) {
@@ -54,7 +54,6 @@ import Foundation
 		self.method = method
 		self.URLString = URLString
 		self.headers = headers
-		self.contentType = contentType
 		self.body = body
 		self.deserializedBody = deserializedBody
 	}
@@ -71,7 +70,6 @@ import Foundation
 			method: request.HTTPMethod ?? "GET",
 			URLString: request.URL?.absoluteString ?? "",
 			headers: request.allHTTPHeaderFields ?? [:],
-			contentType: request.allHTTPHeaderFields?["Content-Type"] ?? "application/octet-stream",
 			body: request.HTTPBody,
 			deserializedBody: deserializedBody
 		)
