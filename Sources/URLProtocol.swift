@@ -71,7 +71,7 @@ import Foundation
 		let responseRepresentation = response.flatMap { response in
 			ResponseRepresentation(requestIdentifier: requestIdentifier, response: response, body: data, deserializedBody: deserializedBody)
 		}
-		let errorRepresentation = ErrorRepresentation(response: responseRepresentation, error: error, requestIdentifier: requestIdentifier)
+		let errorRepresentation = ErrorRepresentation(requestIdentifier: requestIdentifier, error: error, response: responseRepresentation)
 		ResponseDetective.outputFacility.outputErrorRepresentation(errorRepresentation)
 	}
 	

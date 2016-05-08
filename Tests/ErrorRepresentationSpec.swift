@@ -43,7 +43,7 @@ final class ErrorRepresentationSpec: QuickSpec {
 				var sut: ErrorRepresentation!
 				
 				beforeEach {
-					sut = ErrorRepresentation(response: fixtureResponse, error: fixtureError, requestIdentifier: fixtureIdentifier)
+					sut = ErrorRepresentation(requestIdentifier: fixtureIdentifier, error: fixtureError, response: fixtureResponse)
 				}
 				
 				it("should have a correct identifier") {
@@ -67,7 +67,7 @@ final class ErrorRepresentationSpec: QuickSpec {
 				}
 				
 				it("should have correct user info") {
-					expect(sut.userInfo).to(equal(fixtureError.userInfo as? [String: NSObject]))
+					expect(sut.userInfo as? [String: NSObject]).to(equal(fixtureError.userInfo as? [String: NSObject]))
 				}
 				
 			}

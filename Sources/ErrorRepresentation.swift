@@ -23,24 +23,51 @@ import Foundation
 	public let code: Int
 	
 	/// The error reason.
-	public let reason: String?
+	public let reason: String
 	
 	/// The error user info.
-	public let userInfo: [String: NSObject]
-	
-	/// Initializes the ErrorRepresentation instance.
+	public let userInfo: [String: AnyObject]
+
+	/// Initializes the receiver.
 	///
 	/// - Parameters:
+	///     - requestIdentifier: The request's unique identifier.
 	///     - response: The HTTP URL response representation, if any.
-	///     - error: The error that came with the response.
-	///     - requestIdentifier: The unique identifier of assocciated request.
-	public init(response: ResponseRepresentation?, error: NSError, requestIdentifier: String) {
-		self.response = response
-		self.domain = error.domain
-		self.code = error.code
-		self.reason = error.localizedDescription
-		self.userInfo = error.userInfo as? [String: NSObject] ?? [:]
+	///     - domain: The error domain.
+	///     - code: The error code.
+	///     - reason: The error reason.
+	///     - userInfo: The error user info.
+	public init(
+		requestIdentifier: String,
+		response: ResponseRepresentation?,
+		domain: String,
+		code: Int,
+		reason: String,
+		userInfo: [String: AnyObject]
+	) {
 		self.requestIdentifier = requestIdentifier
+		self.response = response
+		self.domain = domain
+		self.code = code
+		self.reason = reason
+		self.userInfo = userInfo
+	}
+	
+	/// Initializes the receiver.
+	///
+	/// - Parameters:
+	///     - requestIdentifier: The unique identifier of assocciated request.
+	///     - error: The error that came with the response.
+	///     - response: The HTTP URL response representation, if any.
+	public convenience init(requestIdentifier: String, error: NSError, response: ResponseRepresentation?) {
+		self.init(
+			requestIdentifier: requestIdentifier,
+			response: response,
+			domain: error.domain,
+			code: error.code,
+			reason: error.localizedDescription,
+			userInfo: error.userInfo as? [String: AnyObject] ?? [:]
+		)
 	}
 	
 	/// An unavailable initializer.
