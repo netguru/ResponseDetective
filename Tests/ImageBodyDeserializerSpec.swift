@@ -16,11 +16,7 @@ final class ImageBodyDeserializerSpec: QuickSpec {
 
 		describe("ImageBodyDeserializer") {
 
-			var sut: ImageBodyDeserializer! = nil
-
-			beforeEach {
-				sut = ImageBodyDeserializer()
-			}
+			let sut = ImageBodyDeserializer()
 
 			it("should correctly deserialize image data") {
 				let source = swatchImage(size: (width: 100, height: 200))

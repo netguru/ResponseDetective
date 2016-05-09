@@ -16,11 +16,7 @@ final class PlaintextBodyDeserializerSpec: QuickSpec {
 		
 		describe("PlaintextBodyDeserializer") {
 
-			var sut: PlaintextBodyDeserializer! = nil
-
-			beforeEach {
-				sut = PlaintextBodyDeserializer()
-			}
+			let sut = PlaintextBodyDeserializer()
 
 			it("should correctly deserialize plaintext data") {
 				let source = "foo bar\nbaz qux"

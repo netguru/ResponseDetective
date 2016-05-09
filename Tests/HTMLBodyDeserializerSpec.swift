@@ -16,11 +16,7 @@ final class HTMLBodyDeserializerSpec: QuickSpec {
 
 		describe("HTMLBodyDeserializer") {
 
-			var sut: HTMLBodyDeserializer! = nil
-
-			beforeEach {
-				sut = HTMLBodyDeserializer()
-			}
+			let sut = HTMLBodyDeserializer()
 
 			it("should correctly deserialize HTML data") {
 				let source = "<!DOCTYPE html><html><head></head><body class=\"foo\"><p>lorem<br>ipsum</p></body></html>"

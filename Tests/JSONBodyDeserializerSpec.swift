@@ -16,11 +16,7 @@ final class JSONBodyDeserializerSpec: QuickSpec {
 		
 		describe("JSONBodyDeserializer") {
 
-			var sut: JSONBodyDeserializer! = nil
-
-			beforeEach {
-				sut = JSONBodyDeserializer()
-			}
+			let sut = JSONBodyDeserializer()
 
 			it("should correctly deserialize JSON data") {
 				let source = ["foo": "", "bar": 0, "baz": false, "qux": [AnyObject](), "corge": [String: AnyObject]()]

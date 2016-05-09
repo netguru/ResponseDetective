@@ -16,11 +16,7 @@ final class XMLBodyDeserializerSpec: QuickSpec {
 
 		describe("XMLBodyDeserializer") {
 
-			var sut: XMLBodyDeserializer! = nil
-
-			beforeEach {
-				sut = XMLBodyDeserializer()
-			}
+			let sut = XMLBodyDeserializer()
 
 			it("should correctly deserialize XML data") {
 				let source = "<foo bar=\"baz\"><qux></qux></foo>"
