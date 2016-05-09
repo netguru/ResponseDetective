@@ -11,6 +11,8 @@
 		3A0F56FF1C3E749400BC3713 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F56FD1C3E749400BC3713 /* URLProtocol.swift */; };
 		3A0F57051C3EBC9800BC3713 /* JSONBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F57041C3EBC9800BC3713 /* JSONBodyDeserializer.swift */; };
 		3A0F57061C3EBC9800BC3713 /* JSONBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F57041C3EBC9800BC3713 /* JSONBodyDeserializer.swift */; };
+		3A16B4CC1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16B4CB1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift */; };
+		3A16B4CD1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16B4CB1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift */; };
 		3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */; };
 		3A3A01881C3A54B5008752CC /* ResponseDetective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A01871C3A54B5008752CC /* ResponseDetective.swift */; };
 		3A3A01891C3A54B5008752CC /* ResponseDetective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A01871C3A54B5008752CC /* ResponseDetective.swift */; };
@@ -79,6 +81,7 @@
 /* Begin PBXFileReference section */
 		3A0F56FD1C3E749400BC3713 /* URLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocol.swift; sourceTree = "<group>"; };
 		3A0F57041C3EBC9800BC3713 /* JSONBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONBodyDeserializer.swift; sourceTree = "<group>"; };
+		3A16B4CB1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleOutputFacilitySpec.swift; sourceTree = "<group>"; };
 		3A2007D81B5501BC00769021 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A28D4821CD2BC9700531879 /* Framework-Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-Common.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +179,14 @@
 			name = "Internal Implementation";
 			sourceTree = "<group>";
 		};
+		3A16B4CA1CDF512E00C189F3 /* Output Facilities */ = {
+			isa = PBXGroup;
+			children = (
+				3A16B4CB1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift */,
+			);
+			name = "Output Facilities";
+			sourceTree = "<group>";
+		};
 		3A28D4811CD2BC9700531879 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				3ADA942A1CDCF63200AB5736 /* Representations */,
+				3A16B4CA1CDF512E00C189F3 /* Output Facilities */,
 				3ADA942B1CDCF63B00AB5736 /* Body Deserializers */,
 			);
 			name = "ResponseDetective Tests";
@@ -557,6 +569,7 @@
 				3AFD796C1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift in Sources */,
 				3AFD796F1C3C03C300BFD6CD /* ErrorRepresentationSpec.swift in Sources */,
 				3AFD79681C3AD81D00BFD6CD /* RequestRepresentationSpec.swift in Sources */,
+				3A16B4CD1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift in Sources */,
 				3ADA942E1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,6 +604,7 @@
 				3AFD796B1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift in Sources */,
 				3AFD796E1C3C03C300BFD6CD /* ErrorRepresentationSpec.swift in Sources */,
 				3AFD79691C3AD81D00BFD6CD /* RequestRepresentationSpec.swift in Sources */,
+				3A16B4CC1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift in Sources */,
 				3ADA942D1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
