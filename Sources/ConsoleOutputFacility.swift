@@ -9,7 +9,23 @@ import Foundation
 
 /// An output facility which outputs requests, responses and errors to console.
 @objc(RDTConsoleOutputFacility) public final class ConsoleOutputFacility: NSObject, OutputFacility {
-	
+
+	/// Print closure used to output strings into the console.
+	private let printClosure: @convention(block) (String) -> Void
+
+	/// Initializes the receiver.
+	///
+	/// - Parameter printClosure: The print closure used to output strings into
+	/// the console.
+	public init(printClosure: @convention(block) (String) -> Void) {
+		self.printClosure = printClosure
+	}
+
+	/// Initializes the receiver with default print closure.
+	public convenience override init() {
+		self.init(printClosure: { print($0) })
+	}
+
 	/// Prints the request in the following format:
 	///
 	///     <0xbadf00d> [REQUEST] POST https://httpbin.org/post
@@ -107,7 +123,7 @@ import Foundation
 	///     - sections: A dictionary with section titles as keys and content
 	///       lines as values.
 	private func printBoxString(title title: String, sections: [(String, [String])]) {
-		print(composeBoxString(title: title, sections: sections))
+		printClosure(composeBoxString(title: title, sections: sections))
 	}
 	
 }
