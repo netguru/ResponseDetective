@@ -16,7 +16,7 @@ import Foundation
 	/// Initializes the receiver.
 	///
 	/// - Parameter printClosure: The print closure used to output strings into
-	/// the console.
+	///   the console.
 	public init(printClosure: @convention(block) (String) -> Void) {
 		self.printClosure = printClosure
 	}

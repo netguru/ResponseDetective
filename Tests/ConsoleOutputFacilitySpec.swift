@@ -10,7 +10,7 @@ import Nimble
 import ResponseDetective
 import Quick
 
-final class ConsoleOutputFacilitySpec: QuickSpec {
+internal final class ConsoleOutputFacilitySpec: QuickSpec {
 
 	override func spec() {
 

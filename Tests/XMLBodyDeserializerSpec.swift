@@ -10,7 +10,7 @@ import Nimble
 import ResponseDetective
 import Quick
 
-final class XMLBodyDeserializerSpec: QuickSpec {
+internal final class XMLBodyDeserializerSpec: QuickSpec {
 
 	override func spec() {
 
