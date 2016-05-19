@@ -97,7 +97,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					beforeEach {
 						ResponseDetective.registerBodyDeserializer(
-							TestBodyDeserializer(deserializedBody: "lorem ipsum"),
+							TestBodyDeserializer(fixedDeserializedBody: "lorem ipsum"),
 							forContentType: "foo/bar"
 						)
 					}
@@ -114,7 +114,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					beforeEach {
 						ResponseDetective.registerBodyDeserializer(
-							TestBodyDeserializer(deserializedBody: "dolor sit amet"),
+							TestBodyDeserializer(fixedDeserializedBody: "dolor sit amet"),
 							forContentType: "foo/*"
 						)
 					}
@@ -123,6 +123,114 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 						expect {
 							ResponseDetective.deserializeBody(NSData(), contentType: "foo/baz")
 						}.to(equal("dolor sit amet"))
+					}
+
+				}
+
+			}
+
+			describe("request interception") {
+
+				let buffer = BufferOutputFacility()
+				let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+
+				beforeEach {
+					ResponseDetective.outputFacility = buffer
+					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
+					ResponseDetective.enableInURLSessionConfiguration(configuration)
+				}
+
+				context("before request has been sent") {
+
+					it("should intercept no requests") {
+						expect(buffer.requestRepresentations).to(beEmpty())
+					}
+
+				}
+
+				context("after request has been sent") {
+
+					let request = NSURLRequest(URL: NSURL(string: "https://httpbin.org/get")!)
+
+					beforeEach {
+						let session = NSURLSession(configuration: configuration)
+						session.dataTaskWithRequest(request).resume()
+					}
+
+					it("should eventually intercept it") {
+						expect(buffer.requestRepresentations).toEventually(haveCount(1), timeout: 5.0)
+					}
+
+				}
+
+			}
+
+			describe("response interception") {
+
+				let buffer = BufferOutputFacility()
+				let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+
+				beforeEach {
+					ResponseDetective.outputFacility = buffer
+					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
+					ResponseDetective.enableInURLSessionConfiguration(configuration)
+				}
+
+				context("before request has been sent") {
+
+					it("should intercept no responses") {
+						expect(buffer.responseRepresentations).to(beEmpty())
+					}
+
+				}
+
+				context("after request has been sent") {
+
+					let request = NSURLRequest(URL: NSURL(string: "https://httpbin.org/get")!)
+
+					beforeEach {
+						let session = NSURLSession(configuration: configuration)
+						session.dataTaskWithRequest(request).resume()
+					}
+
+					it("should eventually intercept its response") {
+						expect(buffer.responseRepresentations).toEventually(haveCount(1), timeout: 5.0)
+					}
+
+				}
+
+			}
+
+			describe("error interception") {
+
+				let buffer = BufferOutputFacility()
+				let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+
+				beforeEach {
+					ResponseDetective.outputFacility = buffer
+					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
+					ResponseDetective.enableInURLSessionConfiguration(configuration)
+				}
+
+				context("before request has been sent") {
+
+					it("should intercept no errors") {
+						expect(buffer.responseRepresentations).to(beEmpty())
+					}
+
+				}
+
+				context("after request has been sent") {
+
+					let request = NSURLRequest(URL: NSURL(string: "https://foobar")!)
+
+					beforeEach {
+						let session = NSURLSession(configuration: configuration)
+						session.dataTaskWithRequest(request).resume()
+					}
+
+					it("should eventually intercept its error") {
+						expect(buffer.errorRepresentations).toEventually(haveCount(1), timeout: 5.0)
 					}
 
 				}
