@@ -16,6 +16,8 @@
 		3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */; };
 		3A3A01881C3A54B5008752CC /* ResponseDetective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A01871C3A54B5008752CC /* ResponseDetective.swift */; };
 		3A3A01891C3A54B5008752CC /* ResponseDetective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A01871C3A54B5008752CC /* ResponseDetective.swift */; };
+		3A549B9D1CEE0C5600706D1B /* BufferOutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A549B9C1CEE0C5600706D1B /* BufferOutputFacility.swift */; };
+		3A549B9E1CEE0CB100706D1B /* BufferOutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A549B9C1CEE0C5600706D1B /* BufferOutputFacility.swift */; };
 		3A54CDCC1CEC731F0025C09A /* ResponseDetectiveSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54CDCB1CEC731F0025C09A /* ResponseDetectiveSpec.swift */; };
 		3A54CDCD1CEC731F0025C09A /* ResponseDetectiveSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54CDCB1CEC731F0025C09A /* ResponseDetectiveSpec.swift */; };
 		3A7972E11CDBAFAE0031C307 /* RDTBodyDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7972E01CDBAFAE0031C307 /* RDTBodyDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,6 +99,7 @@
 		3A28D4871CD2BC9700531879 /* Tests-iOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-iOS-Debug.xcconfig"; sourceTree = "<group>"; };
 		3A28D4881CD2BC9700531879 /* Tests-iOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-iOS-Release.xcconfig"; sourceTree = "<group>"; };
 		3A3A01871C3A54B5008752CC /* ResponseDetective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDetective.swift; sourceTree = "<group>"; };
+		3A549B9C1CEE0C5600706D1B /* BufferOutputFacility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferOutputFacility.swift; sourceTree = "<group>"; };
 		3A54CDCB1CEC731F0025C09A /* ResponseDetectiveSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDetectiveSpec.swift; sourceTree = "<group>"; };
 		3A7972E01CDBAFAE0031C307 /* RDTBodyDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDTBodyDeserializer.h; sourceTree = "<group>"; };
 		3A7972E41CDBB0DB0031C307 /* RDTHTMLBodyDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDTHTMLBodyDeserializer.h; sourceTree = "<group>"; };
@@ -337,6 +340,7 @@
 			children = (
 				3AFD795B1C3AA43200BFD6CD /* OutputFacility.swift */,
 				3AFD79621C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift */,
+				3A549B9C1CEE0C5600706D1B /* BufferOutputFacility.swift */,
 			);
 			name = "Output Facilities";
 			sourceTree = "<group>";
@@ -572,6 +576,7 @@
 				3AFD79571C3A864200BFD6CD /* ResponseRepresentation.swift in Sources */,
 				3A7972EF1CDBB7C80031C307 /* PlaintextBodyDeserializer.swift in Sources */,
 				3A7972EC1CDBB4FB0031C307 /* ImageBodyDeserializer.swift in Sources */,
+				3A549B9E1CEE0CB100706D1B /* BufferOutputFacility.swift in Sources */,
 				3A0F56FF1C3E749400BC3713 /* URLProtocol.swift in Sources */,
 				3A3A01891C3A54B5008752CC /* ResponseDetective.swift in Sources */,
 			);
@@ -606,6 +611,7 @@
 				3AFD79531C3A83C300BFD6CD /* RequestRepresentation.swift in Sources */,
 				3AF4AC631CDBAD7F00490024 /* RDTXMLBodyDeserializer.m in Sources */,
 				3AFD795C1C3AA43200BFD6CD /* OutputFacility.swift in Sources */,
+				3A549B9D1CEE0C5600706D1B /* BufferOutputFacility.swift in Sources */,
 				3AFD79601C3AA48800BFD6CD /* ErrorRepresentation.swift in Sources */,
 				3AFD79561C3A864200BFD6CD /* ResponseRepresentation.swift in Sources */,
 				3A7972EE1CDBB7240031C307 /* PlaintextBodyDeserializer.swift in Sources */,
