@@ -33,13 +33,13 @@
 		3A7BDB321CEDF5C700E8EBB8 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BDB311CEDF5C700E8EBB8 /* Dictionary.swift */; };
 		3A7BDB351CEE013E00E8EBB8 /* TestBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BDB341CEE013E00E8EBB8 /* TestBodyDeserializer.swift */; };
 		3A7BDB361CEE013E00E8EBB8 /* TestBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BDB341CEE013E00E8EBB8 /* TestBodyDeserializer.swift */; };
-		3AA401581CD64544000BD5DC /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA401571CD64511000BD5DC /* ResponseDetective.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AA401591CD64545000BD5DC /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA401571CD64511000BD5DC /* ResponseDetective.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AA401641CD65019000BD5DC /* RDTXMLBodyDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA401611CD65019000BD5DC /* RDTXMLBodyDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AA401661CD65019000BD5DC /* RDTXMLBodyDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA401621CD65019000BD5DC /* RDTXMLBodyDeserializer.m */; };
 		3AB4D2351CEF400C00AB8C6C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BDB311CEDF5C700E8EBB8 /* Dictionary.swift */; };
 		3AB4D2371CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4D2361CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift */; };
 		3AB4D2381CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4D2361CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift */; };
+		3AB4D25F1CEF72C400AB8C6C /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */; };
+		3AB4D2601CEF72C400AB8C6C /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AC132011CDD03D80057ED0B /* HTMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */; };
 		3AC132021CDD03D80057ED0B /* HTMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */; };
 		3ADA942D1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA942C1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift */; };
@@ -117,10 +117,10 @@
 		3A7D01871CD3BE6300B7FBD7 /* Framework-OSX-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-OSX-Release.xcconfig"; sourceTree = "<group>"; };
 		3A7D01881CD3BEC900B7FBD7 /* Tests-OSX-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-OSX-Debug.xcconfig"; sourceTree = "<group>"; };
 		3A7D01891CD3BEE900B7FBD7 /* Tests-OSX-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-OSX-Release.xcconfig"; sourceTree = "<group>"; };
-		3AA401571CD64511000BD5DC /* ResponseDetective.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseDetective.h; sourceTree = "<group>"; };
 		3AA401611CD65019000BD5DC /* RDTXMLBodyDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDTXMLBodyDeserializer.h; sourceTree = "<group>"; };
 		3AA401621CD65019000BD5DC /* RDTXMLBodyDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDTXMLBodyDeserializer.m; sourceTree = "<group>"; };
 		3AB4D2361CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferOutputFacilitySpec.swift; sourceTree = "<group>"; };
+		3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseDetective.h; sourceTree = "<group>"; };
 		3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ACCEBCF1B21C84D006C0FF4 /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; };
 		3ADA942C1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONBodyDeserializerSpec.swift; sourceTree = "<group>"; };
@@ -242,7 +242,6 @@
 		3A7D01831CD3BBD000B7FBD7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3AA401571CD64511000BD5DC /* ResponseDetective.h */,
 				3A7D01841CD3BBD000B7FBD7 /* ResponseDetective-Info.plist */,
 				3A7D01851CD3BBD000B7FBD7 /* ResponseDetective-Tests-Info.plist */,
 			);
@@ -262,6 +261,7 @@
 		3AC784A01B1DE44300884F99 /* ResponseDetective */ = {
 			isa = PBXGroup;
 			children = (
+				3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */,
 				3A3A01871C3A54B5008752CC /* ResponseDetective.swift */,
 				3AFD79581C3A88FA00BFD6CD /* Representations */,
 				3AFD79591C3AA3FF00BFD6CD /* Output Facilities */,
@@ -358,8 +358,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA401641CD65019000BD5DC /* RDTXMLBodyDeserializer.h in Headers */,
+				3AB4D2601CEF72C400AB8C6C /* ResponseDetective.h in Headers */,
 				3A7972E21CDBB0270031C307 /* RDTBodyDeserializer.h in Headers */,
-				3AA401591CD64545000BD5DC /* ResponseDetective.h in Headers */,
 				3A7972E81CDBB0F10031C307 /* RDTHTMLBodyDeserializer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,8 +369,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF4AC621CDBAD6F00490024 /* RDTXMLBodyDeserializer.h in Headers */,
+				3AB4D25F1CEF72C400AB8C6C /* ResponseDetective.h in Headers */,
 				3A7972E11CDBAFAE0031C307 /* RDTBodyDeserializer.h in Headers */,
-				3AA401581CD64544000BD5DC /* ResponseDetective.h in Headers */,
 				3A7972E61CDBB0DB0031C307 /* RDTHTMLBodyDeserializer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
