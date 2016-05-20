@@ -29,7 +29,7 @@ import Foundation
 		"*/xml": XMLBodyDeserializer(),
 		"*/html": HTMLBodyDeserializer(),
 		"image/*": ImageBodyDeserializer(),
-		"text/*": PlaintextBodyDeserializer(),
+		"text/plain": PlaintextBodyDeserializer(),
 	]
 	
 	/// Resets the ResponseDetective mutable state.
