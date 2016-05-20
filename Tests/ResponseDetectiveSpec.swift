@@ -158,7 +158,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 					}
 
 					it("should eventually intercept it") {
-						expect(buffer.requestRepresentations).toEventually(haveCount(1), timeout: 5.0)
+						expect(buffer.requestRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: 5.0)
 					}
 
 				}
@@ -194,7 +194,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 					}
 
 					it("should eventually intercept its response") {
-						expect(buffer.responseRepresentations).toEventually(haveCount(1), timeout: 5.0)
+						expect(buffer.responseRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: 5.0)
 					}
 
 				}
@@ -230,7 +230,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 					}
 
 					it("should eventually intercept its error") {
-						expect(buffer.errorRepresentations).toEventually(haveCount(1), timeout: 5.0)
+						expect(buffer.errorRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: 5.0)
 					}
 
 				}
