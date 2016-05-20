@@ -17,8 +17,8 @@ Pod::Spec.new do |spec|
   # License
 
   spec.license = {
-    :type => 'MIT',
-    :file => 'LICENSE.md'
+    type: 'MIT',
+    file: 'LICENSE.md'
   }
 
   spec.authors = {
@@ -29,11 +29,11 @@ Pod::Spec.new do |spec|
   # Source
 
   spec.source = {
-    :git => 'https://github.com/netguru/ResponseDetective.git',
-    :tag => spec.version.to_s
+    git: 'https://github.com/netguru/ResponseDetective.git',
+    tag: spec.version.to_s
   }
 
-  spec.source_files = 'ResponseDetective/Sources'
+  spec.source_files = 'Sources'
 
   # Linking
 
