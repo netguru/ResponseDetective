@@ -37,6 +37,7 @@
 		3AA401591CD64545000BD5DC /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA401571CD64511000BD5DC /* ResponseDetective.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AA401641CD65019000BD5DC /* RDTXMLBodyDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA401611CD65019000BD5DC /* RDTXMLBodyDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AA401661CD65019000BD5DC /* RDTXMLBodyDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA401621CD65019000BD5DC /* RDTXMLBodyDeserializer.m */; };
+		3AB4D2351CEF400C00AB8C6C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BDB311CEDF5C700E8EBB8 /* Dictionary.swift */; };
 		3AC132011CDD03D80057ED0B /* HTMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */; };
 		3AC132021CDD03D80057ED0B /* HTMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */; };
 		3ADA942D1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA942C1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift */; };
@@ -577,6 +578,7 @@
 				3A7972EF1CDBB7C80031C307 /* PlaintextBodyDeserializer.swift in Sources */,
 				3A7972EC1CDBB4FB0031C307 /* ImageBodyDeserializer.swift in Sources */,
 				3A549B9E1CEE0CB100706D1B /* BufferOutputFacility.swift in Sources */,
+				3AB4D2351CEF400C00AB8C6C /* Dictionary.swift in Sources */,
 				3A0F56FF1C3E749400BC3713 /* URLProtocol.swift in Sources */,
 				3A3A01891C3A54B5008752CC /* ResponseDetective.swift in Sources */,
 			);
