@@ -98,7 +98,7 @@ import Foundation
 	}
 	
 	internal override func stopLoading() {
-		internalTask.cancel()
+		internalSession.invalidateAndCancel()
 	}
 	
 	// MARK: NSURLSessionTaskDelegate
@@ -120,6 +120,7 @@ import Foundation
 			interceptResponse(response, data: internalResponseData)
 			client?.URLProtocolDidFinishLoading(self)
 		}
+		internalSession.finishTasksAndInvalidate()
 	}
 	
 	// MARK: NSURLSessionDataDelegate
