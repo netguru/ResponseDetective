@@ -38,7 +38,7 @@
 		3AB4D2351CEF400C00AB8C6C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BDB311CEDF5C700E8EBB8 /* Dictionary.swift */; };
 		3AB4D2371CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4D2361CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift */; };
 		3AB4D2381CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4D2361CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift */; };
-		3AB4D25F1CEF72C400AB8C6C /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */; };
+		3AB4D25F1CEF72C400AB8C6C /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AB4D2601CEF72C400AB8C6C /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AC132011CDD03D80057ED0B /* HTMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */; };
 		3AC132021CDD03D80057ED0B /* HTMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */; };
