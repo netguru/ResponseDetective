@@ -1,0 +1,10 @@
+//
+// Tests-iOS-Debug.xcconfig
+//
+// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Licensed under the MIT License.
+//
+
+#include "Carthage/Checkouts/xcconfigs/Base/Configurations/Test.xcconfig"
+#include "Carthage/Checkouts/xcconfigs/iOS/iOS-Application.xcconfig"
+#include "Tests-Common.xcconfig"
