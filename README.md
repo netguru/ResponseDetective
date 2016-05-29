@@ -20,20 +20,45 @@ Incorporating ResponseDetective in your project is very simple – it all comes 
 
 For ResponseDetective to work, it needs to be added as a middleman between your `NSURLSession` and the Internet. You can do this by registering the provided `URLProtocolClass` in your session's `NSURLSessionConfiguration.protocolClasses`, or use a shortcut method:
 
+```objc
+// Objective-C
+
+NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+[RDVResponseDetective enableInURLSessionConfiguration:configuration];
+```
+
 ```swift
+// Swift
+
 let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
 ResponseDetective.enableInURLSessionConfiguration(configuration)
 ```
 
 Then, you should use that configuration with your `NSURLSession`:
 
+```objc
+// Objective-C
+
+NSURLSession *session = [[NSURLSession alloc] initWithConfiguration:configuration];
+```
+
 ```swift
+// Swift
+
 let session = NSURLSession(configuration: configuration)
 ```
 
-Or, if you're using [Alamofire](https://github.com/Alamofire/Alamofire) as your networking framework, integrating ResponseDetective comes down to just initializing your `Manager` with the above `NSURLSessionConfiguration`:
+Or, if you're using [AFNetworking](https://github.com/AFNetworking/AFNetworking)/ [Alamofire](https://github.com/Alamofire/Alamofire) as your networking framework, integrating ResponseDetective comes down to just initializing your `AFURLSessionManager`/`Manager` with the above `NSURLSessionConfiguration`:
+
+```objc
+// Objective-C (AFNetworking)
+
+AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+```
 
 ```swift
+// Swift (Alamofire)
+
 let manager = Alamofire.Manager(configuration: configuration)
 ```
 
@@ -43,7 +68,16 @@ And that's all!
 
 Now it's time to perform the actual request:
 
+```objc
+// Objective-C
+
+NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://httpbin.org/get"]];
+[[session dataTaskWithRequest:request] resume];
+```
+
 ```swift
+// Swift
+
 let request = NSURLRequest(URL: NSURL(string: "http://httpbin.org/get")!)
 session.dataTaskWithRequest(request).resume()
 ```
