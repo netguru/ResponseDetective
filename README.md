@@ -48,7 +48,7 @@ NSURLSession *session = [[NSURLSession alloc] initWithConfiguration:configuratio
 let session = NSURLSession(configuration: configuration)
 ```
 
-Or, if you're using [AFNetworking](https://github.com/AFNetworking/AFNetworking)/ [Alamofire](https://github.com/Alamofire/Alamofire) as your networking framework, integrating ResponseDetective comes down to just initializing your `AFURLSessionManager`/`Manager` with the above `NSURLSessionConfiguration`:
+Or, if you're using [AFNetworking](https://github.com/AFNetworking/AFNetworking)/[Alamofire](https://github.com/Alamofire/Alamofire) as your networking framework, integrating ResponseDetective comes down to just initializing your `AFURLSessionManager`/`Manager` with the above `NSURLSessionConfiguration`:
 
 ```objc
 // Objective-C (AFNetworking)
