@@ -84,8 +84,8 @@ import Foundation
 	}
 	
 	internal override static func canInitWithRequest(request: NSURLRequest) -> Bool {
-		guard let URL = request.URL else { return false }
-		return ["http", "https"].contains(URL.scheme) && ResponseDetective.canIncerceptRequest(request)
+		guard let URL = request.URL, let scheme = URL.scheme else { return false }
+		return ["http", "https"].contains(scheme) && ResponseDetective.canIncerceptRequest(request)
 	}
 	
 	internal override static func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {

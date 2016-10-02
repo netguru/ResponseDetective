@@ -461,7 +461,7 @@
 				CLASSPREFIX = RDT;
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Netguru Sp. z o.o.";
 				TargetAttributes = {
 					3A2007D71B5501BC00769021 = {
@@ -472,9 +472,11 @@
 					};
 					3AED3ECB1B1DD7B400FA35FC = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 					};
 					3AED3ED61B1DD7B400FA35FC = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -667,10 +669,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A7D01861CD3BE0100B7FBD7 /* Framework-OSX-Debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -678,9 +676,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A7D01871CD3BE6300B7FBD7 /* Framework-OSX-Release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 			};
 			name = Release;
 		};

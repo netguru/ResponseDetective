@@ -64,10 +64,10 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					beforeEach {
 						ResponseDetective.ignoreRequestsMatchingPredicate(NSPredicate { subject, _ in
-							guard let subject = subject as? NSURLRequest, let URL = subject.URL else {
+							guard let subject = subject as? NSURLRequest, let URL = subject.URL, let string = URL.absoluteString else {
 								return true
 							}
-							return URL.absoluteString.containsString("foo")
+							return string.containsString("foo")
 						})
 					}
 

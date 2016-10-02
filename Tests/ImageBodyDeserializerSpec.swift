@@ -45,10 +45,10 @@ private func swatchImage(size size: (width: Int, height: Int)) -> Image {
 	#if os(iOS) || os(tvOS) || os(watchOS)
 		let rect = CGRect(x: 0, y: 0, width: CGFloat(size.width), height: CGFloat(size.height))
 		UIGraphicsBeginImageContext(rect.size)
-		let context = UIGraphicsGetCurrentContext()
+		let context = UIGraphicsGetCurrentContext()!
 		CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
 		CGContextFillRect(context, rect)
-		let image = UIGraphicsGetImageFromCurrentImageContext()
+		let image = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
 		return image.imageWithRenderingMode(.AlwaysOriginal)
 	#elseif os(OSX)
@@ -65,6 +65,6 @@ private func imageData(image image: Image) -> NSData {
 	#if os(iOS) || os(tvOS) || os(watchOS)
 		return UIImageJPEGRepresentation(image, 1)!
 	#elseif os(OSX)
-		return NSBitmapImageRep(data: image.TIFFRepresentation!)!.representationUsingType(.NSJPEGFileType, properties: [NSImageCompressionFactor: 1])!
+		return NSBitmapImageRep(data: image.TIFFRepresentation!)!.representationUsingType(.JPEG, properties: [NSImageCompressionFactor: 1])!
 	#endif
 }
