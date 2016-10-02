@@ -107,11 +107,6 @@ import Foundation
 		client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
 	}
 	
-	internal func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-		client?.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
-		completionHandler(.PerformDefaultHandling, nil)
-	}
-	
 	internal func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
 		if let error = error {
 			interceptError(error, response: internalResponse, data: internalResponseData)
