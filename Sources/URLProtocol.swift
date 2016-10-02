@@ -34,13 +34,33 @@ import Foundation
 	///
 	/// - Parameter request: The intercepted request.
 	private func interceptRequest(request: NSURLRequest) {
-		let deserializedBody = request.HTTPBody.flatMap { data in
+		let deserializedBody = standardizedDataOfRequest(request).flatMap { data in
 			ResponseDetective.deserializeBody(data, contentType: request.valueForHTTPHeaderField("Content-Type") ?? "application/octet-stream")
 		}
 		let requestRepresentation = RequestRepresentation(identifier: requestIdentifier, request: request, deserializedBody: deserializedBody)
 		ResponseDetective.outputFacility.outputRequestRepresentation(requestRepresentation)
 	}
-	
+
+
+	/// Extracts and standardizes data of a request.
+	///
+	/// - Parameter request: The request which data should be standardized.
+	///
+	/// - Returns: Data of the `request`.
+	private func standardizedDataOfRequest(request: NSURLRequest) -> NSData? {
+		return request.HTTPBody ?? request.HTTPBodyStream.flatMap { stream in
+			let data = NSMutableData()
+			stream.open()
+			while stream.hasBytesAvailable {
+				var buffer = [UInt8](count: 1024, repeatedValue: 0)
+				let length = stream.read(&buffer, maxLength: buffer.count)
+				data.appendBytes(buffer, length: length)
+			}
+			stream.close()
+			return data
+		}
+	}
+
 	/// Incercepts the given response and passes it to the ResponseDetective
 	/// instance.
 	///
