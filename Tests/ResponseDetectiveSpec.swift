@@ -150,7 +150,13 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 				context("after request has been sent") {
 
-					let request = NSURLRequest(URL: NSURL(string: "https://httpbin.org/get")!)
+					let request: NSURLRequest = {
+						let request = NSMutableURLRequest()
+						request.URL = NSURL(string: "https://httpbin.org/post")!
+						request.HTTPMethod = "POST"
+						request.HTTPBody = NSData(base64EncodedString: "foo", options: [])
+						return request
+					}()
 
 					beforeEach {
 						let session = NSURLSession(configuration: configuration)
@@ -159,6 +165,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should eventually intercept it") {
 						expect(buffer.requestRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: 5.0)
+						expect(buffer.responseRepresentations.last?.body).toEventuallyNot(beNil())
 					}
 
 				}
