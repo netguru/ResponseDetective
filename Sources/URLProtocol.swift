@@ -78,7 +78,7 @@ import Foundation
 	// MARK: NSURLProtocol
 	
 	internal override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
-		super.init(request: request, cachedResponse: cachedResponse, client: client)
+		super.init(request: request.copy() as! NSURLRequest, cachedResponse: cachedResponse, client: client)
 		internalSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(), delegate: self, delegateQueue: nil)
 		internalTask = internalSession.dataTaskWithRequest(request)
 	}
