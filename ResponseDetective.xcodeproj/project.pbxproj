@@ -123,6 +123,8 @@
 		3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseDetective.h; sourceTree = "<group>"; };
 		3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ACCEBCF1B21C84D006C0FF4 /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; };
+		3AD0F9F21DA10BB100E18D4C /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		3AD0F9F31DA10BB700E18D4C /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = SOURCE_ROOT; };
 		3ADA942C1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ADA942F1CDCFA9D00AB5736 /* PlaintextBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaintextBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ADA94321CDCFC7F00AB5736 /* ImageBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBodyDeserializerSpec.swift; sourceTree = "<group>"; };
@@ -242,6 +244,8 @@
 		3A7D01831CD3BBD000B7FBD7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3AD0F9F21DA10BB100E18D4C /* Cartfile */,
+				3AD0F9F31DA10BB700E18D4C /* Cartfile.private */,
 				3A7D01841CD3BBD000B7FBD7 /* ResponseDetective-Info.plist */,
 				3A7D01851CD3BBD000B7FBD7 /* ResponseDetective-Tests-Info.plist */,
 			);
