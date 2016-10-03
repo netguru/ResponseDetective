@@ -119,6 +119,7 @@
 		3A7D01891CD3BEE900B7FBD7 /* Tests-OSX-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-OSX-Release.xcconfig"; sourceTree = "<group>"; };
 		3AA401611CD65019000BD5DC /* RDTXMLBodyDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDTXMLBodyDeserializer.h; sourceTree = "<group>"; };
 		3AA401621CD65019000BD5DC /* RDTXMLBodyDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDTXMLBodyDeserializer.m; sourceTree = "<group>"; };
+		3AB4B5F31DA23E7700D1D461 /* ResponseDetective.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = ResponseDetective.podspec; sourceTree = SOURCE_ROOT; };
 		3AB4D2361CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferOutputFacilitySpec.swift; sourceTree = "<group>"; };
 		3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseDetective.h; sourceTree = "<group>"; };
 		3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLBodyDeserializerSpec.swift; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 			children = (
 				3AD0F9F21DA10BB100E18D4C /* Cartfile */,
 				3AD0F9F31DA10BB700E18D4C /* Cartfile.private */,
+				3AB4B5F31DA23E7700D1D461 /* ResponseDetective.podspec */,
 				3A7D01841CD3BBD000B7FBD7 /* ResponseDetective-Info.plist */,
 				3A7D01851CD3BBD000B7FBD7 /* ResponseDetective-Tests-Info.plist */,
 			);
