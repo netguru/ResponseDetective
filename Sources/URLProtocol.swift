@@ -34,13 +34,33 @@ import Foundation
 	///
 	/// - Parameter request: The intercepted request.
 	private func interceptRequest(request: NSURLRequest) {
-		let deserializedBody = request.HTTPBody.flatMap { data in
+		let deserializedBody = standardizedDataOfRequest(request).flatMap { data in
 			ResponseDetective.deserializeBody(data, contentType: request.valueForHTTPHeaderField("Content-Type") ?? "application/octet-stream")
 		}
 		let requestRepresentation = RequestRepresentation(identifier: requestIdentifier, request: request, deserializedBody: deserializedBody)
 		ResponseDetective.outputFacility.outputRequestRepresentation(requestRepresentation)
 	}
-	
+
+
+	/// Extracts and standardizes data of a request.
+	///
+	/// - Parameter request: The request which data should be standardized.
+	///
+	/// - Returns: Data of the `request`.
+	private func standardizedDataOfRequest(request: NSURLRequest) -> NSData? {
+		return request.HTTPBody ?? request.HTTPBodyStream.flatMap { stream in
+			let data = NSMutableData()
+			stream.open()
+			while stream.hasBytesAvailable {
+				var buffer = [UInt8](count: 1024, repeatedValue: 0)
+				let length = stream.read(&buffer, maxLength: buffer.count)
+				data.appendBytes(buffer, length: length)
+			}
+			stream.close()
+			return data
+		}
+	}
+
 	/// Incercepts the given response and passes it to the ResponseDetective
 	/// instance.
 	///
@@ -78,14 +98,14 @@ import Foundation
 	// MARK: NSURLProtocol
 	
 	internal override init(request: NSURLRequest, cachedResponse: NSCachedURLResponse?, client: NSURLProtocolClient?) {
-		super.init(request: request, cachedResponse: cachedResponse, client: client)
+		super.init(request: request.copy() as! NSURLRequest, cachedResponse: cachedResponse, client: client)
 		internalSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(), delegate: self, delegateQueue: nil)
 		internalTask = internalSession.dataTaskWithRequest(request)
 	}
 	
 	internal override static func canInitWithRequest(request: NSURLRequest) -> Bool {
-		guard let URL = request.URL else { return false }
-		return ["http", "https"].contains(URL.scheme) && ResponseDetective.canIncerceptRequest(request)
+		guard let URL = request.URL, let scheme = URL.scheme else { return false }
+		return ["http", "https"].contains(scheme) && ResponseDetective.canIncerceptRequest(request)
 	}
 	
 	internal override static func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
@@ -105,11 +125,6 @@ import Foundation
 
 	internal func URLSession(session: NSURLSession, task: NSURLSessionTask, willPerformHTTPRedirection response: NSHTTPURLResponse, newRequest request: NSURLRequest, completionHandler: (NSURLRequest?) -> Void) {
 		client?.URLProtocol(self, wasRedirectedToRequest: request, redirectResponse: response)
-	}
-	
-	internal func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-		client?.URLProtocol(self, didReceiveAuthenticationChallenge: challenge)
-		completionHandler(.PerformDefaultHandling, nil)
 	}
 	
 	internal func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
