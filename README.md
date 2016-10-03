@@ -1,7 +1,7 @@
 ![](Images/Header.png)
 
 ![](https://www.bitrise.io/app/c09426001dedd91c.svg?token=4zhZMFtDpH-9BhWvGP5-1g&branch=develop)
-![](https://img.shields.io/badge/swift-2.2-orange.svg)
+![](https://img.shields.io/badge/swift-2.3-orange.svg)
 ![](https://img.shields.io/github/release/netguru/ResponseDetective.svg)
 ![](https://img.shields.io/badge/carthage-compatible-green.svg)
 ![](https://img.shields.io/badge/cocoapods-compatible-green.svg)
@@ -10,7 +10,7 @@
 
 ## Requirements
 
-ResponseDetective is written in **Swift 2.2** and requires **iOS 9** or **OS X 10.11**.
+ResponseDetective is written in **Swift 2.3** and requires **iOS 8** or **OS X 10.10**.
 
 ## Usage
 
