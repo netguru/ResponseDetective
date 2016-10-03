@@ -10,7 +10,7 @@
 
 ## Requirements
 
-ResponseDetective is written in **Swift 2.3** and requires **iOS 9** or **OS X 10.11**.
+ResponseDetective is written in **Swift 2.3** and requires **iOS 8** or **OS X 10.10**.
 
 ## Usage
 

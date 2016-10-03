@@ -47,8 +47,8 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
 
-  spec.ios.deployment_target = '9.0'
-  spec.osx.deployment_target = '10.11'
+  spec.ios.deployment_target = '8.0'
+  spec.osx.deployment_target = '10.10'
 
   spec.xcconfig = {
     'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2'
