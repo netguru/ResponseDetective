@@ -165,7 +165,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should eventually intercept it") {
 						expect(buffer.requestRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: 5.0)
-						expect(buffer.responseRepresentations.last?.body).toEventuallyNot(beNil())
+						expect(buffer.responseRepresentations.last?.body).toEventuallyNot(beNil(), timeout: 5.0)
 					}
 
 				}
