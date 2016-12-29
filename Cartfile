@@ -5,4 +5,4 @@
 # Licensed under the MIT License.
 #
 
-github "jspahrsummers/xcconfigs" ~> 0.9
+github "jspahrsummers/xcconfigs" "master"
