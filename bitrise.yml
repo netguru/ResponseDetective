@@ -39,6 +39,7 @@ workflows:
       - cache-pull
       - bootstrap-carthage
       - xcode-test
+      - cocoapods-test
     after_run:
       - cache-push
       - deploy-artifacts
@@ -63,23 +64,26 @@ workflows:
           inputs:
             - carthage_command: bootstrap
 
-  # Xcode workflows
+  # Test workflows
 
   xcode-test:
     steps:
       - xcode-test:
+          title: xcode-test-ios
           inputs:
             - project_path: $XCODEBUILD_PROJECT
             - scheme: $XCODEBUILD_SCHEME_IOS
             - xcodebuild_test_options: $XCODEBUILD_OPTIONS
             - generate_code_coverage_files: 'yes'
       - xcode-test-mac:
+          title: xcode-test-macos
           inputs:
             - project_path: $XCODEBUILD_PROJECT
             - scheme: $XCODEBUILD_SCHEME_MACOS
             - xcodebuild_test_options: $XCODEBUILD_OPTIONS
             - generate_code_coverage_files: 'yes'
       - xcode-test:
+          title: xcode-test-tvos
           inputs:
             - project_path: $XCODEBUILD_PROJECT
             - scheme: $XCODEBUILD_SCHEME_TVOS
@@ -87,6 +91,13 @@ workflows:
             - generate_code_coverage_files: 'yes'
             - simulator_platform: tvOS Simulator
             - simulator_device: Apple TV 1080p
+
+  cocoapods-test:
+    steps:
+      - script:
+          title: cocoapods-lint
+          inputs:
+            - content: pod lib lint
 
   # Deploy workflows
 
