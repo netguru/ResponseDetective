@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A2007D71B5501BC00769021"
                BuildableName = "ResponseDetective.framework"
-               BlueprintName = "ResponseDetective (OS X)"
+               BlueprintName = "ResponseDetective (macOS)"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A2007E11B5501BC00769021"
                BuildableName = "ResponseDetective Tests.xctest"
-               BlueprintName = "ResponseDetective (OS X) Tests"
+               BlueprintName = "ResponseDetective (macOS) Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,7 +40,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -48,7 +49,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A2007E11B5501BC00769021"
                BuildableName = "ResponseDetective Tests.xctest"
-               BlueprintName = "ResponseDetective (OS X) Tests"
+               BlueprintName = "ResponseDetective (macOS) Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +59,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A2007D71B5501BC00769021"
             BuildableName = "ResponseDetective.framework"
-            BlueprintName = "ResponseDetective (OS X)"
+            BlueprintName = "ResponseDetective (macOS)"
             ReferencedContainer = "container:ResponseDetective.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A2007D71B5501BC00769021"
             BuildableName = "ResponseDetective.framework"
-            BlueprintName = "ResponseDetective (OS X)"
+            BlueprintName = "ResponseDetective (macOS)"
             ReferencedContainer = "container:ResponseDetective.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,6 +100,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "ResponseDetective"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

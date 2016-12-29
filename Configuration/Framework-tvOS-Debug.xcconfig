@@ -1,0 +1,10 @@
+//
+// Framework-tvOS-Debug.xcconfig
+//
+// Copyright © 2016 Netguru Sp. z o.o. All rights reserved.
+// Licensed under the MIT License.
+//
+
+#include "Carthage/Checkouts/xcconfigs/Base/Configurations/Debug.xcconfig"
+#include "Carthage/Checkouts/xcconfigs/tvOS/tvOS-Framework.xcconfig"
+#include "Framework-Common.xcconfig"
