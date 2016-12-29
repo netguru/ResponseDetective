@@ -50,6 +50,37 @@
 		3ADA94341CDCFC7F00AB5736 /* ImageBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA94321CDCFC7F00AB5736 /* ImageBodyDeserializerSpec.swift */; };
 		3ADA94361CDD022700AB5736 /* XMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA94351CDD022700AB5736 /* XMLBodyDeserializerSpec.swift */; };
 		3ADA94371CDD022700AB5736 /* XMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA94351CDD022700AB5736 /* XMLBodyDeserializerSpec.swift */; };
+		3AE546331E152DB600E74469 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE5462A1E152DB500E74469 /* ResponseDetective.framework */; };
+		3AE546451E15315500E74469 /* ResponseDetective.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB4D25E1CEF72C400AB8C6C /* ResponseDetective.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE546461E15315A00E74469 /* ResponseDetective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A01871C3A54B5008752CC /* ResponseDetective.swift */; };
+		3AE546471E15316400E74469 /* RequestRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79521C3A83C300BFD6CD /* RequestRepresentation.swift */; };
+		3AE546481E15316400E74469 /* ResponseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79551C3A864200BFD6CD /* ResponseRepresentation.swift */; };
+		3AE546491E15316400E74469 /* ErrorRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD795F1C3AA48800BFD6CD /* ErrorRepresentation.swift */; };
+		3AE5464A1E15316700E74469 /* OutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD795B1C3AA43200BFD6CD /* OutputFacility.swift */; };
+		3AE5464B1E15316700E74469 /* ConsoleOutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79621C3AAA5B00BFD6CD /* ConsoleOutputFacility.swift */; };
+		3AE5464C1E15316700E74469 /* BufferOutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A549B9C1CEE0C5600706D1B /* BufferOutputFacility.swift */; };
+		3AE5464D1E15316B00E74469 /* RDTBodyDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7972E01CDBAFAE0031C307 /* RDTBodyDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE5464E1E15317000E74469 /* JSONBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F57041C3EBC9800BC3713 /* JSONBodyDeserializer.swift */; };
+		3AE5464F1E15317000E74469 /* ImageBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7972EA1CDBB4500031C307 /* ImageBodyDeserializer.swift */; };
+		3AE546501E15317000E74469 /* PlaintextBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7972ED1CDBB7240031C307 /* PlaintextBodyDeserializer.swift */; };
+		3AE546511E15317300E74469 /* RDTXMLBodyDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA401611CD65019000BD5DC /* RDTXMLBodyDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE546521E15317600E74469 /* RDTXMLBodyDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA401621CD65019000BD5DC /* RDTXMLBodyDeserializer.m */; };
+		3AE546531E15317900E74469 /* RDTHTMLBodyDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7972E41CDBB0DB0031C307 /* RDTHTMLBodyDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE546541E15317C00E74469 /* RDTHTMLBodyDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7972E51CDBB0DB0031C307 /* RDTHTMLBodyDeserializer.m */; };
+		3AE546551E15318000E74469 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BDB311CEDF5C700E8EBB8 /* Dictionary.swift */; };
+		3AE546561E15318000E74469 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0F56FD1C3E749400BC3713 /* URLProtocol.swift */; };
+		3AE5465B1E15318E00E74469 /* ConsoleOutputFacilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16B4CB1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift */; };
+		3AE5465C1E15318E00E74469 /* BufferOutputFacilitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4D2361CEF6A0C00AB8C6C /* BufferOutputFacilitySpec.swift */; };
+		3AE5465D1E15319300E74469 /* RequestRepresentationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD79651C3AD5BC00BFD6CD /* RequestRepresentationSpec.swift */; };
+		3AE5465E1E15319300E74469 /* ResponseRepresentationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD796A1C3C026B00BFD6CD /* ResponseRepresentationSpec.swift */; };
+		3AE5465F1E15319300E74469 /* ErrorRepresentationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD796D1C3C03C300BFD6CD /* ErrorRepresentationSpec.swift */; };
+		3AE546601E15319600E74469 /* ResponseDetectiveSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54CDCB1CEC731F0025C09A /* ResponseDetectiveSpec.swift */; };
+		3AE546611E15319B00E74469 /* JSONBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA942C1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift */; };
+		3AE546621E15319B00E74469 /* ImageBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA94321CDCFC7F00AB5736 /* ImageBodyDeserializerSpec.swift */; };
+		3AE546631E15319B00E74469 /* PlaintextBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA942F1CDCFA9D00AB5736 /* PlaintextBodyDeserializerSpec.swift */; };
+		3AE546641E15319B00E74469 /* XMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA94351CDD022700AB5736 /* XMLBodyDeserializerSpec.swift */; };
+		3AE546651E15319B00E74469 /* HTMLBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC131FF1CDD03C50057ED0B /* HTMLBodyDeserializerSpec.swift */; };
+		3AE546661E15319D00E74469 /* TestBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BDB341CEE013E00E8EBB8 /* TestBodyDeserializer.swift */; };
 		3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; };
 		3AF4AC621CDBAD6F00490024 /* RDTXMLBodyDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA401611CD65019000BD5DC /* RDTXMLBodyDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AF4AC631CDBAD7F00490024 /* RDTXMLBodyDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA401621CD65019000BD5DC /* RDTXMLBodyDeserializer.m */; };
@@ -78,6 +109,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3A2007D71B5501BC00769021;
 			remoteInfo = "ResponseDetective (OS X)";
+		};
+		3AE546341E152DB600E74469 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AED3EC31B1DD7B400FA35FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AE546291E152DB500E74469;
+			remoteInfo = "ResponseDetective (tvOS)";
 		};
 		3AED3ED91B1DD7B400FA35FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -113,10 +151,10 @@
 		3A7BDB341CEE013E00E8EBB8 /* TestBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBodyDeserializer.swift; sourceTree = "<group>"; };
 		3A7D01841CD3BBD000B7FBD7 /* ResponseDetective-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ResponseDetective-Info.plist"; sourceTree = "<group>"; };
 		3A7D01851CD3BBD000B7FBD7 /* ResponseDetective-Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ResponseDetective-Tests-Info.plist"; sourceTree = "<group>"; };
-		3A7D01861CD3BE0100B7FBD7 /* Framework-OSX-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-OSX-Debug.xcconfig"; sourceTree = "<group>"; };
-		3A7D01871CD3BE6300B7FBD7 /* Framework-OSX-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-OSX-Release.xcconfig"; sourceTree = "<group>"; };
-		3A7D01881CD3BEC900B7FBD7 /* Tests-OSX-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-OSX-Debug.xcconfig"; sourceTree = "<group>"; };
-		3A7D01891CD3BEE900B7FBD7 /* Tests-OSX-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-OSX-Release.xcconfig"; sourceTree = "<group>"; };
+		3A7D01861CD3BE0100B7FBD7 /* Framework-macOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-macOS-Debug.xcconfig"; sourceTree = "<group>"; };
+		3A7D01871CD3BE6300B7FBD7 /* Framework-macOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-macOS-Release.xcconfig"; sourceTree = "<group>"; };
+		3A7D01881CD3BEC900B7FBD7 /* Tests-macOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS-Debug.xcconfig"; sourceTree = "<group>"; };
+		3A7D01891CD3BEE900B7FBD7 /* Tests-macOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS-Release.xcconfig"; sourceTree = "<group>"; };
 		3AA401611CD65019000BD5DC /* RDTXMLBodyDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDTXMLBodyDeserializer.h; sourceTree = "<group>"; };
 		3AA401621CD65019000BD5DC /* RDTXMLBodyDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDTXMLBodyDeserializer.m; sourceTree = "<group>"; };
 		3AB4B5F31DA23E7700D1D461 /* ResponseDetective.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = ResponseDetective.podspec; sourceTree = SOURCE_ROOT; };
@@ -130,6 +168,12 @@
 		3ADA942F1CDCFA9D00AB5736 /* PlaintextBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaintextBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ADA94321CDCFC7F00AB5736 /* ImageBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ADA94351CDD022700AB5736 /* XMLBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLBodyDeserializerSpec.swift; sourceTree = "<group>"; };
+		3AE5462A1E152DB500E74469 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE546411E152DF800E74469 /* Framework-tvOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-tvOS-Debug.xcconfig"; sourceTree = "<group>"; };
+		3AE546421E152E0400E74469 /* Framework-tvOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-tvOS-Release.xcconfig"; sourceTree = "<group>"; };
+		3AE546431E152F6C00E74469 /* Tests-tvOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS-Debug.xcconfig"; sourceTree = "<group>"; };
+		3AE546441E152F7600E74469 /* Tests-tvOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS-Release.xcconfig"; sourceTree = "<group>"; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFD79521C3A83C300BFD6CD /* RequestRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRepresentation.swift; sourceTree = "<group>"; };
@@ -155,6 +199,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE546261E152DB500E74469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5462F1E152DB600E74469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE546331E152DB600E74469 /* ResponseDetective.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,13 +273,17 @@
 				3A28D4821CD2BC9700531879 /* Framework-Common.xcconfig */,
 				3A28D4831CD2BC9700531879 /* Framework-iOS-Debug.xcconfig */,
 				3A28D4841CD2BC9700531879 /* Framework-iOS-Release.xcconfig */,
-				3A7D01861CD3BE0100B7FBD7 /* Framework-OSX-Debug.xcconfig */,
-				3A7D01871CD3BE6300B7FBD7 /* Framework-OSX-Release.xcconfig */,
+				3A7D01861CD3BE0100B7FBD7 /* Framework-macOS-Debug.xcconfig */,
+				3A7D01871CD3BE6300B7FBD7 /* Framework-macOS-Release.xcconfig */,
+				3AE546411E152DF800E74469 /* Framework-tvOS-Debug.xcconfig */,
+				3AE546421E152E0400E74469 /* Framework-tvOS-Release.xcconfig */,
 				3A28D4861CD2BC9700531879 /* Tests-Common.xcconfig */,
 				3A28D4871CD2BC9700531879 /* Tests-iOS-Debug.xcconfig */,
 				3A28D4881CD2BC9700531879 /* Tests-iOS-Release.xcconfig */,
-				3A7D01881CD3BEC900B7FBD7 /* Tests-OSX-Debug.xcconfig */,
-				3A7D01891CD3BEE900B7FBD7 /* Tests-OSX-Release.xcconfig */,
+				3A7D01881CD3BEC900B7FBD7 /* Tests-macOS-Debug.xcconfig */,
+				3A7D01891CD3BEE900B7FBD7 /* Tests-macOS-Release.xcconfig */,
+				3AE546431E152F6C00E74469 /* Tests-tvOS-Debug.xcconfig */,
+				3AE546441E152F7600E74469 /* Tests-tvOS-Release.xcconfig */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -332,6 +395,8 @@
 				3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */,
 				3A2007D81B5501BC00769021 /* ResponseDetective.framework */,
 				3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */,
+				3AE5462A1E152DB500E74469 /* ResponseDetective.framework */,
+				3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -370,6 +435,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AE546271E152DB500E74469 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5464D1E15316B00E74469 /* RDTBodyDeserializer.h in Headers */,
+				3AE546511E15317300E74469 /* RDTXMLBodyDeserializer.h in Headers */,
+				3AE546451E15315500E74469 /* ResponseDetective.h in Headers */,
+				3AE546531E15317900E74469 /* RDTHTMLBodyDeserializer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AED3EC91B1DD7B400FA35FC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,9 +460,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3A2007D71B5501BC00769021 /* ResponseDetective (OS X) */ = {
+		3A2007D71B5501BC00769021 /* ResponseDetective (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X)" */;
+			buildConfigurationList = 3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (macOS)" */;
 			buildPhases = (
 				3A2007D31B5501BC00769021 /* Sources */,
 				3A2007D41B5501BC00769021 /* Frameworks */,
@@ -397,14 +473,14 @@
 			);
 			dependencies = (
 			);
-			name = "ResponseDetective (OS X)";
+			name = "ResponseDetective (macOS)";
 			productName = "ResponseDetective (OS X)";
 			productReference = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3A2007E11B5501BC00769021 /* ResponseDetective (OS X) Tests */ = {
+		3A2007E11B5501BC00769021 /* ResponseDetective (macOS) Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X) Tests" */;
+			buildConfigurationList = 3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (macOS) Tests" */;
 			buildPhases = (
 				3A2007DE1B5501BC00769021 /* Sources */,
 				3A2007DF1B5501BC00769021 /* Frameworks */,
@@ -416,9 +492,46 @@
 			dependencies = (
 				3A2007E51B5501BC00769021 /* PBXTargetDependency */,
 			);
-			name = "ResponseDetective (OS X) Tests";
+			name = "ResponseDetective (macOS) Tests";
 			productName = "ResponseDetective (OS X)Tests";
 			productReference = 3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3AE546291E152DB500E74469 /* ResponseDetective (tvOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE5463B1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS)" */;
+			buildPhases = (
+				3AE546251E152DB500E74469 /* Sources */,
+				3AE546261E152DB500E74469 /* Frameworks */,
+				3AE546271E152DB500E74469 /* Headers */,
+				3AE546281E152DB500E74469 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ResponseDetective (tvOS)";
+			productName = "ResponseDetective (tvOS)";
+			productReference = 3AE5462A1E152DB500E74469 /* ResponseDetective.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3AE546311E152DB600E74469 /* ResponseDetective (tvOS)Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS)Tests" */;
+			buildPhases = (
+				3AE5462E1E152DB600E74469 /* Sources */,
+				3AE5462F1E152DB600E74469 /* Frameworks */,
+				3AE546301E152DB600E74469 /* Resources */,
+				3AE546671E1531B300E74469 /* Copy Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AE546351E152DB600E74469 /* PBXTargetDependency */,
+			);
+			name = "ResponseDetective (tvOS)Tests";
+			productName = "ResponseDetective (tvOS)Tests";
+			productReference = 3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3AED3ECB1B1DD7B400FA35FC /* ResponseDetective (iOS) */ = {
@@ -466,7 +579,7 @@
 			attributes = {
 				CLASSPREFIX = RDT;
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Netguru Sp. z o.o.";
 				TargetAttributes = {
@@ -475,6 +588,14 @@
 					};
 					3A2007E11B5501BC00769021 = {
 						CreatedOnToolsVersion = 6.4;
+					};
+					3AE546291E152DB500E74469 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Manual;
+					};
+					3AE546311E152DB600E74469 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
 					};
 					3AED3ECB1B1DD7B400FA35FC = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -500,8 +621,10 @@
 			targets = (
 				3AED3ECB1B1DD7B400FA35FC /* ResponseDetective (iOS) */,
 				3AED3ED61B1DD7B400FA35FC /* ResponseDetective (iOS) Tests */,
-				3A2007D71B5501BC00769021 /* ResponseDetective (OS X) */,
-				3A2007E11B5501BC00769021 /* ResponseDetective (OS X) Tests */,
+				3A2007D71B5501BC00769021 /* ResponseDetective (macOS) */,
+				3A2007E11B5501BC00769021 /* ResponseDetective (macOS) Tests */,
+				3AE546291E152DB500E74469 /* ResponseDetective (tvOS) */,
+				3AE546311E152DB600E74469 /* ResponseDetective (tvOS)Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -515,6 +638,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3A2007E01B5501BC00769021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE546281E152DB500E74469 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE546301E152DB600E74469 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -572,6 +709,22 @@
 			shellScript = "carthage copy-frameworks";
 			showEnvVarsInLog = 0;
 		};
+		3AE546671E1531B300E74469 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Nimble.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -612,6 +765,46 @@
 				3A16B4CD1CDF594F00C189F3 /* ConsoleOutputFacilitySpec.swift in Sources */,
 				3ADA942E1CDCF81E00AB5736 /* JSONBodyDeserializerSpec.swift in Sources */,
 				3A7BDB361CEE013E00E8EBB8 /* TestBodyDeserializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE546251E152DB500E74469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5464E1E15317000E74469 /* JSONBodyDeserializer.swift in Sources */,
+				3AE5464C1E15316700E74469 /* BufferOutputFacility.swift in Sources */,
+				3AE546481E15316400E74469 /* ResponseRepresentation.swift in Sources */,
+				3AE546551E15318000E74469 /* Dictionary.swift in Sources */,
+				3AE5464B1E15316700E74469 /* ConsoleOutputFacility.swift in Sources */,
+				3AE546491E15316400E74469 /* ErrorRepresentation.swift in Sources */,
+				3AE546471E15316400E74469 /* RequestRepresentation.swift in Sources */,
+				3AE546461E15315A00E74469 /* ResponseDetective.swift in Sources */,
+				3AE546521E15317600E74469 /* RDTXMLBodyDeserializer.m in Sources */,
+				3AE546541E15317C00E74469 /* RDTHTMLBodyDeserializer.m in Sources */,
+				3AE5464A1E15316700E74469 /* OutputFacility.swift in Sources */,
+				3AE546561E15318000E74469 /* URLProtocol.swift in Sources */,
+				3AE546501E15317000E74469 /* PlaintextBodyDeserializer.swift in Sources */,
+				3AE5464F1E15317000E74469 /* ImageBodyDeserializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5462E1E152DB600E74469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5465E1E15319300E74469 /* ResponseRepresentationSpec.swift in Sources */,
+				3AE546641E15319B00E74469 /* XMLBodyDeserializerSpec.swift in Sources */,
+				3AE546621E15319B00E74469 /* ImageBodyDeserializerSpec.swift in Sources */,
+				3AE5465C1E15318E00E74469 /* BufferOutputFacilitySpec.swift in Sources */,
+				3AE5465F1E15319300E74469 /* ErrorRepresentationSpec.swift in Sources */,
+				3AE5465D1E15319300E74469 /* RequestRepresentationSpec.swift in Sources */,
+				3AE5465B1E15318E00E74469 /* ConsoleOutputFacilitySpec.swift in Sources */,
+				3AE546651E15319B00E74469 /* HTMLBodyDeserializerSpec.swift in Sources */,
+				3AE546631E15319B00E74469 /* PlaintextBodyDeserializerSpec.swift in Sources */,
+				3AE546601E15319600E74469 /* ResponseDetectiveSpec.swift in Sources */,
+				3AE546661E15319D00E74469 /* TestBodyDeserializer.swift in Sources */,
+				3AE546611E15319B00E74469 /* JSONBodyDeserializerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,8 +853,13 @@
 /* Begin PBXTargetDependency section */
 		3A2007E51B5501BC00769021 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3A2007D71B5501BC00769021 /* ResponseDetective (OS X) */;
+			target = 3A2007D71B5501BC00769021 /* ResponseDetective (macOS) */;
 			targetProxy = 3A2007E41B5501BC00769021 /* PBXContainerItemProxy */;
+		};
+		3AE546351E152DB600E74469 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AE546291E152DB500E74469 /* ResponseDetective (tvOS) */;
+			targetProxy = 3AE546341E152DB600E74469 /* PBXContainerItemProxy */;
 		};
 		3AED3EDA1B1DD7B400FA35FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -673,28 +871,56 @@
 /* Begin XCBuildConfiguration section */
 		3A2007EC1B5501BC00769021 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A7D01861CD3BE0100B7FBD7 /* Framework-OSX-Debug.xcconfig */;
+			baseConfigurationReference = 3A7D01861CD3BE0100B7FBD7 /* Framework-macOS-Debug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		3A2007ED1B5501BC00769021 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A7D01871CD3BE6300B7FBD7 /* Framework-OSX-Release.xcconfig */;
+			baseConfigurationReference = 3A7D01871CD3BE6300B7FBD7 /* Framework-macOS-Release.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		3A2007EF1B5501BC00769021 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A7D01881CD3BEC900B7FBD7 /* Tests-OSX-Debug.xcconfig */;
+			baseConfigurationReference = 3A7D01881CD3BEC900B7FBD7 /* Tests-macOS-Debug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		3A2007F01B5501BC00769021 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A7D01891CD3BEE900B7FBD7 /* Tests-OSX-Release.xcconfig */;
+			baseConfigurationReference = 3A7D01891CD3BEE900B7FBD7 /* Tests-macOS-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		3AE5463C1E152DB600E74469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AE546411E152DF800E74469 /* Framework-tvOS-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3AE5463D1E152DB600E74469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AE546421E152E0400E74469 /* Framework-tvOS-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		3AE5463F1E152DB600E74469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AE546431E152F6C00E74469 /* Tests-tvOS-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3AE546401E152DB600E74469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AE546441E152F7600E74469 /* Tests-tvOS-Release.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -742,7 +968,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X)" */ = {
+		3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A2007EC1B5501BC00769021 /* Debug */,
@@ -751,11 +977,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (OS X) Tests" */ = {
+		3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (macOS) Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A2007EF1B5501BC00769021 /* Debug */,
 				3A2007F01B5501BC00769021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE5463B1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE5463C1E152DB600E74469 /* Debug */,
+				3AE5463D1E152DB600E74469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS)Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE5463F1E152DB600E74469 /* Debug */,
+				3AE546401E152DB600E74469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

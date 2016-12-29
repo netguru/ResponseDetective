@@ -7,73 +7,103 @@
 
 # CLI metadata
 
-format_version: 1.1.0
+format_version: 1.3.0
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 # Workflow trigger map
 
 trigger_map:
 
-  - pattern: '*'
-    is_pull_request_allowed: false
-    workflow: internal
+  - push_branch: feature/*
+    workflow: build-feature
 
 # Environment configuration
 
 app:
   envs:
-    - BITRISE_APP_TITLE: ResponseDetective
-    - BITRISE_PROJECT_PATH: ./ResponseDetective.xcodeproj
-    - BITRISE_SCHEME_IOS: ResponseDetective (iOS)
-    - BITRISE_SCHEME_OSX: ResponseDetective (OS X)
+    - XCODEBUILD_PROJECT: ResponseDetective.xcodeproj
+    - XCODEBUILD_OPTIONS: ''
 
 # Workflow declarations
 
 workflows:
 
-  # The default workflow
+  # Top level build workflows
 
-  internal:
+  build-feature:
+    envs:
+      - XCODEBUILD_SCHEME_IOS: iOS
+      - XCODEBUILD_SCHEME_MACOS: macOS
+      - XCODEBUILD_SCHEME_TVOS: tvOS
     before_run:
-      - bootstrap
-      - test-ios
-      - test-osx
+      - cache-pull
+      - bootstrap-carthage
+      - xcode-test
+      - cocoapods-test
     after_run:
-      - deploy
+      - cache-push
+      - deploy-artifacts
 
-  # Bootstraps the project before building
+  # Cache workflows
 
-  bootstrap:
+  cache-pull:
+    steps:
+      - cache-pull: {}
+
+  cache-push:
+    steps:
+      - cache-push:
+          inputs:
+            - cache_paths: "./Carthage -> ./Carthage/Cachefile"
+
+  # Bootstrap workflows
+
+  bootstrap-carthage:
     steps:
       - carthage:
           inputs:
             - carthage_command: bootstrap
-            - platform: iOS,Mac
 
-  # Deploys the project
+  # Test workflows
 
-  deploy:
-    steps:
-      - deploy-to-bitrise-io: {}
-
-  # Runs iOS tests
-
-  test-ios:
-    envs:
-      - BITRISE_SCHEME: $BITRISE_SCHEME_IOS
+  xcode-test:
     steps:
       - xcode-test:
+          title: xcode-test-ios
           inputs:
-            - is_clean_build: 'yes'
-            - output_tool: xcpretty
-
-  # Runs OS X tests
-
-  test-osx:
-    envs:
-      - BITRISE_SCHEME: $BITRISE_SCHEME_OSX
-    steps:
+            - project_path: $XCODEBUILD_PROJECT
+            - scheme: $XCODEBUILD_SCHEME_IOS
+            - xcodebuild_test_options: $XCODEBUILD_OPTIONS
+            - generate_code_coverage_files: 'yes'
       - xcode-test-mac:
+          title: xcode-test-macos
           inputs:
-            - is_clean_build: 'yes'
-            - output_tool: xcpretty
+            - project_path: $XCODEBUILD_PROJECT
+            - scheme: $XCODEBUILD_SCHEME_MACOS
+            - xcodebuild_test_options: $XCODEBUILD_OPTIONS
+            - generate_code_coverage_files: 'yes'
+      - xcode-test:
+          title: xcode-test-tvos
+          inputs:
+            - project_path: $XCODEBUILD_PROJECT
+            - scheme: $XCODEBUILD_SCHEME_TVOS
+            - xcodebuild_test_options: $XCODEBUILD_OPTIONS
+            - generate_code_coverage_files: 'yes'
+            - simulator_platform: tvOS Simulator
+            - simulator_device: Apple TV 1080p
+
+  cocoapods-test:
+    steps:
+      - script:
+          title: cocoapods-lint
+          inputs:
+            - content: pod lib lint
+
+  # Deploy workflows
+
+  deploy-artifacts:
+    steps:
+      - deploy-to-bitrise-io:
+          inputs:
+            - notify_user_groups: none
+            - is_enable_public_page: false

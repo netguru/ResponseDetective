@@ -6,4 +6,4 @@
 #
 
 github "Quick/Quick" ~> 0.9.3
-github "Quick/Nimble" ~> 4.1
+github "Quick/Nimble" ~> 4.1.0
