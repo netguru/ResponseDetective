@@ -15,16 +15,16 @@ import Foundation
 	public static var outputFacility: OutputFacility = ConsoleOutputFacility()
 	
 	/// A class of the URL protocol used to intercept requests.
-	public static let URLProtocolClass: NSURLProtocol.Type = URLProtocol.self
+	public static let URLProtocolClass: Foundation.URLProtocol.Type = URLProtocol.self
 	
 	/// A storage for request predicates.
-	private static var requestPredicates: [NSPredicate] = []
+	fileprivate static var requestPredicates: [NSPredicate] = []
 
 	/// Body deserializers stored by a supported content type.
-	private static var customBodyDeserializers: [String: BodyDeserializer] = [:]
+	fileprivate static var customBodyDeserializers: [String: BodyDeserializer] = [:]
 
 	/// Default body deserializers provided by ResponseDetective.
-	private static let defaultBodyDeserializers: [String: BodyDeserializer] = [
+	fileprivate static let defaultBodyDeserializers: [String: BodyDeserializer] = [
 		"*/json": JSONBodyDeserializer(),
 		"*/xml": XMLBodyDeserializer(),
 		"*/html": HTMLBodyDeserializer(),
@@ -43,8 +43,8 @@ import Foundation
 	///
 	/// - Parameters configuration: The URL session configuration to enable the
 	///   session in.
-	public static func enableInURLSessionConfiguration(configuration: NSURLSessionConfiguration) {
-		configuration.protocolClasses?.insert(URLProtocolClass, atIndex: 0)
+	public static func enableInURLSessionConfiguration(_ configuration: URLSessionConfiguration) {
+		configuration.protocolClasses?.insert(URLProtocolClass, at: 0)
 	}
 	
 	/// Ignores requests matching the given predicate. The predicate will be
@@ -52,7 +52,7 @@ import Foundation
 	///
 	/// - Parameter predicate: A predicate for matching a request. If the
 	///   predicate evaluates to `false`, the request is not intercepted.
-	public static func ignoreRequestsMatchingPredicate(predicate: NSPredicate) {
+	public static func ignoreRequestsMatchingPredicate(_ predicate: NSPredicate) {
 		requestPredicates.append(predicate)
 	}
 	
@@ -61,9 +61,9 @@ import Foundation
 	/// - Parameter request: The request to check.
 	///
 	/// - Returns: `true` if request can be intercepted, `false` otherwise.
-	public static func canIncerceptRequest(request: NSURLRequest) -> Bool {
+	public static func canIncerceptRequest(_ request: URLRequest) -> Bool {
 		return requestPredicates.reduce(true) {
-			return $0 && !$1.evaluateWithObject(request)
+			return $0 && !$1.evaluate(with: request)
 		}
 	}
 	
@@ -72,7 +72,7 @@ import Foundation
 	/// - Parameters:
 	///     - deserializer: The deserializer to register.
 	///     - contentType: The supported content type.
-	public static func registerBodyDeserializer(deserializer: BodyDeserializer, forContentType contentType: String) {
+	public static func registerBodyDeserializer(_ deserializer: BodyDeserializer, forContentType contentType: String) {
 		customBodyDeserializers[contentType] = deserializer
 	}
 	
@@ -81,7 +81,7 @@ import Foundation
 	/// - Parameters:
 	///     - deserializer: The deserializer to register.
 	///     - contentTypes: The supported content types.
-	public static func registerBodyDeserializer(deserializer: BodyDeserializer, forContentTypes contentTypes: [String]) {
+	public static func registerBodyDeserializer(_ deserializer: BodyDeserializer, forContentTypes contentTypes: [String]) {
 		for contentType in contentTypes {
 			registerBodyDeserializer(deserializer, forContentType: contentType)
 		}
@@ -92,10 +92,10 @@ import Foundation
 	/// - Parameter contentType: The content type to find a deserializer for.
 	///
 	/// - Returns: A body deserializer for given `contentType` or `nil`.
-	private static func findBodyDeserializerForContentType(contentType: String) -> BodyDeserializer? {
+	fileprivate static func findBodyDeserializerForContentType(_ contentType: String) -> BodyDeserializer? {
 		for (pattern, deserializer) in defaultBodyDeserializers.appendingElementsOf(dictionary: customBodyDeserializers) {
-			let patternParts = pattern.componentsSeparatedByString("/")
-			let actualParts = contentType.componentsSeparatedByString("/")
+			let patternParts = pattern.components(separatedBy: "/")
+			let actualParts = contentType.components(separatedBy: "/")
 			guard patternParts.count == 2 && actualParts.count == 2 else {
 				return nil
 			}
@@ -114,7 +114,7 @@ import Foundation
 	///
 	/// - Returns: A deserialized body or `nil` if no serializer is capable of
 	///   deserializing body with the given content type.
-	public static func deserializeBody(body: NSData, contentType: String) -> String? {
+	public static func deserializeBody(_ body: Data, contentType: String) -> String? {
 		if let deserializer = findBodyDeserializerForContentType(contentType) {
 			return deserializer.deserializeBody(body)
 		} else {

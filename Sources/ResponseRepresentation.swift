@@ -18,7 +18,7 @@ import Foundation
 	
 	/// A verbal representation of the status code.
 	public var statusString: String {
-		return NSHTTPURLResponse.localizedStringForStatusCode(statusCode)
+		return HTTPURLResponse.localizedString(forStatusCode: statusCode)
 	}
 	
 	/// The URL string of the response (which may be different than originally
@@ -34,7 +34,7 @@ import Foundation
 	}
 	
 	/// The raw body data of the response.
-	public let body: NSData?
+	public let body: Data?
 	
 	/// The parsed body of the response.
 	public let deserializedBody: String?
@@ -53,7 +53,7 @@ import Foundation
 		statusCode: Int,
 		URLString: String,
 		headers: [String: String],
-		body: NSData?,
+		body: Data?,
 		deserializedBody: String?
 	) {
 		self.requestIdentifier = requestIdentifier
@@ -71,11 +71,11 @@ import Foundation
 	///     - response: The HTTP URL response instance.
 	///     - body: The body that came with the response.
 	///     - deserializedBody: The deserialized response body.
-	public convenience init(requestIdentifier: String, response: NSHTTPURLResponse, body: NSData?, deserializedBody: String?) {
+	public convenience init(requestIdentifier: String, response: HTTPURLResponse, body: Data?, deserializedBody: String?) {
 		self.init(
 			requestIdentifier: requestIdentifier,
 			statusCode: response.statusCode,
-			URLString: response.URL?.absoluteString ?? "",
+			URLString: response.url?.absoluteString ?? "",
 			headers: response.allHeaderFields as? [String: String] ?? [:],
 			body: body,
 			deserializedBody: deserializedBody

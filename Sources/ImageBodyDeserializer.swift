@@ -17,11 +17,11 @@
 	#if os(iOS) || os(tvOS) || os(watchOS)
 		private typealias Image = UIImage
 	#elseif os(OSX)
-		private typealias Image = NSImage
+		fileprivate typealias Image = NSImage
 	#endif
 	
 	/// Deserializes image data into a pretty-printed string.
-	public func deserializeBody(body: NSData) -> String? {
+	public func deserializeBody(_ body: Data) -> String? {
 		return Image(data: body).map { "\(Int($0.size.width))px × \(Int($0.size.height))px image" }
 	}
 	

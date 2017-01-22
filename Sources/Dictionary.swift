@@ -14,7 +14,7 @@ internal extension Dictionary {
 	///
 	/// - Returns: A `Dictionary` containing elements of `self` merged with
 	///   elements of other `dictionary.
-	internal func appendingElementsOf(dictionary dictionary: [Key: Value]) -> [Key: Value] {
+	internal func appendingElementsOf(dictionary: [Key: Value]) -> [Key: Value] {
 		var mutableSelf = self
 		for (key, value) in dictionary {
 			mutableSelf[key] = value

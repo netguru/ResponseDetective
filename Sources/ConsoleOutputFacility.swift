@@ -11,13 +11,13 @@ import Foundation
 @objc(RDTConsoleOutputFacility) public final class ConsoleOutputFacility: NSObject, OutputFacility {
 
 	/// Print closure used to output strings into the console.
-	private let printClosure: @convention(block) (String) -> Void
+	fileprivate let printClosure: @convention(block) (String) -> Void
 
 	/// Initializes the receiver.
 	///
 	/// - Parameter printClosure: The print closure used to output strings into
 	///   the console.
-	public init(printClosure: @convention(block) (String) -> Void) {
+	public init(printClosure: @escaping @convention(block) (String) -> Void) {
 		self.printClosure = printClosure
 	}
 
@@ -38,7 +38,7 @@ import Foundation
 	///      │ }
 	///
 	/// - SeeAlso: OutputFacility.outputRequestRepresentation
-	public func outputRequestRepresentation(request: RequestRepresentation) {
+	public func outputRequestRepresentation(_ request: RequestRepresentation) {
 		let headers = request.headers.reduce([]) {
 			return $0 + ["\($1.0): \($1.1)"]
 		}
@@ -64,14 +64,14 @@ import Foundation
 	///      │ }
 	///
 	/// - SeeAlso: OutputFacility.outputResponseRepresentation
-	public func outputResponseRepresentation(response: ResponseRepresentation) {
+	public func outputResponseRepresentation(_ response: ResponseRepresentation) {
 		let headers = response.headers.reduce([]) {
 			return $0 + ["\($1.0): \($1.1)"]
 		}
 		let body = response.deserializedBody.map {
 			$0.characters.split { $0 == "\n" }.map(String.init)
 		} ?? ["<none>"]
-		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercaseString)) \(response.URLString)", sections: [
+		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercased())) \(response.URLString)", sections: [
 			("Headers", headers),
 			("Body", body),
 		])
@@ -85,7 +85,7 @@ import Foundation
 	///      │ NSURLErrorKey: https://httpbin.org/post
 	///
 	/// - SeeAlso: OutputFacility.outputErrorRepresentation
-	public func outputErrorRepresentation(error: ErrorRepresentation) {
+	public func outputErrorRepresentation(_ error: ErrorRepresentation) {
 		let userInfo = error.userInfo.reduce([]) {
 			return $0 + ["\($1.0): \($1.1)"]
 		}
@@ -108,7 +108,7 @@ import Foundation
 	///       lines as values.
 	///
 	/// - Returns: A composed box string.
-	private func composeBoxString(title title: String, sections: [(String, [String])]) -> String {
+	fileprivate func composeBoxString(title: String, sections: [(String, [String])]) -> String {
 		return "\(title)\n" + sections.reduce("") {
 			return "\($0) ├─ \($1.0)\n" + $1.1.reduce("") {
 				return "\($0) │ \($1)\n"
@@ -122,7 +122,7 @@ import Foundation
 	///     - title: The title of the box
 	///     - sections: A dictionary with section titles as keys and content
 	///       lines as values.
-	private func printBoxString(title title: String, sections: [(String, [String])]) {
+	fileprivate func printBoxString(title: String, sections: [(String, [String])]) {
 		printClosure(composeBoxString(title: title, sections: sections))
 	}
 	
