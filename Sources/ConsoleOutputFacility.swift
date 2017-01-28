@@ -40,7 +40,7 @@ import Foundation
 	/// - SeeAlso: OutputFacility.outputRequestRepresentation
 	public func outputRequestRepresentation(_ request: RequestRepresentation) {
 		let headers = request.headers.reduce([]) {
-			return $0 + ["\($1.0): \($1.1)"]
+			$0 + ["\($1.0): \($1.1)"]
 		}
 		let body = request.deserializedBody.map {
 			$0.characters.split { $0 == "\n" }.map(String.init)
@@ -66,7 +66,7 @@ import Foundation
 	/// - SeeAlso: OutputFacility.outputResponseRepresentation
 	public func outputResponseRepresentation(_ response: ResponseRepresentation) {
 		let headers = response.headers.reduce([]) {
-			return $0 + ["\($1.0): \($1.1)"]
+			$0 + ["\($1.0): \($1.1)"]
 		}
 		let body = response.deserializedBody.map {
 			$0.characters.split { $0 == "\n" }.map(String.init)

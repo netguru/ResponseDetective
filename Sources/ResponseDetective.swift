@@ -93,7 +93,7 @@ import Foundation
 	///
 	/// - Returns: A body deserializer for given `contentType` or `nil`.
 	fileprivate static func findBodyDeserializerForContentType(_ contentType: String) -> BodyDeserializer? {
-		for (pattern, deserializer) in defaultBodyDeserializers.appendingElementsOf(dictionary: customBodyDeserializers) {
+		for (pattern, deserializer) in defaultBodyDeserializers.appending(customBodyDeserializers) {
 			let patternParts = pattern.components(separatedBy: "/")
 			let actualParts = contentType.components(separatedBy: "/")
 			guard patternParts.count == 2 && actualParts.count == 2 else {
