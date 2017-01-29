@@ -19,9 +19,9 @@ internal final class ResponseRepresentationSpec: QuickSpec {
 			context("after initializing with a response") {
 				
 				let fixtureResponse = HTTPURLResponse(
-                    url: URL(string: "https://httpbin.org/post")!,
-                    statusCode: 200,
-                    httpVersion: nil,
+					url: URL(string: "https://httpbin.org/post")!,
+					statusCode: 200,
+					httpVersion: nil,
 					headerFields: [
 						"Content-Type": "application/json",
 						"X-Foo": "bar"

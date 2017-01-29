@@ -41,7 +41,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				}
 
 				it("should add protocol class at the beginning of array") {
-                    expect(configuration.protocolClasses!.first == ResponseDetective.URLProtocolClass).to(beTrue())
+					expect(configuration.protocolClasses!.first == ResponseDetective.URLProtocolClass).to(beTrue())
 				}
 
 			}
@@ -67,7 +67,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 							guard let subject = subject as? URLRequest, let url = subject.url else {
 								return true
 							}
-                            let string = url.absoluteString
+							let string = url.absoluteString
                             
 							return string.contains("foo")
 						})
@@ -234,7 +234,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					beforeEach {
 						let session = URLSession(configuration: configuration)
-                        session.dataTask(with: request).resume()
+						session.dataTask(with: request).resume()
 					}
 
 					it("should eventually intercept its error") {

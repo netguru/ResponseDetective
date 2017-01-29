@@ -28,9 +28,9 @@ internal final class ErrorRepresentationSpec: QuickSpec {
 				let fixtureResponse = ResponseRepresentation(
 					requestIdentifier: fixtureIdentifier,
 					response: HTTPURLResponse(
-                        url: URL(string: "https://httpbin.org/post")!,
-                        statusCode: 200,
-                        httpVersion: nil,
+						url: URL(string: "https://httpbin.org/post")!,
+						statusCode: 200,
+						httpVersion: nil,
 						headerFields: [
 							"Content-Type": "application/json",
 							"X-Foo": "bar"
