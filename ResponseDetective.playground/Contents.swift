@@ -6,13 +6,13 @@
 //
 
 import Foundation
+import PlaygroundSupport
 import ResponseDetective
-import XCPlayground
 
 // Enable indefinite execution so that requests complete before the playground
 // is killed.
 
-XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 //: ---
 
