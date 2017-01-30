@@ -24,17 +24,13 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 					identifier: "0",
 					method: "GET",
 					URLString: "http://foo.bar",
-					headers: [
-						"X-Foo": "bar",
-						"X-Baz": "qux",
-					],
+					headers: ["X-Foo": "bar"],
 					body: nil,
 					deserializedBody: "lorem ipsum"
 				)
 				let expected = "<0> [REQUEST] GET http://foo.bar\n" +
 				               " ├─ Headers\n" +
 				               " │ X-Foo: bar\n" +
-				               " │ X-Baz: qux\n" +
 				               " ├─ Body\n" +
 				               " │ lorem ipsum\n"
 				sut.output(requestRepresentation: request)
@@ -46,17 +42,13 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 					requestIdentifier: "0",
 					statusCode: 200,
 					URLString: "http://foo.bar",
-					headers: [
-						"X-Bar": "foo",
-						"X-Qux": "baz",
-					],
+					headers: ["X-Bar": "foo"],
 					body: nil,
 					deserializedBody: "dolor sit amet"
 				)
 				let expected = "<0> [RESPONSE] 200 (NO ERROR) http://foo.bar\n" +
 				               " ├─ Headers\n" +
 				               " │ X-Bar: foo\n" +
-							   " │ X-Qux: baz\n" +
 				               " ├─ Body\n" +
 				               " │ dolor sit amet\n"
 				sut.output(responseRepresentation: response)
@@ -70,14 +62,10 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 					domain: "foo.bar.error",
 					code: 1234,
 					reason: "just because",
-					userInfo: [
-						"foo": "bar",
-						"baz": "qux",
-					]
+					userInfo: ["foo": "bar"]
 				)
 				let expected = "<0> [ERROR] foo.bar.error 1234\n" +
 				               " ├─ User Info\n" +
-				               " │ baz: qux\n" +
 				               " │ foo: bar\n"
 				sut.output(errorRepresentation: error)
 				expect(buffer.last).to(equal(expected))
