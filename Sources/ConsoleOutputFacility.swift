@@ -45,7 +45,7 @@ import Foundation
 		let body = request.deserializedBody.map {
 			$0.characters.split { $0 == "\n" }.map(String.init)
 		} ?? ["<none>"]
-		printBoxString(title: "<\(request.identifier)> [REQUEST] \(request.method) \(request.URLString)", sections: [
+		printBoxString(title: "<\(request.identifier)> [REQUEST] \(request.method) \(request.urlString)", sections: [
 			("Headers", headers),
 			("Body", body),
 		])
@@ -71,7 +71,7 @@ import Foundation
 		let body = response.deserializedBody.map {
 			$0.characters.split { $0 == "\n" }.map(String.init)
 		} ?? ["<none>"]
-		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercased())) \(response.URLString)", sections: [
+		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercased())) \(response.urlString)", sections: [
 			("Headers", headers),
 			("Body", body),
 		])

@@ -23,7 +23,7 @@ import Foundation
 	
 	/// The URL string of the response (which may be different than originally
 	/// requested because of a redirect).
-	public let URLString: String
+	public let urlString: String
 	
 	/// The HTTP headers of the response.
 	public let headers: [String: String]
@@ -44,14 +44,14 @@ import Foundation
 	/// - Parameters:
 	///     - requestIdentifier: The request's unique identifier.
 	///     - statusCode: The status code of the response.
-	///     - URLString: The URL string of the response.
+	///     - urlString: The URL string of the response.
 	///     - headers: The HTTP headers of the response.
 	///     - body: The raw body data of the response.
 	///     - deserializedBody: The parsed body of the response.
-	public init(requestIdentifier: String, statusCode: Int, URLString: String, headers: [String: String], body: Data?, deserializedBody: String?) {
+	public init(requestIdentifier: String, statusCode: Int, urlString: String, headers: [String: String], body: Data?, deserializedBody: String?) {
 		self.requestIdentifier = requestIdentifier
 		self.statusCode = statusCode
-		self.URLString = URLString
+		self.urlString = urlString
 		self.headers = headers
 		self.body = body
 		self.deserializedBody = deserializedBody
@@ -68,7 +68,7 @@ import Foundation
 		self.init(
 			requestIdentifier: requestIdentifier,
 			statusCode: response.statusCode,
-			URLString: response.url?.absoluteString ?? "",
+			urlString: response.url?.absoluteString ?? "",
 			headers: response.allHeaderFields as? [String: String] ?? [:],
 			body: body,
 			deserializedBody: deserializedBody

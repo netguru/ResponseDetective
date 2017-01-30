@@ -23,7 +23,7 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				let request = RequestRepresentation(
 					identifier: "0",
 					method: "GET",
-					URLString: "http://foo.bar",
+					urlString: "http://foo.bar",
 					headers: ["X-Foo": "bar"],
 					body: nil,
 					deserializedBody: "lorem ipsum"
@@ -41,7 +41,7 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				let response = ResponseRepresentation(
 					requestIdentifier: "0",
 					statusCode: 200,
-					URLString: "http://foo.bar",
+					urlString: "http://foo.bar",
 					headers: ["X-Bar": "foo"],
 					body: nil,
 					deserializedBody: "dolor sit amet"

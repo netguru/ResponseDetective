@@ -22,7 +22,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 				let request = RequestRepresentation(
 					identifier: "0",
 					method: "GET",
-					URLString: "http://foo.bar",
+					urlString: "http://foo.bar",
 					headers: [
 						"X-Foo": "bar",
 						"X-Baz": "qux",
@@ -38,7 +38,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 				let response = ResponseRepresentation(
 					requestIdentifier: "0",
 					statusCode: 200,
-					URLString: "http://foo.bar",
+					urlString: "http://foo.bar",
 					headers: [
 						"X-Bar": "foo",
 						"X-Qux": "baz",

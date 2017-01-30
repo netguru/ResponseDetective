@@ -42,7 +42,7 @@ internal final class ResponseRepresentationSpec: QuickSpec {
 				}
 				
 				it("should have a correct URLString") {
-					expect(sut.URLString).to(equal(fixtureResponse.url!.absoluteString))
+					expect(sut.urlString).to(equal(fixtureResponse.url!.absoluteString))
 				}
 				
 				it("should have a correct method") {

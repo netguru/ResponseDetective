@@ -17,7 +17,7 @@ import Foundation
 	public let method: String
 	
 	/// The resolved URL string of the request.
-	public let URLString: String
+	public let urlString: String
 	
 	/// The HTTP headers of the request.
 	public let headers: [String: String]
@@ -38,14 +38,14 @@ import Foundation
 	/// - Parameters:
 	///     - identifier: A unique identifier of the request.
 	///     - method: he HTTP method of the request.
-	///     - URLString: The resolved URL string of the request.
+	///     - urlString: The resolved URL string of the request.
 	///     - headers: The HTTP headers of the request.
 	///     - body: The raw body data of the request.
 	///     - deserializedBody: The parsed body of the request.
-	public init(identifier: String, method: String, URLString: String, headers: [String: String], body: Data?, deserializedBody: String?) {
+	public init(identifier: String, method: String, urlString: String, headers: [String: String], body: Data?, deserializedBody: String?) {
 		self.identifier = identifier
 		self.method = method
-		self.URLString = URLString
+		self.urlString = urlString
 		self.headers = headers
 		self.body = body
 		self.deserializedBody = deserializedBody
@@ -61,7 +61,7 @@ import Foundation
 		self.init(
 			identifier: identifier,
 			method: request.httpMethod ?? "GET",
-			URLString: request.url?.absoluteString ?? "",
+			urlString: request.url?.absoluteString ?? "",
 			headers: request.allHTTPHeaderFields ?? [:],
 			body: request.httpBody,
 			deserializedBody: deserializedBody

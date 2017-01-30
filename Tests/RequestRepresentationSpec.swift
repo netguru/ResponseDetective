@@ -41,7 +41,7 @@ internal final class RequestRepresentationSpec: QuickSpec {
 				}
 				
 				it("should have a correct URLString") {
-					expect(sut.URLString).to(equal(fixtureRequest.url!.absoluteString))
+					expect(sut.urlString).to(equal(fixtureRequest.url!.absoluteString))
 				}
 				
 				it("should have a correct method") {
