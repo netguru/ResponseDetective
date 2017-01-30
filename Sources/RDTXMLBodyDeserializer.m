@@ -1,7 +1,7 @@
 //
 // RDTXMLBodyDeserializer.m
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
