@@ -15,18 +15,18 @@ import Foundation
 	///
 	/// - Parameters:
 	///     - request: The request representation to output.
-	func output(requestRepresentation request: RequestRepresentation)
+	@objc(outputRequestRepresentation:) func output(requestRepresentation request: RequestRepresentation)
 	
 	/// Outputs a response representation.
 	///
 	/// - Parameters:
 	///     - response: The response representation to output.
-	func output(responseRepresentation response: ResponseRepresentation)
+	@objc(outputResponseRepresentation:) func output(responseRepresentation response: ResponseRepresentation)
 	
 	/// Outputs an error representation.
 	///
 	/// - Parameters:
 	///     - error: The error representation to output.
-	func output(errorRepresentation error: ErrorRepresentation)
+	@objc(outputErrorRepresentation:) func output(errorRepresentation error: ErrorRepresentation)
 	
 }

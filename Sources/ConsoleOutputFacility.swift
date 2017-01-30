@@ -15,9 +15,10 @@ import Foundation
 
 	/// Initializes the receiver.
 	///
-	/// - Parameter printClosure: The print closure used to output strings into
-	///   the console.
-	public init(printClosure: @escaping @convention(block) (String) -> Void) {
+	/// - Parameters:
+	///     - printClosure: The print closure used to output strings into the
+	///       console.
+	@objc(initWithPrintBlock:) public init(printClosure: @escaping @convention(block) (String) -> Void) {
 		self.printClosure = printClosure
 	}
 
