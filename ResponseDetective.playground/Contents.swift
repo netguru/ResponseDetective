@@ -33,4 +33,4 @@ let session = URLSession(configuration: configuration)
 let request = URLRequest(url: URL(string: "https://httpbin.org/get")!)
 session.dataTask(with: request).resume()
 
-// Watch the console
+// Watch the console! 🎉
