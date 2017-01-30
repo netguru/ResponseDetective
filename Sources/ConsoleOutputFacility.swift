@@ -37,8 +37,8 @@ import Foundation
 	///      │   "foo": "bar"
 	///      │ }
 	///
-	/// - SeeAlso: OutputFacility.outputRequestRepresentation
-	public func outputRequestRepresentation(_ request: RequestRepresentation) {
+	/// - SeeAlso: OutputFacility.output(requestRepresentation:)
+	public func output(requestRepresentation request: RequestRepresentation) {
 		let headers = request.headers.reduce([]) {
 			$0 + ["\($1.0): \($1.1)"]
 		}
@@ -63,8 +63,8 @@ import Foundation
 	///      │   "headers": {}
 	///      │ }
 	///
-	/// - SeeAlso: OutputFacility.outputResponseRepresentation
-	public func outputResponseRepresentation(_ response: ResponseRepresentation) {
+	/// - SeeAlso: OutputFacility.output(responseRepresentation:)
+	public func output(responseRepresentation response: ResponseRepresentation) {
 		let headers = response.headers.reduce([]) {
 			$0 + ["\($1.0): \($1.1)"]
 		}
@@ -84,10 +84,10 @@ import Foundation
 	///      │ NSLocalizedDescriptionKey: The device is not connected to the internet.
 	///      │ NSURLErrorKey: https://httpbin.org/post
 	///
-	/// - SeeAlso: OutputFacility.outputErrorRepresentation
-	public func outputErrorRepresentation(_ error: ErrorRepresentation) {
+	/// - SeeAlso: OutputFacility.output(errorRepresentation:)
+	public func output(errorRepresentation error: ErrorRepresentation) {
 		let userInfo = error.userInfo.reduce([]) {
-			return $0 + ["\($1.0): \($1.1)"]
+			$0 + ["\($1.0): \($1.1)"]
 		}
 		printBoxString(title: "<\(error.requestIdentifier)> [ERROR] \(error.domain) \(error.code)", sections: [
 			("User Info", userInfo),
@@ -101,7 +101,6 @@ import Foundation
 	///      │ section
 	///      │ contents
 	///
-	///
 	/// - Parameters:
 	///     - title: The title of the box
 	///     - sections: A dictionary with section titles as keys and content
@@ -110,8 +109,8 @@ import Foundation
 	/// - Returns: A composed box string.
 	private func composeBoxString(title: String, sections: [(String, [String])]) -> String {
 		return "\(title)\n" + sections.reduce("") {
-			return "\($0) ├─ \($1.0)\n" + $1.1.reduce("") {
-				return "\($0) │ \($1)\n"
+			"\($0) ├─ \($1.0)\n" + $1.1.reduce("") {
+				"\($0) │ \($1)\n"
 			}
 		}
 	}

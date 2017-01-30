@@ -20,7 +20,7 @@ XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 // interception mechanisms.
 
 let configuration = URLSessionConfiguration.default
-ResponseDetective.enableInURLSessionConfiguration(configuration)
+ResponseDetective.enable(inConfiguration: configuration)
 
 // And use the above configuration to create your session instance.
 

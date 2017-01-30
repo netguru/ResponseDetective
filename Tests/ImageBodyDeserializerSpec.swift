@@ -22,7 +22,7 @@ internal final class ImageBodyDeserializerSpec: QuickSpec {
 				let source = swatchImage(size: (width: 100, height: 200))
 				let data = imageData(image: source)
 				let expected = "100px × 200px image"
-				expect { sut.deserializeBody(data) }.to(equal(expected))
+				expect { sut.deserialize(body: data) }.to(equal(expected))
 			}
 
 		}

@@ -33,12 +33,12 @@ import Foundation
 	/// instance.
 	///
 	/// - Parameter request: The intercepted request.
-	private func interceptRequest(_ request: URLRequest) {
+	private func intercept(request: URLRequest) {
 		let deserializedBody = standardizedDataOfRequest(request).flatMap { data in
-			ResponseDetective.deserializeBody(data, contentType: request.value(forHTTPHeaderField: "Content-Type") ?? "application/octet-stream")
+			ResponseDetective.deserialize(body: data, contentType: request.value(forHTTPHeaderField: "Content-Type") ?? "application/octet-stream")
 		}
 		let requestRepresentation = RequestRepresentation(identifier: requestIdentifier, request: request, deserializedBody: deserializedBody)
-		ResponseDetective.outputFacility.outputRequestRepresentation(requestRepresentation)
+		ResponseDetective.outputFacility.output(requestRepresentation: requestRepresentation)
 	}
 
 
@@ -67,12 +67,12 @@ import Foundation
 	/// - Parameters:
 	///     - response: The intercepted response.
 	///     - data: The intercepted response data.
-	private func interceptResponse(_ response: HTTPURLResponse, data: Data?) {
+	private func intercept(response: HTTPURLResponse, data: Data?) {
 		let deserializedBody = data.flatMap { data in
-			ResponseDetective.deserializeBody(data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")
+			ResponseDetective.deserialize(body: data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")
 		}
 		let responseRepresentation = ResponseRepresentation(requestIdentifier: requestIdentifier, response: response, body: data, deserializedBody: deserializedBody)
-		ResponseDetective.outputFacility.outputResponseRepresentation(responseRepresentation)
+		ResponseDetective.outputFacility.output(responseRepresentation: responseRepresentation)
 	}
 	
 	/// Incercepts the given error and passes it to the ResponseDetective
@@ -85,14 +85,14 @@ import Foundation
 	private func interceptError(_ error: NSError, response: HTTPURLResponse?, data: Data?) {
 		let deserializedBody = response.flatMap { response in
 			return data.flatMap { data in
-				ResponseDetective.deserializeBody(data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")
+				ResponseDetective.deserialize(body: data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")
 			}
 		}
 		let responseRepresentation = response.flatMap { response in
 			ResponseRepresentation(requestIdentifier: requestIdentifier, response: response, body: data, deserializedBody: deserializedBody)
 		}
 		let errorRepresentation = ErrorRepresentation(requestIdentifier: requestIdentifier, error: error, response: responseRepresentation)
-		ResponseDetective.outputFacility.outputErrorRepresentation(errorRepresentation)
+		ResponseDetective.outputFacility.output(errorRepresentation: errorRepresentation)
 	}
 	
 	// MARK: NSURLProtocol
@@ -105,7 +105,7 @@ import Foundation
 	
 	internal override static func canInit(with request: URLRequest) -> Bool {
 		guard let URL = request.url, let scheme = URL.scheme else { return false }
-		return ["http", "https"].contains(scheme) && ResponseDetective.canIncerceptRequest(request)
+		return ["http", "https"].contains(scheme) && ResponseDetective.canIncercept(request: request)
 	}
 	
 	internal override static func canonicalRequest(for request: URLRequest) -> URLRequest {
@@ -113,7 +113,7 @@ import Foundation
 	}
 	
 	internal override func startLoading() {
-		interceptRequest(request)
+		intercept(request: request)
 		internalTask.resume()
 	}
 	
@@ -132,7 +132,7 @@ import Foundation
 			interceptError(error as NSError, response: internalResponse, data: internalResponseData)
 			client?.urlProtocol(self, didFailWithError: error)
 		} else if let response = internalResponse {
-			interceptResponse(response, data: internalResponseData)
+			intercept(response: response, data: internalResponseData)
 			client?.urlProtocolDidFinishLoading(self)
 		}
 		internalSession.finishTasksAndInvalidate()

@@ -22,7 +22,7 @@ internal final class HTMLBodyDeserializerSpec: QuickSpec {
 				let source = "<!DOCTYPE html><html><head></head><body class=\"foo\"><p>lorem<br>ipsum</p></body></html>"
 				let data = source.data(using: .utf8)!
 				let expected = "<!DOCTYPE html>\n<html>\n<head></head>\n<body class=\"foo\"><p>lorem<br>ipsum</p></body>\n</html>"
-				expect { sut.deserializeBody(data) }.to(equal(expected))
+				expect { sut.deserialize(body: data) }.to(equal(expected))
 			}
 
 		}

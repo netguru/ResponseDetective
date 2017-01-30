@@ -22,7 +22,7 @@ internal final class XMLBodyDeserializerSpec: QuickSpec {
 				let source = "<foo bar=\"baz\"><qux></qux></foo>"
 				let data = source.data(using: .utf8)!
 				let expected = "<?xml version=\"1.0\"?>\n<foo bar=\"baz\">\n  <qux/>\n</foo>"
-				expect { sut.deserializeBody(data) }.to(equal(expected))
+				expect { sut.deserialize(body: data) }.to(equal(expected))
 			}
 
 		}

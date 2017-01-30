@@ -42,14 +42,7 @@ import Foundation
 	///     - headers: The HTTP headers of the request.
 	///     - body: The raw body data of the request.
 	///     - deserializedBody: The parsed body of the request.
-	public init(
-		identifier: String,
-		method: String,
-		URLString: String,
-		headers: [String: String],
-		body: Data?,
-		deserializedBody: String?
-	) {
+	public init(identifier: String, method: String, URLString: String, headers: [String: String], body: Data?, deserializedBody: String?) {
 		self.identifier = identifier
 		self.method = method
 		self.URLString = URLString

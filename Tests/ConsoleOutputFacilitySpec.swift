@@ -37,7 +37,7 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				               " │ X-Baz: qux\n" +
 				               " ├─ Body\n" +
 				               " │ lorem ipsum\n"
-				sut.outputRequestRepresentation(request)
+				sut.output(requestRepresentation: request)
 				expect(buffer.last).to(equal(expected))
 			}
 
@@ -59,7 +59,7 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 							   " │ X-Qux: baz\n" +
 				               " ├─ Body\n" +
 				               " │ dolor sit amet\n"
-				sut.outputResponseRepresentation(response)
+				sut.output(responseRepresentation: response)
 				expect(buffer.last).to(equal(expected))
 			}
 
@@ -79,7 +79,7 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				               " ├─ User Info\n" +
 				               " │ baz: qux\n" +
 				               " │ foo: bar\n"
-				sut.outputErrorRepresentation(error)
+				sut.output(errorRepresentation: error)
 				expect(buffer.last).to(equal(expected))
 			}
 

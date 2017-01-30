@@ -37,14 +37,7 @@ import Foundation
 	///     - code: The error code.
 	///     - reason: The error reason.
 	///     - userInfo: The error user info.
-	public init(
-		requestIdentifier: String,
-		response: ResponseRepresentation?,
-		domain: String,
-		code: Int,
-		reason: String,
-		userInfo: [String: Any]
-	) {
+	public init(requestIdentifier: String, response: ResponseRepresentation?, domain: String, code: Int, reason: String, userInfo: [String: Any]) {
 		self.requestIdentifier = requestIdentifier
 		self.response = response
 		self.domain = domain

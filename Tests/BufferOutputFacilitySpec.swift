@@ -30,7 +30,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 					body: nil,
 					deserializedBody: "lorem ipsum"
 				)
-				sut.outputRequestRepresentation(request)
+				sut.output(requestRepresentation: request)
 				expect(sut.requestRepresentations.count).to(beGreaterThanOrEqualTo(1))
 			}
 
@@ -46,7 +46,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 					body: nil,
 					deserializedBody: "dolor sit amet"
 				)
-				sut.outputResponseRepresentation(response)
+				sut.output(responseRepresentation: response)
 				expect(sut.responseRepresentations.count).to(beGreaterThanOrEqualTo(1))
 			}
 
@@ -62,7 +62,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 						"baz": "qux",
 					]
 				)
-				sut.outputErrorRepresentation(error)
+				sut.output(errorRepresentation: error)
 				expect(sut.errorRepresentations.count).to(beGreaterThanOrEqualTo(1))
 			}
 

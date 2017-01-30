@@ -41,27 +41,30 @@ import Foundation
 
 	/// Enables ResponseDetective in an URL session configuration.
 	///
-	/// - Parameters configuration: The URL session configuration to enable the
-	///   session in.
-	public static func enableInURLSessionConfiguration(_ configuration: URLSessionConfiguration) {
+	/// - Parameters:
+	///     - configuration: The URL session configuration to enable the
+	///       session in.
+	public static func enable(inConfiguration configuration: URLSessionConfiguration) {
 		configuration.protocolClasses?.insert(URLProtocolClass, at: 0)
 	}
 	
 	/// Ignores requests matching the given predicate. The predicate will be
 	/// evaluated with an instance of NSURLRequest.
 	///
-	/// - Parameter predicate: A predicate for matching a request. If the
-	///   predicate evaluates to `false`, the request is not intercepted.
-	public static func ignoreRequestsMatchingPredicate(_ predicate: NSPredicate) {
+	/// - Parameters:
+	///     - predicate: A predicate for matching a request. If the
+	///       predicate evaluates to `false`, the request is not intercepted.
+	public static func ignoreRequests(matchingPredicate predicate: NSPredicate) {
 		requestPredicates.append(predicate)
 	}
 	
 	/// Checks whether the given request can be incercepted.
 	///
-	/// - Parameter request: The request to check.
+	/// - Parameters:
+	///     - request: The request to check.
 	///
 	/// - Returns: `true` if request can be intercepted, `false` otherwise.
-	public static func canIncerceptRequest(_ request: URLRequest) -> Bool {
+	public static func canIncercept(request: URLRequest) -> Bool {
 		return requestPredicates.reduce(true) {
 			return $0 && !$1.evaluate(with: request)
 		}
@@ -89,11 +92,12 @@ import Foundation
 
 	/// Finds a body deserializer by pattern.
 	///
-	/// - Parameter contentType: The content type to find a deserializer for.
+	/// - Parameters:
+	///     - contentType: The content type to find a deserializer for.
 	///
 	/// - Returns: A body deserializer for given `contentType` or `nil`.
-	private static func findBodyDeserializerForContentType(_ contentType: String) -> BodyDeserializer? {
-		for (pattern, deserializer) in defaultBodyDeserializers.appending(customBodyDeserializers) {
+	private static func findBodyDeserializer(forContentType contentType: String) -> BodyDeserializer? {
+		for (pattern, deserializer) in defaultBodyDeserializers.appending(elementsOf: customBodyDeserializers) {
 			let patternParts = pattern.components(separatedBy: "/")
 			let actualParts = contentType.components(separatedBy: "/")
 			guard patternParts.count == 2 && actualParts.count == 2 else {
@@ -114,9 +118,9 @@ import Foundation
 	///
 	/// - Returns: A deserialized body or `nil` if no serializer is capable of
 	///   deserializing body with the given content type.
-	public static func deserializeBody(_ body: Data, contentType: String) -> String? {
-		if let deserializer = findBodyDeserializerForContentType(contentType) {
-			return deserializer.deserializeBody(body)
+	public static func deserialize(body: Data, contentType: String) -> String? {
+		if let deserializer = findBodyDeserializer(forContentType: contentType) {
+			return deserializer.deserialize(body: body)
 		} else {
 			return nil
 		}

@@ -37,7 +37,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				let configuration = URLSessionConfiguration.default
 
 				beforeEach {
-					ResponseDetective.enableInURLSessionConfiguration(configuration)
+					ResponseDetective.enable(inConfiguration: configuration)
 				}
 
 				it("should add protocol class at the beginning of array") {
@@ -54,7 +54,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should not ignore the request") {
 						expect {
-							ResponseDetective.canIncerceptRequest(request)
+							ResponseDetective.canIncercept(request: request)
 						}.to(beTruthy())
 					}
 
@@ -63,7 +63,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				context("after adding predicate") {
 
 					beforeEach {
-						ResponseDetective.ignoreRequestsMatchingPredicate(NSPredicate { subject, _ in
+						ResponseDetective.ignoreRequests(matchingPredicate: NSPredicate { subject, _ in
 							guard let subject = subject as? URLRequest, let url = subject.url else {
 								return true
 							}
@@ -75,7 +75,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should ignore the request") {
 						expect {
-							ResponseDetective.canIncerceptRequest(request)
+							ResponseDetective.canIncercept(request: request)
 						}.to(beFalsy())
 					}
 
@@ -89,7 +89,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should return no deserialized body") {
 						expect {
-							ResponseDetective.deserializeBody(Data(), contentType: "foo/bar")
+							ResponseDetective.deserialize(body: Data(), contentType: "foo/bar")
 						}.to(beNil())
 					}
 
@@ -106,7 +106,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should return no deserialized body") {
 						expect {
-							ResponseDetective.deserializeBody(Data(), contentType: "foo/bar")
+							ResponseDetective.deserialize(body: Data(), contentType: "foo/bar")
 						}.to(equal("lorem ipsum"))
 					}
 
@@ -123,7 +123,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should return no deserialized body") {
 						expect {
-							ResponseDetective.deserializeBody(Data(), contentType: "foo/baz")
+							ResponseDetective.deserialize(body: Data(), contentType: "foo/baz")
 						}.to(equal("dolor sit amet"))
 					}
 
@@ -139,7 +139,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				beforeEach {
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
-					ResponseDetective.enableInURLSessionConfiguration(configuration)
+					ResponseDetective.enable(inConfiguration: configuration)
 				}
 
 				context("before request has been sent") {
@@ -181,7 +181,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				beforeEach {
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
-					ResponseDetective.enableInURLSessionConfiguration(configuration)
+					ResponseDetective.enable(inConfiguration: configuration)
 				}
 
 				context("before request has been sent") {
@@ -217,7 +217,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				beforeEach {
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
-					ResponseDetective.enableInURLSessionConfiguration(configuration)
+					ResponseDetective.enable(inConfiguration: configuration)
 				}
 
 				context("before request has been sent") {

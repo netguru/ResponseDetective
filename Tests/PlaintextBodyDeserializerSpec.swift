@@ -22,7 +22,7 @@ internal final class PlaintextBodyDeserializerSpec: QuickSpec {
 				let source = "foo bar\nbaz qux"
 				let data = source.data(using: .utf8)!
 				let expected = source
-				expect { sut.deserializeBody(data) }.to(equal(expected))
+				expect { sut.deserialize(body: data) }.to(equal(expected))
 			}
 			
 		}

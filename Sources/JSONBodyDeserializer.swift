@@ -11,7 +11,7 @@ import Foundation
 @objc(RDTJSONBodyDeserializer) public final class JSONBodyDeserializer: NSObject, BodyDeserializer {
 	
 	/// Deserializes JSON data into a pretty-printed string.
-	public func deserializeBody(_ body: Data) -> String? {
+	public func deserialize(body: Data) -> String? {
 		do {
 			let object = try JSONSerialization.jsonObject(with: body, options: [])
 			let data = try JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted])

@@ -48,14 +48,7 @@ import Foundation
 	///     - headers: The HTTP headers of the response.
 	///     - body: The raw body data of the response.
 	///     - deserializedBody: The parsed body of the response.
-	public init(
-		requestIdentifier: String,
-		statusCode: Int,
-		URLString: String,
-		headers: [String: String],
-		body: Data?,
-		deserializedBody: String?
-	) {
+	public init(requestIdentifier: String, statusCode: Int, URLString: String, headers: [String: String], body: Data?, deserializedBody: String?) {
 		self.requestIdentifier = requestIdentifier
 		self.statusCode = statusCode
 		self.URLString = URLString
