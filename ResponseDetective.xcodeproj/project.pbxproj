@@ -873,7 +873,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A7D01861CD3BE0100B7FBD7 /* Framework-macOS-Debug.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -881,7 +880,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A7D01871CD3BE6300B7FBD7 /* Framework-macOS-Release.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -889,7 +887,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A7D01881CD3BEC900B7FBD7 /* Tests-macOS-Debug.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -897,7 +894,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A7D01891CD3BEE900B7FBD7 /* Tests-macOS-Release.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -905,7 +901,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AE546411E152DF800E74469 /* Framework-tvOS-Debug.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -913,7 +908,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AE546421E152E0400E74469 /* Framework-tvOS-Release.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -921,7 +915,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AE546431E152F6C00E74469 /* Tests-tvOS-Debug.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -929,7 +922,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AE546441E152F7600E74469 /* Tests-tvOS-Release.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -949,7 +941,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A28D4831CD2BC9700531879 /* Framework-iOS-Debug.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -957,7 +948,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A28D4841CD2BC9700531879 /* Framework-iOS-Release.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -965,7 +955,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A28D4871CD2BC9700531879 /* Tests-iOS-Debug.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -973,7 +962,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A28D4881CD2BC9700531879 /* Tests-iOS-Release.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
