@@ -22,7 +22,7 @@ NS_SWIFT_NAME(BodyDeserializer) @protocol RDTBodyDeserializer
 ///
 /// @param body The HTTP body.
 ///
-/// @returns A deserialized representation of the body.
+/// @return A deserialized representation of the body.
 - (nullable NSString *)deserializeBody:(nonnull NSData *)data NS_SWIFT_NAME(deserialize(body:));
 
 @end
