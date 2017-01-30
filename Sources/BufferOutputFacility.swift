@@ -11,13 +11,13 @@ import Foundation
 @objc(RDTBufferOutputFacility) public final class BufferOutputFacility: NSObject, OutputFacility {
 
 	/// A buffer of request representations.
-	public fileprivate(set) var requestRepresentations: [RequestRepresentation] = []
+	public private(set) var requestRepresentations: [RequestRepresentation] = []
 
 	/// A buffer of request representations.
-	public fileprivate(set) var responseRepresentations: [ResponseRepresentation] = []
+	public private(set) var responseRepresentations: [ResponseRepresentation] = []
 
 	/// A buffer of request representations.
-	public fileprivate(set) var errorRepresentations: [ErrorRepresentation] = []
+	public private(set) var errorRepresentations: [ErrorRepresentation] = []
 
 	/// Adds the request representation to the buffer.
 	///

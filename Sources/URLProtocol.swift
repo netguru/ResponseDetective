@@ -11,19 +11,19 @@ import Foundation
 @objc(RDTURLProtocol) internal final class URLProtocol: Foundation.URLProtocol, URLSessionTaskDelegate, URLSessionDataDelegate {
 	
 	/// Internal session object used to perform the request.
-	fileprivate var internalSession: Foundation.URLSession!
+	private var internalSession: Foundation.URLSession!
 	
 	/// Internal session data dark responsible for request execution.
-	fileprivate var internalTask: URLSessionDataTask!
+	private var internalTask: URLSessionDataTask!
 	
 	/// Internal task response storage.
-	fileprivate var internalResponse: HTTPURLResponse?
+	private var internalResponse: HTTPURLResponse?
 	
 	/// Internal response data storage.
-	fileprivate lazy var internalResponseData = Data()
+	private lazy var internalResponseData = Data()
 
 	/// A unique identifier of the request. Currently its address.
-	fileprivate var requestIdentifier: String {
+	private var requestIdentifier: String {
 		return String(describing: Unmanaged<AnyObject>.passUnretained(internalTask.originalRequest! as AnyObject).toOpaque())
 	}
 	
@@ -33,7 +33,7 @@ import Foundation
 	/// instance.
 	///
 	/// - Parameter request: The intercepted request.
-	fileprivate func interceptRequest(_ request: URLRequest) {
+	private func interceptRequest(_ request: URLRequest) {
 		let deserializedBody = standardizedDataOfRequest(request).flatMap { data in
 			ResponseDetective.deserializeBody(data, contentType: request.value(forHTTPHeaderField: "Content-Type") ?? "application/octet-stream")
 		}
@@ -47,7 +47,7 @@ import Foundation
 	/// - Parameter request: The request which data should be standardized.
 	///
 	/// - Returns: Data of the `request`.
-	fileprivate func standardizedDataOfRequest(_ request: URLRequest) -> Data? {
+	private func standardizedDataOfRequest(_ request: URLRequest) -> Data? {
 		return request.httpBody ?? request.httpBodyStream.flatMap { stream in
 			let data = NSMutableData()
 			stream.open()
@@ -67,7 +67,7 @@ import Foundation
 	/// - Parameters:
 	///     - response: The intercepted response.
 	///     - data: The intercepted response data.
-	fileprivate func interceptResponse(_ response: HTTPURLResponse, data: Data?) {
+	private func interceptResponse(_ response: HTTPURLResponse, data: Data?) {
 		let deserializedBody = data.flatMap { data in
 			ResponseDetective.deserializeBody(data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")
 		}
@@ -82,7 +82,7 @@ import Foundation
 	///     - error: The intercepted request.
 	///     - response: The intercepted response.
 	///     - data: The intercepted response data.
-	fileprivate func interceptError(_ error: NSError, response: HTTPURLResponse?, data: Data?) {
+	private func interceptError(_ error: NSError, response: HTTPURLResponse?, data: Data?) {
 		let deserializedBody = response.flatMap { response in
 			return data.flatMap { data in
 				ResponseDetective.deserializeBody(data, contentType: (response.allHeaderFields["Content-Type"] as? String) ?? "application/octet-stream")

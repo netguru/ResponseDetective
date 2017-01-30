@@ -18,13 +18,13 @@ import Foundation
 	public static let URLProtocolClass: Foundation.URLProtocol.Type = URLProtocol.self
 	
 	/// A storage for request predicates.
-	fileprivate static var requestPredicates: [NSPredicate] = []
+	private static var requestPredicates: [NSPredicate] = []
 
 	/// Body deserializers stored by a supported content type.
-	fileprivate static var customBodyDeserializers: [String: BodyDeserializer] = [:]
+	private static var customBodyDeserializers: [String: BodyDeserializer] = [:]
 
 	/// Default body deserializers provided by ResponseDetective.
-	fileprivate static let defaultBodyDeserializers: [String: BodyDeserializer] = [
+	private static let defaultBodyDeserializers: [String: BodyDeserializer] = [
 		"*/json": JSONBodyDeserializer(),
 		"*/xml": XMLBodyDeserializer(),
 		"*/html": HTMLBodyDeserializer(),
@@ -92,7 +92,7 @@ import Foundation
 	/// - Parameter contentType: The content type to find a deserializer for.
 	///
 	/// - Returns: A body deserializer for given `contentType` or `nil`.
-	fileprivate static func findBodyDeserializerForContentType(_ contentType: String) -> BodyDeserializer? {
+	private static func findBodyDeserializerForContentType(_ contentType: String) -> BodyDeserializer? {
 		for (pattern, deserializer) in defaultBodyDeserializers.appending(customBodyDeserializers) {
 			let patternParts = pattern.components(separatedBy: "/")
 			let actualParts = contentType.components(separatedBy: "/")

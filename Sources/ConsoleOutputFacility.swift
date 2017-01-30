@@ -11,7 +11,7 @@ import Foundation
 @objc(RDTConsoleOutputFacility) public final class ConsoleOutputFacility: NSObject, OutputFacility {
 
 	/// Print closure used to output strings into the console.
-	fileprivate let printClosure: @convention(block) (String) -> Void
+	private let printClosure: @convention(block) (String) -> Void
 
 	/// Initializes the receiver.
 	///
@@ -108,7 +108,7 @@ import Foundation
 	///       lines as values.
 	///
 	/// - Returns: A composed box string.
-	fileprivate func composeBoxString(title: String, sections: [(String, [String])]) -> String {
+	private func composeBoxString(title: String, sections: [(String, [String])]) -> String {
 		return "\(title)\n" + sections.reduce("") {
 			return "\($0) ├─ \($1.0)\n" + $1.1.reduce("") {
 				return "\($0) │ \($1)\n"
@@ -122,7 +122,7 @@ import Foundation
 	///     - title: The title of the box
 	///     - sections: A dictionary with section titles as keys and content
 	///       lines as values.
-	fileprivate func printBoxString(title: String, sections: [(String, [String])]) {
+	private func printBoxString(title: String, sections: [(String, [String])]) {
 		printClosure(composeBoxString(title: title, sections: sections))
 	}
 	

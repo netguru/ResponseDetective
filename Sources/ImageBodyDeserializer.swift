@@ -17,7 +17,7 @@
 	#if os(iOS) || os(tvOS) || os(watchOS)
 		private typealias Image = UIImage
 	#elseif os(OSX)
-		fileprivate typealias Image = NSImage
+		private typealias Image = NSImage
 	#endif
 	
 	/// Deserializes image data into a pretty-printed string.
