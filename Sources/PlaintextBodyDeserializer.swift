@@ -11,8 +11,8 @@ import Foundation
 @objc(RDTPlaintextBodyDeserializer) public final class PlaintextBodyDeserializer: NSObject, BodyDeserializer {
 
 	/// Deserializes plaintext data into a string.
-	public func deserializeBody(body: NSData) -> String? {
-		return NSString(data: body, encoding: NSUTF8StringEncoding) as String?
+	public func deserializeBody(_ body: Data) -> String? {
+		return NSString(data: body, encoding: String.Encoding.utf8.rawValue) as String?
 	}
 
 }

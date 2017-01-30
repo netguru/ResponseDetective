@@ -19,10 +19,12 @@ internal final class JSONBodyDeserializerSpec: QuickSpec {
 			let sut = JSONBodyDeserializer()
 
 			it("should correctly deserialize JSON data") {
-				let source = ["foo": "", "bar": 0, "baz": false, "qux": [AnyObject](), "corge": [String: AnyObject]()]
-				let data = try! NSJSONSerialization.dataWithJSONObject(source, options: [])
-				let expected = try! NSString(data: NSJSONSerialization.dataWithJSONObject(source, options: [.PrettyPrinted]), encoding: NSUTF8StringEncoding)!
-				expect { sut.deserializeBody(data) }.to(equal(expected))
+				let source: [String: Any] = ["foo": "", "bar": 0, "baz": false, "qux": [AnyObject](), "corge": [String: Any]()]
+				let data = try! JSONSerialization.data(withJSONObject: source, options: [])
+				let actualData = sut.deserializeBody(data)!.data(using: .utf8)!
+				let actualJSON = try! JSONSerialization.jsonObject(with: actualData, options: []) as! [String: Any]
+
+				expect { (actualJSON as NSDictionary) }.to(equal(source as NSDictionary))
 			}
 			
 		}

@@ -27,10 +27,10 @@ internal final class ErrorRepresentationSpec: QuickSpec {
 				
 				let fixtureResponse = ResponseRepresentation(
 					requestIdentifier: fixtureIdentifier,
-					response: NSHTTPURLResponse(
-						URL: NSURL(string: "https://httpbin.org/post")!,
+					response: HTTPURLResponse(
+						url: URL(string: "https://httpbin.org/post")!,
 						statusCode: 200,
-						HTTPVersion: nil,
+						httpVersion: nil,
 						headerFields: [
 							"Content-Type": "application/json",
 							"X-Foo": "bar"

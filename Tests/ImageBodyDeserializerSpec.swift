@@ -41,30 +41,30 @@ internal final class ImageBodyDeserializerSpec: QuickSpec {
 	private typealias Image = NSImage
 #endif
 
-private func swatchImage(size size: (width: Int, height: Int)) -> Image {
+private func swatchImage(size: (width: Int, height: Int)) -> Image {
 	#if os(iOS) || os(tvOS) || os(watchOS)
 		let rect = CGRect(x: 0, y: 0, width: CGFloat(size.width), height: CGFloat(size.height))
 		UIGraphicsBeginImageContext(rect.size)
 		let context = UIGraphicsGetCurrentContext()!
-		CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
-		CGContextFillRect(context, rect)
+		context.setFillColor(UIColor.black.cgColor)
+		context.fill(rect)
 		let image = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
-		return image.imageWithRenderingMode(.AlwaysOriginal)
+		return image.withRenderingMode(.alwaysOriginal)
 	#elseif os(OSX)
 		let rect = NSMakeRect(0, 0, CGFloat(size.width), CGFloat(size.height))
 		let image = NSImage(size: rect.size)
 		image.lockFocus()
-		NSColor.blackColor().drawSwatchInRect(rect)
+		NSColor.black.drawSwatch(in: rect)
 		image.unlockFocus()
 		return image
 	#endif
 }
 
-private func imageData(image image: Image) -> NSData {
+private func imageData(image: Image) -> Data {
 	#if os(iOS) || os(tvOS) || os(watchOS)
 		return UIImageJPEGRepresentation(image, 1)!
 	#elseif os(OSX)
-		return NSBitmapImageRep(data: image.TIFFRepresentation!)!.representationUsingType(.JPEG, properties: [NSImageCompressionFactor: 1])!
+		return NSBitmapImageRep(data: image.tiffRepresentation!)!.representation(using: .JPEG, properties: [NSImageCompressionFactor: 1])!
 	#endif
 }

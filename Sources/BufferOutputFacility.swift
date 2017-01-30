@@ -22,21 +22,21 @@ import Foundation
 	/// Adds the request representation to the buffer.
 	///
 	/// - SeeAlso: OutputFacility.outputRequestRepresentation
-	public func outputRequestRepresentation(request: RequestRepresentation) {
+	public func outputRequestRepresentation(_ request: RequestRepresentation) {
 		requestRepresentations.append(request)
 	}
 	
 	/// Adds the response representation to the buffer.
 	///
 	/// - SeeAlso: OutputFacility.outputResponseRepresentation
-	public func outputResponseRepresentation(response: ResponseRepresentation) {
+	public func outputResponseRepresentation(_ response: ResponseRepresentation) {
 		responseRepresentations.append(response)
 	}
 	
 	/// Adds the error representation to the buffer.
 	///
 	/// - SeeAlso: OutputFacility.outputErrorRepresentation
-	public func outputErrorRepresentation(error: ErrorRepresentation) {
+	public func outputErrorRepresentation(_ error: ErrorRepresentation) {
 		errorRepresentations.append(error)
 	}
 

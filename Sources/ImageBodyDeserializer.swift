@@ -21,7 +21,7 @@
 	#endif
 	
 	/// Deserializes image data into a pretty-printed string.
-	public func deserializeBody(body: NSData) -> String? {
+	public func deserializeBody(_ body: Data) -> String? {
 		return Image(data: body).map { "\(Int($0.size.width))px × \(Int($0.size.height))px image" }
 	}
 	

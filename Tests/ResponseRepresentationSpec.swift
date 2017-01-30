@@ -18,17 +18,17 @@ internal final class ResponseRepresentationSpec: QuickSpec {
 			
 			context("after initializing with a response") {
 				
-				let fixtureResponse = NSHTTPURLResponse(
-					URL: NSURL(string: "https://httpbin.org/post")!,
+				let fixtureResponse = HTTPURLResponse(
+					url: URL(string: "https://httpbin.org/post")!,
 					statusCode: 200,
-					HTTPVersion: nil,
+					httpVersion: nil,
 					headerFields: [
 						"Content-Type": "application/json",
 						"X-Foo": "bar"
 					]
 				)!
 				
-				let fixtureBody = try! NSJSONSerialization.dataWithJSONObject(["foo": "bar"], options: [])
+				let fixtureBody = try! JSONSerialization.data(withJSONObject: ["foo": "bar"], options: [])
 				let fixtureIdentifier = "1"
 				
 				var sut: ResponseRepresentation!
@@ -42,7 +42,7 @@ internal final class ResponseRepresentationSpec: QuickSpec {
 				}
 				
 				it("should have a correct URLString") {
-					expect(sut.URLString).to(equal(fixtureResponse.URL!.absoluteString))
+					expect(sut.URLString).to(equal(fixtureResponse.url!.absoluteString))
 				}
 				
 				it("should have a correct method") {

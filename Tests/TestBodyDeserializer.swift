@@ -11,12 +11,12 @@ import ResponseDetective
 internal final class TestBodyDeserializer: NSObject, BodyDeserializer {
 
 	/// The closure for deserializing bodies.
-	let deserializationClosure: @convention(block) (NSData) -> String?
+	let deserializationClosure: @convention(block) (Data) -> String?
 
 	/// Creates a general deserializer with given deserialization closure.
 	///
 	/// - Parameter deserializationClosure: Implementation of `deserializeBody`.
-	internal init(deserializationClosure: @convention(block) (NSData) -> String?) {
+	internal init(deserializationClosure: @escaping @convention(block) (Data) -> String?) {
 		self.deserializationClosure = deserializationClosure
 	}
 
@@ -29,13 +29,13 @@ internal final class TestBodyDeserializer: NSObject, BodyDeserializer {
 
 	/// Creates a deserializer which deserializes data into plaintext.
 	internal convenience override init() {
-		self.init { NSString(data: $0, encoding: NSUTF8StringEncoding) as String? }
+		self.init { String(data: $0, encoding: .utf8) as String? }
 	}
 
 	// MARK: Implementation
 
 	/// - SeeAlso: BodyDeserializer.deserializeBody(_:)
-	internal func deserializeBody(data: NSData) -> String? {
+	internal func deserializeBody(_ data: Data) -> String? {
 		return deserializationClosure(data)
 	}
 

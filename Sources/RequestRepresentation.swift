@@ -28,7 +28,7 @@ import Foundation
 	}
 	
 	/// The raw body data of the request.
-	public let body: NSData?
+	public let body: Data?
 	
 	/// The parsed body of the request.
 	public let deserializedBody: String?
@@ -47,7 +47,7 @@ import Foundation
 		method: String,
 		URLString: String,
 		headers: [String: String],
-		body: NSData?,
+		body: Data?,
 		deserializedBody: String?
 	) {
 		self.identifier = identifier
@@ -64,13 +64,13 @@ import Foundation
 	///     - identifier: A unique identifier of the request.
 	///     - request: The URL request instance.
 	///     - deserializedBody: The parsed body of the request.
-	public convenience init(identifier: String, request: NSURLRequest, deserializedBody: String?) {
+	public convenience init(identifier: String, request: URLRequest, deserializedBody: String?) {
 		self.init(
 			identifier: identifier,
-			method: request.HTTPMethod ?? "GET",
-			URLString: request.URL?.absoluteString ?? "",
+			method: request.httpMethod ?? "GET",
+			URLString: request.url?.absoluteString ?? "",
 			headers: request.allHTTPHeaderFields ?? [:],
-			body: request.HTTPBody,
+			body: request.httpBody,
 			deserializedBody: deserializedBody
 		)
 	}

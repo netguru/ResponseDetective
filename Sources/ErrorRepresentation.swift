@@ -26,7 +26,7 @@ import Foundation
 	public let reason: String
 	
 	/// The error user info.
-	public let userInfo: [String: AnyObject]
+	public let userInfo: [String: Any]
 
 	/// Initializes the receiver.
 	///
@@ -43,7 +43,7 @@ import Foundation
 		domain: String,
 		code: Int,
 		reason: String,
-		userInfo: [String: AnyObject]
+		userInfo: [String: Any]
 	) {
 		self.requestIdentifier = requestIdentifier
 		self.response = response

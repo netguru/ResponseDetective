@@ -20,7 +20,7 @@ internal final class PlaintextBodyDeserializerSpec: QuickSpec {
 
 			it("should correctly deserialize plaintext data") {
 				let source = "foo bar\nbaz qux"
-				let data = (source as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+				let data = source.data(using: .utf8)!
 				let expected = source
 				expect { sut.deserializeBody(data) }.to(equal(expected))
 			}
