@@ -1,7 +1,7 @@
 //
 // RDTBodyDeserializer.h
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 // This has been implemented as native Objective-C protocol instead of a Swift
@@ -22,7 +22,7 @@ NS_SWIFT_NAME(BodyDeserializer) @protocol RDTBodyDeserializer
 ///
 /// @param body The HTTP body.
 ///
-/// @returns A deserialized representation of the body.
-- (nullable NSString *)deserializeBody:(nonnull NSData *)data;
+/// @return A deserialized representation of the body.
+- (nullable NSString *)deserializeBody:(nonnull NSData *)data NS_SWIFT_NAME(deserialize(body:));
 
 @end

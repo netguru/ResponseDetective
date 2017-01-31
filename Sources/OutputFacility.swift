@@ -1,7 +1,7 @@
 //
 // OutputFacility.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -13,17 +13,20 @@ import Foundation
 	
 	/// Outputs a request representation.
 	///
-	/// - Parameter request: The request representation to output.
-	func outputRequestRepresentation(request: RequestRepresentation)
+	/// - Parameters:
+	///     - request: The request representation to output.
+	@objc(outputRequestRepresentation:) func output(requestRepresentation request: RequestRepresentation)
 	
 	/// Outputs a response representation.
 	///
-	/// - Parameter response: The response representation to output.
-	func outputResponseRepresentation(response: ResponseRepresentation)
+	/// - Parameters:
+	///     - response: The response representation to output.
+	@objc(outputResponseRepresentation:) func output(responseRepresentation response: ResponseRepresentation)
 	
 	/// Outputs an error representation.
 	///
-	/// - Parameter error: The error representation to output.
-	func outputErrorRepresentation(error: ErrorRepresentation)
+	/// - Parameters:
+	///     - error: The error representation to output.
+	@objc(outputErrorRepresentation:) func output(errorRepresentation error: ErrorRepresentation)
 	
 }

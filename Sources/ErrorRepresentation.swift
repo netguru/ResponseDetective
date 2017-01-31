@@ -1,7 +1,7 @@
 //
 // ErrorRepresentation.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -26,7 +26,7 @@ import Foundation
 	public let reason: String
 	
 	/// The error user info.
-	public let userInfo: [String: AnyObject]
+	public let userInfo: [String: Any]
 
 	/// Initializes the receiver.
 	///
@@ -37,14 +37,7 @@ import Foundation
 	///     - code: The error code.
 	///     - reason: The error reason.
 	///     - userInfo: The error user info.
-	public init(
-		requestIdentifier: String,
-		response: ResponseRepresentation?,
-		domain: String,
-		code: Int,
-		reason: String,
-		userInfo: [String: AnyObject]
-	) {
+	public init(requestIdentifier: String, response: ResponseRepresentation?, domain: String, code: Int, reason: String, userInfo: [String: Any]) {
 		self.requestIdentifier = requestIdentifier
 		self.response = response
 		self.domain = domain

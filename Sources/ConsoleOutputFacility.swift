@@ -1,7 +1,7 @@
 //
 // ConsoleOutputFacility.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -15,9 +15,10 @@ import Foundation
 
 	/// Initializes the receiver.
 	///
-	/// - Parameter printClosure: The print closure used to output strings into
-	///   the console.
-	public init(printClosure: @convention(block) (String) -> Void) {
+	/// - Parameters:
+	///     - printClosure: The print closure used to output strings into the
+	///       console.
+	@objc(initWithPrintBlock:) public init(printClosure: @escaping @convention(block) (String) -> Void) {
 		self.printClosure = printClosure
 	}
 
@@ -37,15 +38,15 @@ import Foundation
 	///      │   "foo": "bar"
 	///      │ }
 	///
-	/// - SeeAlso: OutputFacility.outputRequestRepresentation
-	public func outputRequestRepresentation(request: RequestRepresentation) {
+	/// - SeeAlso: OutputFacility.output(requestRepresentation:)
+	public func output(requestRepresentation request: RequestRepresentation) {
 		let headers = request.headers.reduce([]) {
-			return $0 + ["\($1.0): \($1.1)"]
+			$0 + ["\($1.0): \($1.1)"]
 		}
 		let body = request.deserializedBody.map {
 			$0.characters.split { $0 == "\n" }.map(String.init)
 		} ?? ["<none>"]
-		printBoxString(title: "<\(request.identifier)> [REQUEST] \(request.method) \(request.URLString)", sections: [
+		printBoxString(title: "<\(request.identifier)> [REQUEST] \(request.method) \(request.urlString)", sections: [
 			("Headers", headers),
 			("Body", body),
 		])
@@ -63,15 +64,15 @@ import Foundation
 	///      │   "headers": {}
 	///      │ }
 	///
-	/// - SeeAlso: OutputFacility.outputResponseRepresentation
-	public func outputResponseRepresentation(response: ResponseRepresentation) {
+	/// - SeeAlso: OutputFacility.output(responseRepresentation:)
+	public func output(responseRepresentation response: ResponseRepresentation) {
 		let headers = response.headers.reduce([]) {
-			return $0 + ["\($1.0): \($1.1)"]
+			$0 + ["\($1.0): \($1.1)"]
 		}
 		let body = response.deserializedBody.map {
 			$0.characters.split { $0 == "\n" }.map(String.init)
 		} ?? ["<none>"]
-		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercaseString)) \(response.URLString)", sections: [
+		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercased())) \(response.urlString)", sections: [
 			("Headers", headers),
 			("Body", body),
 		])
@@ -84,10 +85,10 @@ import Foundation
 	///      │ NSLocalizedDescriptionKey: The device is not connected to the internet.
 	///      │ NSURLErrorKey: https://httpbin.org/post
 	///
-	/// - SeeAlso: OutputFacility.outputErrorRepresentation
-	public func outputErrorRepresentation(error: ErrorRepresentation) {
+	/// - SeeAlso: OutputFacility.output(errorRepresentation:)
+	public func output(errorRepresentation error: ErrorRepresentation) {
 		let userInfo = error.userInfo.reduce([]) {
-			return $0 + ["\($1.0): \($1.1)"]
+			$0 + ["\($1.0): \($1.1)"]
 		}
 		printBoxString(title: "<\(error.requestIdentifier)> [ERROR] \(error.domain) \(error.code)", sections: [
 			("User Info", userInfo),
@@ -101,17 +102,16 @@ import Foundation
 	///      │ section
 	///      │ contents
 	///
-	///
 	/// - Parameters:
 	///     - title: The title of the box
 	///     - sections: A dictionary with section titles as keys and content
 	///       lines as values.
 	///
 	/// - Returns: A composed box string.
-	private func composeBoxString(title title: String, sections: [(String, [String])]) -> String {
+	private func composeBoxString(title: String, sections: [(String, [String])]) -> String {
 		return "\(title)\n" + sections.reduce("") {
-			return "\($0) ├─ \($1.0)\n" + $1.1.reduce("") {
-				return "\($0) │ \($1)\n"
+			"\($0) ├─ \($1.0)\n" + $1.1.reduce("") {
+				"\($0) │ \($1)\n"
 			}
 		}
 	}
@@ -122,7 +122,7 @@ import Foundation
 	///     - title: The title of the box
 	///     - sections: A dictionary with section titles as keys and content
 	///       lines as values.
-	private func printBoxString(title title: String, sections: [(String, [String])]) {
+	private func printBoxString(title: String, sections: [(String, [String])]) {
 		printClosure(composeBoxString(title: title, sections: sections))
 	}
 	

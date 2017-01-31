@@ -1,7 +1,7 @@
 //
 // RequestRepresentationSpec.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -19,13 +19,13 @@ internal final class RequestRepresentationSpec: QuickSpec {
 			context("after initializing with a request") {
 				
 				let fixtureRequest = NSMutableURLRequest(
-					URL: NSURL(string: "https://httpbin.org/post")!,
+					URL: URL(string: "https://httpbin.org/post")!,
 					HTTPMethod: "POST",
 					headerFields: [
 						"Content-Type": "application/json",
 						"X-Foo": "bar",
 					],
-					HTTPBody: try! NSJSONSerialization.dataWithJSONObject(["foo": "bar"], options: [])
+					HTTPBody: try! JSONSerialization.data(withJSONObject: ["foo": "bar"], options: [])
 				)
 				
 				let fixtureIdentifier = "1"
@@ -33,7 +33,7 @@ internal final class RequestRepresentationSpec: QuickSpec {
 				var sut: RequestRepresentation!
 				
 				beforeEach {
-					sut = RequestRepresentation(identifier: fixtureIdentifier, request: fixtureRequest, deserializedBody: nil)
+					sut = RequestRepresentation(identifier: fixtureIdentifier, request: fixtureRequest as URLRequest, deserializedBody: nil)
 				}
 				
 				it("should have a correct identifier") {
@@ -41,11 +41,11 @@ internal final class RequestRepresentationSpec: QuickSpec {
 				}
 				
 				it("should have a correct URLString") {
-					expect(sut.URLString).to(equal(fixtureRequest.URL!.absoluteString))
+					expect(sut.urlString).to(equal(fixtureRequest.url!.absoluteString))
 				}
 				
 				it("should have a correct method") {
-					expect(sut.method).to(equal(fixtureRequest.HTTPMethod))
+					expect(sut.method).to(equal(fixtureRequest.httpMethod))
 				}
 				
 				it("should have correct headers") {
@@ -53,7 +53,7 @@ internal final class RequestRepresentationSpec: QuickSpec {
 				}
 				
 				it("should have a correct body") {
-					expect(sut.body).to(equal(fixtureRequest.HTTPBody))
+					expect(sut.body).to(equal(fixtureRequest.httpBody))
 				}
 				
 			}
@@ -66,11 +66,11 @@ internal final class RequestRepresentationSpec: QuickSpec {
 
 private extension NSMutableURLRequest {
 
-	convenience init(URL: NSURL, HTTPMethod: String, headerFields: [String: String], HTTPBody: NSData?) {
-		self.init(URL: URL)
-		self.HTTPMethod = HTTPMethod
+	convenience init(URL: Foundation.URL, HTTPMethod: String, headerFields: [String: String], HTTPBody: Data?) {
+		self.init(url: URL)
+		self.httpMethod = HTTPMethod
 		self.allHTTPHeaderFields = headerFields
-		self.HTTPBody = HTTPBody
+		self.httpBody = HTTPBody
 	}
 
 }

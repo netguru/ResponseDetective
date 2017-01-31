@@ -1,7 +1,7 @@
 //
 // ConsoleOutputFacilitySpec.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -23,21 +23,17 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				let request = RequestRepresentation(
 					identifier: "0",
 					method: "GET",
-					URLString: "http://foo.bar",
-					headers: [
-						"X-Foo": "bar",
-						"X-Baz": "qux",
-					],
+					urlString: "http://foo.bar",
+					headers: ["X-Foo": "bar"],
 					body: nil,
 					deserializedBody: "lorem ipsum"
 				)
 				let expected = "<0> [REQUEST] GET http://foo.bar\n" +
 				               " ├─ Headers\n" +
 				               " │ X-Foo: bar\n" +
-				               " │ X-Baz: qux\n" +
 				               " ├─ Body\n" +
 				               " │ lorem ipsum\n"
-				sut.outputRequestRepresentation(request)
+				sut.output(requestRepresentation: request)
 				expect(buffer.last).to(equal(expected))
 			}
 
@@ -45,21 +41,17 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				let response = ResponseRepresentation(
 					requestIdentifier: "0",
 					statusCode: 200,
-					URLString: "http://foo.bar",
-					headers: [
-						"X-Bar": "foo",
-						"X-Qux": "baz",
-					],
+					urlString: "http://foo.bar",
+					headers: ["X-Bar": "foo"],
 					body: nil,
 					deserializedBody: "dolor sit amet"
 				)
 				let expected = "<0> [RESPONSE] 200 (NO ERROR) http://foo.bar\n" +
 				               " ├─ Headers\n" +
 				               " │ X-Bar: foo\n" +
-							   " │ X-Qux: baz\n" +
 				               " ├─ Body\n" +
 				               " │ dolor sit amet\n"
-				sut.outputResponseRepresentation(response)
+				sut.output(responseRepresentation: response)
 				expect(buffer.last).to(equal(expected))
 			}
 
@@ -70,16 +62,12 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 					domain: "foo.bar.error",
 					code: 1234,
 					reason: "just because",
-					userInfo: [
-						"foo": "bar",
-						"baz": "qux",
-					]
+					userInfo: ["foo": "bar"]
 				)
 				let expected = "<0> [ERROR] foo.bar.error 1234\n" +
 				               " ├─ User Info\n" +
-				               " │ baz: qux\n" +
 				               " │ foo: bar\n"
-				sut.outputErrorRepresentation(error)
+				sut.output(errorRepresentation: error)
 				expect(buffer.last).to(equal(expected))
 			}
 

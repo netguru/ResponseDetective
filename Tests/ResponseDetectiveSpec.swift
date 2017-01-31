@@ -1,7 +1,7 @@
 //
 // ResponseDetectiveSpec.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -23,7 +23,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 			describe("initial state") {
 
 				it("should use default output facility") {
-					expect(ResponseDetective.outputFacility.dynamicType == ConsoleOutputFacility.self).to(beTruthy())
+					expect(type(of: ResponseDetective.outputFacility) == ConsoleOutputFacility.self).to(beTruthy())
 				}
 
 				it("should use default url protocol class") {
@@ -34,27 +34,27 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 			describe("enabling in url session configuration") {
 
-				let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+				let configuration = URLSessionConfiguration.default
 
 				beforeEach {
-					ResponseDetective.enableInURLSessionConfiguration(configuration)
+					ResponseDetective.enable(inConfiguration: configuration)
 				}
 
 				it("should add protocol class at the beginning of array") {
-					expect(configuration.protocolClasses).to(beginWith(ResponseDetective.URLProtocolClass))
+					expect(configuration.protocolClasses!.first == ResponseDetective.URLProtocolClass).to(beTrue())
 				}
 
 			}
 
 			describe("ignoring requests") {
 
-				let request = NSURLRequest(URL: NSURL(string: "http://foo.bar")!)
+				let request = URLRequest(url: URL(string: "http://foo.bar")!)
 
 				context("before adding predicate") {
 
 					it("should not ignore the request") {
 						expect {
-							ResponseDetective.canIncerceptRequest(request)
+							ResponseDetective.canIncercept(request: request)
 						}.to(beTruthy())
 					}
 
@@ -63,17 +63,19 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				context("after adding predicate") {
 
 					beforeEach {
-						ResponseDetective.ignoreRequestsMatchingPredicate(NSPredicate { subject, _ in
-							guard let subject = subject as? NSURLRequest, let URL = subject.URL, let string = URL.absoluteString else {
+						ResponseDetective.ignoreRequests(matchingPredicate: NSPredicate { subject, _ in
+							guard let subject = subject as? URLRequest, let url = subject.url else {
 								return true
 							}
-							return string.containsString("foo")
+							let string = url.absoluteString
+                            
+							return string.contains("foo")
 						})
 					}
 
 					it("should ignore the request") {
 						expect {
-							ResponseDetective.canIncerceptRequest(request)
+							ResponseDetective.canIncercept(request: request)
 						}.to(beFalsy())
 					}
 
@@ -87,7 +89,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should return no deserialized body") {
 						expect {
-							ResponseDetective.deserializeBody(NSData(), contentType: "foo/bar")
+							ResponseDetective.deserialize(body: Data(), contentType: "foo/bar")
 						}.to(beNil())
 					}
 
@@ -104,7 +106,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should return no deserialized body") {
 						expect {
-							ResponseDetective.deserializeBody(NSData(), contentType: "foo/bar")
+							ResponseDetective.deserialize(body: Data(), contentType: "foo/bar")
 						}.to(equal("lorem ipsum"))
 					}
 
@@ -121,7 +123,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 					it("should return no deserialized body") {
 						expect {
-							ResponseDetective.deserializeBody(NSData(), contentType: "foo/baz")
+							ResponseDetective.deserialize(body: Data(), contentType: "foo/baz")
 						}.to(equal("dolor sit amet"))
 					}
 
@@ -132,12 +134,12 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 			describe("request interception") {
 
 				let buffer = BufferOutputFacility()
-				let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+				let configuration = URLSessionConfiguration.default
 
 				beforeEach {
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
-					ResponseDetective.enableInURLSessionConfiguration(configuration)
+					ResponseDetective.enable(inConfiguration: configuration)
 				}
 
 				context("before request has been sent") {
@@ -150,17 +152,16 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 				context("after request has been sent") {
 
-					let request: NSURLRequest = {
-						let request = NSMutableURLRequest()
-						request.URL = NSURL(string: "https://httpbin.org/post")!
-						request.HTTPMethod = "POST"
-						request.HTTPBody = NSData(base64EncodedString: "foo", options: [])
+					let request: URLRequest = {
+						var request = URLRequest(url: URL(string: "https://httpbin.org/post")!)
+						request.httpMethod = "POST"
+						request.httpBody = Data(base64Encoded: "foo", options: [])
 						return request
 					}()
 
 					beforeEach {
-						let session = NSURLSession(configuration: configuration)
-						session.dataTaskWithRequest(request).resume()
+						let session = URLSession(configuration: configuration)
+						session.dataTask(with: request).resume()
 					}
 
 					it("should eventually intercept it") {
@@ -175,12 +176,12 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 			describe("response interception") {
 
 				let buffer = BufferOutputFacility()
-				let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+				let configuration = URLSessionConfiguration.default
 
 				beforeEach {
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
-					ResponseDetective.enableInURLSessionConfiguration(configuration)
+					ResponseDetective.enable(inConfiguration: configuration)
 				}
 
 				context("before request has been sent") {
@@ -193,11 +194,11 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 				context("after request has been sent") {
 
-					let request = NSURLRequest(URL: NSURL(string: "https://httpbin.org/get")!)
+					let request = URLRequest(url: URL(string: "https://httpbin.org/get")!)
 
 					beforeEach {
-						let session = NSURLSession(configuration: configuration)
-						session.dataTaskWithRequest(request).resume()
+						let session = URLSession(configuration: configuration)
+						session.dataTask(with: request).resume()
 					}
 
 					it("should eventually intercept its response") {
@@ -211,12 +212,12 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 			describe("error interception") {
 
 				let buffer = BufferOutputFacility()
-				let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+				let configuration = URLSessionConfiguration.default
 
 				beforeEach {
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
-					ResponseDetective.enableInURLSessionConfiguration(configuration)
+					ResponseDetective.enable(inConfiguration: configuration)
 				}
 
 				context("before request has been sent") {
@@ -229,11 +230,11 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 				context("after request has been sent") {
 
-					let request = NSURLRequest(URL: NSURL(string: "https://foobar")!)
+					let request = URLRequest(url: URL(string: "https://foobar")!)
 
 					beforeEach {
-						let session = NSURLSession(configuration: configuration)
-						session.dataTaskWithRequest(request).resume()
+						let session = URLSession(configuration: configuration)
+						session.dataTask(with: request).resume()
 					}
 
 					it("should eventually intercept its error") {

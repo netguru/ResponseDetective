@@ -1,7 +1,7 @@
 //
 // ResponseRepresentation.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -18,12 +18,12 @@ import Foundation
 	
 	/// A verbal representation of the status code.
 	public var statusString: String {
-		return NSHTTPURLResponse.localizedStringForStatusCode(statusCode)
+		return HTTPURLResponse.localizedString(forStatusCode: statusCode)
 	}
 	
 	/// The URL string of the response (which may be different than originally
 	/// requested because of a redirect).
-	public let URLString: String
+	public let urlString: String
 	
 	/// The HTTP headers of the response.
 	public let headers: [String: String]
@@ -34,7 +34,7 @@ import Foundation
 	}
 	
 	/// The raw body data of the response.
-	public let body: NSData?
+	public let body: Data?
 	
 	/// The parsed body of the response.
 	public let deserializedBody: String?
@@ -44,21 +44,14 @@ import Foundation
 	/// - Parameters:
 	///     - requestIdentifier: The request's unique identifier.
 	///     - statusCode: The status code of the response.
-	///     - URLString: The URL string of the response.
+	///     - urlString: The URL string of the response.
 	///     - headers: The HTTP headers of the response.
 	///     - body: The raw body data of the response.
 	///     - deserializedBody: The parsed body of the response.
-	public init(
-		requestIdentifier: String,
-		statusCode: Int,
-		URLString: String,
-		headers: [String: String],
-		body: NSData?,
-		deserializedBody: String?
-	) {
+	public init(requestIdentifier: String, statusCode: Int, urlString: String, headers: [String: String], body: Data?, deserializedBody: String?) {
 		self.requestIdentifier = requestIdentifier
 		self.statusCode = statusCode
-		self.URLString = URLString
+		self.urlString = urlString
 		self.headers = headers
 		self.body = body
 		self.deserializedBody = deserializedBody
@@ -71,11 +64,11 @@ import Foundation
 	///     - response: The HTTP URL response instance.
 	///     - body: The body that came with the response.
 	///     - deserializedBody: The deserialized response body.
-	public convenience init(requestIdentifier: String, response: NSHTTPURLResponse, body: NSData?, deserializedBody: String?) {
+	public convenience init(requestIdentifier: String, response: HTTPURLResponse, body: Data?, deserializedBody: String?) {
 		self.init(
 			requestIdentifier: requestIdentifier,
 			statusCode: response.statusCode,
-			URLString: response.URL?.absoluteString ?? "",
+			urlString: response.url?.absoluteString ?? "",
 			headers: response.allHeaderFields as? [String: String] ?? [:],
 			body: body,
 			deserializedBody: deserializedBody

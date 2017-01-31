@@ -1,7 +1,7 @@
 //
 // ImageBodyDeserializer.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -21,7 +21,7 @@
 	#endif
 	
 	/// Deserializes image data into a pretty-printed string.
-	public func deserializeBody(body: NSData) -> String? {
+	public func deserialize(body: Data) -> String? {
 		return Image(data: body).map { "\(Int($0.size.width))px × \(Int($0.size.height))px image" }
 	}
 	

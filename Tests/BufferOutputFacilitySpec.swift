@@ -1,7 +1,7 @@
 //
 // BufferOutputFacilitySpec.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -22,7 +22,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 				let request = RequestRepresentation(
 					identifier: "0",
 					method: "GET",
-					URLString: "http://foo.bar",
+					urlString: "http://foo.bar",
 					headers: [
 						"X-Foo": "bar",
 						"X-Baz": "qux",
@@ -30,7 +30,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 					body: nil,
 					deserializedBody: "lorem ipsum"
 				)
-				sut.outputRequestRepresentation(request)
+				sut.output(requestRepresentation: request)
 				expect(sut.requestRepresentations.count).to(beGreaterThanOrEqualTo(1))
 			}
 
@@ -38,7 +38,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 				let response = ResponseRepresentation(
 					requestIdentifier: "0",
 					statusCode: 200,
-					URLString: "http://foo.bar",
+					urlString: "http://foo.bar",
 					headers: [
 						"X-Bar": "foo",
 						"X-Qux": "baz",
@@ -46,7 +46,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 					body: nil,
 					deserializedBody: "dolor sit amet"
 				)
-				sut.outputResponseRepresentation(response)
+				sut.output(responseRepresentation: response)
 				expect(sut.responseRepresentations.count).to(beGreaterThanOrEqualTo(1))
 			}
 
@@ -62,7 +62,7 @@ internal final class BufferOutputFacilitySpec: QuickSpec {
 						"baz": "qux",
 					]
 				)
-				sut.outputErrorRepresentation(error)
+				sut.output(errorRepresentation: error)
 				expect(sut.errorRepresentations.count).to(beGreaterThanOrEqualTo(1))
 			}
 

@@ -1,7 +1,7 @@
 //
 // PlaintextBodyDeserializer.swift
 //
-// Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+// Copyright (c) 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -11,8 +11,8 @@ import Foundation
 @objc(RDTPlaintextBodyDeserializer) public final class PlaintextBodyDeserializer: NSObject, BodyDeserializer {
 
 	/// Deserializes plaintext data into a string.
-	public func deserializeBody(body: NSData) -> String? {
-		return NSString(data: body, encoding: NSUTF8StringEncoding) as String?
+	public func deserialize(body: Data) -> String? {
+		return NSString(data: body, encoding: String.Encoding.utf8.rawValue) as String?
 	}
 
 }
