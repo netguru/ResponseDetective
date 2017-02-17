@@ -104,9 +104,15 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 						)
 					}
 
-					it("should return no deserialized body") {
+					it("should return a deserialized body") {
 						expect {
 							ResponseDetective.deserialize(body: Data(), contentType: "foo/bar")
+						}.to(equal("lorem ipsum"))
+					}
+
+					it("should return a deserialized body for content type containing properties") {
+						expect {
+							ResponseDetective.deserialize(body: Data(), contentType: "foo/bar; charset=utf8")
 						}.to(equal("lorem ipsum"))
 					}
 
@@ -121,7 +127,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 						)
 					}
 
-					it("should return no deserialized body") {
+					it("should return a deserialized body") {
 						expect {
 							ResponseDetective.deserialize(body: Data(), contentType: "foo/baz")
 						}.to(equal("dolor sit amet"))
