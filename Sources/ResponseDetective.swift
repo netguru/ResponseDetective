@@ -97,9 +97,12 @@ import Foundation
 	///
 	/// - Returns: A body deserializer for given `contentType` or `nil`.
 	@objc(findBodyDeserializerForContentType:) private static func findBodyDeserializer(forContentType contentType: String) -> BodyDeserializer? {
+		guard let trimmedContentType = contentType.components(separatedBy: ";").first?.trimmingCharacters(in: .whitespaces) else {
+			return nil
+		}
 		for (pattern, deserializer) in defaultBodyDeserializers.appending(elementsOf: customBodyDeserializers) {
 			let patternParts = pattern.components(separatedBy: "/")
-			let actualParts = contentType.components(separatedBy: "/")
+			let actualParts = trimmedContentType.components(separatedBy: "/")
 			guard patternParts.count == 2 && actualParts.count == 2 else {
 				return nil
 			}
