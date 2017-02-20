@@ -10,8 +10,12 @@ import Foundation
 /// An output facility which outputs requests, responses and errors to console.
 @objc(RDTConsoleOutputFacility) public final class ConsoleOutputFacility: NSObject, OutputFacility {
 
-	/// Print closure used to output strings into the console.
-	private let printClosure: @convention(block) (String) -> Void
+	// MARK: Initializers
+	
+	/// Initializes the receiver with default print closure.
+	public convenience override init() {
+		self.init(printClosure: { print($0) })
+	}
 
 	/// Initializes the receiver.
 	///
@@ -22,10 +26,12 @@ import Foundation
 		self.printClosure = printClosure
 	}
 
-	/// Initializes the receiver with default print closure.
-	public convenience override init() {
-		self.init(printClosure: { print($0) })
-	}
+	// MARK: Properties
+
+	/// Print closure used to output strings into the console.
+	private let printClosure: @convention(block) (String) -> Void
+
+	// MARK: OutputFacility
 
 	/// Prints the request in the following format:
 	///
@@ -94,6 +100,8 @@ import Foundation
 			("User Info", userInfo),
 		])
 	}
+
+	// MARK: Printing boxes
 	
 	/// Composes a box string in the following format:
 	///

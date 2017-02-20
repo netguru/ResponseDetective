@@ -10,6 +10,8 @@ import Foundation
 /// An output facility that adds received representations to array buffers.
 @objc(RDTBufferOutputFacility) public final class BufferOutputFacility: NSObject, OutputFacility {
 
+	// MARK: Properties
+
 	/// A buffer of request representations.
 	public private(set) var requestRepresentations: [RequestRepresentation] = []
 
@@ -18,6 +20,8 @@ import Foundation
 
 	/// A buffer of request representations.
 	public private(set) var errorRepresentations: [ErrorRepresentation] = []
+
+	// MARK: OutputFacility
 
 	/// Adds the request representation to the buffer.
 	///

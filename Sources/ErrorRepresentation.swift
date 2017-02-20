@@ -7,26 +7,10 @@
 
 import Foundation
 
-/// Represents a foundation response error.
+/// Represents an instance of `NSError`.
 @objc(RDTErrorRepresentation) public final class ErrorRepresentation: NSObject {
-	
-	/// The request's unique identifier.
-	public let requestIdentifier: String
-	
-	/// The response representation that came along with the error.
-	public let response: ResponseRepresentation?
-	
-	/// The error domain.
-	public let domain: String
-	
-	/// The error code.
-	public let code: Int
-	
-	/// The error reason.
-	public let reason: String
-	
-	/// The error user info.
-	public let userInfo: [String: Any]
+
+	// MARK: Initializers
 
 	/// Initializes the receiver.
 	///
@@ -62,6 +46,28 @@ import Foundation
 			userInfo: error.userInfo as? [String: AnyObject] ?? [:]
 		)
 	}
+
+	// MARK: Properties
+	
+	/// The request's unique identifier.
+	public let requestIdentifier: String
+	
+	/// The response representation that came along with the error.
+	public let response: ResponseRepresentation?
+	
+	/// The error domain.
+	public let domain: String
+	
+	/// The error code.
+	public let code: Int
+	
+	/// The error reason.
+	public let reason: String
+	
+	/// The error user info.
+	public let userInfo: [String: Any]
+
+	// MARK: Unavailable
 	
 	/// An unavailable initializer.
 	@available(*, unavailable) public override init() {

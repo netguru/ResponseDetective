@@ -10,6 +10,8 @@
 
 @implementation RDTHTMLBodyDeserializer
 
+// MARK: RDTBodyDeserializer
+
 - (nullable NSString *)deserializeBody:(nonnull NSData *)body {
 	NSString *string = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
 	const char *memory = string.UTF8String;

@@ -10,6 +10,8 @@ import Foundation
 /// ResponseDetective configuration cluster class that defines the behavior
 /// of request interception and logging.
 @objc(RDTResponseDetective) public final class ResponseDetective: NSObject {
+
+	// MARK: Properties
 	
 	/// An output facility for reporting requests, responses and errors.
 	public static var outputFacility: OutputFacility = ConsoleOutputFacility()
@@ -31,6 +33,8 @@ import Foundation
 		"image/*": ImageBodyDeserializer(),
 		"text/plain": PlaintextBodyDeserializer(),
 	]
+
+	// MARK: Configuration
 	
 	/// Resets the ResponseDetective mutable state.
 	public static func reset() {
@@ -57,7 +61,7 @@ import Foundation
 	@objc(ignoreRequestsMatchingPredicate:) public static func ignoreRequests(matchingPredicate predicate: NSPredicate) {
 		requestPredicates.append(predicate)
 	}
-	
+
 	/// Checks whether the given request can be incercepted.
 	///
 	/// - Parameters:
@@ -69,7 +73,9 @@ import Foundation
 			return $0 && !$1.evaluate(with: request)
 		}
 	}
-	
+
+	// MARK: Deserialization
+
 	/// Registers a body deserializer.
 	///
 	/// - Parameters:
@@ -87,6 +93,22 @@ import Foundation
 	@objc(registerBodyDeserializer:forContentTypes:) public static func registerBodyDeserializer(_ deserializer: BodyDeserializer, forContentTypes contentTypes: [String]) {
 		for contentType in contentTypes {
 			registerBodyDeserializer(deserializer, forContentType: contentType)
+		}
+	}
+
+	/// Deserializes a HTTP body into a string.
+	///
+	/// - Parameters:
+	///     - body: The body to deserialize.
+	///     - contentType: The content type of the body.
+	///
+	/// - Returns: A deserialized body or `nil` if no serializer is capable of
+	///   deserializing body with the given content type.
+	@objc(deserializeBody:contentType:) public static func deserialize(body: Data, contentType: String) -> String? {
+		if let deserializer = findBodyDeserializer(forContentType: contentType) {
+			return deserializer.deserialize(body: body)
+		} else {
+			return nil
 		}
 	}
 
@@ -112,21 +134,5 @@ import Foundation
 		}
 		return nil
 	}
-	
-	/// Deserializes a HTTP body into a string.
-	///
-	/// - Parameters:
-	///     - body: The body to deserialize.
-	///     - contentType: The content type of the body.
-	///
-	/// - Returns: A deserialized body or `nil` if no serializer is capable of
-	///   deserializing body with the given content type.
-	@objc(deserializeBody:contentType:) public static func deserialize(body: Data, contentType: String) -> String? {
-		if let deserializer = findBodyDeserializer(forContentType: contentType) {
-			return deserializer.deserialize(body: body)
-		} else {
-			return nil
-		}
-	}
-	
+
 }
