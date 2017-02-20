@@ -5,5 +5,13 @@
 # Licensed under the MIT License.
 #
 
-github "Quick/Quick" ~> 1.0.0
-github "Quick/Nimble" ~> 6.0.0
+# Configuration dependencies
+
+github "jspahrsummers/xcconfigs" "master"
+
+# Test dependencies
+
+github "AliSoftware/OHHTTPStubs" "5.2.3-swift3"
+github "Quick/Quick" ~> 1.1.0
+github "Quick/Nimble" ~> 6.0.1
+github "typelift/SwiftCheck" ~> 0.7.3
