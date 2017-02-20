@@ -515,9 +515,9 @@
 			productReference = 3AE5462A1E152DB500E74469 /* ResponseDetective.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3AE546311E152DB600E74469 /* ResponseDetective (tvOS)Tests */ = {
+		3AE546311E152DB600E74469 /* ResponseDetective (tvOS) Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS)Tests" */;
+			buildConfigurationList = 3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS) Tests" */;
 			buildPhases = (
 				3AE5462E1E152DB600E74469 /* Sources */,
 				3AE5462F1E152DB600E74469 /* Frameworks */,
@@ -529,7 +529,7 @@
 			dependencies = (
 				3AE546351E152DB600E74469 /* PBXTargetDependency */,
 			);
-			name = "ResponseDetective (tvOS)Tests";
+			name = "ResponseDetective (tvOS) Tests";
 			productName = "ResponseDetective (tvOS)Tests";
 			productReference = 3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -624,7 +624,7 @@
 				3A2007D71B5501BC00769021 /* ResponseDetective (macOS) */,
 				3A2007E11B5501BC00769021 /* ResponseDetective (macOS) Tests */,
 				3AE546291E152DB500E74469 /* ResponseDetective (tvOS) */,
-				3AE546311E152DB600E74469 /* ResponseDetective (tvOS)Tests */,
+				3AE546311E152DB600E74469 /* ResponseDetective (tvOS) Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -995,7 +995,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS)Tests" */ = {
+		3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS) Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AE5463F1E152DB600E74469 /* Debug */,

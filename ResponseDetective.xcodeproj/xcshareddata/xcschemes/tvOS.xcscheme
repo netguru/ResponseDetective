@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3AE546311E152DB600E74469"
                BuildableName = "ResponseDetective Tests.xctest"
-               BlueprintName = "ResponseDetective (tvOS)Tests"
+               BlueprintName = "ResponseDetective (tvOS) Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -49,7 +49,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3AE546311E152DB600E74469"
                BuildableName = "ResponseDetective Tests.xctest"
-               BlueprintName = "ResponseDetective (tvOS)Tests"
+               BlueprintName = "ResponseDetective (tvOS) Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
          </TestableReference>
