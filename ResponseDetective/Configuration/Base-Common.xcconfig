@@ -1,0 +1,101 @@
+//
+// Base-Common.xcconfig
+//
+// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under the MIT License.
+//
+// This file contains abstract build settings which are mapped onto the real
+// build settings in `Base-Mappings.xcconfig` file. The names are underscored
+// to prevent conflicts with real build settings.
+//
+
+// MARK: Environment
+
+/// The environment build setting, typically overridden in environment-specific
+/// `xcconfig` files, such as `App-Development.xcconfig`.
+///
+/// Environment should be prefixed with `ENV_`, such as `ENV_STAGING`.
+_ENVIRONMENT =
+
+// MARK: Versioning
+
+/// The build semantic version, mapped later into `CFBundleVersionString` in
+/// `Info.plist`.
+_BUILD_VERSION = 0.5
+
+/// The build number, mapped later into `CFBundleVersion` in `Info.plist`.
+_BUILD_NUMBER = 0.5
+
+// MARK: Bundle
+
+/// Bundle name of the product, used by Xcode to create an `.app` bundle.
+_BUNDLE_NAME =
+
+/// Bundle identifier of the product.
+_BUNDLE_IDENTIFIER =
+
+/// Parth to `Info.plist` file of the product.
+_BUNDLE_INFOPLIST_PATH =
+
+/// Whether the bundle is testable.
+_BUNDLE_TESTABLE = NO
+
+// MARK: Deployment
+
+/// Target devices of the product.
+///
+/// `1` - iPhone, iPod Touch, iPhone Simulator
+/// `2` - iPad, iPad Simulator
+/// `3` - Apple TV, Apple TV Simulator
+/// `4` - Apple Watch 38mm, Apple Watch 42mm, Watch Simulator
+_DEPLOYMENT_DEVICES[sdk=iphone*] = 1,2
+_DEPLOYMENT_DEVICES[sdk=appletv*] = 3
+
+/// Target minimum iOS, macOS and tvOS versions of the product.
+_DEPLOYMENT_VERSION[sdk=iphone*] = 8.0
+_DEPLOYMENT_VERSION[sdk=macosx*] = 10.10
+_DEPLOYMENT_VERSION[sdk=appletv*] = 9.0
+
+// MARK: Code signing
+
+/// Development team to be used with `_CODESIGN_PROFILE_SPECIFIER` to manually
+/// code sign the product.
+_CODESIGN_DEVELOPMENT_TEAM =
+
+/// The provisioning profile specifier to be used with `_CODESIGN_DEVELOPMENT_TEAM`
+/// to manually code sign the product.
+_CODESIGN_PROFILE_SPECIFIER =
+
+/// Path to `.entitlements` file of the product.
+_CODESIGN_ENTITLEMENTS_PATH =
+
+// MARK: Carthage
+
+/// The path to frameworks built by Carthage.
+///
+/// This build setting can be used in `carthage copy-frameworks` build phase
+/// when adding paths to the frameworks that have to be copied.
+_CARTHAGE_BUILD_PATH[sdk=iphone*] = $(SRCROOT)/Carthage/Build/iOS
+_CARTHAGE_BUILD_PATH[sdk=macosx*] = $(SRCROOT)/Carthage/Build/Mac
+_CARTHAGE_BUILD_PATH[sdk=appletv*] = $(SRCROOT)/Carthage/Build/tvOS
+
+// MARK: Compiling
+
+/// The version of Swift to be used.
+_COMPILER_SWIFT_VERSION = 3.0.2
+
+/// Additional flags for the Swift compiler.
+_COMPILER_SWIFT_FLAGS =
+
+/// Additional search paths when looking for frameworks.
+_COMPILER_FRAMEWORK_SEARCH_PATHS = $(_CARTHAGE_BUILD_PATH)
+
+/// Additional search paths when looking for headers.
+_COMPILER_HEADER_SEARCH_PATHS =
+
+/// Additional libraries linked by compiler.
+_COMPILER_LINKED_LIBRARIES =
+
+// MARK: Mapping
+
+#include "Base-Mappings.xcconfig"
