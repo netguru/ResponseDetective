@@ -33,7 +33,7 @@ Pod::Spec.new do |spec|
     tag: spec.version.to_s
   }
 
-  spec.source_files = 'Sources'
+  spec.source_files = 'ResponseDetective/Sources'
 
   # Linking
 
