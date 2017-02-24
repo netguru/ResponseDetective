@@ -40,9 +40,7 @@ import Foundation
 	private lazy var internalResponseData = Data()
 
 	/// A unique identifier of the request. Currently its address.
-	private var requestIdentifier: String {
-		return String(describing: Unmanaged<AnyObject>.passUnretained(internalTask.originalRequest! as AnyObject).toOpaque())
-	}
+	private lazy var requestIdentifier: String = String(describing: Unmanaged<AnyObject>.passUnretained(self.internalTask.originalRequest! as AnyObject).toOpaque())
 
 	// MARK: URLProtocol
 
