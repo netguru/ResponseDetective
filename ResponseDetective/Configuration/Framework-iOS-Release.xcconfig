@@ -1,0 +1,10 @@
+//
+// Framework-iOS-Release.xcconfig
+//
+// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under the MIT License.
+//
+
+#include "../../Carthage/Checkouts/xcconfigs/Base/Configurations/Release.xcconfig"
+#include "../../Carthage/Checkouts/xcconfigs/iOS/iOS-Framework.xcconfig"
+#include "Framework-Common.xcconfig"

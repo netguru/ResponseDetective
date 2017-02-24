@@ -1,9 +1,15 @@
 #
 # Cartfile.private
 #
-# Copyright (c) 2016 Netguru Sp. z o.o. All rights reserved.
+# Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
 # Licensed under the MIT License.
 #
 
-github "Quick/Quick" ~> 0.9.3
-github "Quick/Nimble" ~> 4.1
+# Configuration dependencies
+
+github "jspahrsummers/xcconfigs" "master"
+
+# Test dependencies
+
+github "Quick/Quick" ~> 1.1.0
+github "Quick/Nimble" ~> 6.0.1

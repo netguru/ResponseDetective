@@ -1,0 +1,12 @@
+//
+// Tests-Common.xcconfig
+//
+// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under the MIT License.
+//
+
+#include "Base-Common.xcconfig"
+
+_BUNDLE_NAME = ResponseDetective Tests
+_BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective.tests
+_BUNDLE_INFOPLIST_PATH = $(SRCROOT)/ResponseDetective/Resources/Tests-Info.plist

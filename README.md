@@ -1,7 +1,7 @@
 ![](Images/Header.png)
 
 ![](https://www.bitrise.io/app/c09426001dedd91c.svg?token=4zhZMFtDpH-9BhWvGP5-1g&branch=develop)
-![](https://img.shields.io/badge/swift-2.3-orange.svg)
+![](https://img.shields.io/badge/swift-3.0.2-orange.svg)
 ![](https://img.shields.io/github/release/netguru/ResponseDetective.svg)
 ![](https://img.shields.io/badge/carthage-compatible-green.svg)
 ![](https://img.shields.io/badge/cocoapods-compatible-green.svg)
@@ -10,7 +10,7 @@
 
 ## Requirements
 
-ResponseDetective is written in **Swift 2.3** and requires **iOS 8** or **OS X 10.10**.
+ResponseDetective is written in **Swift 3.0.2** and supports **iOS 8.0+**, **macOS 10.9+** and **tvOS 9.0+**.
 
 ## Usage
 
@@ -18,23 +18,23 @@ Incorporating ResponseDetective in your project is very simple – it all comes 
 
 ### Step 1: Enable interception
 
-For ResponseDetective to work, it needs to be added as a middleman between your `NSURLSession` and the Internet. You can do this by registering the provided `URLProtocolClass` in your session's `NSURLSessionConfiguration.protocolClasses`, or use a shortcut method:
+For ResponseDetective to work, it needs to be added as a middleman between your `(NS)URLSession` and the Internet. You can do this by registering the provided `URLProtocol` class in your session's `(NS)URLSessionConfiguration.protocolClasses`, or use a shortcut method:
 
 ```objc
 // Objective-C
 
 NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-[RDVResponseDetective enableInURLSessionConfiguration:configuration];
+[RDTResponseDetective enableInConfiguration:configuration];
 ```
 
 ```swift
 // Swift
 
-let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-ResponseDetective.enableInURLSessionConfiguration(configuration)
+let configuration = URLSessionConfiguration.default
+ResponseDetective.enable(inConfiguration: configuration)
 ```
 
-Then, you should use that configuration with your `NSURLSession`:
+Then, you should use that configuration with your `(NS)URLSession`:
 
 ```objc
 // Objective-C
@@ -45,10 +45,10 @@ NSURLSession *session = [[NSURLSession alloc] initWithConfiguration:configuratio
 ```swift
 // Swift
 
-let session = NSURLSession(configuration: configuration)
+let session = URLSession(configuration: configuration)
 ```
 
-Or, if you're using [AFNetworking](https://github.com/AFNetworking/AFNetworking)/[Alamofire](https://github.com/Alamofire/Alamofire) as your networking framework, integrating ResponseDetective comes down to just initializing your `AFURLSessionManager`/`Manager` with the above `NSURLSessionConfiguration`:
+Or, if you're using [AFNetworking](https://github.com/AFNetworking/AFNetworking)/[Alamofire](https://github.com/Alamofire/Alamofire) as your networking framework, integrating ResponseDetective comes down to just initializing your `AFURLSessionManager`/`Manager` with the above `(NS)URLSessionConfiguration`:
 
 ```objc
 // Objective-C (AFNetworking)
@@ -78,8 +78,8 @@ NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@
 ```swift
 // Swift
 
-let request = NSURLRequest(URL: NSURL(string: "http://httpbin.org/get")!)
-session.dataTaskWithRequest(request).resume()
+let request = URLRequest(URL: URL(string: "http://httpbin.org/get")!)
+session.dataTask(with: request).resume()
 ```
 
 Voilà! 🎉 Check out your console output:
@@ -114,7 +114,7 @@ Voilà! 🎉 Check out your console output:
 
 ### Carthage
 
-If you're using [Carthage](https://github.com/Carthage/Carthage), just add the following dependency to your `Cartfile`:
+If you're using [Carthage](https://github.com/Carthage/Carthage), add the following dependency to your `Cartfile`:
 
 ```none
 github "netguru/ResponseDetective"
@@ -122,7 +122,7 @@ github "netguru/ResponseDetective"
 
 ### CocoaPods
 
-Using ResponseDetective with [CocoaPods](http://cocoapods.org) is as easy as adding the following dependency to your `Podfile`:
+If you're using [CocoaPods](http://cocoapods.org), add the following dependency to your `Podfile`:
 
 ```none
 use_frameworks!
@@ -131,10 +131,7 @@ pod 'ResponseDetective'
 
 ## About
 
-This project is made with <3 by [Netguru](https://netguru.co/opensource) and maintained by:
-
-- Adrian Kashivskyy ([github](https://github.com/akashivskyy), [twitter](https://twitter.com/akashivskyy))
-- Aleksander Popko ([github](https://github.com/APbjj))
+This project is made with <3 by [Netguru](https://netguru.co) and maintained by [Adrian Kashivskyy](https://github.com/akashivskyy).
 
 ### License
 
