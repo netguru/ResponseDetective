@@ -21,10 +21,10 @@ _ENVIRONMENT =
 
 /// The build semantic version, mapped later into `CFBundleVersionString` in
 /// `Info.plist`.
-_BUILD_VERSION = 0.5
+_BUILD_VERSION = 1.0
 
 /// The build number, mapped later into `CFBundleVersion` in `Info.plist`.
-_BUILD_NUMBER = 0.5
+_BUILD_NUMBER = 1.0
 
 // MARK: Bundle
 
