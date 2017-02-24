@@ -53,7 +53,7 @@ _DEPLOYMENT_DEVICES[sdk=appletv*] = 3
 
 /// Target minimum iOS, macOS and tvOS versions of the product.
 _DEPLOYMENT_VERSION[sdk=iphone*] = 8.0
-_DEPLOYMENT_VERSION[sdk=macosx*] = 10.10
+_DEPLOYMENT_VERSION[sdk=macosx*] = 10.9
 _DEPLOYMENT_VERSION[sdk=appletv*] = 9.0
 
 // MARK: Code signing
