@@ -14,8 +14,11 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 trigger_map:
 
-  - push_branch: feature/*
-    workflow: build-feature
+  - pull_request_target_branch: develop
+    workflow: build-and-test
+
+  - push_branch: develop
+    workflow: build-and-test
 
 # Environment configuration
 
@@ -30,7 +33,7 @@ workflows:
 
   # Top level build workflows
 
-  build-feature:
+  build-and-test:
     envs:
       - XCODEBUILD_SCHEME_IOS: iOS
       - XCODEBUILD_SCHEME_MACOS: macOS
