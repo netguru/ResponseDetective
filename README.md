@@ -131,7 +131,7 @@ pod 'ResponseDetective'
 
 ## About
 
-This project is made with <3 by [Netguru](https://netguru.co/opensource) and maintained by [Adrian Kashivskyy](https://github.com/akashivskyy).
+This project is made with <3 by [Netguru](https://netguru.co) and maintained by [Adrian Kashivskyy](https://github.com/akashivskyy).
 
 ### License
 
