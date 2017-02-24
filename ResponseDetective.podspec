@@ -34,6 +34,7 @@ Pod::Spec.new do |spec|
   }
 
   spec.source_files = 'ResponseDetective/Sources'
+  spec.module_map = 'ResponseDetective/Resources/Framework.modulemap'
 
   # Linking
 

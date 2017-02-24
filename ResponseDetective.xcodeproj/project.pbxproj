@@ -184,6 +184,7 @@
 		3AF56EC91E5B37B500F1CEBC /* ResponseRepresentationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseRepresentationSpec.swift; sourceTree = "<group>"; };
 		3AF56ECB1E5B37B500F1CEBC /* XMLBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3AF56F0B1E5B4ED800F1CEBC /* TestBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBodyDeserializer.swift; sourceTree = "<group>"; };
+		3AF96F121E60647900A9831E /* Framework.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Framework.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +285,7 @@
 		3AF56E6E1E5B379A00F1CEBC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3AF96F121E60647900A9831E /* Framework.modulemap */,
 				3AF56E6F1E5B379A00F1CEBC /* Framework-Info.plist */,
 				3AF56E701E5B379A00F1CEBC /* Tests-Info.plist */,
 			);
