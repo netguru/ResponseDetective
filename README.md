@@ -1,7 +1,7 @@
 ![](Images/Header.png)
 
 ![](https://www.bitrise.io/app/c09426001dedd91c.svg?token=4zhZMFtDpH-9BhWvGP5-1g&branch=develop)
-![](https://img.shields.io/badge/swift-3-orange.svg)
+![](https://img.shields.io/badge/swift-3.0.2-orange.svg)
 ![](https://img.shields.io/github/release/netguru/ResponseDetective.svg)
 ![](https://img.shields.io/badge/carthage-compatible-green.svg)
 ![](https://img.shields.io/badge/cocoapods-compatible-green.svg)
@@ -10,7 +10,7 @@
 
 ## Requirements
 
-ResponseDetective is written in **Swift 3** and supports **iOS 8.0+**, **macOS 10.10+** and **tvOS 9.0+**.
+ResponseDetective is written in **Swift 3.0.2** and supports **iOS 8.0+**, **macOS 10.9+** and **tvOS 9.0+**.
 
 ## Usage
 
@@ -114,7 +114,7 @@ Voilà! 🎉 Check out your console output:
 
 ### Carthage
 
-If you're using [Carthage](https://github.com/Carthage/Carthage), just add the following dependency to your `Cartfile`:
+If you're using [Carthage](https://github.com/Carthage/Carthage), add the following dependency to your `Cartfile`:
 
 ```none
 github "netguru/ResponseDetective"
@@ -122,7 +122,7 @@ github "netguru/ResponseDetective"
 
 ### CocoaPods
 
-Using ResponseDetective with [CocoaPods](http://cocoapods.org) is as easy as adding the following dependency to your `Podfile`:
+If you're using [CocoaPods](http://cocoapods.org), add the following dependency to your `Podfile`:
 
 ```none
 use_frameworks!
