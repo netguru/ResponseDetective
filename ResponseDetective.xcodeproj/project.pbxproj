@@ -129,6 +129,9 @@
 /* Begin PBXFileReference section */
 		3A2007D81B5501BC00769021 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A5A99CB1E604064002EFC39 /* bitrise.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = bitrise.yml; sourceTree = "<group>"; };
+		3A5A99CC1E604064002EFC39 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		3A5A99CD1E604064002EFC39 /* ResponseDetective.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResponseDetective.podspec; sourceTree = "<group>"; };
 		3A63C1E31E5B3485008BBE4E /* Base-Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Common.xcconfig"; sourceTree = "<group>"; };
 		3A63C1E41E5B3485008BBE4E /* Base-Mappings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Mappings.xcconfig"; sourceTree = "<group>"; };
 		3A63C1E51E5B3485008BBE4E /* Framework-Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-Common.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +235,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A5A99CA1E60404E002EFC39 /* Other Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A5A99CB1E604064002EFC39 /* bitrise.yml */,
+				3A5A99CC1E604064002EFC39 /* Cartfile.private */,
+				3A5A99CD1E604064002EFC39 /* ResponseDetective.podspec */,
+			);
+			name = "Other Files";
+			sourceTree = "<group>";
+		};
 		3A63C1E21E5B3485008BBE4E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +263,7 @@
 				3AF56EBA1E5B37B500F1CEBC /* Tests */,
 				3AF56E6E1E5B379A00F1CEBC /* Resources */,
 				3A63C1E21E5B3485008BBE4E /* Configuration */,
+				3A5A99CA1E60404E002EFC39 /* Other Files */,
 				3AED3ECD1B1DD7B400FA35FC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -782,8 +796,6 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
-				"$(_CARTHAGE_BUILD_PATH)/SwiftCheck.framework",
-				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -801,8 +813,6 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
-				"$(_CARTHAGE_BUILD_PATH)/SwiftCheck.framework",
-				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -820,8 +830,6 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
-				"$(_CARTHAGE_BUILD_PATH)/SwiftCheck.framework",
-				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (

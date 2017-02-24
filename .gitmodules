@@ -7,9 +7,3 @@
 [submodule "Carthage/Checkouts/xcconfigs"]
 	path = Carthage/Checkouts/xcconfigs
 	url = https://github.com/jspahrsummers/xcconfigs.git
-[submodule "Carthage/Checkouts/OHHTTPStubs"]
-	path = Carthage/Checkouts/OHHTTPStubs
-	url = https://github.com/AliSoftware/OHHTTPStubs.git
-[submodule "Carthage/Checkouts/SwiftCheck"]
-	path = Carthage/Checkouts/SwiftCheck
-	url = https://github.com/typelift/SwiftCheck.git
