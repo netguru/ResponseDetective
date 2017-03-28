@@ -148,6 +148,7 @@
 		3A63C1F01E5B3485008BBE4E /* Tests-macOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS-Release.xcconfig"; sourceTree = "<group>"; };
 		3A63C1F11E5B3485008BBE4E /* Tests-tvOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS-Debug.xcconfig"; sourceTree = "<group>"; };
 		3A63C1F21E5B3485008BBE4E /* Tests-tvOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS-Release.xcconfig"; sourceTree = "<group>"; };
+		3ABF34631E8B2A9E0010A8FE /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		3AE5462A1E152DB500E74469 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +241,7 @@
 		3A5A99CA1E60404E002EFC39 /* Other Files */ = {
 			isa = PBXGroup;
 			children = (
+				3ABF34631E8B2A9E0010A8FE /* .swift-version */,
 				3A5A99CB1E604064002EFC39 /* bitrise.yml */,
 				3A5A99CC1E604064002EFC39 /* Cartfile.private */,
 				3A5A99CD1E604064002EFC39 /* ResponseDetective.podspec */,
@@ -697,7 +699,7 @@
 				CLASSPREFIX = RDT;
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Netguru Sp. z o.o.";
 				TargetAttributes = {
 					3A2007D71B5501BC00769021 = {
