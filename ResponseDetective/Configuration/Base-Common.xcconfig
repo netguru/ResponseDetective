@@ -82,7 +82,7 @@ _CARTHAGE_BUILD_PATH[sdk=appletv*] = $(SRCROOT)/Carthage/Build/tvOS
 // MARK: Compiling
 
 /// The version of Swift to be used.
-_COMPILER_SWIFT_VERSION = 3.0.2
+_COMPILER_SWIFT_VERSION = 3.1
 
 /// Additional flags for the Swift compiler.
 _COMPILER_SWIFT_FLAGS =
