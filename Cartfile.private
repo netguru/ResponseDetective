@@ -12,4 +12,4 @@ github "jspahrsummers/xcconfigs" "master"
 # Test dependencies
 
 github "Quick/Quick" ~> 1.1.0
-github "Quick/Nimble" ~> 6.0.1
+github "Quick/Nimble" ~> 6.1.0
