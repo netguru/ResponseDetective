@@ -21,10 +21,10 @@ _ENVIRONMENT =
 
 /// The build semantic version, mapped later into `CFBundleVersionString` in
 /// `Info.plist`.
-_BUILD_VERSION = 1.0
+_BUILD_VERSION = 1.0.1
 
 /// The build number, mapped later into `CFBundleVersion` in `Info.plist`.
-_BUILD_NUMBER = 1.0
+_BUILD_NUMBER = 1.0.1
 
 // MARK: Bundle
 
@@ -82,7 +82,7 @@ _CARTHAGE_BUILD_PATH[sdk=appletv*] = $(SRCROOT)/Carthage/Build/tvOS
 // MARK: Compiling
 
 /// The version of Swift to be used.
-_COMPILER_SWIFT_VERSION = 3.0.2
+_COMPILER_SWIFT_VERSION = 3.1
 
 /// Additional flags for the Swift compiler.
 _COMPILER_SWIFT_FLAGS =

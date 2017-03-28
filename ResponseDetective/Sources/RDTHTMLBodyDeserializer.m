@@ -5,7 +5,7 @@
 // Licensed under the MIT License.
 //
 
-#import <libxml/HTMLTree.h>
+#import <libxml/HTMLtree.h>
 #import "RDTHTMLBodyDeserializer.h"
 
 @implementation RDTHTMLBodyDeserializer
