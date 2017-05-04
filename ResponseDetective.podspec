@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   # Description
 
   spec.name = 'ResponseDetective'
-  spec.version = '1.0.1'
+  spec.version = '1.1'
   spec.summary = 'Sherlock Holmes of the networking layer'
   spec.homepage = 'https://github.com/netguru/ResponseDetective'
 
@@ -49,7 +49,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.ios.deployment_target = '8.0'
-  spec.osx.deployment_target = '10.10'
+  spec.osx.deployment_target = '10.9'
   spec.tvos.deployment_target = '9.0'
 
   spec.xcconfig = {
