@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */; };
+		3AB9E9801EBB64C8004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */; };
+		3AB9E9811EBB64C9004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */; };
+		3AB9E9821EBB64C9004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */; };
+		3AC631211EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */; };
+		3AC631221EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */; };
+		3AC631231EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */; };
 		3AE546331E152DB600E74469 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE5462A1E152DB500E74469 /* ResponseDetective.framework */; };
 		3AED3ED81B1DD7B400FA35FC /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */; };
 		3AF56E841E5B37A500F1CEBC /* BufferOutputFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56E721E5B37A500F1CEBC /* BufferOutputFacility.swift */; };
@@ -148,7 +154,9 @@
 		3A63C1F01E5B3485008BBE4E /* Tests-macOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS-Release.xcconfig"; sourceTree = "<group>"; };
 		3A63C1F11E5B3485008BBE4E /* Tests-tvOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS-Debug.xcconfig"; sourceTree = "<group>"; };
 		3A63C1F21E5B3485008BBE4E /* Tests-tvOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS-Release.xcconfig"; sourceTree = "<group>"; };
+		3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ABF34631E8B2A9E0010A8FE /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
+		3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializer.swift; sourceTree = "<group>"; };
 		3AE5462A1E152DB500E74469 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -458,6 +466,7 @@
 				3AF56E791E5B37A500F1CEBC /* PlaintextBodyDeserializer.swift */,
 				3AF56E761E5B37A500F1CEBC /* ImageBodyDeserializer.swift */,
 				3AF56E771E5B37A500F1CEBC /* JSONBodyDeserializer.swift */,
+				3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */,
 				3AF56EFF1E5B3D1200F1CEBC /* XMLBodyDeserializer */,
 				3AF56F001E5B3D2200F1CEBC /* HTMLBodyDeserializer */,
 			);
@@ -527,6 +536,7 @@
 				3AF56ECB1E5B37B500F1CEBC /* XMLBodyDeserializerSpec.swift */,
 				3AF56EC61E5B37B500F1CEBC /* PlaintextBodyDeserializerSpec.swift */,
 				3AF56EC51E5B37B500F1CEBC /* JSONBodyDeserializerSpec.swift */,
+				3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */,
 			);
 			name = "Body Deserializers";
 			sourceTree = "<group>";
@@ -853,6 +863,7 @@
 			files = (
 				3AF56E971E5B37A500F1CEBC /* OutputFacility.swift in Sources */,
 				3AF56E941E5B37A500F1CEBC /* JSONBodyDeserializer.swift in Sources */,
+				3AC631221EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift in Sources */,
 				3AF56E851E5B37A500F1CEBC /* BufferOutputFacility.swift in Sources */,
 				3AF56EA91E5B37A500F1CEBC /* RDTXMLBodyDeserializer.m in Sources */,
 				3AF56EAC1E5B37A500F1CEBC /* RequestRepresentation.swift in Sources */,
@@ -879,6 +890,7 @@
 				3AF56ED01E5B37B500F1CEBC /* BufferOutputFacilitySpec.swift in Sources */,
 				3AF56EE81E5B37B500F1CEBC /* ResponseDetectiveSpec.swift in Sources */,
 				3AF56EE21E5B37B500F1CEBC /* PlaintextBodyDeserializerSpec.swift in Sources */,
+				3AB9E9811EBB64C9004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */,
 				3AF56ED31E5B37B500F1CEBC /* ConsoleOutputFacilitySpec.swift in Sources */,
 				3AF56ED91E5B37B500F1CEBC /* HTMLBodyDeserializerSpec.swift in Sources */,
 				3AF56EE51E5B37B500F1CEBC /* RequestRepresentationSpec.swift in Sources */,
@@ -893,6 +905,7 @@
 			files = (
 				3AF56E981E5B37A500F1CEBC /* OutputFacility.swift in Sources */,
 				3AF56E951E5B37A500F1CEBC /* JSONBodyDeserializer.swift in Sources */,
+				3AC631231EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift in Sources */,
 				3AF56E861E5B37A500F1CEBC /* BufferOutputFacility.swift in Sources */,
 				3AF56EAA1E5B37A500F1CEBC /* RDTXMLBodyDeserializer.m in Sources */,
 				3AF56EAD1E5B37A500F1CEBC /* RequestRepresentation.swift in Sources */,
@@ -919,6 +932,7 @@
 				3AF56ED11E5B37B500F1CEBC /* BufferOutputFacilitySpec.swift in Sources */,
 				3AF56EE91E5B37B500F1CEBC /* ResponseDetectiveSpec.swift in Sources */,
 				3AF56EE31E5B37B500F1CEBC /* PlaintextBodyDeserializerSpec.swift in Sources */,
+				3AB9E9821EBB64C9004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */,
 				3AF56ED41E5B37B500F1CEBC /* ConsoleOutputFacilitySpec.swift in Sources */,
 				3AF56EDA1E5B37B500F1CEBC /* HTMLBodyDeserializerSpec.swift in Sources */,
 				3AF56EE61E5B37B500F1CEBC /* RequestRepresentationSpec.swift in Sources */,
@@ -933,6 +947,7 @@
 			files = (
 				3AF56E961E5B37A500F1CEBC /* OutputFacility.swift in Sources */,
 				3AF56E931E5B37A500F1CEBC /* JSONBodyDeserializer.swift in Sources */,
+				3AC631211EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift in Sources */,
 				3AF56E841E5B37A500F1CEBC /* BufferOutputFacility.swift in Sources */,
 				3AF56EA81E5B37A500F1CEBC /* RDTXMLBodyDeserializer.m in Sources */,
 				3AF56EAB1E5B37A500F1CEBC /* RequestRepresentation.swift in Sources */,
@@ -959,6 +974,7 @@
 				3AF56ECF1E5B37B500F1CEBC /* BufferOutputFacilitySpec.swift in Sources */,
 				3AF56EE71E5B37B500F1CEBC /* ResponseDetectiveSpec.swift in Sources */,
 				3AF56EE11E5B37B500F1CEBC /* PlaintextBodyDeserializerSpec.swift in Sources */,
+				3AB9E9801EBB64C8004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */,
 				3AF56ED21E5B37B500F1CEBC /* ConsoleOutputFacilitySpec.swift in Sources */,
 				3AF56ED81E5B37B500F1CEBC /* HTMLBodyDeserializerSpec.swift in Sources */,
 				3AF56EE41E5B37B500F1CEBC /* RequestRepresentationSpec.swift in Sources */,
