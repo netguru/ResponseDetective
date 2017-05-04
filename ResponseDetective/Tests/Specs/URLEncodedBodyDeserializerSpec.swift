@@ -20,7 +20,7 @@ internal final class URLEncodedBodyDeserializerSpec: QuickSpec {
 
 			it("should correctly deserialize URL-encoded data") {
 
-				if #available(macOS 10.10, tvOS 10.0, *) {
+				if #available(macOS 10.10, *) {
 
 					let items = [URLQueryItem(name: "foo", value: nil), URLQueryItem(name: "bar", value: "baz")]
 					let components = URLComponents(queryItems: items)
@@ -50,7 +50,7 @@ internal final class URLEncodedBodyDeserializerSpec: QuickSpec {
 
 // MARK: -
 
-@available(macOS 10.10, tvOS 10.0, *) fileprivate extension URLComponents {
+@available(macOS 10.10, *) fileprivate extension URLComponents {
 
 	fileprivate init(queryItems: [URLQueryItem]) {
 		self.init()

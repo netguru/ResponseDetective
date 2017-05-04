@@ -19,7 +19,7 @@ import Foundation
 			return nil
 		}
 
-		if #available(macOS 10.10, tvOS 10.0, *) {
+		if #available(macOS 10.10, *) {
 
 			let stringFromQueryItems: ([URLQueryItem]) -> String = {
 				$0.map { "\($0.name): \($0.value ?? "nil")" }.joined(separator: "\n")
