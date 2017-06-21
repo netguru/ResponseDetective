@@ -1,15 +1,21 @@
 //
-// Framework-Common.xcconfig
+// Framework-Base.xcconfig
 //
 // Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
-#include "Base-Common.xcconfig"
+// Imports
+
+#include "../../Carthage/Checkouts/xcconfigs/Targets/Framework.xcconfig"
+
+// Bundle
 
 _BUNDLE_NAME = ResponseDetective
 _BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective
 _BUNDLE_INFOPLIST_PATH = $(SRCROOT)/ResponseDetective/Resources/Framework-Info.plist
 
-_COMPILER_HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2
-_COMPILER_LINKED_LIBRARIES = -lxml2
+// Compiler
+
+_COMPILER_OBJC_HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2
+_COMPILER_OBJC_LINKER_FLAGS = -lxml2

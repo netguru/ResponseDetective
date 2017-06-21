@@ -1,11 +1,16 @@
 //
-// Tests-Common.xcconfig
+// Tests-Base.xcconfig
 //
 // Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
 // Licensed under the MIT License.
 //
 
-#include "Base-Common.xcconfig"
+
+// Imports
+
+#include "../../Carthage/Checkouts/xcconfigs/Targets/Application.xcconfig"
+
+// Bundle
 
 _BUNDLE_NAME = ResponseDetective Tests
 _BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective.tests
