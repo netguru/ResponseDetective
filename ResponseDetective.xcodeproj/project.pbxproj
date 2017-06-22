@@ -138,22 +138,8 @@
 		3A5A99CB1E604064002EFC39 /* bitrise.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = bitrise.yml; sourceTree = "<group>"; };
 		3A5A99CC1E604064002EFC39 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		3A5A99CD1E604064002EFC39 /* ResponseDetective.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResponseDetective.podspec; sourceTree = "<group>"; };
-		3A63C1E31E5B3485008BBE4E /* Base-Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Common.xcconfig"; sourceTree = "<group>"; };
-		3A63C1E41E5B3485008BBE4E /* Base-Mappings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Mappings.xcconfig"; sourceTree = "<group>"; };
-		3A63C1E51E5B3485008BBE4E /* Framework-Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-Common.xcconfig"; sourceTree = "<group>"; };
-		3A63C1E61E5B3485008BBE4E /* Framework-iOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-iOS-Debug.xcconfig"; sourceTree = "<group>"; };
-		3A63C1E71E5B3485008BBE4E /* Framework-iOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-iOS-Release.xcconfig"; sourceTree = "<group>"; };
-		3A63C1E81E5B3485008BBE4E /* Framework-macOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-macOS-Debug.xcconfig"; sourceTree = "<group>"; };
-		3A63C1E91E5B3485008BBE4E /* Framework-macOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-macOS-Release.xcconfig"; sourceTree = "<group>"; };
-		3A63C1EA1E5B3485008BBE4E /* Framework-tvOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-tvOS-Debug.xcconfig"; sourceTree = "<group>"; };
-		3A63C1EB1E5B3485008BBE4E /* Framework-tvOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-tvOS-Release.xcconfig"; sourceTree = "<group>"; };
-		3A63C1EC1E5B3485008BBE4E /* Tests-Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Common.xcconfig"; sourceTree = "<group>"; };
-		3A63C1ED1E5B3485008BBE4E /* Tests-iOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-iOS-Debug.xcconfig"; sourceTree = "<group>"; };
-		3A63C1EE1E5B3485008BBE4E /* Tests-iOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-iOS-Release.xcconfig"; sourceTree = "<group>"; };
-		3A63C1EF1E5B3485008BBE4E /* Tests-macOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS-Debug.xcconfig"; sourceTree = "<group>"; };
-		3A63C1F01E5B3485008BBE4E /* Tests-macOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS-Release.xcconfig"; sourceTree = "<group>"; };
-		3A63C1F11E5B3485008BBE4E /* Tests-tvOS-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS-Debug.xcconfig"; sourceTree = "<group>"; };
-		3A63C1F21E5B3485008BBE4E /* Tests-tvOS-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS-Release.xcconfig"; sourceTree = "<group>"; };
+		3A7A4A831EC71336005E2E9D /* Common-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Common-Base.xcconfig"; sourceTree = "<group>"; };
+		3A7A4A841EC71410005E2E9D /* Framework-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-Base.xcconfig"; sourceTree = "<group>"; };
 		3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ABF34631E8B2A9E0010A8FE /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializer.swift; sourceTree = "<group>"; };
@@ -193,6 +179,15 @@
 		3AF56EC91E5B37B500F1CEBC /* ResponseRepresentationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseRepresentationSpec.swift; sourceTree = "<group>"; };
 		3AF56ECB1E5B37B500F1CEBC /* XMLBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3AF56F0B1E5B4ED800F1CEBC /* TestBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBodyDeserializer.swift; sourceTree = "<group>"; };
+		3AF695861ECB199700586DA7 /* Common-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Common-Debug.xcconfig"; sourceTree = "<group>"; };
+		3AF695871ECB19CC00586DA7 /* Framework-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-iOS.xcconfig"; sourceTree = "<group>"; };
+		3AF695891ECB1A6A00586DA7 /* Tests-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Base.xcconfig"; sourceTree = "<group>"; };
+		3AF6958A1ECB1A7900586DA7 /* Common-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Common-Release.xcconfig"; sourceTree = "<group>"; };
+		3AF6958B1ECB1B5100586DA7 /* Tests-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-iOS.xcconfig"; sourceTree = "<group>"; };
+		3AF6958C1ECB1D2B00586DA7 /* Framework-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-macOS.xcconfig"; sourceTree = "<group>"; };
+		3AF6958D1ECB1D4200586DA7 /* Framework-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-tvOS.xcconfig"; sourceTree = "<group>"; };
+		3AF6958E1ECB1D5800586DA7 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
+		3AF6958F1ECB1D6600586DA7 /* Tests-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS.xcconfig"; sourceTree = "<group>"; };
 		3AF96F121E60647900A9831E /* Framework.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Framework.modulemap; sourceTree = "<group>"; };
 		3AF96F131E607C8F00A9831E /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,12 +252,12 @@
 			name = "Other Files";
 			sourceTree = "<group>";
 		};
-		3A63C1E21E5B3485008BBE4E /* Configuration */ = {
+		3A7A4A821EC712FA005E2E9D /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				3AF56EF31E5B3A0800F1CEBC /* Base */,
-				3AF56EF51E5B3ABD00F1CEBC /* Framework */,
-				3AF56EF61E5B3AC700F1CEBC /* Tests */,
+				3AF695831ECB192F00586DA7 /* Common */,
+				3AF695841ECB193800586DA7 /* Framework */,
+				3AF695881ECB1A5700586DA7 /* Tests */,
 			);
 			name = Configuration;
 			path = ResponseDetective/Configuration;
@@ -275,7 +270,7 @@
 				3AF56E711E5B37A500F1CEBC /* Sources */,
 				3AF56EBA1E5B37B500F1CEBC /* Tests */,
 				3AF56E6E1E5B379A00F1CEBC /* Resources */,
-				3A63C1E21E5B3485008BBE4E /* Configuration */,
+				3A7A4A821EC712FA005E2E9D /* Configuration */,
 				3A5A99CA1E60404E002EFC39 /* Other Files */,
 				3AED3ECD1B1DD7B400FA35FC /* Products */,
 			);
@@ -362,91 +357,6 @@
 				3AF56F0A1E5B4E9A00F1CEBC /* Output Facilities */,
 			);
 			path = Specs;
-			sourceTree = "<group>";
-		};
-		3AF56EF31E5B3A0800F1CEBC /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1E31E5B3485008BBE4E /* Base-Common.xcconfig */,
-				3A63C1E41E5B3485008BBE4E /* Base-Mappings.xcconfig */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		3AF56EF51E5B3ABD00F1CEBC /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1E51E5B3485008BBE4E /* Framework-Common.xcconfig */,
-				3AF56EF71E5B3AD300F1CEBC /* iOS */,
-				3AF56EF81E5B3ADB00F1CEBC /* macOS */,
-				3AF56EF91E5B3AE400F1CEBC /* tvOS */,
-			);
-			name = Framework;
-			sourceTree = "<group>";
-		};
-		3AF56EF61E5B3AC700F1CEBC /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1EC1E5B3485008BBE4E /* Tests-Common.xcconfig */,
-				3AF56EFA1E5B3AEB00F1CEBC /* iOS */,
-				3AF56EFB1E5B3AF100F1CEBC /* macOS */,
-				3AF56EFC1E5B3AFB00F1CEBC /* tvOS */,
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
-		3AF56EF71E5B3AD300F1CEBC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1E61E5B3485008BBE4E /* Framework-iOS-Debug.xcconfig */,
-				3A63C1E71E5B3485008BBE4E /* Framework-iOS-Release.xcconfig */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		3AF56EF81E5B3ADB00F1CEBC /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1E81E5B3485008BBE4E /* Framework-macOS-Debug.xcconfig */,
-				3A63C1E91E5B3485008BBE4E /* Framework-macOS-Release.xcconfig */,
-			);
-			name = macOS;
-			sourceTree = "<group>";
-		};
-		3AF56EF91E5B3AE400F1CEBC /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1EA1E5B3485008BBE4E /* Framework-tvOS-Debug.xcconfig */,
-				3A63C1EB1E5B3485008BBE4E /* Framework-tvOS-Release.xcconfig */,
-			);
-			name = tvOS;
-			sourceTree = "<group>";
-		};
-		3AF56EFA1E5B3AEB00F1CEBC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1ED1E5B3485008BBE4E /* Tests-iOS-Debug.xcconfig */,
-				3A63C1EE1E5B3485008BBE4E /* Tests-iOS-Release.xcconfig */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		3AF56EFB1E5B3AF100F1CEBC /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1EF1E5B3485008BBE4E /* Tests-macOS-Debug.xcconfig */,
-				3A63C1F01E5B3485008BBE4E /* Tests-macOS-Release.xcconfig */,
-			);
-			name = macOS;
-			sourceTree = "<group>";
-		};
-		3AF56EFC1E5B3AFB00F1CEBC /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				3A63C1F11E5B3485008BBE4E /* Tests-tvOS-Debug.xcconfig */,
-				3A63C1F21E5B3485008BBE4E /* Tests-tvOS-Release.xcconfig */,
-			);
-			name = tvOS;
 			sourceTree = "<group>";
 		};
 		3AF56EFD1E5B3CE700F1CEBC /* Representations */ = {
@@ -548,6 +458,38 @@
 				3AF56EC11E5B37B500F1CEBC /* ConsoleOutputFacilitySpec.swift */,
 			);
 			name = "Output Facilities";
+			sourceTree = "<group>";
+		};
+		3AF695831ECB192F00586DA7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A4A831EC71336005E2E9D /* Common-Base.xcconfig */,
+				3AF695861ECB199700586DA7 /* Common-Debug.xcconfig */,
+				3AF6958A1ECB1A7900586DA7 /* Common-Release.xcconfig */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3AF695841ECB193800586DA7 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A4A841EC71410005E2E9D /* Framework-Base.xcconfig */,
+				3AF695871ECB19CC00586DA7 /* Framework-iOS.xcconfig */,
+				3AF6958C1ECB1D2B00586DA7 /* Framework-macOS.xcconfig */,
+				3AF6958D1ECB1D4200586DA7 /* Framework-tvOS.xcconfig */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		3AF695881ECB1A5700586DA7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3AF695891ECB1A6A00586DA7 /* Tests-Base.xcconfig */,
+				3AF6958B1ECB1B5100586DA7 /* Tests-iOS.xcconfig */,
+				3AF6958E1ECB1D5800586DA7 /* Tests-macOS.xcconfig */,
+				3AF6958F1ECB1D6600586DA7 /* Tests-tvOS.xcconfig */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1006,21 +948,21 @@
 /* Begin XCBuildConfiguration section */
 		3A2007EC1B5501BC00769021 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1E81E5B3485008BBE4E /* Framework-macOS-Debug.xcconfig */;
+			baseConfigurationReference = 3AF6958C1ECB1D2B00586DA7 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		3A2007ED1B5501BC00769021 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1E91E5B3485008BBE4E /* Framework-macOS-Release.xcconfig */;
+			baseConfigurationReference = 3AF6958C1ECB1D2B00586DA7 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		3A2007EF1B5501BC00769021 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1EF1E5B3485008BBE4E /* Tests-macOS-Debug.xcconfig */;
+			baseConfigurationReference = 3AF6958E1ECB1D5800586DA7 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
@@ -1028,7 +970,7 @@
 		};
 		3A2007F01B5501BC00769021 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1F01E5B3485008BBE4E /* Tests-macOS-Release.xcconfig */;
+			baseConfigurationReference = 3AF6958E1ECB1D5800586DA7 /* Tests-macOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
@@ -1036,21 +978,21 @@
 		};
 		3AE5463C1E152DB600E74469 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1EA1E5B3485008BBE4E /* Framework-tvOS-Debug.xcconfig */;
+			baseConfigurationReference = 3AF6958D1ECB1D4200586DA7 /* Framework-tvOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		3AE5463D1E152DB600E74469 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1EB1E5B3485008BBE4E /* Framework-tvOS-Release.xcconfig */;
+			baseConfigurationReference = 3AF6958D1ECB1D4200586DA7 /* Framework-tvOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		3AE5463F1E152DB600E74469 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1F11E5B3485008BBE4E /* Tests-tvOS-Debug.xcconfig */;
+			baseConfigurationReference = 3AF6958F1ECB1D6600586DA7 /* Tests-tvOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
@@ -1058,7 +1000,7 @@
 		};
 		3AE546401E152DB600E74469 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1F21E5B3485008BBE4E /* Tests-tvOS-Release.xcconfig */;
+			baseConfigurationReference = 3AF6958F1ECB1D6600586DA7 /* Tests-tvOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
@@ -1066,43 +1008,43 @@
 		};
 		3AED3EE01B1DD7B400FA35FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AF695861ECB199700586DA7 /* Common-Debug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		3AED3EE11B1DD7B400FA35FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AF6958A1ECB1A7900586DA7 /* Common-Release.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		3AED3EE31B1DD7B400FA35FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1E61E5B3485008BBE4E /* Framework-iOS-Debug.xcconfig */;
+			baseConfigurationReference = 3AF695871ECB19CC00586DA7 /* Framework-iOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		3AED3EE41B1DD7B400FA35FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1E71E5B3485008BBE4E /* Framework-iOS-Release.xcconfig */;
+			baseConfigurationReference = 3AF695871ECB19CC00586DA7 /* Framework-iOS.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		3AED3EE61B1DD7B400FA35FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1ED1E5B3485008BBE4E /* Tests-iOS-Debug.xcconfig */;
+			baseConfigurationReference = 3AF6958B1ECB1B5100586DA7 /* Tests-iOS.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Debug;
 		};
 		3AED3EE71B1DD7B400FA35FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A63C1EE1E5B3485008BBE4E /* Tests-iOS-Release.xcconfig */;
+			baseConfigurationReference = 3AF6958B1ECB1B5100586DA7 /* Tests-iOS.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 			};
 			name = Release;
 		};
