@@ -201,7 +201,7 @@
 		3AF6958E1ECB1D5800586DA7 /* Tests-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-macOS.xcconfig"; sourceTree = "<group>"; };
 		3AF6958F1ECB1D6600586DA7 /* Tests-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS.xcconfig"; sourceTree = "<group>"; };
 		3AF96F121E60647900A9831E /* Framework.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Framework.modulemap; sourceTree = "<group>"; };
-		3AF96F131E607C8F00A9831E /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; };
+		3AF96F131E607C8F00A9831E /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
