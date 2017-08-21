@@ -14,6 +14,9 @@
 		3A167CE11F4AFD5900943FAB /* DelegateProxyEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A167CDF1F4AFD5900943FAB /* DelegateProxyEventHandler.swift */; };
 		3A167CE21F4AFD5900943FAB /* DelegateProxyEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A167CDF1F4AFD5900943FAB /* DelegateProxyEventHandler.swift */; };
 		3A2007E31B5501BC00769021 /* ResponseDetective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */; };
+		3A7BBE021F4B34C700305276 /* DelegateProxySwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BBE011F4B34C700305276 /* DelegateProxySwizzler.swift */; };
+		3A7BBE031F4B34C700305276 /* DelegateProxySwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BBE011F4B34C700305276 /* DelegateProxySwizzler.swift */; };
+		3A7BBE041F4B34C700305276 /* DelegateProxySwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BBE011F4B34C700305276 /* DelegateProxySwizzler.swift */; };
 		3AB9E9801EBB64C8004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */; };
 		3AB9E9811EBB64C9004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */; };
 		3AB9E9821EBB64C9004E575E /* URLEncodedBodyDeserializerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */; };
@@ -148,6 +151,7 @@
 		3A5A99CD1E604064002EFC39 /* ResponseDetective.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResponseDetective.podspec; sourceTree = "<group>"; };
 		3A7A4A831EC71336005E2E9D /* Common-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Common-Base.xcconfig"; sourceTree = "<group>"; };
 		3A7A4A841EC71410005E2E9D /* Framework-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-Base.xcconfig"; sourceTree = "<group>"; };
+		3A7BBE011F4B34C700305276 /* DelegateProxySwizzler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateProxySwizzler.swift; sourceTree = "<group>"; };
 		3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializerSpec.swift; sourceTree = "<group>"; };
 		3ABF34631E8B2A9E0010A8FE /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializer.swift; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 			children = (
 				3A167CDB1F4AEEE700943FAB /* DelegateProxy.swift */,
 				3A167CDF1F4AFD5900943FAB /* DelegateProxyEventHandler.swift */,
+				3A7BBE011F4B34C700305276 /* DelegateProxySwizzler.swift */,
 			);
 			name = "Delegate Proxy";
 			sourceTree = "<group>";
@@ -832,6 +837,7 @@
 				3A167CE11F4AFD5900943FAB /* DelegateProxyEventHandler.swift in Sources */,
 				3AF56EB21E5B37A500F1CEBC /* ResponseDetective.swift in Sources */,
 				3AF56E9A1E5B37A500F1CEBC /* PlaintextBodyDeserializer.swift in Sources */,
+				3A7BBE031F4B34C700305276 /* DelegateProxySwizzler.swift in Sources */,
 				3AF56E8E1E5B37A500F1CEBC /* ErrorRepresentation.swift in Sources */,
 				3A167CDD1F4AEEE800943FAB /* DelegateProxy.swift in Sources */,
 				3AF56E881E5B37A500F1CEBC /* ConsoleOutputFacility.swift in Sources */,
@@ -876,6 +882,7 @@
 				3A167CE21F4AFD5900943FAB /* DelegateProxyEventHandler.swift in Sources */,
 				3AF56EB31E5B37A500F1CEBC /* ResponseDetective.swift in Sources */,
 				3AF56E9B1E5B37A500F1CEBC /* PlaintextBodyDeserializer.swift in Sources */,
+				3A7BBE041F4B34C700305276 /* DelegateProxySwizzler.swift in Sources */,
 				3AF56E8F1E5B37A500F1CEBC /* ErrorRepresentation.swift in Sources */,
 				3A167CDE1F4AEEE800943FAB /* DelegateProxy.swift in Sources */,
 				3AF56E891E5B37A500F1CEBC /* ConsoleOutputFacility.swift in Sources */,
@@ -920,6 +927,7 @@
 				3A167CE01F4AFD5900943FAB /* DelegateProxyEventHandler.swift in Sources */,
 				3AF56EB11E5B37A500F1CEBC /* ResponseDetective.swift in Sources */,
 				3AF56E991E5B37A500F1CEBC /* PlaintextBodyDeserializer.swift in Sources */,
+				3A7BBE021F4B34C700305276 /* DelegateProxySwizzler.swift in Sources */,
 				3AF56E8D1E5B37A500F1CEBC /* ErrorRepresentation.swift in Sources */,
 				3A167CDC1F4AEEE800943FAB /* DelegateProxy.swift in Sources */,
 				3AF56E871E5B37A500F1CEBC /* ConsoleOutputFacility.swift in Sources */,
