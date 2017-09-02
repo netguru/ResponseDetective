@@ -59,7 +59,7 @@ AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfi
 ```swift
 // Swift (Alamofire)
 
-let manager = Alamofire.Manager(configuration: configuration)
+let manager = Alamofire.SessionManager(configuration: configuration)
 ```
 
 And that's all!
