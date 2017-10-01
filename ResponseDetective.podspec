@@ -1,7 +1,7 @@
 #
 # ResponseDetective.podspec
 #
-# Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+# Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
 # Licensed under the MIT License.
 #
 
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   # Description
 
   spec.name = 'ResponseDetective'
-  spec.version = '1.1'
+  spec.version = '1.2.0'
   spec.summary = 'Sherlock Holmes of the networking layer'
   spec.homepage = 'https://github.com/netguru/ResponseDetective'
 
@@ -52,7 +52,7 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target = '10.9'
   spec.tvos.deployment_target = '9.0'
 
-  spec.xcconfig = {
+  spec.pod_target_xcconfig = {
     'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2'
   }
 
