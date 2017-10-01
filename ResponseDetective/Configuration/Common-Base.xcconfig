@@ -12,7 +12,7 @@
 
 // MARK: Build
 
-_BUILD_VERSION = 2.0
+_BUILD_VERSION = 1.2.0
 
 // MARK: Deployment
 
