@@ -7,9 +7,9 @@
 
 # Configuration dependencies
 
-github "netguru/xcconfigs" == 0.2
+github "netguru/xcconfigs" == 0.3
 
 # Test dependencies
 
-github "Quick/Quick" ~> 1.1.0
-github "Quick/Nimble" ~> 7.0.1
+github "Quick/Quick" ~> 1.2.0
+github "Quick/Nimble" ~> 7.0.2
