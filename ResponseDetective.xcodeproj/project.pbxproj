@@ -134,7 +134,7 @@
 
 /* Begin PBXFileReference section */
 		3A2007D81B5501BC00769021 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2007E21B5501BC00769021 /* ResponseDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResponseDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5A99CB1E604064002EFC39 /* bitrise.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = bitrise.yml; sourceTree = "<group>"; };
 		3A5A99CC1E604064002EFC39 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		3A5A99CD1E604064002EFC39 /* ResponseDetective.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResponseDetective.podspec; sourceTree = "<group>"; };
@@ -144,9 +144,9 @@
 		3ABF34631E8B2A9E0010A8FE /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializer.swift; sourceTree = "<group>"; };
 		3AE5462A1E152DB500E74469 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE546321E152DB600E74469 /* ResponseDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResponseDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AED3ED71B1DD7B400FA35FC /* ResponseDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResponseDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF56E6F1E5B379A00F1CEBC /* Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Framework-Info.plist"; sourceTree = "<group>"; };
 		3AF56E701E5B379A00F1CEBC /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		3AF56E721E5B37A500F1CEBC /* BufferOutputFacility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferOutputFacility.swift; sourceTree = "<group>"; };
@@ -280,11 +280,11 @@
 			isa = PBXGroup;
 			children = (
 				3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */,
-				3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */,
+				3AED3ED71B1DD7B400FA35FC /* ResponseDetectiveTests.xctest */,
 				3A2007D81B5501BC00769021 /* ResponseDetective.framework */,
-				3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */,
+				3A2007E21B5501BC00769021 /* ResponseDetectiveTests.xctest */,
 				3AE5462A1E152DB500E74469 /* ResponseDetective.framework */,
-				3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */,
+				3AE546321E152DB600E74469 /* ResponseDetectiveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -531,9 +531,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3A2007D71B5501BC00769021 /* ResponseDetective (macOS) */ = {
+		3A2007D71B5501BC00769021 /* ResponseDetective-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (macOS)" */;
+			buildConfigurationList = 3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective-macOS" */;
 			buildPhases = (
 				3A2007D31B5501BC00769021 /* Sources */,
 				3A2007D41B5501BC00769021 /* Frameworks */,
@@ -544,14 +544,14 @@
 			);
 			dependencies = (
 			);
-			name = "ResponseDetective (macOS)";
+			name = "ResponseDetective-macOS";
 			productName = "ResponseDetective (OS X)";
 			productReference = 3A2007D81B5501BC00769021 /* ResponseDetective.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3A2007E11B5501BC00769021 /* ResponseDetective (macOS) Tests */ = {
+		3A2007E11B5501BC00769021 /* ResponseDetective-macOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (macOS) Tests" */;
+			buildConfigurationList = 3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective-macOS-Tests" */;
 			buildPhases = (
 				3A2007DE1B5501BC00769021 /* Sources */,
 				3A2007DF1B5501BC00769021 /* Frameworks */,
@@ -563,14 +563,14 @@
 			dependencies = (
 				3A2007E51B5501BC00769021 /* PBXTargetDependency */,
 			);
-			name = "ResponseDetective (macOS) Tests";
+			name = "ResponseDetective-macOS-Tests";
 			productName = "ResponseDetective (OS X)Tests";
-			productReference = 3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */;
+			productReference = 3A2007E21B5501BC00769021 /* ResponseDetectiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3AE546291E152DB500E74469 /* ResponseDetective (tvOS) */ = {
+		3AE546291E152DB500E74469 /* ResponseDetective-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AE5463B1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS)" */;
+			buildConfigurationList = 3AE5463B1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective-tvOS" */;
 			buildPhases = (
 				3AE546251E152DB500E74469 /* Sources */,
 				3AE546261E152DB500E74469 /* Frameworks */,
@@ -581,14 +581,14 @@
 			);
 			dependencies = (
 			);
-			name = "ResponseDetective (tvOS)";
+			name = "ResponseDetective-tvOS";
 			productName = "ResponseDetective (tvOS)";
 			productReference = 3AE5462A1E152DB500E74469 /* ResponseDetective.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3AE546311E152DB600E74469 /* ResponseDetective (tvOS) Tests */ = {
+		3AE546311E152DB600E74469 /* ResponseDetective-tvOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS) Tests" */;
+			buildConfigurationList = 3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective-tvOS-Tests" */;
 			buildPhases = (
 				3AE5462E1E152DB600E74469 /* Sources */,
 				3AE5462F1E152DB600E74469 /* Frameworks */,
@@ -600,14 +600,14 @@
 			dependencies = (
 				3AE546351E152DB600E74469 /* PBXTargetDependency */,
 			);
-			name = "ResponseDetective (tvOS) Tests";
+			name = "ResponseDetective-tvOS-Tests";
 			productName = "ResponseDetective (tvOS)Tests";
-			productReference = 3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */;
+			productReference = 3AE546321E152DB600E74469 /* ResponseDetectiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3AED3ECB1B1DD7B400FA35FC /* ResponseDetective (iOS) */ = {
+		3AED3ECB1B1DD7B400FA35FC /* ResponseDetective-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective (iOS)" */;
+			buildConfigurationList = 3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective-iOS" */;
 			buildPhases = (
 				3AED3EC71B1DD7B400FA35FC /* Sources */,
 				3AED3EC81B1DD7B400FA35FC /* Frameworks */,
@@ -618,14 +618,14 @@
 			);
 			dependencies = (
 			);
-			name = "ResponseDetective (iOS)";
+			name = "ResponseDetective-iOS";
 			productName = ResponseDetective;
 			productReference = 3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3AED3ED61B1DD7B400FA35FC /* ResponseDetective (iOS) Tests */ = {
+		3AED3ED61B1DD7B400FA35FC /* ResponseDetective-iOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective (iOS) Tests" */;
+			buildConfigurationList = 3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective-iOS-Tests" */;
 			buildPhases = (
 				3AED3ED31B1DD7B400FA35FC /* Sources */,
 				3AED3ED41B1DD7B400FA35FC /* Frameworks */,
@@ -637,9 +637,9 @@
 			dependencies = (
 				3AED3EDA1B1DD7B400FA35FC /* PBXTargetDependency */,
 			);
-			name = "ResponseDetective (iOS) Tests";
+			name = "ResponseDetective-iOS-Tests";
 			productName = ResponseDetectiveTests;
-			productReference = 3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */;
+			productReference = 3AED3ED71B1DD7B400FA35FC /* ResponseDetectiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -690,12 +690,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3AED3ECB1B1DD7B400FA35FC /* ResponseDetective (iOS) */,
-				3AED3ED61B1DD7B400FA35FC /* ResponseDetective (iOS) Tests */,
-				3A2007D71B5501BC00769021 /* ResponseDetective (macOS) */,
-				3A2007E11B5501BC00769021 /* ResponseDetective (macOS) Tests */,
-				3AE546291E152DB500E74469 /* ResponseDetective (tvOS) */,
-				3AE546311E152DB600E74469 /* ResponseDetective (tvOS) Tests */,
+				3AED3ECB1B1DD7B400FA35FC /* ResponseDetective-iOS */,
+				3AED3ED61B1DD7B400FA35FC /* ResponseDetective-iOS-Tests */,
+				3A2007D71B5501BC00769021 /* ResponseDetective-macOS */,
+				3A2007E11B5501BC00769021 /* ResponseDetective-macOS-Tests */,
+				3AE546291E152DB500E74469 /* ResponseDetective-tvOS */,
+				3AE546311E152DB600E74469 /* ResponseDetective-tvOS-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -930,17 +930,17 @@
 /* Begin PBXTargetDependency section */
 		3A2007E51B5501BC00769021 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3A2007D71B5501BC00769021 /* ResponseDetective (macOS) */;
+			target = 3A2007D71B5501BC00769021 /* ResponseDetective-macOS */;
 			targetProxy = 3A2007E41B5501BC00769021 /* PBXContainerItemProxy */;
 		};
 		3AE546351E152DB600E74469 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AE546291E152DB500E74469 /* ResponseDetective (tvOS) */;
+			target = 3AE546291E152DB500E74469 /* ResponseDetective-tvOS */;
 			targetProxy = 3AE546341E152DB600E74469 /* PBXContainerItemProxy */;
 		};
 		3AED3EDA1B1DD7B400FA35FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AED3ECB1B1DD7B400FA35FC /* ResponseDetective (iOS) */;
+			target = 3AED3ECB1B1DD7B400FA35FC /* ResponseDetective-iOS */;
 			targetProxy = 3AED3ED91B1DD7B400FA35FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1051,7 +1051,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (macOS)" */ = {
+		3A2007EB1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A2007EC1B5501BC00769021 /* Debug */,
@@ -1060,7 +1060,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective (macOS) Tests" */ = {
+		3A2007EE1B5501BC00769021 /* Build configuration list for PBXNativeTarget "ResponseDetective-macOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A2007EF1B5501BC00769021 /* Debug */,
@@ -1069,7 +1069,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AE5463B1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS)" */ = {
+		3AE5463B1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AE5463C1E152DB600E74469 /* Debug */,
@@ -1078,7 +1078,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective (tvOS) Tests" */ = {
+		3AE5463E1E152DB600E74469 /* Build configuration list for PBXNativeTarget "ResponseDetective-tvOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AE5463F1E152DB600E74469 /* Debug */,
@@ -1096,7 +1096,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective (iOS)" */ = {
+		3AED3EE21B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AED3EE31B1DD7B400FA35FC /* Debug */,
@@ -1105,7 +1105,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective (iOS) Tests" */ = {
+		3AED3EE51B1DD7B400FA35FC /* Build configuration list for PBXNativeTarget "ResponseDetective-iOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AED3EE61B1DD7B400FA35FC /* Debug */,
