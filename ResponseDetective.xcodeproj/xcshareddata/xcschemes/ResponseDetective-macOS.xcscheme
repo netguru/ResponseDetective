@@ -10,13 +10,13 @@
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AE546291E152DB500E74469"
+               BlueprintIdentifier = "3A2007D71B5501BC00769021"
                BuildableName = "ResponseDetective.framework"
-               BlueprintName = "ResponseDetective (tvOS)"
+               BlueprintName = "ResponseDetective-macOS"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AE546311E152DB600E74469"
-               BuildableName = "ResponseDetective Tests.xctest"
-               BlueprintName = "ResponseDetective (tvOS) Tests"
+               BlueprintIdentifier = "3A2007E11B5501BC00769021"
+               BuildableName = "ResponseDetectiveTests.xctest"
+               BlueprintName = "ResponseDetective-macOS-Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,9 +48,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AE546311E152DB600E74469"
-               BuildableName = "ResponseDetective Tests.xctest"
-               BlueprintName = "ResponseDetective (tvOS) Tests"
+               BlueprintIdentifier = "3A2007E11B5501BC00769021"
+               BuildableName = "ResponseDetectiveTests.xctest"
+               BlueprintName = "ResponseDetective-macOS-Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,9 +58,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3AE546291E152DB500E74469"
+            BlueprintIdentifier = "3A2007D71B5501BC00769021"
             BuildableName = "ResponseDetective.framework"
-            BlueprintName = "ResponseDetective (tvOS)"
+            BlueprintName = "ResponseDetective-macOS"
             ReferencedContainer = "container:ResponseDetective.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -81,9 +81,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3AE546291E152DB500E74469"
+            BlueprintIdentifier = "3A2007D71B5501BC00769021"
             BuildableName = "ResponseDetective.framework"
-            BlueprintName = "ResponseDetective (tvOS)"
+            BlueprintName = "ResponseDetective-macOS"
             ReferencedContainer = "container:ResponseDetective.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,9 +99,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3AE546291E152DB500E74469"
+            BlueprintIdentifier = "3A2007D71B5501BC00769021"
             BuildableName = "ResponseDetective.framework"
-            BlueprintName = "ResponseDetective (tvOS)"
+            BlueprintName = "ResponseDetective-macOS"
             ReferencedContainer = "container:ResponseDetective.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

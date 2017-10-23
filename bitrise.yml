@@ -35,9 +35,9 @@ workflows:
 
   build-and-test:
     envs:
-      - XCODEBUILD_SCHEME_IOS: iOS
-      - XCODEBUILD_SCHEME_MACOS: macOS
-      - XCODEBUILD_SCHEME_TVOS: tvOS
+      - XCODEBUILD_SCHEME_IOS: ResponseDetective-iOS
+      - XCODEBUILD_SCHEME_MACOS: ResponseDetective-macOS
+      - XCODEBUILD_SCHEME_TVOS: ResponseDetective-tvOS
     before_run:
       - cache-pull
       - bootstrap-carthage
