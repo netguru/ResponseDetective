@@ -12,6 +12,6 @@
 
 // Bundle
 
-_BUNDLE_NAME = ResponseDetective Tests
+_BUNDLE_NAME = ResponseDetectiveTests
 _BUNDLE_IDENTIFIER = co.netguru.lib.responsedetective.tests
 _BUNDLE_INFOPLIST_PATH = $(SRCROOT)/ResponseDetective/Resources/Tests-Info.plist

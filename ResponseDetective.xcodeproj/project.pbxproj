@@ -134,7 +134,7 @@
 
 /* Begin PBXFileReference section */
 		3A2007D81B5501BC00769021 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2007E21B5501BC00769021 /* ResponseDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResponseDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5A99CB1E604064002EFC39 /* bitrise.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = bitrise.yml; sourceTree = "<group>"; };
 		3A5A99CC1E604064002EFC39 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		3A5A99CD1E604064002EFC39 /* ResponseDetective.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResponseDetective.podspec; sourceTree = "<group>"; };
@@ -144,9 +144,9 @@
 		3ABF34631E8B2A9E0010A8FE /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializer.swift; sourceTree = "<group>"; };
 		3AE5462A1E152DB500E74469 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE546321E152DB600E74469 /* ResponseDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResponseDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ResponseDetective Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AED3ED71B1DD7B400FA35FC /* ResponseDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResponseDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF56E6F1E5B379A00F1CEBC /* Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Framework-Info.plist"; sourceTree = "<group>"; };
 		3AF56E701E5B379A00F1CEBC /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		3AF56E721E5B37A500F1CEBC /* BufferOutputFacility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferOutputFacility.swift; sourceTree = "<group>"; };
@@ -280,11 +280,11 @@
 			isa = PBXGroup;
 			children = (
 				3AED3ECC1B1DD7B400FA35FC /* ResponseDetective.framework */,
-				3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */,
+				3AED3ED71B1DD7B400FA35FC /* ResponseDetectiveTests.xctest */,
 				3A2007D81B5501BC00769021 /* ResponseDetective.framework */,
-				3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */,
+				3A2007E21B5501BC00769021 /* ResponseDetectiveTests.xctest */,
 				3AE5462A1E152DB500E74469 /* ResponseDetective.framework */,
-				3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */,
+				3AE546321E152DB600E74469 /* ResponseDetectiveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -565,7 +565,7 @@
 			);
 			name = "ResponseDetective-macOS-Tests";
 			productName = "ResponseDetective (OS X)Tests";
-			productReference = 3A2007E21B5501BC00769021 /* ResponseDetective Tests.xctest */;
+			productReference = 3A2007E21B5501BC00769021 /* ResponseDetectiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3AE546291E152DB500E74469 /* ResponseDetective-tvOS */ = {
@@ -602,7 +602,7 @@
 			);
 			name = "ResponseDetective-tvOS-Tests";
 			productName = "ResponseDetective (tvOS)Tests";
-			productReference = 3AE546321E152DB600E74469 /* ResponseDetective Tests.xctest */;
+			productReference = 3AE546321E152DB600E74469 /* ResponseDetectiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3AED3ECB1B1DD7B400FA35FC /* ResponseDetective-iOS */ = {
@@ -639,7 +639,7 @@
 			);
 			name = "ResponseDetective-iOS-Tests";
 			productName = ResponseDetectiveTests;
-			productReference = 3AED3ED71B1DD7B400FA35FC /* ResponseDetective Tests.xctest */;
+			productReference = 3AED3ED71B1DD7B400FA35FC /* ResponseDetectiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
