@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3AED3ED61B1DD7B400FA35FC"
-               BuildableName = "ResponseDetective Tests.xctest"
+               BuildableName = "ResponseDetectiveTests.xctest"
                BlueprintName = "ResponseDetective-iOS-Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
@@ -49,7 +49,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3AED3ED61B1DD7B400FA35FC"
-               BuildableName = "ResponseDetective Tests.xctest"
+               BuildableName = "ResponseDetectiveTests.xctest"
                BlueprintName = "ResponseDetective-iOS-Tests"
                ReferencedContainer = "container:ResponseDetective.xcodeproj">
             </BuildableReference>
