@@ -50,7 +50,7 @@ import Foundation
 			$0 + ["\($1.0): \($1.1)"]
 		}
 		let body = request.deserializedBody.map {
-			$0.characters.split { $0 == "\n" }.map(String.init)
+			$0.split { $0 == "\n" }.map(String.init)
 		} ?? ["<none>"]
 		printBoxString(title: "<\(request.identifier)> [REQUEST] \(request.method) \(request.urlString)", sections: [
 			("Headers", headers),
@@ -76,7 +76,7 @@ import Foundation
 			$0 + ["\($1.0): \($1.1)"]
 		}
 		let body = response.deserializedBody.map {
-			$0.characters.split { $0 == "\n" }.map(String.init)
+			$0.split { $0 == "\n" }.map(String.init)
 		} ?? ["<none>"]
 		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercased())) \(response.urlString)", sections: [
 			("Headers", headers),
