@@ -133,6 +133,10 @@ pod 'ResponseDetective'
 
 This project is made with <3 by [Netguru](https://netguru.co) and maintained by [Adrian Kashivskyy](https://github.com/akashivskyy).
 
+### Release names
+
+Starting from version 1.0.0, ResponseDetective's releases are named after [Sherlock Holmes canon stories](http://www.sherlockian.net/investigating/canon/), in chronological order. **What happens if we reach 60 releases and there are no more stories?** We don't know, maybe we'll start naming them after cats or something.
+
 ### License
 
 ResponseDetective is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for more info.
