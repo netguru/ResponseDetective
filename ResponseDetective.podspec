@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   # Description
 
   spec.name = 'ResponseDetective'
-  spec.version = '1.2.1'
+  spec.version = '1.2.2'
   spec.summary = 'Sherlock Holmes of the networking layer'
   spec.homepage = 'https://github.com/netguru/ResponseDetective'
 
