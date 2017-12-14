@@ -754,6 +754,7 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
+				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -771,6 +772,7 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
+				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -788,6 +790,7 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
+				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (

@@ -7,6 +7,7 @@
 
 import Foundation
 import Nimble
+import OHHTTPStubs
 import ResponseDetective
 import Quick
 
@@ -15,9 +16,19 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 	override func spec() {
 		
 		describe("ResponseDetective") {
-
+			
+			beforeSuite {
+				stub(condition: isHost("httpbin.org")) { _ in
+					return OHHTTPStubsResponse(data: Data(), statusCode: 200, headers: nil)
+				}
+			}
+			
 			beforeEach {
 				ResponseDetective.reset()
+			}
+			
+			afterSuite {
+				OHHTTPStubs.removeAllStubs()
 			}
 			
 			describe("initial state") {
