@@ -27,6 +27,10 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				ResponseDetective.reset()
 			}
 			
+			afterSuite {
+				OHHTTPStubs.removeAllStubs()
+			}
+			
 			describe("initial state") {
 
 				it("should use default output facility") {
