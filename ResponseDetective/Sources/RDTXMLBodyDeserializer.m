@@ -6,6 +6,7 @@
 //
 
 #import <libxml/tree.h>
+#import <libxml/parser.h>
 #import "RDTXMLBodyDeserializer.h"
 
 @implementation RDTXMLBodyDeserializer
