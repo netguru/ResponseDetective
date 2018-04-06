@@ -328,24 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				3AF56F0B1E5B4ED800F1CEBC /* TestBodyDeserializer.swift */,
-				3AF56EBC1E5B37B500F1CEBC /* Generators */,
-				3AF56EBD1E5B37B500F1CEBC /* Matchers */,
 			);
 			path = Additions;
-			sourceTree = "<group>";
-		};
-		3AF56EBC1E5B37B500F1CEBC /* Generators */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Generators;
-			sourceTree = "<group>";
-		};
-		3AF56EBD1E5B37B500F1CEBC /* Matchers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Matchers;
 			sourceTree = "<group>";
 		};
 		3AF56EBF1E5B37B500F1CEBC /* Specs */ = {
@@ -651,14 +635,16 @@
 				CLASSPREFIX = RDT;
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Netguru Sp. z o.o.";
 				TargetAttributes = {
 					3A2007D71B5501BC00769021 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0930;
 					};
 					3A2007E11B5501BC00769021 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0930;
 					};
 					3AE546291E152DB500E74469 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -754,6 +740,7 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
+				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -771,6 +758,7 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
+				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -788,6 +776,7 @@
 			inputPaths = (
 				"$(_CARTHAGE_BUILD_PATH)/Quick.framework",
 				"$(_CARTHAGE_BUILD_PATH)/Nimble.framework",
+				"$(_CARTHAGE_BUILD_PATH)/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (

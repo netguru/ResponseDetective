@@ -12,4 +12,5 @@ github "netguru/xcconfigs" == 0.3
 # Test dependencies
 
 github "Quick/Quick" ~> 1.2.0
-github "Quick/Nimble" ~> 7.0.2
+github "Quick/Nimble" ~> 7.0.0
+github "AliSoftware/OHHTTPStubs" ~> 6.1.0
