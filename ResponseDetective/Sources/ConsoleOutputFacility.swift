@@ -46,20 +46,32 @@ import Foundation
 	///
 	/// - SeeAlso: OutputFacility.output(requestRepresentation:)
 	public func output(requestRepresentation request: RequestRepresentation) {
+		func print(headers: [String], body: [String]) {
+			printBoxString(title: "<\(request.identifier)> [REQUEST] \(request.method) \(request.urlString)", sections: [
+				("Headers", headers),
+				("Body", body),
+			])
+		}
+		
 		let headers = request.headers.reduce([]) {
 			$0 + ["\($1.0): \($1.1)"]
 		}
-		let body = request.deserializedBody.map {
+		
+		let stringBody: [String]? = request.deserializedBody.map {
 			#if swift(>=3.2)
 				return $0.split { $0 == "\n" }.map(String.init)
 			#else
 				return $0.characters.split { $0 == "\n" }.map(String.init)
 			#endif
-		} ?? ["<none>"]
-		printBoxString(title: "<\(request.identifier)> [REQUEST] \(request.method) \(request.urlString)", sections: [
-			("Headers", headers),
-			("Body", body),
-		])
+		}
+		
+		if let body = stringBody {
+			print(headers: headers, body: body)
+		} else if let data = request.body {
+			print(headers: headers, body: ["<\(data.description)>"])
+		} else {
+			print(headers: headers, body: ["<empty>"])
+		}
 	}
 	
 	/// Prints the response in the following format:
@@ -76,20 +88,31 @@ import Foundation
 	///
 	/// - SeeAlso: OutputFacility.output(responseRepresentation:)
 	public func output(responseRepresentation response: ResponseRepresentation) {
+		func print(headers: [String], body: [String]) {
+			printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercased())) \(response.urlString)", sections: [
+				("Headers", headers),
+				("Body", body),
+			])
+		}
+		
 		let headers = response.headers.reduce([]) {
 			$0 + ["\($1.0): \($1.1)"]
 		}
-		let body = response.deserializedBody.map {
+		
+		let stringBody: [String]? = response.deserializedBody.map {
 			#if swift(>=3.2)
 				return $0.split { $0 == "\n" }.map(String.init)
 			#else
 				return $0.characters.split { $0 == "\n" }.map(String.init)
 			#endif
-		} ?? ["<none>"]
-		printBoxString(title: "<\(response.requestIdentifier)> [RESPONSE] \(response.statusCode) (\(response.statusString.uppercased())) \(response.urlString)", sections: [
-			("Headers", headers),
-			("Body", body),
-		])
+		}
+		if let body = stringBody {
+			print(headers: headers, body: body)
+		} else if let data = response.body {
+			print(headers: headers, body: ["<\(data.description)>"])
+		} else {
+			print(headers: headers, body: ["<empty>"])
+		}
 	}
 	
 	/// Prints the error in the following format:

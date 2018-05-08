@@ -19,7 +19,7 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 			var buffer = [String]()
 			let sut = ConsoleOutputFacility(printClosure: { buffer.append($0) })
 
-			it("should produce correct request output") {
+			it("should produce correct string request output") {
 				let request = RequestRepresentation(
 					identifier: "0",
 					method: "GET",
@@ -36,8 +36,63 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				sut.output(requestRepresentation: request)
 				expect(buffer.last).to(equal(expected))
 			}
-
-			it("should produce correct response output") {
+			
+			it("should produce correct image request output") {
+				let request = RequestRepresentation(
+					identifier: "0",
+					method: "GET",
+					urlString: "http://foo.bar",
+					headers: ["X-Foo": "bar"],
+					body: UIImageJPEGRepresentation(UIImage.size(CGSize(width: 5.0, height: 10.0)), 1.0),
+					deserializedBody: nil
+				)
+				let expected = "<0> [REQUEST] GET http://foo.bar\n" +
+				               " ├─ Headers\n" +
+				               " │ X-Foo: bar\n" +
+				               " ├─ Body\n" +
+				               " │ <5px × 10px image>\n"
+				sut.output(requestRepresentation: request)
+				expect(buffer.last).to(equal(expected))
+			}
+			
+			it("should produce correct data request output") {
+				let body = "Hello World".data(using: .utf8)!
+				let request = RequestRepresentation(
+					identifier: "0",
+					method: "GET",
+					urlString: "http://foo.bar",
+					headers: ["X-Foo": "bar"],
+					body: body,
+					deserializedBody: nil
+				)
+				let expected = "<0> [REQUEST] GET http://foo.bar\n" +
+				               " ├─ Headers\n" +
+				               " │ X-Foo: bar\n" +
+				               " ├─ Body\n" +
+				               " │ <unrecognizable \(body.count) bytes>\n"
+				sut.output(requestRepresentation: request)
+				expect(buffer.last).to(equal(expected))
+			}
+			
+			it("should produce correct empty request output") {
+				let request = RequestRepresentation(
+					identifier: "0",
+					method: "GET",
+					urlString: "http://foo.bar",
+					headers: ["X-Foo": "bar"],
+					body: nil,
+					deserializedBody: nil
+				)
+				let expected = "<0> [REQUEST] GET http://foo.bar\n" +
+				               " ├─ Headers\n" +
+				               " │ X-Foo: bar\n" +
+				               " ├─ Body\n" +
+				               " │ <empty>\n"
+				sut.output(requestRepresentation: request)
+				expect(buffer.last).to(equal(expected))
+			}
+			
+			it("should produce correct string response output") {
 				let response = ResponseRepresentation(
 					requestIdentifier: "0",
 					statusCode: 200,
@@ -54,7 +109,62 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				sut.output(responseRepresentation: response)
 				expect(buffer.last).to(equal(expected))
 			}
-
+			
+			it("should produce correct image response output") {
+				let response = ResponseRepresentation(
+					requestIdentifier: "0",
+					statusCode: 200,
+					urlString: "http://foo.bar",
+					headers: ["X-Bar": "foo"],
+					body: UIImageJPEGRepresentation(UIImage.size(CGSize(width: 5.0, height: 10.0)), 1.0),
+					deserializedBody: nil
+				)
+				let expected = "<0> [RESPONSE] 200 (NO ERROR) http://foo.bar\n" +
+				               " ├─ Headers\n" +
+				               " │ X-Bar: foo\n" +
+				               " ├─ Body\n" +
+				               " │ <5px × 10px image>\n"
+				sut.output(responseRepresentation: response)
+				expect(buffer.last).to(equal(expected))
+			}
+			
+			it("should produce correct data response output") {
+				let body = "Hello World".data(using: .utf8)!
+				let response = ResponseRepresentation(
+					requestIdentifier: "0",
+					statusCode: 200,
+					urlString: "http://foo.bar",
+					headers: ["X-Bar": "foo"],
+					body: body,
+					deserializedBody: nil
+				)
+				let expected = "<0> [RESPONSE] 200 (NO ERROR) http://foo.bar\n" +
+				               " ├─ Headers\n" +
+				               " │ X-Bar: foo\n" +
+				               " ├─ Body\n" +
+				               " │ <unrecognizable \(body.count) bytes>\n"
+				sut.output(responseRepresentation: response)
+				expect(buffer.last).to(equal(expected))
+			}
+			
+			it("should produce correct empty response output") {
+				let response = ResponseRepresentation(
+					requestIdentifier: "0",
+					statusCode: 200,
+					urlString: "http://foo.bar",
+					headers: ["X-Bar": "foo"],
+					body: nil,
+					deserializedBody: nil
+				)
+				let expected = "<0> [RESPONSE] 200 (NO ERROR) http://foo.bar\n" +
+				               " ├─ Headers\n" +
+				               " │ X-Bar: foo\n" +
+				               " ├─ Body\n" +
+				               " │ <empty>\n"
+				sut.output(responseRepresentation: response)
+				expect(buffer.last).to(equal(expected))
+			}
+			
 			it("should produce correct error ourput") {
 				let error = ErrorRepresentation(
 					requestIdentifier: "0",
@@ -70,9 +180,26 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 				sut.output(errorRepresentation: error)
 				expect(buffer.last).to(equal(expected))
 			}
-
+			
 		}
 		
+	}
+	
+}
+
+internal extension UIImage {
+	
+	/// Initializes a new `UIImage`.
+	/// - parameter size: The desired size.
+	/// - returns: The `UIImage` with the desired size.
+	internal class func size(_ size: CGSize) -> UIImage {
+		let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
+		UIGraphicsBeginImageContext(rect.size)
+		
+		let image = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+		
+		return image!
 	}
 	
 }
