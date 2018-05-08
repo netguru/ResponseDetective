@@ -106,6 +106,9 @@
 		3AF56F0C1E5B4ED800F1CEBC /* TestBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56F0B1E5B4ED800F1CEBC /* TestBodyDeserializer.swift */; };
 		3AF56F0D1E5B4ED800F1CEBC /* TestBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56F0B1E5B4ED800F1CEBC /* TestBodyDeserializer.swift */; };
 		3AF56F0E1E5B4ED800F1CEBC /* TestBodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF56F0B1E5B4ED800F1CEBC /* TestBodyDeserializer.swift */; };
+		AE4A36BC20A1A8D1006E9715 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4A36BB20A1A8D1006E9715 /* Data.swift */; };
+		AE4A36BD20A1A8D1006E9715 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4A36BB20A1A8D1006E9715 /* Data.swift */; };
+		AE4A36BE20A1A8D1006E9715 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4A36BB20A1A8D1006E9715 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +193,7 @@
 		3AF6958F1ECB1D6600586DA7 /* Tests-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-tvOS.xcconfig"; sourceTree = "<group>"; };
 		3AF96F121E60647900A9831E /* Framework.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Framework.modulemap; sourceTree = "<group>"; };
 		3AF96F131E607C8F00A9831E /* ResponseDetective.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ResponseDetective.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AE4A36BB20A1A8D1006E9715 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +402,7 @@
 		3AF56F021E5B3D4900F1CEBC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AE4A36BB20A1A8D1006E9715 /* Data.swift */,
 				3AF56E741E5B37A500F1CEBC /* Dictionary.swift */,
 			);
 			name = Extensions;
@@ -807,6 +812,7 @@
 				3AF56EB81E5B37A500F1CEBC /* URLProtocol.swift in Sources */,
 				3AF56E8B1E5B37A500F1CEBC /* Dictionary.swift in Sources */,
 				3AF56EA31E5B37A500F1CEBC /* RDTHTMLBodyDeserializer.m in Sources */,
+				AE4A36BD20A1A8D1006E9715 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +855,7 @@
 				3AF56EB91E5B37A500F1CEBC /* URLProtocol.swift in Sources */,
 				3AF56E8C1E5B37A500F1CEBC /* Dictionary.swift in Sources */,
 				3AF56EA41E5B37A500F1CEBC /* RDTHTMLBodyDeserializer.m in Sources */,
+				AE4A36BE20A1A8D1006E9715 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +898,7 @@
 				3AF56EB71E5B37A500F1CEBC /* URLProtocol.swift in Sources */,
 				3AF56E8A1E5B37A500F1CEBC /* Dictionary.swift in Sources */,
 				3AF56EA21E5B37A500F1CEBC /* RDTHTMLBodyDeserializer.m in Sources */,
+				AE4A36BC20A1A8D1006E9715 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
