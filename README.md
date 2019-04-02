@@ -1,16 +1,17 @@
 ![](Images/Header.png)
 
-![](https://www.bitrise.io/app/c09426001dedd91c.svg?token=4zhZMFtDpH-9BhWvGP5-1g&branch=develop)
-![](https://img.shields.io/badge/swift-3.2-orange.svg)
+![](https://app.bitrise.io/app/c09426001dedd91c/status.svg?token=4zhZMFtDpH-9BhWvGP5-1g&branch=develop)
+![](https://img.shields.io/badge/swift-5.0-orange.svg)
 ![](https://img.shields.io/github/release/netguru/ResponseDetective.svg)
 ![](https://img.shields.io/badge/carthage-compatible-green.svg)
 ![](https://img.shields.io/badge/cocoapods-compatible-green.svg)
+![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 **ResponseDetective** is a non-intrusive framework for intercepting any outgoing requests and incoming responses between your app and your server for debugging purposes.
 
 ## Requirements
 
-ResponseDetective is written in **Swift 3.2** and supports **iOS 8.0+**, **macOS 10.9+** and **tvOS 9.0+**.
+ResponseDetective is written in **Swift 5.0** and supports **iOS 8.0+**, **macOS 10.10+** and **tvOS 9.0+**.
 
 ## Usage
 
@@ -117,7 +118,7 @@ Voilà! 🎉 Check out your console output:
 If you're using [Carthage](https://github.com/Carthage/Carthage), add the following dependency to your `Cartfile`:
 
 ```none
-github "netguru/ResponseDetective"
+github "netguru/ResponseDetective" ~> {version}
 ```
 
 ### CocoaPods
@@ -126,7 +127,7 @@ If you're using [CocoaPods](http://cocoapods.org), add the following dependency 
 
 ```none
 use_frameworks!
-pod 'ResponseDetective'
+pod 'ResponseDetective', '~> {version}'
 ```
 
 ## About

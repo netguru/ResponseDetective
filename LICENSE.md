@@ -1,4 +1,4 @@
-**MIT License**
+MIT License
 
 Copyright © 2017 Netguru Sp. z o.o.
 
