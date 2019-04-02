@@ -50,7 +50,7 @@ internal final class URLEncodedBodyDeserializerSpec: QuickSpec {
 
 // MARK: -
 
-@available(macOS 10.10, *) fileprivate extension URLComponents {
+@available(macOS 10.10, *) extension URLComponents {
 
 	fileprivate init(queryItems: [URLQueryItem]) {
 		self.init()

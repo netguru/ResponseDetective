@@ -141,7 +141,6 @@
 		3A7A4A831EC71336005E2E9D /* Common-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Common-Base.xcconfig"; sourceTree = "<group>"; };
 		3A7A4A841EC71410005E2E9D /* Framework-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-Base.xcconfig"; sourceTree = "<group>"; };
 		3AB9E97E1EBB64C0004E575E /* URLEncodedBodyDeserializerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializerSpec.swift; sourceTree = "<group>"; };
-		3ABF34631E8B2A9E0010A8FE /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		3AC631201EBB5CF8000F6353 /* URLEncodedBodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedBodyDeserializer.swift; sourceTree = "<group>"; };
 		3AE5462A1E152DB500E74469 /* ResponseDetective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResponseDetective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE546321E152DB600E74469 /* ResponseDetectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResponseDetectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,7 +243,6 @@
 		3A5A99CA1E60404E002EFC39 /* Other Files */ = {
 			isa = PBXGroup;
 			children = (
-				3ABF34631E8B2A9E0010A8FE /* .swift-version */,
 				3A5A99CB1E604064002EFC39 /* bitrise.yml */,
 				3A5A99CC1E604064002EFC39 /* Cartfile.private */,
 				3A5A99CD1E604064002EFC39 /* ResponseDetective.podspec */,
@@ -635,7 +633,7 @@
 				CLASSPREFIX = RDT;
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Netguru Sp. z o.o.";
 				TargetAttributes = {
 					3A2007D71B5501BC00769021 = {
@@ -666,10 +664,11 @@
 			};
 			buildConfigurationList = 3AED3EC61B1DD7B400FA35FC /* Build configuration list for PBXProject "ResponseDetective" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 3AED3EC21B1DD7B400FA35FC;
 			productRefGroup = 3AED3ECD1B1DD7B400FA35FC /* Products */;

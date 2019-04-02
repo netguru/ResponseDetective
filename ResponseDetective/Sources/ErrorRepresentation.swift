@@ -43,7 +43,7 @@ import Foundation
 			domain: error.domain,
 			code: error.code,
 			reason: error.localizedDescription,
-			userInfo: error.userInfo as? [String: AnyObject] ?? [:]
+			userInfo: error.userInfo
 		)
 	}
 

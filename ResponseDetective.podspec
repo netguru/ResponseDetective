@@ -46,10 +46,12 @@ Pod::Spec.new do |spec|
 
   # Settings
 
+  spec.swift_version = '5.0'
+
   spec.requires_arc = true
 
   spec.ios.deployment_target = '8.0'
-  spec.osx.deployment_target = '10.9'
+  spec.osx.deployment_target = '10.10'
   spec.tvos.deployment_target = '9.0'
 
   spec.pod_target_xcconfig = {

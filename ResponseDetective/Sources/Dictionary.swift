@@ -5,7 +5,7 @@
 // Licensed under the MIT License.
 //
 
-internal extension Dictionary {
+extension Dictionary {
 
 	/// Appends elements of other `dictionary` and returns a new one.
 	///
