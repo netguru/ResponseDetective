@@ -63,8 +63,8 @@ private func swatchImage(size: (width: Int, height: Int)) -> Image {
 
 private func imageData(image: Image) -> Data {
 	#if os(iOS) || os(tvOS) || os(watchOS)
-		return UIImageJPEGRepresentation(image, 1)!
+        return image.jpegData(compressionQuality: 1)!
 	#elseif os(OSX)
-		return NSBitmapImageRep(data: image.tiffRepresentation!)!.representation(using: .JPEG, properties: [NSImageCompressionFactor: 1])!
+        return NSBitmapImageRep(data: image.tiffRepresentation!)!.representation(using: .jpeg, properties: [.compressionFactor: 1])!
 	#endif
 }
