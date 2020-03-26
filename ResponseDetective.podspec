@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   # Description
 
   spec.name = 'ResponseDetective'
-  spec.version = '1.3.0'
+  spec.version = '1.4.0'
   spec.summary = 'Sherlock Holmes of the networking layer'
   spec.homepage = 'https://github.com/netguru/ResponseDetective'
 
@@ -46,7 +46,7 @@ Pod::Spec.new do |spec|
 
   # Settings
 
-  spec.swift_version = '5.0'
+  spec.swift_version = '5.2'
 
   spec.requires_arc = true
 
