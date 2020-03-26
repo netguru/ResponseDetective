@@ -1,7 +1,7 @@
 //
 // BufferOutputFacility.swift
 //
-// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Copyright © 2016-2020 Netguru S.A. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -29,14 +29,14 @@ import Foundation
 	public func output(requestRepresentation request: RequestRepresentation) {
 		requestRepresentations.append(request)
 	}
-	
+
 	/// Adds the response representation to the buffer.
 	///
 	/// - SeeAlso: OutputFacility.output(responseRepresentation:)
 	public func output(responseRepresentation response: ResponseRepresentation) {
 		responseRepresentations.append(response)
 	}
-	
+
 	/// Adds the error representation to the buffer.
 	///
 	/// - SeeAlso: OutputFacility.output(errorRepresentation:)

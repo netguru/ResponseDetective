@@ -1,7 +1,7 @@
 //
 // ResponseDetectiveSpec.swift
 //
-// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Copyright © 2016-2020 Netguru S.A. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -12,25 +12,25 @@ import ResponseDetective
 import Quick
 
 internal final class ResponseDetectiveSpec: QuickSpec {
-	
+
 	override func spec() {
-		
+
 		describe("ResponseDetective") {
-			
+
 			beforeSuite {
 				stub(condition: isHost("httpbin.org")) { _ in
 					return OHHTTPStubsResponse(data: Data(), statusCode: 200, headers: nil)
 				}
 			}
-			
+
 			beforeEach {
 				ResponseDetective.reset()
 			}
-			
+
 			afterSuite {
 				OHHTTPStubs.removeAllStubs()
 			}
-			
+
 			describe("initial state") {
 
 				it("should use default output facility") {
@@ -79,7 +79,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 								return true
 							}
 							let string = url.absoluteString
-                            
+
 							return string.contains("foo")
 						})
 					}
@@ -261,7 +261,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 				}
 
 			}
-			
+
 		}
 
 	}

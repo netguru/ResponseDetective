@@ -1,7 +1,7 @@
 //
 // PlaintextBodyDeserializerSpec.swift
 //
-// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Copyright © 2016-2020 Netguru S.A. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -11,9 +11,9 @@ import ResponseDetective
 import Quick
 
 internal final class PlaintextBodyDeserializerSpec: QuickSpec {
-	
+
 	override func spec() {
-		
+
 		describe("PlaintextBodyDeserializer") {
 
 			let sut = PlaintextBodyDeserializer()
@@ -24,9 +24,9 @@ internal final class PlaintextBodyDeserializerSpec: QuickSpec {
 				let expected = source
 				expect { sut.deserialize(body: data) }.to(equal(expected))
 			}
-			
+
 		}
-		
+
 	}
-	
+
 }

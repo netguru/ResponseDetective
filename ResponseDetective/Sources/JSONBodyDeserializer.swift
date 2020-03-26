@@ -1,7 +1,7 @@
 //
 // JSONBodyDeserializer.swift
 //
-// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Copyright © 2016-2020 Netguru S.A. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -11,7 +11,7 @@ import Foundation
 @objc(RDTJSONBodyDeserializer) public final class JSONBodyDeserializer: NSObject, BodyDeserializer {
 
 	// MARK: BodyDeserializer
-	
+
 	/// Deserializes JSON data into a pretty-printed string.
 	public func deserialize(body: Data) -> String? {
 		do {
@@ -22,5 +22,5 @@ import Foundation
 			return nil
 		}
 	}
-	
+
 }

@@ -1,7 +1,7 @@
 //
 // JSONBodyDeserializerSpec.swift
 //
-// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Copyright © 2016-2020 Netguru S.A. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -11,9 +11,9 @@ import ResponseDetective
 import Quick
 
 internal final class JSONBodyDeserializerSpec: QuickSpec {
-	
+
 	override func spec() {
-		
+
 		describe("JSONBodyDeserializer") {
 
 			let sut = JSONBodyDeserializer()
@@ -26,9 +26,9 @@ internal final class JSONBodyDeserializerSpec: QuickSpec {
 
 				expect { (actualJSON as NSDictionary) }.to(equal(source as NSDictionary))
 			}
-			
+
 		}
-		
+
 	}
-	
+
 }
