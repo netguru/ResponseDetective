@@ -39,8 +39,8 @@ import Foundation
 	/// Internal response data storage.
 	private lazy var internalResponseData = Data()
 
-	/// A unique identifier of the request. Currently its address.
-	private lazy var requestIdentifier: String = String(describing: Unmanaged<AnyObject>.passUnretained(self.internalTask.originalRequest! as AnyObject).toOpaque())
+	/// A unique identifier of the request.
+    private let requestIdentifier: String = UUID().uuidString.uppercased()
 
 	// MARK: URLProtocol
 
