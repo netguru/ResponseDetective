@@ -1,7 +1,7 @@
 #
 # ResponseDetective.podspec
 #
-# Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+# Copyright © 2017-2020 Netguru S.A. All rights reserved.
 # Licensed under the MIT License.
 #
 
