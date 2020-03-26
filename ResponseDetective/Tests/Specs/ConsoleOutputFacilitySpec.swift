@@ -1,7 +1,7 @@
 //
 // ConsoleOutputFacilitySpec.swift
 //
-// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Copyright © 2016-2020 Netguru S.A. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -72,7 +72,7 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 			}
 
 		}
-		
+
 	}
-	
+
 }

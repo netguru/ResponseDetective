@@ -1,7 +1,7 @@
 //
 // ConsoleOutputFacility.swift
 //
-// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Copyright © 2016-2020 Netguru S.A. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -11,7 +11,7 @@ import Foundation
 @objc(RDTConsoleOutputFacility) public final class ConsoleOutputFacility: NSObject, OutputFacility {
 
 	// MARK: Initializers
-	
+
 	/// Initializes the receiver with default print closure.
 	public convenience override init() {
 		self.init(printClosure: { print($0) })
@@ -61,7 +61,7 @@ import Foundation
 			("Body", body),
 		])
 	}
-	
+
 	/// Prints the response in the following format:
 	///
 	///     <0xbadf00d> [RESPONSE] 200 (NO ERROR) https://httpbin.org/post
@@ -91,7 +91,7 @@ import Foundation
 			("Body", body),
 		])
 	}
-	
+
 	/// Prints the error in the following format:
 	///
 	///     <0xbadf00d> [ERROR] NSURLErrorDomain -1009
@@ -110,7 +110,7 @@ import Foundation
 	}
 
 	// MARK: Printing boxes
-	
+
 	/// Composes a box string in the following format:
 	///
 	///     box title
@@ -131,7 +131,7 @@ import Foundation
 			}
 		}
 	}
-	
+
 	/// Composes and prints the box sting in the console.
 	///
 	/// - Parameters:
@@ -141,5 +141,5 @@ import Foundation
 	private func printBoxString(title: String, sections: [(String, [String])]) {
 		printClosure(composeBoxString(title: title, sections: sections))
 	}
-	
+
 }

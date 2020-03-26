@@ -1,7 +1,7 @@
 //
 // URLProtocol.swift
 //
-// Copyright © 2016-2017 Netguru Sp. z o.o. All rights reserved.
+// Copyright © 2016-2020 Netguru S.A. All rights reserved.
 // Licensed under the MIT License.
 //
 
@@ -26,21 +26,21 @@ import Foundation
 	}
 
 	// MARK: Properties
-	
+
 	/// Internal session object used to perform the request.
 	private var internalSession: Foundation.URLSession!
-	
+
 	/// Internal session data dark responsible for request execution.
 	private var internalTask: URLSessionDataTask!
-	
+
 	/// Internal task response storage.
 	private var internalResponse: HTTPURLResponse?
-	
+
 	/// Internal response data storage.
 	private lazy var internalResponseData = Data()
 
-	/// A unique identifier of the request. Currently its address.
-	private lazy var requestIdentifier: String = String(describing: Unmanaged<AnyObject>.passUnretained(self.internalTask.originalRequest! as AnyObject).toOpaque())
+	/// A unique identifier of the request.
+    private let requestIdentifier: String = UUID().uuidString.uppercased()
 
 	// MARK: URLProtocol
 
@@ -78,7 +78,7 @@ import Foundation
 		}
 		internalSession.finishTasksAndInvalidate()
 	}
-	
+
 	// MARK: URLSessionDataDelegate
 
 	/// - SeeAlso: URLSessionDataDelegate.urlSession(_:dataTask:didReceive:completionHandler:)
@@ -95,7 +95,7 @@ import Foundation
 	}
 
 	// MARK: Interception
-	
+
 	/// Incercepts the given request and passes it to the ResponseDetective
 	/// instance.
 	///
@@ -143,7 +143,7 @@ import Foundation
 	}
 
 	// MARK: Private
-	
+
 	/// Extracts and standardizes data of a request.
 	///
 	/// - Parameters:
@@ -163,5 +163,5 @@ import Foundation
 			return data as Data
 		}
 	}
-	
+
 }
