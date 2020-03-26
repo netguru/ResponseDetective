@@ -28,5 +28,5 @@ internal final class XMLBodyDeserializerSpec: QuickSpec {
 		}
 
 	}
-	
+
 }

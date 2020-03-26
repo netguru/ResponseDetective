@@ -11,7 +11,7 @@ import Foundation
 @objc(RDTJSONBodyDeserializer) public final class JSONBodyDeserializer: NSObject, BodyDeserializer {
 
 	// MARK: BodyDeserializer
-	
+
 	/// Deserializes JSON data into a pretty-printed string.
 	public func deserialize(body: Data) -> String? {
 		do {
@@ -22,5 +22,5 @@ import Foundation
 			return nil
 		}
 	}
-	
+
 }

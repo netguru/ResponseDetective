@@ -48,27 +48,27 @@ import Foundation
 	}
 
 	// MARK: Properties
-	
+
 	/// A unique identifier of the request.
 	public let identifier: String
-	
+
 	/// The HTTP method of the request.
 	public let method: String
-	
+
 	/// The resolved URL string of the request.
 	public let urlString: String
-	
+
 	/// The HTTP headers of the request.
 	public let headers: [String: String]
-	
+
 	/// The content type of the request.
 	public var contentType: String {
 		return headers["Content-Type"] ?? "application/octet-stream"
 	}
-	
+
 	/// The raw body data of the request.
 	public let body: Data?
-	
+
 	/// The parsed body of the request.
 	public let deserializedBody: String?
 

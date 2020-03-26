@@ -72,7 +72,7 @@ internal final class ConsoleOutputFacilitySpec: QuickSpec {
 			}
 
 		}
-		
+
 	}
-	
+
 }

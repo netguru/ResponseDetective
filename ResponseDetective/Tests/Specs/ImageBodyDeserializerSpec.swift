@@ -28,7 +28,7 @@ internal final class ImageBodyDeserializerSpec: QuickSpec {
 		}
 
 	}
-	
+
 }
 
 // MARK: -

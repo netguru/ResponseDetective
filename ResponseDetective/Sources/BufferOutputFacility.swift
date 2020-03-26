@@ -29,14 +29,14 @@ import Foundation
 	public func output(requestRepresentation request: RequestRepresentation) {
 		requestRepresentations.append(request)
 	}
-	
+
 	/// Adds the response representation to the buffer.
 	///
 	/// - SeeAlso: OutputFacility.output(responseRepresentation:)
 	public func output(responseRepresentation response: ResponseRepresentation) {
 		responseRepresentations.append(response)
 	}
-	
+
 	/// Adds the error representation to the buffer.
 	///
 	/// - SeeAlso: OutputFacility.output(errorRepresentation:)

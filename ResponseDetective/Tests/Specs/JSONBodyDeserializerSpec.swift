@@ -11,9 +11,9 @@ import ResponseDetective
 import Quick
 
 internal final class JSONBodyDeserializerSpec: QuickSpec {
-	
+
 	override func spec() {
-		
+
 		describe("JSONBodyDeserializer") {
 
 			let sut = JSONBodyDeserializer()
@@ -26,9 +26,9 @@ internal final class JSONBodyDeserializerSpec: QuickSpec {
 
 				expect { (actualJSON as NSDictionary) }.to(equal(source as NSDictionary))
 			}
-			
+
 		}
-		
+
 	}
-	
+
 }

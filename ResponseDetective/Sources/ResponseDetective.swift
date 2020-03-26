@@ -12,13 +12,13 @@ import Foundation
 @objc(RDTResponseDetective) public final class ResponseDetective: NSObject {
 
 	// MARK: Properties
-	
+
 	/// An output facility for reporting requests, responses and errors.
 	public static var outputFacility: OutputFacility = ConsoleOutputFacility()
-	
+
 	/// A class of the URL protocol used to intercept requests.
 	public static let URLProtocolClass: Foundation.URLProtocol.Type = URLProtocol.self
-	
+
 	/// A storage for request predicates.
 	private static var requestPredicates: [NSPredicate] = []
 
@@ -36,7 +36,7 @@ import Foundation
 	]
 
 	// MARK: Configuration
-	
+
 	/// Resets the ResponseDetective mutable state.
 	public static func reset() {
 		outputFacility = ConsoleOutputFacility()
@@ -52,7 +52,7 @@ import Foundation
 	@objc(enableInConfiguration:) public static func enable(inConfiguration configuration: URLSessionConfiguration) {
 		configuration.protocolClasses?.insert(URLProtocolClass, at: 0)
 	}
-	
+
 	/// Ignores requests matching the given predicate. The predicate will be
 	/// evaluated with an instance of NSURLRequest.
 	///
@@ -85,7 +85,7 @@ import Foundation
 	@objc(registerBodyDeserializer:forContentType:) public static func registerBodyDeserializer(_ deserializer: BodyDeserializer, forContentType contentType: String) {
 		customBodyDeserializers[contentType] = deserializer
 	}
-	
+
 	/// Registers a body deserializer.
 	///
 	/// - Parameters:

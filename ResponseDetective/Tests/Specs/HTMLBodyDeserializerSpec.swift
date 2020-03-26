@@ -26,7 +26,7 @@ internal final class HTMLBodyDeserializerSpec: QuickSpec {
 			}
 
 		}
-		
+
 	}
-	
+
 }

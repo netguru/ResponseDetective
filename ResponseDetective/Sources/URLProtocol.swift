@@ -26,16 +26,16 @@ import Foundation
 	}
 
 	// MARK: Properties
-	
+
 	/// Internal session object used to perform the request.
 	private var internalSession: Foundation.URLSession!
-	
+
 	/// Internal session data dark responsible for request execution.
 	private var internalTask: URLSessionDataTask!
-	
+
 	/// Internal task response storage.
 	private var internalResponse: HTTPURLResponse?
-	
+
 	/// Internal response data storage.
 	private lazy var internalResponseData = Data()
 
@@ -78,7 +78,7 @@ import Foundation
 		}
 		internalSession.finishTasksAndInvalidate()
 	}
-	
+
 	// MARK: URLSessionDataDelegate
 
 	/// - SeeAlso: URLSessionDataDelegate.urlSession(_:dataTask:didReceive:completionHandler:)
@@ -95,7 +95,7 @@ import Foundation
 	}
 
 	// MARK: Interception
-	
+
 	/// Incercepts the given request and passes it to the ResponseDetective
 	/// instance.
 	///
@@ -143,7 +143,7 @@ import Foundation
 	}
 
 	// MARK: Private
-	
+
 	/// Extracts and standardizes data of a request.
 	///
 	/// - Parameters:
@@ -163,5 +163,5 @@ import Foundation
 			return data as Data
 		}
 	}
-	
+
 }

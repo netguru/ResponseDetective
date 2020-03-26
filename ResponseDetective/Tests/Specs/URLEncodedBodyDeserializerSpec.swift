@@ -43,9 +43,9 @@ internal final class URLEncodedBodyDeserializerSpec: QuickSpec {
 			}
 
 		}
-		
+
 	}
-	
+
 }
 
 // MARK: -

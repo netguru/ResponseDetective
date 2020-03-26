@@ -29,7 +29,7 @@ import Foundation
 		self.body = body
 		self.deserializedBody = deserializedBody
 	}
-	
+
 	/// Initializes the receiver.
 	///
 	/// - Parameters:
@@ -49,34 +49,34 @@ import Foundation
 	}
 
 	// MARK: Properties
-	
+
 	/// The request's unique identifier.
 	public let requestIdentifier: String
-	
+
 	/// The status code of the response.
 	public let statusCode: Int
-	
+
 	/// A verbal representation of the status code.
 	public var statusString: String {
 		return HTTPURLResponse.localizedString(forStatusCode: statusCode)
 	}
-	
+
 	/// The URL string of the response (which may be different than originally
 	/// requested because of a redirect).
 	public let urlString: String
-	
+
 	/// The HTTP headers of the response.
 	public let headers: [String: String]
-	
+
 	/// The content type of the response.
 	public var contentType: String {
 		return headers["Content-Type"] ?? "application/octet-stream"
 	}
-	
+
 	/// The raw body data of the response.
 	public let body: Data?
-	
+
 	/// The parsed body of the response.
 	public let deserializedBody: String?
-	
+
 }
