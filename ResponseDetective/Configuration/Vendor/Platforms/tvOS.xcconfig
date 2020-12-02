@@ -1,0 +1,29 @@
+//
+// Platforms/tvOS.xcconfig
+//
+// Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under MIT License.
+//
+// This file contains build settings specific to tvOS platform.
+//
+
+// MARK: Architecture
+
+// SDK root of tvOS.
+SDKROOT = appletvos
+
+// Supported platforms for tvOS.
+SUPPORTED_PLATFORMS = appletvos appletvsimulator
+
+// MARK: Deployment
+
+// Deployment target for tvOS.
+TVOS_DEPLOYMENT_TARGET = $(_DEPLOYMENT_TARGET_TVOS)
+
+// Supported device families for tvOS.
+TARGETED_DEVICE_FAMILY = $(_DEPLOYMENT_DEVICES_TVOS)
+
+// MARK: Linker
+
+// Where to find embedded frameworks for tvOS.
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks

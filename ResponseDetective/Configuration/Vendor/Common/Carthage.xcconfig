@@ -1,0 +1,17 @@
+//
+// Common/Carthage.xcconfig
+//
+// Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under MIT License.
+//
+// This file contains base build settings for targets using Carthage.
+//
+
+// Path to top-level Carthage directory.
+_CARTHAGE_PATH = $(PROJECT_DIR)/Carthage
+
+// Path to platform-specific Carthage/Build directory.
+_CARTHAGE_BUILD_PATH[sdk=iphone*] = $(_CARTHAGE_PATH)/Build/iOS
+_CARTHAGE_BUILD_PATH[sdk=macosx*] = $(_CARTHAGE_PATH)/Build/Mac
+_CARTHAGE_BUILD_PATH[sdk=appletv*] = $(_CARTHAGE_PATH)/Build/tvOS
+_CARTHAGE_BUILD_PATH[sdk=watch*] = $(_CARTHAGE_PATH)/Build/watchOS

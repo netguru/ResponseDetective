@@ -7,7 +7,7 @@
 
 // Imports
 
-#include "../../Carthage/Checkouts/xcconfigs/Targets/Framework.xcconfig"
+#include "Vendor/Targets/Framework.xcconfig"
 
 // Bundle
 

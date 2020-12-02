@@ -633,7 +633,7 @@
 				CLASSPREFIX = RDT;
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Netguru S.A.";
 				TargetAttributes = {
 					3A2007D71B5501BC00769021 = {

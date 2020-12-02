@@ -1,0 +1,243 @@
+//
+// Common/Common.xcconfig
+//
+// Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under MIT License.
+//
+// This file contains base build settings for all targets.
+//
+
+// Include default values of variables.
+#include "Variables.xcconfig"
+
+// MARK: Build options
+
+// The format of debugging symbols.
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+// MARK: Search paths
+
+// Disable legacy-compatible header searching.
+ALWAYS_SEARCH_USER_PATHS = NO
+
+// Additional framework search paths.
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(_CARTHAGE_BUILD_PATH) $(_COMPILER_FRAMEWORK_SEARCH_PATHS)
+
+// Additional header search paths.
+HEADER_SEARCH_PATHS = $(inherited) $(_COMPILER_OBJC_HEADER_SEARCH_PATHS)
+
+// MARK: Linking
+
+// Other linker flags.
+OTHER_LDFLAGS = $(inherited) $(_COMPILER_OBJC_LINKER_FLAGS)
+
+// MARK: Packaging
+
+// Path to `Info.plist` file.
+INFOPLIST_FILE = $(_BUNDLE_INFOPLIST_PATH)
+
+// `CFBundleVersionString`.
+PRODUCT_BUNDLE_VERSION_STRING = $(_BUILD_VERSION)
+
+// `CFBundleVersion`.
+PRODUCT_BUNDLE_VERSION = $(_BUILD_NUMBER)
+
+// `CFBundleIdentifier`.
+PRODUCT_BUNDLE_IDENTIFIER = $(_BUNDLE_IDENTIFIER)
+
+// Name of the product.
+PRODUCT_NAME = $(_BUNDLE_NAME)
+
+// MARK: Signing
+
+// Code signing style.
+CODE_SIGN_STYLE = $(_CODESIGN_STYLE)
+
+// Development team to use for code signing.
+DEVELOPMENT_TEAM = $(_CODESIGN_DEVELOPMENT_TEAM)
+
+// Identity to use for code signing.
+CODE_SIGN_IDENTITY = $(_CODESIGN_IDENTITY)
+
+// Provisioning profile specifier for code signing.
+PROVISIONING_PROFILE_SPECIFIER = $(_CODESIGN_PROFILE_SPECIFIER)
+
+// Path to `.entitlements` file for code signing.
+CODE_SIGN_ENTITLEMENTS = $(_CODESIGN_ENTITLEMENTS_PATH)
+
+// MARK: LLVM compiler
+
+// Disable link-time optimizations.
+LLVM_LTO = NO
+
+// Compile `NSAssert` assertions.
+ENABLE_NS_ASSERTIONS = YES
+
+// Require `objc_msgSend` to be cast before invocation.
+ENABLE_STRICT_OBJC_MSGSEND = YES
+
+// Preprocessor definitions, mapped from `_ENVIRONMENT`.
+GCC_PREPROCESSOR_DEFINITIONS = $(_ENVIRONMENTS) $(inherited)
+
+// Use GNU++11 C++ language standard.
+CLANG_CXX_LANGUAGE_STANDARD = gnu++11
+
+// Use LLVM C++ standard library.
+CLANG_CXX_LIBRARY = libc++
+
+// Enable module imports and definitions.
+CLANG_ENABLE_MODULES = YES
+
+// Enable Objective-C ARC.
+CLANG_ENABLE_OBJC_ARC = YES
+
+// Warn about block capture autoreleasing.
+CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES
+
+// Warn about suspucious commas.
+CLANG_WARN_COMMA = YES
+
+// Warn about suspicious empty loop bodies.
+CLANG_WARN_EMPTY_BODY = YES
+
+// Warn when a function will recursively call itself on every code path.
+CLANG_WARN_INFINITE_RECURSION = YES
+
+// Warn about non-literal null conversion.
+CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES
+
+// Whether to warn on suspicious implicit conversions.
+CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES
+
+// Warn about strict prototypes.
+CLANG_WARN_STRICT_PROTOTYPES = YES
+
+// Warn about unreachable code.
+CLANG_WARN_UNREACHABLE_CODE = YES
+
+// Warn about range-based `for` loops in C++.
+CLANG_WARN_RANGE_LOOP_ANALYSIS = YES
+
+// Warning about suspicious uses of `std::move`.
+CLANG_WARN_SUSPICIOUS_MOVE = YES
+
+// Warn when overriding deprecated Objective-C methods.
+CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES
+
+// Warn about implicit Objective-C literal conversions.
+CLANG_WARN_OBJC_LITERAL_CONVERSION = YES
+
+// Warn about direct accesses to the Objective-C `isa` pointer instead of using
+// the Objective-C runtime API.
+CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR
+
+// Warn about classes that unintentionally do not subclass a root class.
+CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR
+
+// Warn duplicate method declarations within the same `@interface`.
+CLANG_WARN__DUPLICATE_METHOD_MATCH = YES
+
+// Warn about implicit capture of `self` (e.g. direct ivar access).
+CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES
+
+// Whether to run the static analyzer with every build.
+RUN_CLANG_STATIC_ANALYZER = YES
+
+// Warn for misused nullability attributes.
+CLANG_ANALYZER_NONNULL = YES
+
+// Warn when a non-localized string is passed to a user-interface method
+// expecting a localized string.
+CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES
+
+// Warn about suspicius conversions between `NSNumber` and `CFNumberRef`.
+CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE
+
+// Warn when a floating-point value is used as a loop counter.
+CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES
+
+// Warn when using `rand()` and `random()` instead of `arc4random()`.
+CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES
+
+// Warn when using `strcpy() and `strcat()`.
+CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES
+
+// Warn about incorrect uses of `nullable` values.
+CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES
+
+// Function calls should not be position-dependent.
+GCC_DYNAMIC_NO_PIC = NO
+
+// Warn if the same variable is declared in two binaries that are linked
+// together.
+GCC_NO_COMMON_BLOCKS = YES
+
+// Use GNU99 C variant.
+GCC_C_LANGUAGE_STANDARD = gnu99
+
+// Whether to precompile the prefix header (if one is specified).
+GCC_PRECOMPILE_PREFIX_HEADER = YES
+
+// Treat warnings as errors (a.k.a. hard mode).
+GCC_TREAT_WARNINGS_AS_ERRORS = $(_COMPILER_HARD_MODE)
+
+// Warn about 64-bit values being implicitly shortened to 32 bits.
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES
+
+// Warn about fields missing from structure initializers (only if designated
+// initializers aren't used).
+GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES
+
+// Warn when the returned value does not match its return type.
+GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR
+
+// Warn about the use of four-character constants.
+GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES
+
+// Warn about an aggregate data type's initializer not being fully bracketed.
+GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES
+
+// Whether to warn about unsafe comparisons between values of different
+// signedness.
+GCC_WARN_SIGN_COMPARE = YES
+
+// Warn if a variable might be clobbered by a setjmp call or if an automatic
+// variable is used without prior initialization.
+GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE
+
+// Warn about static functions that are unused.
+GCC_WARN_UNUSED_FUNCTION = YES
+
+// Whether to warn about labels that are unused.
+GCC_WARN_UNUSED_LABEL = YES
+
+// Warn about variables that are never used.
+GCC_WARN_UNUSED_VARIABLE = YES
+
+// Warn if a `@selector` expression refers to an undeclared selector.
+GCC_WARN_UNDECLARED_SELECTOR = YES
+
+// MARK: Asset catalog compiler
+
+// Asset to use as app icon.
+ASSETCATALOG_COMPILER_APPICON_NAME = $(_ASSET_ICON)
+
+// Asset to use as launch image.
+ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = $(_ASSET_LAUNCHIMAGE)
+
+// MARK: Swift compiler
+
+// Swift version to be used.
+SWIFT_VERSION = $(_COMPILER_SWIFT_VERSION)
+
+// Treat warning as errors (a.k.a. hard mode).
+SWIFT_TREAT_WARNINGS_AS_ERRORS = $(_COMPILER_HARD_MODE)
+
+// Compilation conditions for Swift, mapped from `_ENVIRONMENTS`.
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(_ENVIRONMENTS) $(inherited)
+
+// Additional flags passed to Swift compiler.
+OTHER_SWIFT_FLAGS = $(inherited) $(_COMPILER_SWIFT_FLAGS)
+
+// Path to bridging header between Swift and Objective-C.
+SWIFT_OBJC_BRIDGING_HEADER = $(_COMPILER_SWIFT_BRIDGING_HEADER_PATH)

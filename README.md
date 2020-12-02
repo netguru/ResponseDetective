@@ -1,7 +1,6 @@
 ![](Images/Header.png)
 
-![](https://app.bitrise.io/app/c09426001dedd91c/status.svg?token=4zhZMFtDpH-9BhWvGP5-1g&branch=develop)
-![](https://img.shields.io/badge/swift-5.2-orange.svg)
+![](https://img.shields.io/badge/swift-5.3-orange.svg)
 ![](https://img.shields.io/github/release/netguru/ResponseDetective.svg)
 ![](https://img.shields.io/badge/carthage-compatible-green.svg)
 ![](https://img.shields.io/badge/cocoapods-compatible-green.svg)
@@ -11,7 +10,7 @@
 
 ## Requirements
 
-ResponseDetective is written in **Swift 5.2** and supports **iOS 8.0+**, **macOS 10.10+** and **tvOS 9.0+**.
+ResponseDetective is written in **Swift 5.3** and supports **iOS 9.0+**, **macOS 10.10+** and **tvOS 9.0+**.
 
 ## Usage
 
@@ -130,9 +129,17 @@ use_frameworks!
 pod 'ResponseDetective', '~> {version}'
 ```
 
+### Local
+
+To install the test dependencies or to build ResponseDetective itself, do not run `carthage` directly. It can't handle the Apple Silicon architectures introduced in Xcode 12. Instead, run it through the `carthage.sh` script:
+
+```bash
+$ ./carthage.sh bootstrap
+```
+
 ## About
 
-This project was made with ♡ by [Netguru](https://netguru.com) and is now maintained by [Adrian Kashivskyy](https://github.com/akashivskyy).
+This project was made with ♡ by [Netguru](https://netguru.com).
 
 ### Release names
 

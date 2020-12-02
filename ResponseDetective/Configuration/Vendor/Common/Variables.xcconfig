@@ -1,0 +1,110 @@
+//
+// Common/Variables.xcconfig
+//
+// Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under MIT License.
+//
+// This file contains variables that are mapped to build settings.
+//
+
+// MARK: Environment
+
+// The environments build setting, typically overridden in environment-specific
+// `xcconfig` files.
+_ENVIRONMENTS = ENV_DEFAULT
+
+// MARK: Versioning
+
+// The build semantic version, mapped later to `CFBundleVersionString`.
+_BUILD_VERSION =
+
+// The build number, mapped later to `CFBundleVersion`.
+_BUILD_NUMBER = $(_BUILD_VERSION)
+
+// MARK: Bundle
+
+// Bundle name of the product, used by Xcode to create an `.app` bundle.
+_BUNDLE_NAME = $(TARGET_NAME)
+
+// Bundle identifier of the product.
+_BUNDLE_IDENTIFIER =
+
+/// Path to `Info.plist` file of the product.
+_BUNDLE_INFOPLIST_PATH =
+
+// Whether the bundle is `@testable`.
+_BUNDLE_TESTABLE = YES
+
+// MARK: Deployment
+
+// Minimum iOS deployment target.
+_DEPLOYMENT_TARGET_IOS =
+
+// Targeted device families on iOS.
+_DEPLOYMENT_DEVICES_IOS = 1,2
+
+// Minimum macOS deployment target.
+_DEPLOYMENT_TARGET_MACOS =
+
+// Minimum tvOS deployment target.
+_DEPLOYMENT_TARGET_TVOS =
+
+// Targeted device families on tvOS.
+_DEPLOYMENT_DEVICES_TVOS = 3
+
+// Minimum watchOS deployment target.
+_DEPLOYMENT_TARGET_WATCHOS =
+
+// Targeted device families on watchOS.
+_DEPLOYMENT_DEVICES_WATCHOS = 4
+
+// MARK: Signing
+
+// Code signign style.
+_CODESIGN_STYLE = Automatic
+
+// Development team to be used with `_CODESIGN_PROFILE_SPECIFIER` to manually
+// code sign the product.
+_CODESIGN_DEVELOPMENT_TEAM =
+
+// The identity to be used with `_CODESIGN_PROFILE_SPECIFIER` to manually code
+// sign the product.
+_CODESIGN_IDENTITY =
+
+// The provisioning profile specifier to be used with `_CODESIGN_IDENTITY` to
+// manually code sign the product.
+_CODESIGN_PROFILE_SPECIFIER =
+
+// Path to `.entitlements` file of the product.
+_CODESIGN_ENTITLEMENTS_PATH =
+
+// MARK: Assets
+
+// Name of the icon asset to be used.
+_ASSET_ICON =
+
+// Name of the launch image asset to be used.
+_ASSET_LAUNCHIMAGE =
+
+// MARK: Compiler
+
+// Whether to enable hard mode (a.k.a. treat warnings as errors).
+_COMPILER_HARD_MODE = YES
+
+// The version of Swift to be used by compiler.
+_COMPILER_SWIFT_VERSION =
+
+// Additional flags for the Swift compiler.
+_COMPILER_SWIFT_FLAGS =
+
+// Path to Swift bridging header to be used by compiler.
+_COMPILER_SWIFT_BRIDGING_HEADER_PATH =
+
+// Additional flags for Objective-C linker.
+_COMPILER_OBJC_LINKER_FLAGS =
+
+// Additional search paths when looking for headers.
+_COMPILER_OBJC_HEADER_SEARCH_PATHS =
+
+// Additional search paths when looking for frameworks.
+_COMPILER_FRAMEWORK_SEARCH_PATHS =
