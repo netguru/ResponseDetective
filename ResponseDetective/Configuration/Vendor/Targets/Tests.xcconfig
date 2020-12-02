@@ -1,0 +1,11 @@
+//
+// Targets/Tests.xcconfig
+//
+// Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under MIT License.
+//
+// This file contains build settings specific to test bundle targets.
+//
+
+// Inherit from Application target.
+#include "Application.xcconfig"

@@ -7,16 +7,16 @@
 
 // Imports
 
-#include "../../Carthage/Checkouts/xcconfigs/Common/Common.xcconfig"
-#include "../../Carthage/Checkouts/xcconfigs/Common/Carthage.xcconfig"
+#include "Vendor/Common/Common.xcconfig"
+#include "Vendor/Common/Carthage.xcconfig"
 
 // MARK: Build
 
-_BUILD_VERSION = 1.4.0
+_BUILD_VERSION = 1.5.0
 
 // MARK: Deployment
 
-_DEPLOYMENT_TARGET_IOS = 8.0
+_DEPLOYMENT_TARGET_IOS = 9.0
 _DEPLOYMENT_TARGET_MACOS = 10.10
 _DEPLOYMENT_TARGET_TVOS = 9.0
 

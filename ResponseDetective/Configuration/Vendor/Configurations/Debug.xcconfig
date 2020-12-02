@@ -1,0 +1,58 @@
+//
+// Configurations/Debug.xcconfig
+//
+// Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under MIT License.
+//
+// This file contains build settings specific to debug configuration.
+//
+
+// MARK: Environment
+
+// Set debug environments.
+_ENVIRONMENTS = ENV_DEBUG
+
+// MARK: Architecture
+
+// Build only the active architecture.
+ONLY_ACTIVE_ARCH = YES
+
+// MARK: Build options
+
+// Allow `@testable` imports.
+ENABLE_TESTABILITY = $(_BUNDLE_TESTABLE)
+
+// MARK: Deployment
+
+// Do not strip debugging symbols when copying resources.
+COPY_PHASE_STRIP = NO
+
+// Do not strip debugging symbols when copying the built product to its final
+// installation location.
+STRIP_INSTALLED_PRODUCT = NO
+
+// MARK: Signing
+
+// Disable Developer ID timestamping.
+OTHER_CODE_SIGN_FLAGS = --timestamp=none
+
+// MARK: LLVM compiler
+
+// Disable GCC optimization.
+GCC_OPTIMIZATION_LEVEL = 0
+
+// Catch errors in integer arithmetic.
+OTHER_CFLAGS = -ftrapv
+
+// MARK: Asset compiler
+
+// Optimize assets for time.
+ASSETCATALOG_COMPILER_OPTIMIZATION = time
+
+// MARK: Swift compiler
+
+// Disable whole-module compilation for Swift.
+SWIFT_COMPILATION_MODE = singlefile
+
+// Disable optimizations for Swift.
+SWIFT_OPTIMIZATION_LEVEL = -Onone

@@ -8,4 +8,4 @@
 // Imports
 
 #include "Common-Base.xcconfig"
-#include "../../Carthage/Checkouts/xcconfigs/Configurations/Release.xcconfig"
+#include "Vendor/Configurations/Release.xcconfig"

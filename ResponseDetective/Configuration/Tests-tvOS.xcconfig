@@ -8,4 +8,4 @@
 // Imports
 
 #include "Tests-Base.xcconfig"
-#include "../../Carthage/Checkouts/xcconfigs/Platforms/tvOS.xcconfig"
+#include "Vendor/Platforms/tvOS.xcconfig"

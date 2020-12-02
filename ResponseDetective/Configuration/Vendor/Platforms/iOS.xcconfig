@@ -1,0 +1,34 @@
+//
+// Platforms/iOS.xcconfig
+//
+// Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under MIT License.
+//
+// This file contains build settings specific to iOS platform.
+//
+
+// MARK: Architecture
+
+// SDK root of iOS.
+SDKROOT = iphoneos
+
+// Supported platforms for iOS.
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator
+
+// MARK: Deployment
+
+// Deployment target for iOS.
+IPHONEOS_DEPLOYMENT_TARGET = $(_DEPLOYMENT_TARGET_IOS)
+
+// Supported device families for iOS.
+TARGETED_DEVICE_FAMILY = $(_DEPLOYMENT_DEVICES_IOS)
+
+// MARK: Linking
+
+// Where to find embedded frameworks for iOS.
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+
+// MARK: Search paths
+
+// Xcode needs this to find archived headers if `SKIP_INSTALL` is set.
+HEADER_SEARCH_PATHS = $(inherited) $(OBJROOT)/UninstalledProducts/include

@@ -19,7 +19,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 			beforeSuite {
 				stub(condition: isHost("httpbin.org")) { _ in
-					return OHHTTPStubsResponse(data: Data(), statusCode: 200, headers: nil)
+					return HTTPStubsResponse(data: Data(), statusCode: 200, headers: nil)
 				}
 			}
 
@@ -28,7 +28,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 			}
 
 			afterSuite {
-				OHHTTPStubs.removeAllStubs()
+				HTTPStubs.removeAllStubs()
 			}
 
 			describe("initial state") {
@@ -182,8 +182,8 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 					}
 
 					it("should eventually intercept it") {
-						expect(buffer.requestRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: 5.0)
-						expect(buffer.responseRepresentations.last?.body).toEventuallyNot(beNil(), timeout: 5.0)
+						expect(buffer.requestRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: .seconds(5))
+						expect(buffer.responseRepresentations.last?.body).toEventuallyNot(beNil(), timeout: .seconds(5))
 					}
 
 				}
@@ -219,7 +219,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 					}
 
 					it("should eventually intercept its response") {
-						expect(buffer.responseRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: 5.0)
+						expect(buffer.responseRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: .seconds(5))
 					}
 
 				}
@@ -255,7 +255,7 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 					}
 
 					it("should eventually intercept its error") {
-						expect(buffer.errorRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: 5.0)
+						expect(buffer.errorRepresentations.count).toEventually(beGreaterThanOrEqualTo(1), timeout: .seconds(5))
 					}
 
 				}
