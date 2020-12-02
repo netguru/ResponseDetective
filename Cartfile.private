@@ -5,10 +5,6 @@
 # Licensed under the MIT License.
 #
 
-# Configuration dependencies
-
-github "netguru/xcconfigs" == 0.3
-
 # Test dependencies
 
 github "Quick/Quick" ~> 2.0.0
