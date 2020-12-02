@@ -8,4 +8,4 @@
 // Imports
 
 #include "Framework-Base.xcconfig"
-#include "../../Carthage/Checkouts/xcconfigs/Platforms/macOS.xcconfig"
+#include "Vendor/Platforms/macOS.xcconfig"

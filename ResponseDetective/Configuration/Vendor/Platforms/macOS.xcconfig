@@ -1,0 +1,31 @@
+//
+// Platforms/macOS.xcconfig
+//
+// Copyright © 2017 Netguru Sp. z o.o. All rights reserved.
+// Licensed under MIT License.
+//
+// This file contains build settings specific to macOS platform.
+//
+
+// MARK: Architecture
+
+// SDK root of macOS.
+SDKROOT = macosx
+
+// Supported platforms for macOS.
+SUPPORTED_PLATFORMS = macosx
+
+// MARK: Deployment
+
+// Deployment target for macOS.
+MACOSX_DEPLOYMENT_TARGET = $(_DEPLOYMENT_TARGET_MACOS)
+
+// MARK: Compiler
+
+// Whether to combine multiple image resolutions into a TIFF.
+COMBINE_HIDPI_IMAGES = YES
+
+// MARK: Linker
+
+// Where to find embedded frameworks for macOS.
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/../Frameworks

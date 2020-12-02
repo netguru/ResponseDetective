@@ -5,10 +5,9 @@
 // Licensed under the MIT License.
 //
 
-
 // Imports
 
-#include "../../Carthage/Checkouts/xcconfigs/Targets/Application.xcconfig"
+#include "Vendor/Targets/Application.xcconfig"
 
 // Bundle
 

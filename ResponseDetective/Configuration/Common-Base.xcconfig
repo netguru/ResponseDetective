@@ -7,8 +7,8 @@
 
 // Imports
 
-#include "../../Carthage/Checkouts/xcconfigs/Common/Common.xcconfig"
-#include "../../Carthage/Checkouts/xcconfigs/Common/Carthage.xcconfig"
+#include "Vendor/Common/Common.xcconfig"
+#include "Vendor/Common/Carthage.xcconfig"
 
 // MARK: Build
 
