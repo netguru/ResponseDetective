@@ -1,6 +1,4 @@
-// swift-tools-version:5.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -13,32 +11,107 @@ let package = Package(
     products: [
         .library(
             name: "ResponseDetective",
-            targets: ["ResponseDetective"]
-        ),
-        .library(
-            name: "ResponseDetectiveObjC",
-            targets: ["ResponseDetectiveObjC"]
+            targets: [
+                "ResponseDetective",
+                "ResponseDetectiveObjC"
+            ]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(
+            url: "https://github.com/Quick/Quick.git",
+            .exact("3.0.0")
+        ),
+        .package(
+            url: "https://github.com/Quick/Nimble.git",
+            .exact("9.0.0")
+        ),
+        .package(
+            url: "https://github.com/AliSoftware/OHHTTPStubs.git",
+            .exact("9.1.0")
+        )
+    ],
     targets: [
         .target(
             name: "ResponseDetective",
             dependencies: ["ResponseDetectiveObjC"],
             path: "ResponseDetective",
-            sources: ["Sources/Swift"]
+            exclude: [
+                "Configuration",
+                "Resources",
+                "Tests",
+                "include",
+                "Sources/RDTHTMLBodyDeserializer.h",
+                "Sources/RDTXMLBodyDeserializer.h",
+                "Sources/ResponseDetective.h",
+                "Sources/RDTHTMLBodyDeserializer.m",
+                "Sources/RDTBodyDeserializer.h",
+                "Sources/RDTXMLBodyDeserializer.m"
+            ],
+            sources: [
+                "Sources/ResponseRepresentation.swift",
+                "Sources/ErrorRepresentation.swift",
+                "Sources/ResponseDetective.swift",
+                "Sources/BufferOutputFacility.swift",
+                "Sources/ConsoleOutputFacility.swift",
+                "Sources/URLEncodedBodyDeserializer.swift",
+                "Sources/PlaintextBodyDeserializer.swift",
+                "Sources/ImageBodyDeserializer.swift",
+                "Sources/JSONBodyDeserializer.swift",
+                "Sources/Dictionary.swift",
+                "Sources/URLProtocol.swift",
+                "Sources/OutputFacility.swift",
+                "Sources/RequestRepresentation.swift"
+            ]
         ),
         .target(
             name: "ResponseDetectiveObjC",
             dependencies: [],
             path: "ResponseDetective",
-            sources: ["Sources/ObjC"]
-        )
-//        .testTarget(
-//            name: "ResponseDetectiveTests",
-//            dependencies: ["ResponseDetective"],
-//            path: "ResponseDetective",
-//            sources: ["Tests"]
-//        ),
+            exclude: [
+                "Configuration",
+                "Resources",
+                "Tests",
+                "Sources/ResponseRepresentation.swift",
+                "Sources/ErrorRepresentation.swift",
+                "Sources/ResponseDetective.swift",
+                "Sources/BufferOutputFacility.swift",
+                "Sources/ConsoleOutputFacility.swift",
+                "Sources/URLEncodedBodyDeserializer.swift",
+                "Sources/PlaintextBodyDeserializer.swift",
+                "Sources/ImageBodyDeserializer.swift",
+                "Sources/JSONBodyDeserializer.swift",
+                "Sources/Dictionary.swift",
+                "Sources/URLProtocol.swift",
+                "Sources/OutputFacility.swift",
+                "Sources/RequestRepresentation.swift"
+            ],
+            sources: [
+                "Sources/RDTHTMLBodyDeserializer.h",
+                "Sources/RDTXMLBodyDeserializer.h",
+                "Sources/ResponseDetective.h",
+                "Sources/RDTHTMLBodyDeserializer.m",
+                "Sources/RDTBodyDeserializer.h",
+                "Sources/RDTXMLBodyDeserializer.m"
+            ]
+        ),
+        .testTarget(
+            name: "ResponseDetectiveTests",
+            dependencies: [
+                "ResponseDetective",
+                "ResponseDetectiveObjC",
+                "Quick",
+                "Nimble",
+                "OHHTTPStubs"
+            ],
+            path: "ResponseDetective",
+            exclude: [
+                "Configuration",
+                "Resources",
+                "Sources",
+                "include",
+            ],
+            sources: ["Tests"]
+        ),
     ]
 )

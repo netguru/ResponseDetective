@@ -13,6 +13,12 @@ extern const unsigned char ResponseDetectiveVersionString[];
 
 @import Foundation;
 
-#import "ResponseDetective/Sources/ObjC/RDTBodyDeserializer.h"
-#import "ResponseDetective/Sources/ObjC/RDTXMLBodyDeserializer.h"
-#import "ResponseDetective/Sources/ObjC/RDTHTMLBodyDeserializer.h"
+#ifndef SWIFT_PACKAGE
+#import <ResponseDetective/RDTBodyDeserializer.h>
+#import <ResponseDetective/RDTXMLBodyDeserializer.h>
+#import <ResponseDetective/RDTHTMLBodyDeserializer.h>
+#else
+#import "RDTBodyDeserializer.h"
+#import "RDTXMLBodyDeserializer.h"
+#import "RDTHTMLBodyDeserializer.h"
+#endif
