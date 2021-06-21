@@ -4,6 +4,7 @@
 ![](https://img.shields.io/github/release/netguru/ResponseDetective.svg)
 ![](https://img.shields.io/badge/carthage-compatible-green.svg)
 ![](https://img.shields.io/badge/cocoapods-compatible-green.svg)
+![](https://img.shields.io/badge/spm-compatible-green.svg)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 **ResponseDetective** is a non-intrusive framework for intercepting any outgoing requests and incoming responses between your app and your server for debugging purposes.
@@ -129,12 +130,22 @@ use_frameworks!
 pod 'ResponseDetective', '~> {version}'
 ```
 
+### Swift Package Manager
+
+If you're using [Swift Package Manager](https://github.com/apple/swift-package-manager), add this repository to the Swift Packages in your project settings.
+
 ### Local
 
 To install the test dependencies or to build ResponseDetective itself, do not run `carthage` directly. It can't handle the Apple Silicon architectures introduced in Xcode 12. Instead, run it through the `carthage.sh` script:
 
 ```bash
 $ ./carthage.sh bootstrap
+```
+
+Alternatively, you can run the tests locally using Swift Package Manager with the following command:
+
+```bash
+$ swift test
 ```
 
 ## About

@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if SWIFT_PACKAGE
+import ResponseDetectiveObjC
+#endif
 
 /// ResponseDetective configuration cluster class that defines the behavior
 /// of request interception and logging.

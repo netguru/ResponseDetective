@@ -10,6 +10,9 @@
 #elseif os(OSX)
 	import AppKit
 #endif
+#if SWIFT_PACKAGE
+import ResponseDetectiveObjC
+#endif
 
 /// Deserializes image bodies.
 @objc(RDTImageBodyDeserializer) public final class ImageBodyDeserializer: NSObject, BodyDeserializer {

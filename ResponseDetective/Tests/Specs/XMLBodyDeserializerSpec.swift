@@ -8,6 +8,9 @@
 import Foundation
 import Nimble
 import ResponseDetective
+#if SWIFT_PACKAGE
+import ResponseDetectiveObjC
+#endif
 import Quick
 
 internal final class XMLBodyDeserializerSpec: QuickSpec {

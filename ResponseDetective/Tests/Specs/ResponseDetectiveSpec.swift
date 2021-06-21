@@ -18,7 +18,9 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 		describe("ResponseDetective") {
 
 			beforeSuite {
-				stub(condition: isHost("httpbin.org")) { _ in
+				HTTPStubs.stubRequests { request in
+					return request.url?.host == "httpbin.org"
+				} withStubResponse: { _ in
 					return HTTPStubsResponse(data: Data(), statusCode: 200, headers: nil)
 				}
 			}
@@ -150,10 +152,11 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 			describe("request interception") {
 
-				let buffer = BufferOutputFacility()
+				var buffer: BufferOutputFacility!
 				let configuration = URLSessionConfiguration.default
 
 				beforeEach {
+					buffer = BufferOutputFacility()
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
 					ResponseDetective.enable(inConfiguration: configuration)
@@ -192,10 +195,11 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 			describe("response interception") {
 
-				let buffer = BufferOutputFacility()
+				var buffer: BufferOutputFacility!
 				let configuration = URLSessionConfiguration.default
 
 				beforeEach {
+					buffer = BufferOutputFacility()
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
 					ResponseDetective.enable(inConfiguration: configuration)
@@ -228,10 +232,11 @@ internal final class ResponseDetectiveSpec: QuickSpec {
 
 			describe("error interception") {
 
-				let buffer = BufferOutputFacility()
+				var buffer: BufferOutputFacility!
 				let configuration = URLSessionConfiguration.default
 
 				beforeEach {
+					buffer = BufferOutputFacility()
 					ResponseDetective.outputFacility = buffer
 					ResponseDetective.registerBodyDeserializer(TestBodyDeserializer(), forContentType: "*/*")
 					ResponseDetective.enable(inConfiguration: configuration)

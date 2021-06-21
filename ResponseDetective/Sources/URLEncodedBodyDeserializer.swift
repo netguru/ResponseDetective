@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if SWIFT_PACKAGE
+import ResponseDetectiveObjC
+#endif
 
 /// Deserializes URL-encoded bodies.
 @objc(RDTURLEncodedBodyDeserializer) public final class URLEncodedBodyDeserializer: NSObject, BodyDeserializer {
