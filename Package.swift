@@ -93,6 +93,10 @@ let package = Package(
                 "Sources/RDTHTMLBodyDeserializer.m",
                 "Sources/RDTBodyDeserializer.h",
                 "Sources/RDTXMLBodyDeserializer.m"
+            ],
+            cSettings: [
+                .headerSearchPath("ResponseDetective/Sources"),
+                .headerSearchPath("ResponseDetective")
             ]
         ),
         .testTarget(
