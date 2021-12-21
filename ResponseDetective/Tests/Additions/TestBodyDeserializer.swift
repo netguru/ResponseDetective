@@ -6,6 +6,9 @@
 //
 
 import ResponseDetective
+#if SWIFT_PACKAGE
+import ResponseDetectiveObjC
+#endif
 
 /// A test body deserializer.
 internal final class TestBodyDeserializer: NSObject, BodyDeserializer {
