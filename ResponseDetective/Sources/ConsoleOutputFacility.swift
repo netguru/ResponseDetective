@@ -10,6 +10,10 @@ import Foundation
 /// An output facility which outputs requests, responses and errors to console.
 @objc(RDTConsoleOutputFacility) public final class ConsoleOutputFacility: NSObject, OutputFacility {
 
+    // MARK: Nested types
+    
+    public typealias PrintClosure = (String) -> Void
+    
 	// MARK: Initializers
 
 	/// Initializes the receiver with default print closure.
@@ -22,14 +26,14 @@ import Foundation
 	/// - Parameters:
 	///     - printClosure: The print closure used to output strings into the
 	///       console.
-	@objc(initWithPrintBlock:) public init(printClosure: @escaping @convention(block) (String) -> Void) {
+	@objc(initWithPrintBlock:) public init(printClosure: @escaping PrintClosure) {
 		self.printClosure = printClosure
 	}
 
 	// MARK: Properties
 
 	/// Print closure used to output strings into the console.
-	private let printClosure: @convention(block) (String) -> Void
+	private let printClosure: PrintClosure
 
 	// MARK: OutputFacility
 
