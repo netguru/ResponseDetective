@@ -65,6 +65,7 @@ import Foundation
 	/// - SeeAlso: URLSessionTaskDelegate.urlSession(_:task:willPerformHTTPRedirection:newRequest:completionHandler:)
 	internal func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {
 		client?.urlProtocol(self, wasRedirectedTo: request, redirectResponse: response)
+        completionHandler(request)
 	}
 
 	/// - SeeAlso: URLSessionTaskDelegate.urlSession(_:task:didCompleteWithError:)
