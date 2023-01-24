@@ -1109,24 +1109,24 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Quick";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 3.0.0;
 			};
 		};
 		9048EB1C27EA45BE0091305E /* XCRemoteSwiftPackageReference "Nimble" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Nimble";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 9.0.0;
 			};
 		};
 		9048EB1F27EA45E30091305E /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				kind = exactVersion;
+				version = 9.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
