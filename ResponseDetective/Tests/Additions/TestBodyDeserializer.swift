@@ -12,14 +12,18 @@ import ResponseDetectiveObjC
 
 /// A test body deserializer.
 internal final class TestBodyDeserializer: NSObject, BodyDeserializer {
-
+    
+    // MARK: Nested types
+    
+    public typealias DeserializationClosure = (Data) -> String?
+    
 	/// The closure for deserializing bodies.
-	let deserializationClosure: @convention(block) (Data) -> String?
+	let deserializationClosure: DeserializationClosure
 
 	/// Creates a general deserializer with given deserialization closure.
 	///
 	/// - Parameter deserializationClosure: Implementation of `deserializeBody`.
-	internal init(deserializationClosure: @escaping @convention(block) (Data) -> String?) {
+	internal init(deserializationClosure: @escaping DeserializationClosure) {
 		self.deserializationClosure = deserializationClosure
 	}
 
